@@ -10,9 +10,24 @@
     </head>
     <body id="home" class="">
         <header>
-            <svg class="ico ico-menu"><use xlink:href="#ico-menu"></use></svg>
+            <svg id="menu" class="ico ico-menu"><use xlink:href="#ico-menu"></use></svg>
+            <nav>
+              <ul>
+                <li><a class="distort" data-text="HOME" href="#">HOME</a></li>
+                <li><a class="distort" data-text="ABOUT" href="#">ABOUT</a></li>
+                <li><a class="distort" data-text="WORK" href="#">WORK</a></li>
+                <li><a class="distort" data-text="IMPRINT" href="#">IMPRINT</a></li>
+              </ul>
+            </nav>
         </header>
         <h1>digital</h1>
-        <?php include_once("assets/icons/ico-sprite.svg"); ?>
+        <!-- SVG sprite -->
+        <svg style="display: none;">
+            <symbol id="ico-menu" viewBox="0 0 12 18">
+                <path d="M0 0h12v2H0V0zm0 8h12v2H0V8zm0 8h12v2H0v-2z" />
+            </symbol>
+        </svg>
+        <!-- JS -->
+        <script src="./js/ms.js"></script>
     </body>
 </html>
