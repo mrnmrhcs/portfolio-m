@@ -136,14 +136,12 @@ nav {
   background: #1F1F1F;
   opacity: 0;
   visibility: hidden;
-  transform: scale(5);
-
-  transition: all .5s cubic-bezier(0.82, 0.06, 0.35, 1.01);
+  transition: all .5s .75s cubic-bezier(0.82, 0.06, 0.35, 1.01);
 }
 
 header .ico-menu path {
 
-  transition: transform .4s .35s cubic-bezier(0.21, 0, 0.08, 0.99);
+  transition: transform .4s .45s cubic-bezier(0.21, 0, 0.08, 0.99);
 }
 
 header.is-active .ico-menu .one {
@@ -160,7 +158,33 @@ header.is-active nav {
 
   opacity: 1;
   visibility: visible;
-  transform: scale(1);
+  transition: all .5s cubic-bezier(0.82, 0.06, 0.35, 1.01);
+}
+
+header.is-active li {
+
+  opacity: 1;
+  transform: translateY(0);
+}
+
+header li:nth-child(1) {
+
+  transition: all 0.2s 0.45s ease-in;
+}
+
+header li:nth-child(2) {
+
+  transition: all 0.2s 0.55s ease-in;
+}
+
+header li:nth-child(3) {
+
+  transition: all 0.2s 0.65s ease-in;
+}
+
+header li:nth-child(4) {
+
+  transition: all 0.2s 0.75s ease-in;
 }
 
 nav ul {
@@ -183,6 +207,12 @@ nav ul a {
   color: #3B3B3B;
   display: block;
   position: relative;
+}
+
+nav ul li {
+
+  opacity: 0;
+  transform: translateY(15px);
 }
 
 @keyframes distort-one {
