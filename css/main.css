@@ -1,6 +1,20 @@
 /*  General
     =================================================== */
 
+@font-face {
+  font-family: 'Larsseit';
+  src: url('../assets/fonts/larsseit-webfont.woff2') format('woff2'),
+       url('../assets/fonts/larsseit-webfont.woff') format('woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Larsseit';
+  src: url('../assets/fonts/larsseit-bold-webfont.woff2') format('woff2'),
+       url('../assets/fonts/larsseit-bold-webfont.woff') format('woff');
+  font-weight: bold;
+}
+
 html {
     background-color: #1F1F1F;
 }
@@ -29,7 +43,7 @@ h1, h2, h3, h4 {
 h1 {
     font-size: 4.236em;
     line-height: 4.90909090909091rem; /* 108px */
-    font-weight: 900;
+    font-weight: bold;
     letter-spacing: -8px;
     text-transform: uppercase;
     padding-top: 1.6363636364rem; /* 36px */
@@ -127,7 +141,22 @@ nav {
   transition: all .5s cubic-bezier(0.82, 0.06, 0.35, 1.01);
 }
 
-nav.is-active {
+header .ico-menu path {
+
+  transition: transform .4s .35s cubic-bezier(0.21, 0, 0.08, 0.99);
+}
+
+header.is-active .ico-menu .one {
+
+  transform: translateY(8px);
+}
+
+header.is-active .ico-menu .three {
+
+  transform: translateY(-8px);
+}
+
+header.is-active nav {
 
   opacity: 1;
   visibility: visible;

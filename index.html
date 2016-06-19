@@ -5,12 +5,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/lib/normalize.css">
-        <link rel="stylesheet" type="text/css" href="css/fonts.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
     </head>
     <body id="home" class="">
         <header>
-            <svg id="menu" class="ico ico-menu"><use xlink:href="#ico-menu"></use></svg>
+          <svg id="menu" class="ico ico-menu" viewBox="0 0 12 18">
+            <path class="one" d="M0 0h12v2H0V0zm0"/>
+            <path class="two" d="M0 8h12v2H0V8zm0"/>
+            <path class="three" d="M0 16h12v2H0v-2z"/>
+          </svg>
             <nav>
               <ul>
                 <li><a class="distort" data-text="HOME" href="#">HOME</a></li>
@@ -25,6 +28,11 @@
         <svg style="display: none;">
             <symbol id="ico-menu" viewBox="0 0 12 18">
                 <path d="M0 0h12v2H0V0zm0 8h12v2H0V8zm0 8h12v2H0v-2z" />
+            </symbol>
+            <symbol id="ico-minus" viewBox="0 0 12 18">
+                <path class="one" d="M0 0h12v2H0V0zm0" />
+                <path class="two" d="M1 8h12v2H0V8zm0" />
+                <path class="three" d="M2 16h12v2H0v-2z" />
             </symbol>
         </svg>
         <!-- JS -->

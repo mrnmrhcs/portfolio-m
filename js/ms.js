@@ -1,16 +1,16 @@
-console.log('MS');
+console.log('######## MS ########');
 
 var menuTrigger = document.getElementById('menu');
-var menu = document.querySelector('nav');
+var header = document.querySelector('header');
 
 menuTrigger.addEventListener('click', function(){
 
-  if(menu.classList.contains('is-active')) {
+  if(header.classList.contains('is-active')) {
 
-    menu.classList.remove('is-active');
+    header.classList.remove('is-active');
   } else {
 
-    menu.classList.add('is-active');
+    header.classList.add('is-active');
   }
 
 });
