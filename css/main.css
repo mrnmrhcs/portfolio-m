@@ -1,0 +1,139 @@
+/*  General
+    =================================================== */
+
+html {
+    background-color: #1F1F1F;
+}
+header {
+    height: 18px;
+    padding: 36px 0;
+}
+
+/*  Typo
+    =================================================== */
+
+html {
+    font-size: 1.375em; /* 22px */
+    line-height: 1.6363636364em; /* 36px */
+}
+body {
+    font-family: 'Larsseit', Arial, sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    color: #3B3B3B;
+}
+h1, h2, h3, h4 {
+    font-family: 'Larsseit';
+    font-weight: 600;
+    font-style: inherit;
+    color: #2B2B2B;
+    padding: 0.81818181818182rem 0; /* 18px */
+    margin: 0;
+}
+h1 {
+    font-size: 4.236em;
+    line-height: 4.90909090909091rem; /* 108px */
+    font-weight: 900;
+    letter-spacing: -8px;
+    text-transform: uppercase;
+    padding-top: 1.6363636364rem; /* 36px */
+}
+h2 {
+    font-size: 2.618em;
+    line-height: 3.2727272727rem; /* 72px */
+    letter-spacing: -3px;
+}
+h3 {
+    font-size: 1.618em;
+    line-height: 1.6363636364rem; /* 36px */
+    letter-spacing: -2px;
+}
+h4, h5 {
+    letter-spacing: -1px;
+}
+p, pre, table, blockquote {
+    padding: 0.81818181818182rem 0; /* 18px */
+    margin: 0;
+}
+ul, ol {
+    list-style-position: outside;
+    padding: 0 18px;
+    margin: 0;
+}
+ul ul, ol ol, ul ol, ol ul {
+    margin: 0;
+}
+ul li {
+    padding-left: 6px;
+}
+hr {
+    border: 1px solid;
+    margin: -1px 0;
+}
+b, strong, em, small, code {
+    line-height: 1;
+}
+sup {
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+    top: -0.5em;
+}
+sub {
+    bottom: -0.25em;
+}
+a {
+    color: #268ED9;
+}
+
+/*  Icons
+    =================================================== */
+
+.ico {
+    fill: currentColor;
+    vertical-align: 6px;
+}
+
+.ico-menu {
+    color: #ffffff;
+    display: block;
+    height: 18px;
+    width: 12px;
+    margin: 0 auto;
+}
+
+/*  Pages - Home
+    =================================================== */
+
+#home {
+    width: 100%;
+}
+#home h1 {
+    font-size: 11.089em;
+    line-height: 11.45454545454545rem;
+    letter-spacing: -27px;
+    text-align: center;
+    margin-top: 25vh;
+}
+
+/*  Pages - About
+    =================================================== */
+
+#about {
+    width: 700px;
+    padding-bottom: 144px;
+    margin: 0 auto;
+}
+#about h1 {
+    text-transform: uppercase;
+}
+
+/*  Helper - Baseline Grid
+    =================================================== */
+
+.basegrid {
+    background-image: linear-gradient(to bottom, hsla(359, 0%, 20%, 1) 1px, transparent 1px);
+    background-position: left -1px;
+    background-repeat: repeat;
+    background-size: 18px 18px;
+}
