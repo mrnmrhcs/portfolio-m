@@ -19,6 +19,8 @@ body {
     font-weight: 100;
     font-style: normal;
     color: #3B3B3B;
+
+    position: relative;
 }
 h1, h2, h3, h4 {
 
@@ -64,7 +66,7 @@ ul ul, ol ol, ul ol, ol ul {
     margin: 0;
 }
 ul li {
-    padding-left: 6px;
+    /*padding-left: 6px;*/
 }
 hr {
     border: 1px solid;
@@ -101,6 +103,9 @@ a {
     height: 18px;
     width: 12px;
     cursor: pointer;
+
+    position: relative;
+    z-index: 100;
     padding: 16px 19px;
 }
 
@@ -111,6 +116,7 @@ header {
 
     text-align: center;
     padding: 20px 0;
+    position: relative;
 }
 
 header .ico-menu path {
@@ -160,6 +166,15 @@ header li:nth-child(4) {
 
     transition: all 0.2s 0.75s ease-in;
 }
+header li:nth-child(5) {
+
+    transition: all 0.2s 0.85s ease-in;
+}
+
+header li:nth-child(6) {
+
+    transition: all 0.2s 0.95s ease-in;
+}
 
 /*  Menu
     =================================================== */
@@ -169,12 +184,13 @@ nav {
     background: #1F1F1F;
     opacity: 0;
     visibility: hidden;
+    overflow-y: scroll;
 
     position: fixed;
-    top: 180px;
-    left: 72px;
+    top: 0;
+    left: 0;
     height: 100vh;
-    width: 90vw;
+    width: 100vw;
 
     transform: translate3d(0, 0, 0);
     transition: all .5s .75s cubic-bezier(0.82, 0.06, 0.35, 1.01);
@@ -185,8 +201,8 @@ nav ul {
     list-style: none;
     text-align: left;
 
-    width: 100%;
-    padding: 0;
+    /*width: 100%;*/
+    padding: 180px 72px;
 }
 
 nav ul a {
@@ -435,6 +451,7 @@ nav ul li {
     letter-spacing: -27px;
     text-align: center;
     margin-top: 25vh;
+    z-index: -100;
 }
 
 /*  Pages - About
