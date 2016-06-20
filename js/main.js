@@ -1,4 +1,4 @@
-console.log('######## MS ########');
+console.log('######## M ########');
 
 var menuTrigger = document.getElementById('menu');
 var header = document.querySelector('header');

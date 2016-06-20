@@ -1,0 +1,25 @@
+{
+  "name": "portfolio-m",
+  "version": "1.0.0",
+  "description": "![WOW.](https://cldup.com/JD_k_tMHGF.gif \"WOW.\")",
+  "main": "index.js",
+  "dependencies": {
+    "normalize.css": "^4.1.1",
+    "pills": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Booozz/portfolio-m.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Booozz/portfolio-m/issues"
+  },
+  "homepage": "https://github.com/Booozz/portfolio-m#readme"
+}
