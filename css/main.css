@@ -9,16 +9,19 @@ html {
     =================================================== */
 
 html {
+
     font-size: 1.375em; /* 22px */
     line-height: 1.6363636364em; /* 36px */
 }
 body {
+
     font-family: 'Larsseit', Arial, sans-serif;
     font-weight: 100;
     font-style: normal;
     color: #3B3B3B;
 }
 h1, h2, h3, h4 {
+
     font-family: 'Larsseit';
     font-weight: 600;
     font-style: inherit;
@@ -27,6 +30,7 @@ h1, h2, h3, h4 {
     margin: 0;
 }
 h1 {
+
     font-size: 4.236em;
     line-height: 4.90909090909091rem; /* 108px */
     font-weight: bold;
@@ -105,8 +109,56 @@ a {
 
 header {
 
-  text-align: center;
-  padding: 20px 0;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header .ico-menu path {
+
+    transition: transform .4s .45s cubic-bezier(0.21, 0, 0.08, 0.99);
+}
+
+header.is-active .ico-menu .one {
+
+    transform: translateY(8px);
+}
+
+header.is-active .ico-menu .three {
+
+    transform: translateY(-8px);
+}
+
+header.is-active nav {
+
+    opacity: 1;
+    visibility: visible;
+    transition: all .5s cubic-bezier(0.82, 0.06, 0.35, 1.01);
+}
+
+header.is-active li {
+
+    opacity: 1;
+    transform: translateY(0);
+}
+
+header li:nth-child(1) {
+
+    transition: all 0.2s 0.45s ease-in;
+}
+
+header li:nth-child(2) {
+
+    transition: all 0.2s 0.55s ease-in;
+}
+
+header li:nth-child(3) {
+
+    transition: all 0.2s 0.65s ease-in;
+}
+
+header li:nth-child(4) {
+
+    transition: all 0.2s 0.75s ease-in;
 }
 
 /*  Menu
@@ -114,92 +166,47 @@ header {
 
 nav {
 
-  position: fixed;
-  top: 85px;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background: #1F1F1F;
-  opacity: 0;
-  visibility: hidden;
-  transform: translate3d(0, 0, 0);
-  transition: all .5s .75s cubic-bezier(0.82, 0.06, 0.35, 1.01);
-}
+    background: #1F1F1F;
+    opacity: 0;
+    visibility: hidden;
 
-header .ico-menu path {
+    position: fixed;
+    top: 180px;
+    left: 72px;
+    height: 100vh;
+    width: 90vw;
 
-  transition: transform .4s .45s cubic-bezier(0.21, 0, 0.08, 0.99);
-}
-
-header.is-active .ico-menu .one {
-
-  transform: translateY(8px);
-}
-
-header.is-active .ico-menu .three {
-
-  transform: translateY(-8px);
-}
-
-header.is-active nav {
-
-  opacity: 1;
-  visibility: visible;
-  transition: all .5s cubic-bezier(0.82, 0.06, 0.35, 1.01);
-}
-
-header.is-active li {
-
-  opacity: 1;
-  transform: translateY(0);
-}
-
-header li:nth-child(1) {
-
-  transition: all 0.2s 0.45s ease-in;
-}
-
-header li:nth-child(2) {
-
-  transition: all 0.2s 0.55s ease-in;
-}
-
-header li:nth-child(3) {
-
-  transition: all 0.2s 0.65s ease-in;
-}
-
-header li:nth-child(4) {
-
-  transition: all 0.2s 0.75s ease-in;
+    transform: translate3d(0, 0, 0);
+    transition: all .5s .75s cubic-bezier(0.82, 0.06, 0.35, 1.01);
 }
 
 nav ul {
 
-  list-style: none;
-  width: 100%;
-  text-align: center;
+    list-style: none;
+    text-align: left;
+
+    width: 100%;
+    padding: 0;
 }
 
 nav ul a {
 
-  font-family: 'Larsseit';
-  font-size: 6.854em;
-  line-height: 6.5454545455rem; /* 144px */
-  font-weight: 900;
-  letter-spacing: -8px;
-  color: #2B2B2B;
-  text-align: center;
-  text-decoration: none;
-  color: #3B3B3B;
-  display: block;
-  position: relative;
+    font-family: 'Larsseit';
+    font-size: 6.854em;
+    line-height: 7.7272727273rem; /* 144px */
+    font-weight: 900;
+    letter-spacing: -12px;
+    color: #2B2B2B;
+    text-decoration: none;
+
+    display: block;
+    position: relative;
 }
 
 nav ul li {
 
-  opacity: 0;
-  transform: translateY(15px);
+    opacity: 0;
+    transform: translateY(15px);
 }
 
 @keyframes distort-one {
@@ -405,15 +412,15 @@ nav ul li {
 }
 
 .distort:hover:after {
-  left: 2px;
-  text-shadow: -1px 0 rgba(255, 0, 0, 0.25);
-  animation: distort-one 2s infinite linear alternate-reverse;
+  left: 3px;
+  text-shadow: -3px 0 rgba(0, 80, 77, 0.5);
+  animation: distort-one 3s infinite linear alternate-reverse;
 }
 
 .distort:hover:before {
-  left: -3px;
-  text-shadow: 3px 0 rgba(0, 0, 255, 0.25);
-  animation: distort-one 3s infinite linear alternate-reverse;
+  left: -5px;
+  text-shadow: 5px 0 rgba(96, 25, 0, 0.5);
+  animation: distort-two 3s infinite linear alternate-reverse;
 }
 
 /*  Pages - Home
