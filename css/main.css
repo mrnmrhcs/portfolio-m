@@ -1,20 +1,6 @@
 /*  General
     =================================================== */
 
-@font-face {
-  font-family: 'Larsseit';
-  src: url('../assets/fonts/larsseit-webfont.woff2') format('woff2'),
-       url('../assets/fonts/larsseit-webfont.woff') format('woff');
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: 'Larsseit';
-  src: url('../assets/fonts/larsseit-bold-webfont.woff2') format('woff2'),
-       url('../assets/fonts/larsseit-bold-webfont.woff') format('woff');
-  font-weight: bold;
-}
-
 html {
     background-color: #1F1F1F;
 }
