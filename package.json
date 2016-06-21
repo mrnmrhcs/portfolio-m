@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "![WOW.](https://cldup.com/JD_k_tMHGF.gif \"WOW.\")",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "normalize.css": "^4.1.1"
+  },
   "devDependencies": {
     "browser-sync": "^2.13.0",
     "del": "^2.2.0",
