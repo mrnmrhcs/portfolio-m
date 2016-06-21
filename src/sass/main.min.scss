@@ -130,59 +130,59 @@ header {
     position: relative;
 }
 
-header .ico-menu path {
+body .ico-menu path {
 
     transition: transform .4s .45s cubic-bezier(0.21, 0, 0.08, 0.99);
 }
 
-header.is-active .ico-menu .one {
+body.is-active .ico-menu .one {
 
     transform: translateY(8px);
 }
 
-header.is-active .ico-menu .three {
+body.is-active .ico-menu .three {
 
     transform: translateY(-8px);
 }
 
-header.is-active nav {
+body.is-active nav {
 
     opacity: 1;
     visibility: visible;
     transition: all .5s cubic-bezier(0.82, 0.06, 0.35, 1.01);
 }
 
-header.is-active li {
+body.is-active nav li {
 
     opacity: 1;
     transform: translateY(0);
 }
 
-header li:nth-child(1) {
+nav li:nth-child(1) {
 
     transition: all 0.2s 0.45s ease-in;
 }
 
-header li:nth-child(2) {
+nav li:nth-child(2) {
 
     transition: all 0.2s 0.55s ease-in;
 }
 
-header li:nth-child(3) {
+nav li:nth-child(3) {
 
     transition: all 0.2s 0.65s ease-in;
 }
 
-header li:nth-child(4) {
+nav li:nth-child(4) {
 
     transition: all 0.2s 0.75s ease-in;
 }
-header li:nth-child(5) {
+nav li:nth-child(5) {
 
     transition: all 0.2s 0.85s ease-in;
 }
 
-header li:nth-child(6) {
+nav li:nth-child(6) {
 
     transition: all 0.2s 0.95s ease-in;
 }
