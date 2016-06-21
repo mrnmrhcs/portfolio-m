@@ -4,7 +4,8 @@
   "description": "![WOW.](https://cldup.com/JD_k_tMHGF.gif \"WOW.\")",
   "main": "index.js",
   "dependencies": {
-    "normalize.css": "^4.1.1"
+    "normalize.css": "^4.1.1",
+    "pills": "^1.0.1"
   },
   "devDependencies": {
     "browser-sync": "^2.13.0",
