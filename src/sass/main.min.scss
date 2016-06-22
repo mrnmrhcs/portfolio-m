@@ -129,6 +129,16 @@ a {
     padding: 0;
     font-size: 0;
     line-height: 0;
+    &:focus {
+
+        outline: 0;
+    }
+    &:hover {
+        .ico-menu {
+
+            color: #D1D1D1;
+        }
+    }
 }
 .btn-menu {
 
