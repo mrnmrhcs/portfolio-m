@@ -1,6 +1,8 @@
 'use strict';
 
 var gulp = require('gulp');
+var gutil = require( 'gulp-util' );
+var plugins = require('gulp-load-plugins')();
 var gnf = require('gulp-npm-files');
 var rename = require("gulp-rename");
 var sass = require('gulp-sass');
@@ -12,9 +14,14 @@ var gulpIf = require('gulp-if');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
+var ftp = require( 'vinyl-ftp' );
 var del = require('del');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
+
+function getTask(task) {
+    return require('./glp/' + task)(gulp, plugins);
+}
 
 //  development
 
@@ -96,7 +103,7 @@ gulp.task('clean:node_modules', function() {
     del.sync('./src/css/node_modules');
 });
 
-//  sequences
+//  default, build, deploy
 
 gulp.task('default', function (callback) {
     runSequence('modules',['sass','browserSync','watch'],callback);
@@ -104,3 +111,5 @@ gulp.task('default', function (callback) {
 gulp.task('build', function (callback) {
     runSequence('clean:dist','modules',['sass','useref','images','icons','fonts'],callback);
 });
+
+gulp.task('deploy', getTask('deploy'));
