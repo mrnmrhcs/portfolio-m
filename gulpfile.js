@@ -19,6 +19,25 @@ var plugins = require('gulp-load-plugins')();
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
 
+
+
+// svgConfig = {
+//     svg: {
+//         namespaceClassnames: false
+//     },
+//     mode: {
+//         symbol: {
+//             dest: '.',
+//             sprite: 'sprite.svg'
+//         }
+//     }
+// };
+//
+//
+// gulp.src('**/*.svg', {cwd: config.source + './src/assets/icons/_src'})
+//     .pipe(svgSprite(svgConfig))
+//     .pipe(gulp.dest(config.dest + './src/assets/icons/svg'));
+
 //  development
 
 gulp.task('browserSync', function() {
@@ -45,6 +64,15 @@ gulp.task('modules:scss', function() {
     return gulp.src("./src/sass/node_modules/**/*.scss")
     .pipe(rename(function (path) { path.extname = ".scss";}))
     .pipe(gulp.dest("./src/sass/modules"));
+});
+gulp.task('modules:get-js', function() {
+    return gulp.src(gnf(), {base:'./'})
+    .pipe(gulpIf('*.js', gulp.dest('./src/js/')))
+});
+gulp.task('modules:js', function() {
+    return gulp.src("./src/js/node_modules/**/*.scss")
+    .pipe(rename(function (path) { path.extname = ".scss";}))
+    .pipe(gulp.dest("./src/js/modules"));
 });
 gulp.task('modules:get', function (callback) {
     return runSequence('clean:modules','modules:get-css','modules:css','modules:get-scss','modules:scss','clean:node_modules',callback);
@@ -129,5 +157,6 @@ gulp.task('default', function (callback) {
 gulp.task('build', function (callback) {
     runSequence('clean:dist','modules',['sass','useref','images','icons','fonts'],callback);
 });
+
 
 gulp.task('deploy', require('./glp/deploy')(gulp, plugins));

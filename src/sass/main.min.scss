@@ -1,19 +1,18 @@
 @import "modules/modularscale-sass/stylesheets/_modular-scale";
+@import "_helper";
+@import "_effects";
 
-/*  General
-    =================================================== */
-
-html {
-    background-color: #1F1F1F;
-}
 
 /*  Typo
     =================================================== */
 
 html {
 
-    font-size: ms(3);
+    overflow-x: hidden;
+
+    font-size: ms(0);
     line-height: 40px;
+    width: 100vw;
 }
 body {
 
@@ -22,7 +21,7 @@ body {
     font-style: normal;
     color: #3B3B3B;
 
-    position: relative;
+    width: 100vw;
 }
 h1, h2, h3, h4 {
 
@@ -30,43 +29,44 @@ h1, h2, h3, h4 {
     font-weight: 600;
     font-style: inherit;
     color: #2B2B2B;
-    padding: 20px 0;
+    padding: 20px 0 40px 0;
     margin: 0;
 }
 h1 {
 
-    font-size: ms(10);
-    line-height: 100px;
+    font-size: ms(4);
+    line-height: 140px;
     font-weight: 900;
     letter-spacing: -10px;
     text-transform: uppercase;
-    padding-top: 0;
+    padding: 0 0 60px 0;
 }
 h2 {
 
-    font-size: ms(7);
+    font-size: ms(2);
     line-height: 60px;
     letter-spacing: -3px;
 }
 h3 {
 
-    font-size: ms(5);
+    font-size: ms(1);
     line-height: 40px;
     letter-spacing: -2px;
 }
 h4, h5 {
 
     letter-spacing: -1px;
+    padding: 20px 0 20px 0;
 }
 p, pre, table, blockquote {
 
-    padding: 20px 0; /* 18px */
+    padding: 0 0 40px 0; /* 18px */
     margin: 0;
 }
 ul, ol {
 
     list-style-position: outside;
-    padding: 0 18px;
+    padding: 0 22px;
     margin: 0;
 }
 ul ul, ol ol, ul ol, ol ul {
@@ -98,18 +98,19 @@ a {
     color: #268ED9;
 }
 
+
 /*  Icons
     =================================================== */
 
 .ico {
 
     fill: currentColor;
-    vertical-align: 6px;
+    // vertical-align: 6px;
 }
 .ico-menu {
 
     color: #ffffff;
-    height: 18px;
+    // height: 20px;
     width: 12px;
     cursor: pointer;
 
@@ -125,8 +126,7 @@ a {
     background-color: transparent;
     border: 0;
     padding: 0;
-    font-size: 0;
-    line-height: 0;
+
     &:focus {
 
         outline: 0;
@@ -140,60 +140,41 @@ a {
 }
 .btn-menu {
 
-    height: 18px;
+    height: 20px;
 }
 
-
-/*  Header
-    =================================================== */
-
-header {
-
-    text-align: center;
-    position: relative;
-
-    height: 126px;
-    padding: 54px 0;
-}
-body .ico-menu path {
-
-    transition: transform .4s .45s cubic-bezier(0.20, 0, 0.10, 0.95);
-}
-body.is-active .ico-menu .one {
-
-    transform: translateY(8px);
-}
-body.is-active .ico-menu .three {
-
-    transform: translateY(-8px);
-}
-body.is-active nav {
-
-    opacity: 1;
-    visibility: visible;
-    transition: all .5s cubic-bezier(0.80, 0.05, 0.35, 1.00);
-}
-body.is-active nav li {
-
-    opacity: 1;
-    transform: translateY(0);
-}
 
 /*  Menu
     =================================================== */
 
 nav {
+    text-align: center;
+    position: fixed;
+    top: 60px;
+    left: 50vw;
+    z-index: 999;
+
+    line-height: 20px;
+    height: 20px;
+
+    path {
+        transition: transform .4s .45s cubic-bezier(0.20, 0, 0.10, 0.95);
+    }
+}
+
+header {
 
     background: #1F1F1F;
     opacity: 0;
     visibility: hidden;
     overflow-y: scroll;
+    overflow-x: hidden;
 
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
 
     transform: translate3d(0, 0, 0);
     transition: all .5s cubic-bezier(0.80, 0.05, 0.35, 1.00);
@@ -201,276 +182,54 @@ nav {
 
         list-style: none;
         text-align: left;
-        padding: 180px 72px;
-        li {
+        padding: 200px 72px;
+        a {
 
-            opacity: 0;
-            transform: translateY(15px);
-            a {
+            font-family: 'Larsseit';
+            font-size: ms(4);
+            line-height: 180px;
+            font-weight: 900;
+            letter-spacing: -12px;
+            color: #2B2B2B;
+            text-decoration: none;
 
-                font-family: 'Larsseit';
-                font-size: 6.854em;
-                line-height: 7.7272727273rem; /* 144px */
-                font-weight: 900;
-                letter-spacing: -12px;
-                color: #2B2B2B;
-                text-decoration: none;
-
-                display: block;
-                position: relative;
-            }
-        }
-        li:nth-child(1) {
-
-            transition: all 0.3s 0.15s ease-in;
-        }
-        li:nth-child(2) {
-
-            transition: all 0.3s 0.25s ease-in;
-        }
-        li:nth-child(3) {
-
-            transition: all 0.3s 0.35s ease-in;
-        }
-        li:nth-child(4) {
-
-            transition: all 0.3s 0.45s ease-in;
-        }
-        li:nth-child(5) {
-
-            transition: all 0.3s 0.55s ease-in;
-        }
-        li:nth-child(6) {
-
-            transition: all 0.3s 0.65s ease-in;
+            display: block;
+            position: relative;
         }
     }
 }
 
-@keyframes distort-one {
-  0% {
-    clip: rect(128px, 1024px, 33px, 0);
-  }
-  3.33333% {
-    clip: rect(53px, 1024px, 49px, 0);
-  }
-  6.66667% {
-    clip: rect(14px, 1024px, 71px, 0);
-  }
-  10% {
-    clip: rect(95px, 1024px, 28px, 0);
-  }
-  13.33333% {
-    clip: rect(112px, 1024px, 31px, 0);
-  }
-  16.66667% {
-    clip: rect(102px, 1024px, 34px, 0);
-  }
-  20% {
-    clip: rect(124px, 1024px, 14px, 0);
-  }
-  23.33333% {
-    clip: rect(61px, 1024px, 61px, 0);
-  }
-  26.66667% {
-    clip: rect(144px, 1024px, 102px, 0);
-  }
-  30% {
-    clip: rect(3px, 1024px, 106px, 0);
-  }
-  33.33333% {
-    clip: rect(140px, 1024px, 5px, 0);
-  }
-  36.66667% {
-    clip: rect(48px, 1024px, 36px, 0);
-  }
-  40% {
-    clip: rect(45px, 1024px, 53px, 0);
-  }
-  43.33333% {
-    clip: rect(80px, 1024px, 68px, 0);
-  }
-  46.66667% {
-    clip: rect(30px, 1024px, 18px, 0);
-  }
-  50% {
-    clip: rect(42px, 1024px, 50px, 0);
-  }
-  53.33333% {
-    clip: rect(16px, 1024px, 32px, 0);
-  }
-  56.66667% {
-    clip: rect(48px, 1024px, 137px, 0);
-  }
-  60% {
-    clip: rect(65px, 1024px, 87px, 0);
-  }
-  63.33333% {
-    clip: rect(102px, 1024px, 106px, 0);
-  }
-  66.66667% {
-    clip: rect(121px, 1024px, 31px, 0);
-  }
-  70% {
-    clip: rect(112px, 1024px, 107px, 0);
-  }
-  73.33333% {
-    clip: rect(76px, 1024px, 7px, 0);
-  }
-  76.66667% {
-    clip: rect(28px, 1024px, 130px, 0);
-  }
-  80% {
-    clip: rect(77px, 1024px, 103px, 0);
-  }
-  83.33333% {
-    clip: rect(30px, 1024px, 3px, 0);
-  }
-  86.66667% {
-    clip: rect(116px, 1024px, 129px, 0);
-  }
-  90% {
-    clip: rect(35px, 1024px, 10px, 0);
-  }
-  93.33333% {
-    clip: rect(87px, 1024px, 107px, 0);
-  }
-  96.66667% {
-    clip: rect(107px, 1024px, 100px, 0);
-  }
-  100% {
-    clip: rect(150px, 1024px, 123px, 0);
-  }
+html.open header {
+
+    opacity: 1;
+    visibility: visible;
+    transition: all .5s cubic-bezier(0.80, 0.05, 0.35, 1.00);
+}
+html.open .ico-menu .one {
+
+    transform: translateY(9px);
+}
+html.open .ico-menu .three {
+
+    transform: translateY(-9px);
+}
+html.open {
+
+    overflow: hidden;
 }
 
-@keyframes distort-two {
-  0% {
-    clip: rect(10px, 1024px, 19px, 0);
-  }
-  3.33333% {
-    clip: rect(103px, 1024px, 136px, 0);
-  }
-  6.66667% {
-    clip: rect(53px, 1024px, 14px, 0);
-  }
-  10% {
-    clip: rect(39px, 1024px, 47px, 0);
-  }
-  13.33333% {
-    clip: rect(46px, 1024px, 79px, 0);
-  }
-  16.66667% {
-    clip: rect(53px, 1024px, 124px, 0);
-  }
-  20% {
-    clip: rect(7px, 1024px, 4px, 0);
-  }
-  23.33333% {
-    clip: rect(22px, 1024px, 46px, 0);
-  }
-  26.66667% {
-    clip: rect(122px, 1024px, 146px, 0);
-  }
-  30% {
-    clip: rect(16px, 1024px, 98px, 0);
-  }
-  33.33333% {
-    clip: rect(48px, 1024px, 24px, 0);
-  }
-  36.66667% {
-    clip: rect(88px, 1024px, 59px, 0);
-  }
-  40% {
-    clip: rect(37px, 1024px, 85px, 0);
-  }
-  43.33333% {
-    clip: rect(99px, 1024px, 30px, 0);
-  }
-  46.66667% {
-    clip: rect(4px, 1024px, 106px, 0);
-  }
-  50% {
-    clip: rect(79px, 1024px, 134px, 0);
-  }
-  53.33333% {
-    clip: rect(130px, 1024px, 21px, 0);
-  }
-  56.66667% {
-    clip: rect(49px, 1024px, 15px, 0);
-  }
-  60% {
-    clip: rect(27px, 1024px, 23px, 0);
-  }
-  63.33333% {
-    clip: rect(82px, 1024px, 142px, 0);
-  }
-  66.66667% {
-    clip: rect(69px, 1024px, 142px, 0);
-  }
-  70% {
-    clip: rect(106px, 1024px, 14px, 0);
-  }
-  73.33333% {
-    clip: rect(77px, 1024px, 26px, 0);
-  }
-  76.66667% {
-    clip: rect(12px, 1024px, 150px, 0);
-  }
-  80% {
-    clip: rect(112px, 1024px, 35px, 0);
-  }
-  83.33333% {
-    clip: rect(97px, 1024px, 32px, 0);
-  }
-  86.66667% {
-    clip: rect(111px, 1024px, 50px, 0);
-  }
-  90% {
-    clip: rect(139px, 1024px, 40px, 0);
-  }
-  93.33333% {
-    clip: rect(108px, 1024px, 135px, 0);
-  }
-  96.66667% {
-    clip: rect(147px, 1024px, 55px, 0);
-  }
-  100% {
-    clip: rect(138px, 1024px, 30px, 0);
-  }
-}
 
-.distort:hover:before, .distort:hover:after {
 
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #1F1F1F;
-    clip: rect(0, 0, 0, 0);
-}
-.distort:hover:after {
 
-    left: 3px;
-    text-shadow: -3px 0 rgba(0, 80, 77, 0.5);
-    animation: distort-one 3s infinite linear alternate-reverse;
-}
-.distort:hover:before {
-
-    left: -5px;
-    text-shadow: 5px 0 rgba(96, 25, 0, 0.5);
-    animation: distort-two 3s infinite linear alternate-reverse;
-}
-
-/*  Pages - General
+/*  Pages
     =================================================== */
 
+html {
+    background-color: #1F1F1F;
+}
 
 
-/*  Pages - Home
-    =================================================== */
-
-#home .content {
+#home .row {
 
     text-align: center;
     h1 {
@@ -480,24 +239,10 @@ nav {
     }
 }
 
-/*  Pages - About
-    =================================================== */
-
 #about .content {
-
-    padding: 54px 144px 144px 144px;
+    padding: 200px 196px;
     li {
 
-        padding-left: 6px;
+        padding-left: 4px;
     }
-}
-
-/*  Helper - Baseline Grid
-    =================================================== */
-
-.basegrid {
-    background-image: linear-gradient(to bottom, hsla(359, 0%, 20%, 1) 1px, transparent 1px);
-    background-position: left -1px;
-    background-repeat: repeat;
-    background-size: 18px 18px;
 }
