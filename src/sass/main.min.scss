@@ -37,7 +37,7 @@ h1 {
     font-size: ms(4);
     line-height: 140px;
     font-weight: 900;
-    letter-spacing: -10px;
+    letter-spacing: -18px;
     text-transform: uppercase;
     padding: 0 0 60px 0;
 }
@@ -105,14 +105,12 @@ a {
 .ico {
 
     fill: currentColor;
-    // vertical-align: 6px;
 }
-.ico-menu {
+#ico-menu {
 
     color: #ffffff;
     // height: 20px;
     width: 12px;
-    cursor: pointer;
 
     position: relative;
     z-index: 100;
@@ -138,11 +136,11 @@ a {
         }
     }
 }
-.btn-menu {
+#btn-menu {
 
+    cursor: pointer;
     height: 20px;
 }
-
 
 /*  Menu
     =================================================== */
@@ -205,11 +203,11 @@ html.open header {
     visibility: visible;
     transition: all .5s cubic-bezier(0.80, 0.05, 0.35, 1.00);
 }
-html.open .ico-menu .one {
+html.open #ico-object-top {
 
     transform: translateY(9px);
 }
-html.open .ico-menu .three {
+html.open #ico-object-bottom {
 
     transform: translateY(-9px);
 }
@@ -218,18 +216,24 @@ html.open {
     overflow: hidden;
 }
 
-
-
-
 /*  Pages
     =================================================== */
 
 html {
     background-color: #1F1F1F;
 }
+.content {
+    li {
+
+        padding-left: 4px;
+    }
+}
 
 
-#home .row {
+/*  Pages
+    =================================================== */
+
+#home .content {
 
     text-align: center;
     h1 {
@@ -238,11 +242,11 @@ html {
         z-index: -100;
     }
 }
-
 #about .content {
-    padding: 200px 196px;
-    li {
 
-        padding-left: 4px;
-    }
+    padding: 200px 196px;
+}
+#prjct .content {
+
+    padding: 200px 196px;
 }

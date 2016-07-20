@@ -13,11 +13,13 @@
     </head>
     <body id="about">
         <nav class="main-nav">
-            <button class="btn btn-menu">
-                <svg id="menu" class="ico ico-menu" viewBox="0 0 12 20">
-                    <path class="one" d="M0 0h12v2H0V0zm0"/>
-                    <path class="two" d="M0 9h12v2H0V9zm0"/>
-                    <path class="three" d="M0 18h12v2H0v-2z"/>
+            <button id="btn-menu" class="btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
+                    <g id="ico-menu" class="ico">
+                        <path id="ico-object-bottom" d="M0 18h12v2H0z"/>
+                        <path id="ico-object-center" d="M0 9h12v2H0z"/>
+                        <path id="ico-object-top" d="M0 0h12v2H0z"/>
+                    </g>
                 </svg>
             </button>
         </nav>
@@ -50,7 +52,7 @@
                     </ul>
                 </div>
             </div>
-        
+        </div>
         <!-- <?php include_once("../assets/icons/ico-sprite.svg"); ?> -->
         <script src="../js/main.min.js"></script>
     </body>
