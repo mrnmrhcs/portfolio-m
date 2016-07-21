@@ -1,0 +1,75 @@
+html {
+
+    font-size: ms(0);
+    line-height: 40px;
+}
+
+body {
+
+    font-family: 'Larsseit', Arial, sans-serif;
+    font-weight: 100;
+    font-style: normal;
+
+    color: $clr-p-dark;
+}
+h1, h2, h3, h4 {
+
+    font-family: 'Larsseit';
+    font-weight: 600;
+    font-style: inherit;
+
+    color: $clr-h-dark;
+
+    padding: 20px 0 40px 0;
+    margin: 0;
+}
+h4, h5 {
+
+    letter-spacing: -1px;
+
+    padding: 20px 0 20px 0;
+    margin: 0;
+}
+h1 {
+
+    font-size: ms(4);
+    line-height: 160px;
+
+    font-weight: 900;
+    letter-spacing: -8px;
+    text-transform: uppercase;
+
+    padding: 0 0 160px 0;
+}
+h2 {
+
+    font-size: ms(2);
+    line-height: 60px;
+
+    letter-spacing: -3px;
+}
+h3 {
+
+    font-size: ms(1);
+    line-height: 40px;
+
+    letter-spacing: -2px;
+}
+ul, ol {
+
+    list-style-position: outside;
+
+    padding: 0 22px;
+    margin: 0;
+}
+p {
+
+    color: $clr-p-dark;
+
+    padding: 0 0 40px 0;
+    margin: 0;
+}
+a {
+
+    color: #268ED9;
+}

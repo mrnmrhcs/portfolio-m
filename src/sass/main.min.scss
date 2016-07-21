@@ -1,148 +1,94 @@
 @import "modules/modularscale-sass/stylesheets/_modular-scale";
+@import "_variables";
+@import "_typography";
 @import "_helper";
 @import "_effects";
 
-
-/*  Typo
-    =================================================== */
-
-html {
-
-    overflow-x: hidden;
-
-    font-size: ms(0);
-    line-height: 40px;
-    width: 100vw;
-}
-body {
-
-    font-family: 'Larsseit', Arial, sans-serif;
-    font-weight: 100;
-    font-style: normal;
-    color: #3B3B3B;
-
-    width: 100vw;
-}
-h1, h2, h3, h4 {
-
-    font-family: 'Larsseit';
-    font-weight: 600;
-    font-style: inherit;
-    color: #2B2B2B;
-    padding: 20px 0 40px 0;
-    margin: 0;
-}
-h1 {
-
-    font-size: ms(4);
-    line-height: 140px;
-    font-weight: 900;
-    letter-spacing: -18px;
-    text-transform: uppercase;
-    padding: 0 0 60px 0;
-}
-h2 {
-
-    font-size: ms(2);
-    line-height: 60px;
-    letter-spacing: -3px;
-}
-h3 {
-
-    font-size: ms(1);
-    line-height: 40px;
-    letter-spacing: -2px;
-}
-h4, h5 {
-
-    letter-spacing: -1px;
-    padding: 20px 0 20px 0;
-}
-p, pre, table, blockquote {
-
-    padding: 0 0 40px 0; /* 18px */
-    margin: 0;
-}
-ul, ol {
-
-    list-style-position: outside;
-    padding: 0 22px;
-    margin: 0;
-}
-ul ul, ol ol, ul ol, ol ul {
-
-    margin: 0;
-}
-hr {
-
-    border: 1px solid;
-    margin: -1px 0;
-}
-b, strong, em, small, code {
-
-    line-height: 1;
-}
-sup {
-
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-    top: -0.5em;
-}
-sub {
-
-    bottom: -0.25em;
-}
-a {
-
-    color: #268ED9;
-}
-
-
-/*  Icons
+/*  Icons - General
     =================================================== */
 
 .ico {
 
     fill: currentColor;
 }
+
+/*  Icons - Types
+    =================================================== */
+
 #ico-menu {
 
-    color: #ffffff;
-    // height: 20px;
+    color: #fff;
+
     width: 12px;
 
     position: relative;
-    z-index: 100;
+    z-index: 999;
+}
+#ico-link {
+
+    color: $clr-dark;
+}
+#ico-dav {
+
+    color: $clr-dark;
+
+    position: relative;
+    z-index: -999;
 }
 
-/*  Buttons
+/*  Buttons - General
     =================================================== */
 
 .btn {
 
-    background-color: transparent;
+    cursor: pointer;
     border: 0;
-    padding: 0;
 
+    padding: 0;
     &:focus {
 
         outline: 0;
     }
     &:hover {
-        .ico-menu {
+        #ico-menu {
 
-            color: #D1D1D1;
+            color: $clr-dark;
+        }
+        #ico-link {
+
+            color: #fff;
         }
     }
 }
-#btn-menu {
+.btn-circle {
 
-    cursor: pointer;
-    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: block;
+
+    width: 100px;
+    height: 100px;
+    padding: 28px;
+    margin: 0 auto;
+    &:hover {
+
+        background-color: #454849;
+    }
 }
 
-/*  Menu
+/*  Buttons - Types
+    =================================================== */
+
+#btn-menu {
+
+    background-color: transparent;
+
+    height: 20px;
+    margin-left: -6px;
+}
+
+
+/*  Navigation - General
     =================================================== */
 
 nav {
@@ -162,7 +108,7 @@ nav {
 
 header {
 
-    background: #1F1F1F;
+    background: $clr-dark;
     opacity: 0;
     visibility: hidden;
     overflow-y: scroll;
@@ -188,7 +134,7 @@ header {
             line-height: 180px;
             font-weight: 900;
             letter-spacing: -12px;
-            color: #2B2B2B;
+            color: $clr-light;
             text-decoration: none;
 
             display: block;
@@ -197,40 +143,55 @@ header {
     }
 }
 
-html.open header {
 
-    opacity: 1;
-    visibility: visible;
-    transition: all .5s cubic-bezier(0.80, 0.05, 0.35, 1.00);
-}
-html.open #ico-object-top {
+/*  Navigation - Behavior
+    =================================================== */
 
-    transform: translateY(9px);
-}
-html.open #ico-object-bottom {
-
-    transform: translateY(-9px);
-}
 html.open {
 
     overflow: hidden;
-}
+    #ico-menu {
 
-/*  Pages
-    =================================================== */
+        color: $clr-light;
+        &:hover {
 
-html {
-    background-color: #1F1F1F;
-}
-.content {
-    li {
+            color: #fff;
+        }
 
-        padding-left: 4px;
+    }
+    header {
+
+        opacity: 1;
+        visibility: visible;
+        transition: all .5s cubic-bezier(0.80, 0.05, 0.35, 1.00);
+    }
+    #ico-object-top {
+
+        transform: translateY(9px);
+    }
+    #ico-object-bottom {
+
+        transform: translateY(-9px);
     }
 }
 
+/*  Layout - General
+    =================================================== */
 
-/*  Pages
+html {
+
+    overflow-x: hidden;
+
+    background-color: $clr-light;
+
+    width: 100vw;
+}
+body {
+
+    width: 100vw;
+}
+
+/*  Layout - Home
     =================================================== */
 
 #home .content {
@@ -242,11 +203,106 @@ html {
         z-index: -100;
     }
 }
-#about .content {
 
-    padding: 200px 196px;
-}
+/*  Layout - Projects
+    =================================================== */
+
 #prjct .content {
 
-    padding: 200px 196px;
+    .prjct-header {
+
+        // background-color: #3E4042;
+        margin-bottom: 690px;
+        .row {
+
+            overflow: visible;
+        }
+        h1 {
+
+            color: $clr-dark;
+
+            padding: 220px 100px 220px 100px;
+        }
+        .prjct-hero-img {
+
+            height: 860px;
+            margin-bottom: -690px;
+            padding: 0 20px;
+            img {
+
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    .prjct-info {
+
+        padding: 140px 0 140px 0;
+        .prjct-stats {
+
+            list-style-type: none;
+            padding-left: 711px;
+        }
+    }
+    .prjct-mobile-wrap {
+
+        position: relative;
+        width: 100%;
+        .prjct-logo-svg {
+
+            padding:  271px 0;
+            svg {
+
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        .prjct-mobile-img {
+
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -217px;
+        }
+    }
+    .prjct-link {
+        padding: 160px 0;
+    }
+}
+
+/*  Layout - About
+    =================================================== */
+
+#about .content {
+
+    h1 {
+
+        padding-left: 204px;
+        padding-right: 204px;
+    }
+    h2 {
+
+        padding-left: 407px;
+        padding-right: 204px;
+    }
+    h3 {
+
+        padding-left: 407px;
+        padding-right: 204px;
+    }
+    h4 {
+
+        padding-left: 407px;
+        padding-right: 204px;
+    }
+    p {
+
+        padding-left: 407px;
+        padding-right: 204px;
+    }
+    ul {
+
+        padding-left: 407px;
+        padding-right: 204px;
+    }
 }
