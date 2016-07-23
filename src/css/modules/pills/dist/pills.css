@@ -18,7 +18,7 @@ html, body {
 .row {
   display: block;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1024px;
   overflow: hidden;
   *zoom: 1;
 }
