@@ -12,6 +12,7 @@
     fill: currentColor;
 }
 
+
 /*  Icons - Types
     =================================================== */
 
@@ -26,11 +27,18 @@
 }
 #ico-link {
 
-    color: $clr-dark;
+    color: #fff;
 }
 #ico-dav {
 
-    color: $clr-dark;
+    color: $clr-p-light;
+
+    position: relative;
+    z-index: -999;
+}
+#ico-universal {
+
+    color: $clr-p-light;
 
     position: relative;
     z-index: -999;
@@ -56,13 +64,13 @@
         }
         #ico-link {
 
-            color: #fff;
+            color: $clr-dark;
         }
     }
 }
 .btn-circle {
 
-    background-color: #fff;
+    background-color: $clr-p-light;
     border-radius: 50%;
     display: block;
 
@@ -72,7 +80,7 @@
     margin: 0 auto;
     &:hover {
 
-        background-color: #454849;
+        background-color: #fff;
     }
 }
 
@@ -108,7 +116,7 @@ nav {
 
 header {
 
-    background: $clr-dark;
+    background: $clr-p-lighter;
     opacity: 0;
     visibility: hidden;
     overflow-y: scroll;
@@ -117,6 +125,8 @@ header {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 777;
+
     height: 100vh;
     width: 100vw;
 
@@ -126,7 +136,7 @@ header {
 
         list-style: none;
         text-align: left;
-        padding: 200px 72px;
+        padding: 200px 80px 80px 80px;
         a {
 
             font-family: 'Larsseit';
@@ -134,15 +144,17 @@ header {
             line-height: 180px;
             font-weight: 900;
             letter-spacing: -12px;
-            color: $clr-light;
+            color: $clr-p-light;
             text-decoration: none;
 
             display: block;
             position: relative;
+            &:hover {
+                color: #fff;
+            }
         }
     }
 }
-
 
 /*  Navigation - Behavior
     =================================================== */
@@ -150,12 +162,18 @@ header {
 html.open {
 
     overflow: hidden;
-    #ico-menu {
 
-        color: $clr-light;
-        &:hover {
+    #btn-menu {
+
+        #ico-menu {
 
             color: #fff;
+        }
+        &:hover {
+            #ico-menu {
+
+                color: $clr-light;
+            }
         }
 
     }
@@ -164,6 +182,7 @@ html.open {
         opacity: 1;
         visibility: visible;
         transition: all .5s cubic-bezier(0.80, 0.05, 0.35, 1.00);
+
     }
     #ico-object-top {
 
@@ -209,7 +228,7 @@ body {
 
 #prjct .content {
 
-    .prjct-header {
+    .prjct-header-1 {
 
         // background-color: #3E4042;
         margin-bottom: 690px;
@@ -219,14 +238,39 @@ body {
         }
         h1 {
 
-            color: $clr-dark;
+            // color: $clr-p-light;
 
-            padding: 220px 100px 220px 100px;
+            padding: 240px 82px 220px 102px;
         }
         .prjct-hero-img {
 
             height: 860px;
             margin-bottom: -690px;
+            padding: 0 20px;
+            img {
+
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    .prjct-header-2 {
+
+        margin-bottom: 0;
+        .row {
+
+            overflow: visible;
+        }
+        h1 {
+
+            // color: $clr-p-light;
+
+            padding: 240px 82px 220px 102px;
+        }
+        .prjct-hero-img {
+
+            height: 1400px;
+            margin-bottom: -1230px;
             padding: 0 20px;
             img {
 
@@ -241,6 +285,7 @@ body {
         .prjct-stats {
 
             list-style-type: none;
+
             padding-left: 711px;
         }
     }
@@ -248,14 +293,18 @@ body {
 
         position: relative;
         width: 100%;
-        .prjct-logo-svg {
+        svg {
+
+            display: block;
+            margin: 0 auto;
+        }
+        .prjct-logo-svg-1 {
 
             padding:  271px 0;
-            svg {
+        }
+        .prjct-logo-svg-2 {
 
-                display: block;
-                margin: 0 auto;
-            }
+            padding:  100px 0;
         }
         .prjct-mobile-img {
 
@@ -275,10 +324,12 @@ body {
 
 #about .content {
 
+    padding: 240px 0;
+
     h1 {
 
-        padding-left: 204px;
-        padding-right: 204px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
     h2 {
 

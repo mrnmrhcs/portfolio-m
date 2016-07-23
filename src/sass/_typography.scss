@@ -10,7 +10,7 @@ body {
     font-weight: 100;
     font-style: normal;
 
-    color: $clr-p-dark;
+    color: $clr-p-light;
 }
 h1, h2, h3, h4 {
 
@@ -18,7 +18,7 @@ h1, h2, h3, h4 {
     font-weight: 600;
     font-style: inherit;
 
-    color: $clr-h-dark;
+    // color: $clr-h-dark;
 
     padding: 20px 0 40px 0;
     margin: 0;
@@ -36,8 +36,8 @@ h1 {
     line-height: 160px;
 
     font-weight: 900;
-    letter-spacing: -8px;
-    text-transform: uppercase;
+    letter-spacing: -12px;
+    //text-transform: uppercase;
 
     padding: 0 0 160px 0;
 }
@@ -59,12 +59,14 @@ ul, ol {
 
     list-style-position: outside;
 
+    color: $clr-p-lighter;
+
     padding: 0 22px;
     margin: 0;
 }
 p {
 
-    color: $clr-p-dark;
+    color: $clr-p-lighter;
 
     padding: 0 0 40px 0;
     margin: 0;
