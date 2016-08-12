@@ -231,7 +231,7 @@ body {
     }
 }
 
-/*  Layout - Projects
+/*  Layout - Projects General
     =================================================== */
 
 .prjct .content {
@@ -274,20 +274,12 @@ body {
 
         position: relative;
         width: 100%;
-        height: 1800px;
 
-        padding-top: 200px;
-        margin-bottom: 400px;
         svg {
 
             display: block;
             margin: 0 auto;
         }
-        .prjct-logo-svg {
-
-            padding:  271px 0;
-        }
-
         .prjct-phone-img {
 
             position: absolute;
@@ -313,6 +305,29 @@ body {
     }
     .prjct-link {
         padding: 160px 0;
+    }
+}
+
+/*  Layout - Project
+    =================================================== */
+
+#prjct-dav {
+
+    .prjct-mobile-wrap {
+
+        height: 882px;
+        padding-top: 289px;
+
+    }
+}
+#prjct-universal {
+
+    .prjct-mobile-wrap {
+
+        height: 1800px;
+
+        padding-top: 200px;
+        margin-bottom: 400px;
     }
 }
 #prjct-behance {
