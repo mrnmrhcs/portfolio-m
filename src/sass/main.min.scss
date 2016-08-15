@@ -136,14 +136,27 @@ header {
 
         list-style: none;
         text-align: left;
-        padding: 200px 80px 80px 80px;
+        padding: 140px 30px 30px 30px;
+
+        @media screen and (min-width: 640px) {
+
+            padding: 140px 40px 40px 40px;
+        }
+        @media screen and (min-width: 840px) {
+
+            padding: 180px 60px 60px 60px;
+        }
+        @media screen and (min-width: 1200px) {
+
+            padding: 200px 80px 80px 80px;
+        }
         a {
 
             font-family: 'Larsseit';
-            font-size: ms(4);
-            line-height: 180px;
+            font-size: ms(0);
+            line-height: 35px;
             font-weight: 900;
-            letter-spacing: -12px;
+            letter-spacing: -1px;
             color: $clr-p-light;
             text-decoration: none;
 
@@ -151,6 +164,30 @@ header {
             position: relative;
             &:hover {
                 color: #fff;
+            }
+            @media screen and (min-width: 400px) {
+
+                font-size: ms(1);
+                letter-spacing: -1px;
+                line-height: 50px;
+            }
+            @media screen and (min-width: 640px) {
+
+                font-size: ms(2);
+                letter-spacing: -4px;
+                line-height: 80px;
+            }
+            @media screen and (min-width: 840px) {
+
+                font-size: ms(3);
+                letter-spacing: -8px;
+                line-height: 120px;
+            }
+            @media screen and (min-width: 1200px) {
+
+                font-size: ms(4);
+                letter-spacing: -12px;
+                line-height: 180px;
             }
         }
     }
@@ -231,7 +268,7 @@ body {
     }
 }
 
-/*  Layout - Projects General
+/*  Layout - Project / General
     =================================================== */
 
 .prjct .content {
