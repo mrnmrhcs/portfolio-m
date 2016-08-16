@@ -32,14 +32,41 @@ h4, h5 {
 }
 h1 {
 
-    font-size: ms(4);
-    line-height: 160px;
+    font-size: ms(0);
+    line-height: 30px;
 
     font-weight: 900;
-    letter-spacing: -12px;
-    //text-transform: uppercase;
+    letter-spacing: -1px;
+    // text-align: center;
 
     padding: 0 0 160px 0;
+
+    @media screen and (min-width: 400px) {
+
+        font-size: ms(1);
+        letter-spacing: -1px;
+        line-height: 45px;
+        // text-align: left;
+    }
+    @media screen and (min-width: 640px) {
+
+        font-size: ms(2);
+        letter-spacing: -3px;
+        line-height: 70px;
+    }
+    @media screen and (min-width: 840px) {
+
+        font-size: ms(3);
+        letter-spacing: -6px;
+        line-height: 100px;
+
+    }
+    @media screen and (min-width: 1200px) {
+
+        font-size: ms(4);
+        letter-spacing: -12px;
+        line-height: 160px;
+    }
 }
 h2 {
 
