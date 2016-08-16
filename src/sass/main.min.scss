@@ -136,19 +136,23 @@ header {
 
         list-style: none;
         text-align: left;
-        padding: 140px 30px 30px 30px;
+        padding: 200px 30px 30px 30px;
 
+        @media screen and (min-width: 400px) {
+
+            padding: 240px 40px 120px 40px;
+        }
         @media screen and (min-width: 640px) {
 
-            padding: 140px 40px 40px 40px;
+            padding: 280px 40px 200px 40px;
         }
         @media screen and (min-width: 840px) {
 
-            padding: 180px 60px 60px 60px;
+            padding: 300px 60px 300px 60px;
         }
         @media screen and (min-width: 1200px) {
 
-            padding: 200px 80px 80px 80px;
+            padding: 340px 80px 400px 80px;
         }
         a {
 
@@ -316,7 +320,7 @@ body {
     }
     .prjct-info {
 
-        padding: 140px 0 140px 0;
+        padding: 220px 0 240px 0;
         .prjct-stats {
 
             list-style-type: none;
@@ -358,7 +362,7 @@ body {
         }
     }
     .prjct-link {
-        padding: 160px 0;
+        padding: 220px 0;
     }
 }
 
