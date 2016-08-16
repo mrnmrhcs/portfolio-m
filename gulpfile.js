@@ -89,7 +89,7 @@ gulp.task('clean:dist', function() {
 //  sequences
 
 gulp.task('default', function (callback) {
-    runSequence('clean:dist',['sass','browserSync','watch'],callback);
+    runSequence('clear:cache',['sass','browserSync','watch'],callback);
 });
 gulp.task('build', function (callback) {
     runSequence('clean:dist',['sass','useref','images','icons','fonts'],callback);
