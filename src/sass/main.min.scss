@@ -286,23 +286,23 @@ body {
         }
         h1 {
 
-            padding: 140px 20px 60px 20px;
+            padding: 200px 20px 180px 20px;
 
             @media screen and (min-width: 400px) {
 
-                padding: 180px 20px 140px 40px;
+                padding: 240px 20px 200px 40px;
             }
             @media screen and (min-width: 640px) {
 
-                padding: 220px 40px 180px 60px;
+                padding: 280px 40px 240px 60px;
             }
             @media screen and (min-width: 840px) {
 
-                padding: 260px 40px 220px 80px;
+                padding: 300px 40px 260px 80px;
             }
             @media screen and (min-width: 1200px) {
 
-                padding: 300px 80px 260px 100px;
+                padding: 340px 60px 300px 80px;
             }
         }
         .prjct-hero-img {
