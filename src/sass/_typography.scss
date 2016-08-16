@@ -32,8 +32,8 @@ h4, h5 {
 }
 h1 {
 
-    font-size: ms(0);
-    line-height: 30px;
+    font-size: ms(1);
+    line-height: 40px;
 
     font-weight: 900;
     letter-spacing: -1px;
@@ -45,7 +45,7 @@ h1 {
 
         font-size: ms(1);
         letter-spacing: -1px;
-        line-height: 45px;
+        line-height: 40px;
         // text-align: left;
     }
     @media screen and (min-width: 640px) {
