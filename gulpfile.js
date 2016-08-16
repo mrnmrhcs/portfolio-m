@@ -19,66 +19,17 @@ var plugins = require('gulp-load-plugins')();
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
 
-
-
-// svgConfig = {
-//     svg: {
-//         namespaceClassnames: false
-//     },
-//     mode: {
-//         symbol: {
-//             dest: '.',
-//             sprite: 'sprite.svg'
-//         }
-//     }
-// };
-//
-//
-// gulp.src('**/*.svg', {cwd: config.source + './src/assets/icons/_src'})
-//     .pipe(svgSprite(svgConfig))
-//     .pipe(gulp.dest(config.dest + './src/assets/icons/svg'));
-
 //  development
 
 gulp.task('browserSync', function() {
     browserSync.init({
-        server: "./src",
+        server: {
+            baseDir: "./src",
+            routes: {
+                "/node_modules": "node_modules"
+            }
+        }
     });
-});
-gulp.task('modules:get-css', function() {
-    return gulp.src(gnf(), {base:'./'})
-    .pipe(gulpIf('*.css', gulp.dest('./src/css/')))
-});
-
-gulp.task('modules:css', function() {
-    return gulp.src("./src/css/node_modules/**/*.css")
-    .pipe(rename(function (path) { path.extname = ".css";}))
-    .pipe(gulp.dest("./src/css/modules"));
-});
-
-gulp.task('modules:get-scss', function() {
-    return gulp.src(gnf(), {base:'./'})
-    .pipe(gulpIf('*.scss', gulp.dest('./src/sass/')))
-});
-gulp.task('modules:scss', function() {
-    return gulp.src("./src/sass/node_modules/**/*.scss")
-    .pipe(rename(function (path) { path.extname = ".scss";}))
-    .pipe(gulp.dest("./src/sass/modules"));
-});
-gulp.task('modules:get-js', function() {
-    return gulp.src(gnf(), {base:'./'})
-    .pipe(gulpIf('*.js', gulp.dest('./src/js/')))
-});
-gulp.task('modules:js', function() {
-    return gulp.src("./src/js/node_modules/**/*.scss")
-    .pipe(rename(function (path) { path.extname = ".scss";}))
-    .pipe(gulp.dest("./src/js/modules"));
-});
-gulp.task('modules:get', function (callback) {
-    return runSequence('clean:modules','modules:get-css','modules:css','modules:get-scss','modules:scss','clean:node_modules',callback);
-});
-gulp.task('modules', function (callback) {
-    return runSequence('modules:get-css','modules:css','clean:node_modules',callback);
 });
 gulp.task('sass', function () {
     gulp.src('./src/sass/**/*.scss')
@@ -134,28 +85,14 @@ gulp.task('fonts', function() {
 gulp.task('clean:dist', function() {
     return del.sync('dist');
 });
-gulp.task('clean:modules', function() {
-    return del.sync('./src/css/modules');
-    del.sync('./src/sass/modules');
-});
-gulp.task('clean:node_modules', function() {
-    del.sync('./src/css/node_modules')
-    del.sync('./src/css/modules/modularscale-sass')
-    del.sync('./src/sass/node_modules')
-    del.sync('./src/sass/modules/pills')
-    del.sync('./src/sass/modules/pills/dist/pills.min.css')
-    del.sync('./src/sass/modules/modularscale-sass/stylesheets/_modular-scale-tests.scss')
-    del.sync('./src/sass/modules/modularscale-sass/test-compass/')
-    del.sync('./src/sass/modules/modularscale-sass/test-node-sass/');
-});
 
 //  sequences
 
 gulp.task('default', function (callback) {
-    runSequence('modules',['sass','browserSync','watch'],callback);
+    runSequence('clean:dist',['sass','browserSync','watch'],callback);
 });
 gulp.task('build', function (callback) {
-    runSequence('clean:dist','modules',['sass','useref','images','icons','fonts'],callback);
+    runSequence('clean:dist',['sass','useref','images','icons','fonts'],callback);
 });
 
 
