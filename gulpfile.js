@@ -26,7 +26,7 @@ gulp.task('browserSync', function() {
         server: {
             baseDir: "./src",
             routes: {
-                "/node_modules": "node_modules"
+                "/node_modules": "node_modules",
                 "/browser-sync": "browser-sync"
             }
         }
