@@ -326,6 +326,7 @@ body {
             list-style-type: none;
 
             padding-left: 20px;
+
             @media screen and (min-width: 400px) {
 
                 padding-left: 40px;
@@ -351,29 +352,49 @@ body {
 
         svg {
 
-            display: block;
-            margin: 0 auto;
+            display: none;;
+            @media screen and (min-width: 800px) {
+
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        .prjct-bg-img {
+
+            display: none;;
+            @media screen and (min-width: 800px) {
+
+                display: block;
+                // margin: 0 auto;
+            }
         }
         .prjct-phone-img {
 
-            position: absolute;
-            top: 0;
-            left: 50%;
-            margin-left: -217px;
+            width: 85%;
+            max-width: 434px;
+            margin: 0 auto;
+
+            @media screen and (min-width: 800px) {
+
+                width: 100%;
+                margin-top: -580px;
+            }
         }
         .prjct-mobile {
 
-            position: absolute;
-            z-index: 999;
-            left: 50%;
-            top: 1140px;
-            margin-left: -425px;
+            margin-top: 60px;
+            margin-bottom: 200px;
+            @media screen and (min-width: 800px) {
+
+                margin-top: 200px;
+            }
+
             .prjct-mobile-img {
 
-                width: 375px;
+                width: 100%;
+                max-width: 375px;
                 margin: 0 auto;
-                margin-left: 20px;
-                margin-right: 20px;
+
             }
         }
     }
@@ -387,10 +408,17 @@ body {
 
 #prjct-dav {
 
+    .prjct-content .row {
+        overflow: visible;
+    }
     .prjct-mobile-wrap {
 
-        height: 882px;
-        padding-top: 289px;
+        padding-top: 0px;
+
+        @media screen and (min-width: 800px) {
+
+            padding-top: 318px;
+        }
 
     }
 }
@@ -398,10 +426,10 @@ body {
 
     .prjct-mobile-wrap {
 
-        height: 1800px;
-
-        padding-top: 200px;
-        margin-bottom: 200px;
+        // height: 1800px;
+        //
+        // padding-top: 0px;
+        // margin-bottom: 200px;
     }
 }
 #prjct-behance {
