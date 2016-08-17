@@ -70,16 +70,36 @@ h1 {
 }
 h2 {
 
-    font-size: ms(2);
-    line-height: 60px;
+    font-size: ms(0);
+    line-height: 20px;
     letter-spacing: -3px;
+    @media screen and (min-width: 400px) {
+
+        font-size: ms(1);
+        letter-spacing: -3px;
+        line-height: 40px;
+    }
+    @media screen and (min-width: 840px) {
+
+        font-size: ms(2);
+        letter-spacing: -6px;
+        line-height: 60px;
+    }
+
 }
 h3 {
 
-    font-size: ms(1);
-    line-height: 40px;
+    font-size: ms(0);
+    line-height: 20px;
 
     letter-spacing: -2px;
+    
+    @media screen and (min-width: 840px) {
+
+        font-size: ms(1);
+        letter-spacing: -6px;
+        line-height: 40px;
+    }
 }
 ul, ol {
 
