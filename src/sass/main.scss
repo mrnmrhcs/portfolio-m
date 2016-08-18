@@ -108,6 +108,10 @@ nav {
 
     line-height: 20px;
     height: 20px;
+    @media screen and (min-width: 400px) {
+
+        top: 60px;
+    }
 
     path {
         transition: transform .4s .45s cubic-bezier(0.20, 0, 0.10, 0.95);
@@ -136,7 +140,7 @@ header {
 
         list-style: none;
         text-align: left;
-        padding: 160px 30px 30px 30px;
+        padding: 100px 20px 30px 20px;
 
         @media screen and (min-width: 400px) {
 
@@ -152,15 +156,15 @@ header {
         }
         @media screen and (min-width: 1200px) {
 
-            padding: 340px 80px 400px 80px;
+            padding: 360px 80px 400px 80px;
         }
         a {
 
             font-family: 'Larsseit';
             font-size: ms(0);
-            line-height: 35px;
+            line-height: 40px;
             font-weight: 900;
-            letter-spacing: -1px;
+            letter-spacing: -1.25px;
             color: $clr-p-light;
             text-decoration: none;
 
@@ -290,7 +294,7 @@ body {
         }
         h1 {
 
-            padding: 160px 10px 100px 10px;
+            padding: 300px 10px 60px 0px;
 
             @media screen and (min-width: 400px) {
 
@@ -302,11 +306,11 @@ body {
             }
             @media screen and (min-width: 840px) {
 
-                padding: 300px 40px 260px 80px;
+                padding: 320px 40px 260px 80px;
             }
             @media screen and (min-width: 1200px) {
 
-                padding: 340px 0 300px 0;
+                padding: 460px 0 300px 0;
             }
         }
         .prjct-hero-img {
@@ -320,25 +324,26 @@ body {
     }
     .prjct-info {
 
-        padding: 100px 0 120px 0;
+        padding: 60px 0 80px 0;
 
         @media screen and (min-width: 400px) {
 
-            padding: 140px 0 180px 0;
+            padding: 140px 0 160px 0;
         }
         @media screen and (min-width: 640px) {
 
-            padding: 180px 0 220px 0;
+            padding: 160px 0 200px 0;
         }
         @media screen and (min-width: 840px) {
 
-            padding: 200px 0 260px 0;
+            padding: 180px 0 180px 0;
         }
         .prjct-stats {
 
             list-style-type: none;
 
             padding-left: 10px;
+            padding-right: 0;
 
             @media screen and (min-width: 400px) {
 
@@ -396,18 +401,20 @@ body {
         .prjct-mobile {
 
             margin-top: 80px;
-            margin-bottom: 0px;
+            margin-bottom: 40px;
+
             @media screen and (min-width: 840px) {
 
                 margin-top: 200px;
+                margin-bottom: 200px;
             }
 
             .prjct-mobile-img {
 
-                width: 92%;
+                width: 100%;
                 max-width: 375px;
                 margin: 0 auto;
-                margin-bottom: 60px;
+                margin-bottom: 40px;
                 @media screen and (min-width: 600px) {
 
                     margin: 0 auto;
@@ -470,7 +477,7 @@ body {
 
     .prjct-hero-img {
 
-        margin-bottom: 80px;
+        margin-bottom: 40px;
         @media screen and (min-width: 640px) {
 
             margin-bottom: 200px;
@@ -502,7 +509,7 @@ body {
 
     .prjct-hero-img {
 
-        margin-bottom: 80px;
+        margin-bottom: 40px;
 
         @media screen and (min-width: 640px) {
 
@@ -511,7 +518,7 @@ body {
     }
     .prjct-img-1 {
 
-        margin-bottom: 80px;
+        margin-bottom: 40px;
 
         @media screen and (min-width: 640px) {
 
@@ -538,7 +545,7 @@ body {
 
     h1 {
 
-        padding: 160px 20px 100px 20px;
+        padding: 300px 20px 60px 20px;
 
         @media screen and (min-width: 400px) {
 
@@ -554,7 +561,7 @@ body {
         }
         @media screen and (min-width: 1200px) {
 
-            padding: 340px 60px 300px 80px;
+            padding: 460px 60px 200px 80px;
         }
     }
     h2 {
