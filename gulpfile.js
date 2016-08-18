@@ -70,11 +70,11 @@ gulp.task('useref', function(){
     .pipe(gulpIf('index.html', gulp.dest('./dist')));
 });
 gulp.task('images', function(){
-    return gulp.src('./src/assets/images/*.+(png|jpg|gif)')
+    return gulp.src('./src/assets/img/*.+(png|jpg|gif)')
     .pipe(cache(imagemin({
         interlaced: true
     })))
-    .pipe(gulp.dest('dist/assets/images'));
+    .pipe(gulp.dest('dist/assets/img'));
 });
 gulp.task('icons', function() {
     return gulp.src('./src/assets/icons/*')
