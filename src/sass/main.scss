@@ -102,7 +102,7 @@
 nav {
     text-align: center;
     position: fixed;
-    top: 60px;
+    top: 40px;
     left: 50vw;
     z-index: 999;
 
@@ -290,11 +290,11 @@ body {
         }
         h1 {
 
-            padding: 160px 20px 100px 20px;
+            padding: 160px 10px 100px 10px;
 
             @media screen and (min-width: 400px) {
 
-                padding: 240px 20px 200px 40px;
+                padding: 240px 20px 200px 20px;
             }
             @media screen and (min-width: 640px) {
 
@@ -306,7 +306,7 @@ body {
             }
             @media screen and (min-width: 1200px) {
 
-                padding: 340px 60px 300px 80px;
+                padding: 340px 0 300px 0;
             }
         }
         .prjct-hero-img {
@@ -320,16 +320,29 @@ body {
     }
     .prjct-info {
 
-        padding: 220px 0 240px 0;
+        padding: 100px 0 120px 0;
+
+        @media screen and (min-width: 400px) {
+
+            padding: 140px 0 180px 0;
+        }
+        @media screen and (min-width: 640px) {
+
+            padding: 180px 0 220px 0;
+        }
+        @media screen and (min-width: 840px) {
+
+            padding: 200px 0 260px 0;
+        }
         .prjct-stats {
 
             list-style-type: none;
 
-            padding-left: 20px;
+            padding-left: 10px;
 
             @media screen and (min-width: 400px) {
 
-                padding-left: 40px;
+                padding-left: 20px;
             }
             @media screen and (min-width: 640px) {
 
@@ -353,7 +366,7 @@ body {
         svg {
 
             display: none;;
-            @media screen and (min-width: 800px) {
+            @media screen and (min-width: 840px) {
 
                 display: block;
                 margin: 0 auto;
@@ -362,7 +375,7 @@ body {
         .prjct-bg-img {
 
             display: none;;
-            @media screen and (min-width: 800px) {
+            @media screen and (min-width: 840px) {
 
                 display: block;
                 // margin: 0 auto;
@@ -370,11 +383,11 @@ body {
         }
         .prjct-phone-img {
 
-            width: 96%;
+            width: 100%;
             max-width: 434px;
             margin: 0 auto;
 
-            @media screen and (min-width: 800px) {
+            @media screen and (min-width: 840px) {
 
                 width: 100%;
                 margin-top: -580px;
@@ -382,24 +395,45 @@ body {
         }
         .prjct-mobile {
 
-            margin-top: 60px;
-            margin-bottom: 200px;
-            @media screen and (min-width: 800px) {
+            margin-top: 80px;
+            margin-bottom: 0px;
+            @media screen and (min-width: 840px) {
 
                 margin-top: 200px;
             }
 
             .prjct-mobile-img {
 
-                width: 100%;
+                width: 92%;
                 max-width: 375px;
                 margin: 0 auto;
+                margin-bottom: 60px;
+                @media screen and (min-width: 600px) {
+
+                    margin: 0 auto;
+                }
 
             }
         }
     }
     .prjct-link {
-        padding: 200px 0;
+        padding: 100px 0;
+        @media screen and (min-width: 400px) {
+
+            padding: 160px 0;
+        }
+        @media screen and (min-width: 640px) {
+
+            padding: 180px 0;
+        }
+        @media screen and (min-width: 840px) {
+
+            padding: 200px 0;
+        }
+        @media screen and (min-width: 1200px) {
+
+            padding: 200px 0;
+        }
     }
 }
 
@@ -415,7 +449,7 @@ body {
 
         padding-top: 0px;
 
-        @media screen and (min-width: 800px) {
+        @media screen and (min-width: 840px) {
 
             padding-top: 318px;
         }
@@ -445,6 +479,7 @@ body {
     .prjct-img-1 {
 
         margin-bottom: 80px;
+
         @media screen and (min-width: 640px) {
 
             margin-bottom: 200px;
@@ -455,7 +490,12 @@ body {
 
     .prjct-hero-img {
 
-        margin-bottom: 200px;
+        margin-bottom: 80px;
+
+        @media screen and (min-width: 640px) {
+
+            margin-bottom: 200px;
+        }
     }
 }
 #prjct-client {
@@ -463,6 +503,7 @@ body {
     .prjct-hero-img {
 
         margin-bottom: 80px;
+
         @media screen and (min-width: 640px) {
 
             margin-bottom: 200px;
@@ -471,6 +512,7 @@ body {
     .prjct-img-1 {
 
         margin-bottom: 80px;
+
         @media screen and (min-width: 640px) {
 
             margin-bottom: 200px;
@@ -478,7 +520,12 @@ body {
     }
     .prjct-img-2 {
 
-        margin-bottom: 200px;
+        margin-bottom: 80px;
+
+        @media screen and (min-width: 640px) {
+
+            margin-bottom: 200px;
+        }
     }
 }
 
