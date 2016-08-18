@@ -144,19 +144,19 @@ header {
 
         @media screen and (min-width: 400px) {
 
-            padding: 240px 40px 120px 40px;
+            padding: 240px 40px 80px 40px;
         }
         @media screen and (min-width: 640px) {
 
-            padding: 280px 40px 200px 40px;
+            padding: 280px 40px 100px 40px;
         }
         @media screen and (min-width: 840px) {
 
-            padding: 300px 60px 300px 60px;
+            padding: 300px 80px 120px 80px;
         }
         @media screen and (min-width: 1200px) {
 
-            padding: 360px 80px 400px 80px;
+            padding: 460px 100px 140px 100px;
         }
         a {
 
@@ -194,7 +194,7 @@ header {
             @media screen and (min-width: 1200px) {
 
                 font-size: ms(4);
-                letter-spacing: -12px;
+                letter-spacing: -14px;
                 line-height: 180px;
             }
         }
@@ -427,19 +427,19 @@ body {
         padding: 100px 0;
         @media screen and (min-width: 400px) {
 
-            padding: 160px 0;
+            padding: 120px 0;
         }
         @media screen and (min-width: 640px) {
 
-            padding: 180px 0;
+            padding: 140px 0;
         }
         @media screen and (min-width: 840px) {
 
-            padding: 200px 0;
+            padding: 160px 0;
         }
         @media screen and (min-width: 1200px) {
 
-            padding: 200px 0;
+            padding: 180px 0;
         }
     }
 }
