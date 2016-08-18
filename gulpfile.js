@@ -41,6 +41,7 @@ gulp.task('sass', function () {
         cascade: false
     }))
     .pipe(cssnano())
+    .pipe(rename("main.min.css"))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./src/css/'))
     .pipe(browserSync.reload({

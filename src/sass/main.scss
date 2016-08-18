@@ -1,8 +1,8 @@
-@import "modules/modularscale-sass/stylesheets/_modular-scale";
-@import "_variables";
-@import "_typography";
-@import "_helper";
-@import "_effects";
+@import "lib/modularscale-sass/stylesheets/_modular-scale";
+@import "base/_variables";
+@import "base/_typography";
+@import "components/_effects";
+@import "helpers/_helpers";
 
 /*  Icons - General
     =================================================== */
@@ -533,7 +533,7 @@ body {
         @media screen and (min-width: 1200px) {
 
             padding-left: 400px;
-            padding-right: 204px;
+            padding-right: 200px;
         }
     }
     h3 {
@@ -559,7 +559,7 @@ body {
         @media screen and (min-width: 1200px) {
 
             padding-left: 400px;
-            padding-right: 204px;
+            padding-right: 200px;
         }
     }
     h4 {
@@ -585,7 +585,7 @@ body {
         @media screen and (min-width: 1200px) {
 
             padding-left: 400px;
-            padding-right: 204px;
+            padding-right: 200px;
         }
     }
     p {
@@ -611,7 +611,7 @@ body {
         @media screen and (min-width: 1200px) {
 
             padding-left: 400px;
-            padding-right: 204px;
+            padding-right: 200px;
         }
     }
     ul {
@@ -637,7 +637,7 @@ body {
         @media screen and (min-width: 1200px) {
 
             padding-left: 400px;
-            padding-right: 204px;
+            padding-right: 210px;
         }
     }
 }

@@ -4,6 +4,7 @@
   "description": "![WOW.](https://cldup.com/JD_k_tMHGF.gif \"WOW.\")",
   "main": "index.js",
   "dependencies": {
+    "bootstrap": "^4.0.0-alpha.3",
     "modularscale-sass": "^2.1.1",
     "normalize.css": "^4.2.0",
     "pills": "^1.0.1",
