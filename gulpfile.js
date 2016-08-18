@@ -62,7 +62,7 @@ gulp.task('clear:cache', function (callback) {
 });
 gulp.task('useref', function(){
     return gulp.src(['./src/pages/*.html','./src/index.html'])
-    .pipe(useref())
+    .pipe(useref({ searchPath: ['./','./src'] }))
     .pipe(gulpIf('*.js', uglify()))
     .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulpIf('!*.html', gulp.dest('./dist')))
