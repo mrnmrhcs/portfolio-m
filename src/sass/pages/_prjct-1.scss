@@ -1,0 +1,19 @@
+/*  Prjct-1 Styles
+    =================================================== */
+
+#prjct-dav {
+
+    .prjct-content .row {
+        
+        overflow: visible;
+    }
+    .prjct-mobile-wrap {
+
+        padding-top: 0px;
+
+        @media screen and (min-width: 840px) {
+
+            padding-top: 318px;
+        }
+    }
+}

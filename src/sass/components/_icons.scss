@@ -1,0 +1,39 @@
+/*  General
+    =================================================== */
+
+.ico {
+
+    fill: currentColor;
+}
+
+
+/*  Types
+    =================================================== */
+
+#ico-menu {
+
+    color: #fff;
+
+    width: 12px;
+
+    position: relative;
+    z-index: 999;
+}
+#ico-link {
+
+    color: #fff;
+}
+#ico-dav {
+
+    color: $clr-p-light;
+
+    position: relative;
+    z-index: -999;
+}
+#ico-universal {
+
+    color: $clr-p-light;
+
+    position: relative;
+    z-index: -999;
+}

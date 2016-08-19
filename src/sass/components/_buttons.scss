@@ -1,0 +1,53 @@
+/*  General
+    =================================================== */
+
+.btn {
+
+    cursor: pointer;
+    border: 0;
+
+    padding: 0;
+
+    &:focus {
+
+        outline: 0;
+    }
+    &:hover {
+
+        #ico-menu {
+
+            color: $clr-dark;
+        }
+        #ico-link {
+
+            color: $clr-dark;
+        }
+    }
+}
+.btn-circle {
+
+    background-color: $clr-p-light;
+    border-radius: 50%;
+    display: block;
+
+    width: 100px;
+    height: 100px;
+    padding: 28px;
+    margin: 0 auto;
+    
+    &:hover {
+
+        background-color: #fff;
+    }
+}
+
+/*  Types
+    =================================================== */
+
+#btn-menu {
+
+    background-color: transparent;
+
+    height: 20px;
+    margin-left: -6px;
+}

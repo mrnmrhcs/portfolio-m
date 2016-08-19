@@ -1,0 +1,171 @@
+
+/*  General
+    =================================================== */
+
+.prjct .content {
+
+    img {
+
+        width: 100%;
+        height: auto;
+    }
+    .prjct-header {
+
+        .row {
+
+            overflow: visible;
+        }
+        h1 {
+
+            padding: 300px 10px 60px 0px;
+
+            @media screen and (min-width: 400px) {
+
+                padding: 240px 20px 200px 20px;
+            }
+            @media screen and (min-width: 640px) {
+
+                padding: 280px 40px 240px 60px;
+            }
+            @media screen and (min-width: 840px) {
+
+                padding: 320px 40px 260px 80px;
+            }
+            @media screen and (min-width: 1200px) {
+
+                padding: 440px 0 300px 0;
+            }
+        }
+        .prjct-hero-img {
+
+            img {
+
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    .prjct-info {
+
+        padding: 60px 0 80px 0;
+
+        @media screen and (min-width: 400px) {
+
+            padding: 140px 0 160px 0;
+        }
+        @media screen and (min-width: 640px) {
+
+            padding: 160px 0 200px 0;
+        }
+        @media screen and (min-width: 840px) {
+
+            padding: 180px 0 180px 0;
+        }
+        .prjct-stats {
+
+            list-style-type: none;
+
+            padding-left: 10px;
+            padding-right: 0;
+
+            @media screen and (min-width: 400px) {
+
+                padding-left: 20px;
+            }
+            @media screen and (min-width: 640px) {
+
+                padding-left: 80px;
+            }
+            @media screen and (min-width: 840px) {
+
+                padding-left: 160px;
+            }
+            @media screen and (min-width: 1200px) {
+
+                padding-left: 700px;
+            }
+        }
+    }
+    .prjct-mobile-wrap {
+
+        position: relative;
+        width: 100%;
+
+        svg {
+
+            display: none;
+
+            @media screen and (min-width: 840px) {
+
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        .prjct-bg-img {
+
+            display: none;
+            @media screen and (min-width: 840px) {
+
+                display: block;
+                // margin: 0 auto;
+            }
+        }
+        .prjct-phone-img {
+
+            width: 100%;
+            max-width: 434px;
+            margin: 0 auto;
+
+            @media screen and (min-width: 840px) {
+
+                width: 100%;
+                margin-top: -580px;
+            }
+        }
+        .prjct-mobile {
+
+            margin-top: 80px;
+            margin-bottom: 40px;
+
+            @media screen and (min-width: 840px) {
+
+                margin-top: 200px;
+                margin-bottom: 200px;
+            }
+
+            .prjct-mobile-img {
+
+                width: 100%;
+                max-width: 375px;
+                margin: 0 auto;
+                margin-bottom: 40px;
+
+                @media screen and (min-width: 600px) {
+
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+    .prjct-link {
+
+        padding: 100px 0;
+
+        @media screen and (min-width: 400px) {
+
+            padding: 120px 0;
+        }
+        @media screen and (min-width: 640px) {
+
+            padding: 140px 0;
+        }
+        @media screen and (min-width: 840px) {
+
+            padding: 160px 0;
+        }
+        @media screen and (min-width: 1200px) {
+
+            padding: 180px 0;
+        }
+    }
+}

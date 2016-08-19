@@ -1,3 +1,7 @@
+
+/*  Typography
+    =================================================== */
+
 html {
 
     font-size: ms(0);
@@ -8,7 +12,6 @@ html {
         letter-spacing: 0;
     }
 }
-
 body {
 
     font-family: 'Larsseit', Arial, sans-serif;
@@ -42,7 +45,6 @@ h1 {
 
     font-weight: 900;
     letter-spacing: -5.25px;
-    // text-align: center;
 
     padding: 0 0 160px 0;
 
@@ -51,7 +53,6 @@ h1 {
         font-size: ms(2);
         letter-spacing: -3px;
         line-height: 60px;
-        // text-align: left;
     }
     @media screen and (min-width: 640px) {
 
@@ -70,7 +71,7 @@ h1 {
 
         font-size: ms(5);
         letter-spacing: -22px;
-        line-height: 230px;
+        line-height: 220px;
     }
 }
 h2 {
@@ -95,7 +96,6 @@ h3 {
 
     font-size: ms(0);
     line-height: 20px;
-
     letter-spacing: -2px;
 
     @media screen and (min-width: 840px) {

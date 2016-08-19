@@ -1,0 +1,33 @@
+/*  Prjct-5 Styles
+    =================================================== */
+
+#prjct-client {
+
+    .prjct-hero-img {
+
+        margin-bottom: 40px;
+
+        @media screen and (min-width: 640px) {
+
+            margin-bottom: 200px;
+        }
+    }
+    .prjct-img-1 {
+
+        margin-bottom: 40px;
+
+        @media screen and (min-width: 640px) {
+
+            margin-bottom: 200px;
+        }
+    }
+    .prjct-img-2 {
+
+        margin-bottom: 80px;
+
+        @media screen and (min-width: 640px) {
+
+            margin-bottom: 200px;
+        }
+    }
+}

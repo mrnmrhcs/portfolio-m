@@ -1,0 +1,24 @@
+
+/*  General
+    =================================================== */
+
+html {
+
+    overflow-x: hidden;
+    background-color: $clr-light;
+    width: 100vw;
+}
+body {
+
+    width: 100vw;
+}
+.row {
+
+    max-width: 1200px;
+
+    .columns {
+
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
