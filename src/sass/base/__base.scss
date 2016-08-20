@@ -1,6 +1,5 @@
-@import "_lib/_modularscale/stylesheets/_modular-scale";
+@import "node_modules/modularscale-sass/stylesheets/_modular-scale";
 
-@import "_color";
+@import "_variables";
 @import "_typography";
-
 @import "_layout";
