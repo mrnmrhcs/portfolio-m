@@ -35,7 +35,6 @@ h4, h5 {
 
     letter-spacing: -1px;
 
-    padding: 20px 0 20px 0;
     margin: 0;
 }
 h1 {
@@ -46,7 +45,7 @@ h1 {
     font-weight: 900;
     letter-spacing: -5.25px;
 
-    padding: 0 0 160px 0;
+    // padding: 0 0 160px 0;
 
     @media screen and (min-width: 400px) {
 
@@ -88,7 +87,7 @@ h2 {
     @media screen and (min-width: 840px) {
 
         font-size: ms(2);
-        letter-spacing: -6px;
+        letter-spacing: -5px;
         line-height: 60px;
     }
 }
@@ -101,17 +100,15 @@ h3 {
     @media screen and (min-width: 840px) {
 
         font-size: ms(1);
-        letter-spacing: -4px;
+        letter-spacing: -3px;
         line-height: 40px;
     }
 }
 ul, ol {
 
-    list-style-position: outside;
-
+    list-style-position: inside;
     color: $c-text;;
 
-    padding: 0 22px;
     margin: 0;
 }
 p {

@@ -8,23 +8,23 @@
 
     h1 {
 
-        padding: 300px 20px 60px 20px;
+        padding: 160px 20px 60px 20px;
 
         @media screen and (min-width: 400px) {
 
-            padding: 240px 20px 200px 40px;
+            padding: 220px 20px 80px 20px;
         }
         @media screen and (min-width: 640px) {
 
-            padding: 280px 40px 240px 60px;
+            padding: 220px 40px 100px 40px;
         }
         @media screen and (min-width: 840px) {
 
-            padding: 300px 40px 260px 80px;
+            padding: 260px 40px 160px 40px;
         }
         @media screen and (min-width: 1200px) {
 
-            padding: 260px 60px 180px 80px;
+            padding: 260px 60px 160px 20px;
         }
     }
     h2 {
@@ -34,7 +34,7 @@
 
         @media screen and (min-width: 400px) {
 
-            padding-left: 40px;
+            padding-left: 20px;
             padding-right: 40px;
         }
         @media screen and (min-width: 640px) {
@@ -44,8 +44,8 @@
         }
         @media screen and (min-width: 840px) {
 
-            padding-left: 220px;
-            padding-right: 180px;
+            padding-left: 200px;
+            padding-right: 160px;
         }
         @media screen and (min-width: 1200px) {
 
@@ -60,7 +60,7 @@
 
         @media screen and (min-width: 400px) {
 
-            padding-left: 40px;
+            padding-left: 20px;
             padding-right: 40px;
         }
         @media screen and (min-width: 640px) {
@@ -70,8 +70,8 @@
         }
         @media screen and (min-width: 840px) {
 
-            padding-left: 220px;
-            padding-right: 180px;
+            padding-left: 200px;
+            padding-right: 160px;
         }
         @media screen and (min-width: 1200px) {
 
@@ -86,7 +86,7 @@
 
         @media screen and (min-width: 400px) {
 
-            padding-left: 40px;
+            padding-left: 20px;
             padding-right: 40px;
         }
         @media screen and (min-width: 640px) {
@@ -96,8 +96,8 @@
         }
         @media screen and (min-width: 840px) {
 
-            padding-left: 220px;
-            padding-right: 180px;
+            padding-left: 200px;
+            padding-right: 160px;
         }
         @media screen and (min-width: 1200px) {
 
@@ -112,7 +112,7 @@
 
         @media screen and (min-width: 400px) {
 
-            padding-left: 40px;
+            padding-left: 20px;
             padding-right: 40px;
         }
         @media screen and (min-width: 640px) {
@@ -122,8 +122,8 @@
         }
         @media screen and (min-width: 840px) {
 
-            padding-left: 220px;
-            padding-right: 180px;
+            padding-left: 200px;
+            padding-right: 160px;
         }
         @media screen and (min-width: 1200px) {
 
@@ -138,7 +138,7 @@
 
         @media screen and (min-width: 400px) {
 
-            padding-left: 40px;
+            padding-left: 20px;
             padding-right: 40px;
         }
         @media screen and (min-width: 640px) {
@@ -148,13 +148,13 @@
         }
         @media screen and (min-width: 840px) {
 
-            padding-left: 220px;
-            padding-right: 180px;
+            padding-left: 200px;
+            padding-right: 160px;
         }
         @media screen and (min-width: 1200px) {
 
             padding-left: 400px;
-            padding-right: 210px;
+            padding-right: 200px;
         }
     }
 }
