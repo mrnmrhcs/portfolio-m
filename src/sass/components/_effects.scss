@@ -201,18 +201,18 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: #797E82;
+    background: $c-nav-bg;
     clip: rect(0, 0, 0, 0);
 }
 .distort:hover:after {
 
     left: 3px;
-    text-shadow: -3px 0 rgba(0, 80, 77, 0.5);
+    text-shadow: -3px 0 rgba(240, 243, 89, 1.0);
     animation: distort-one 3s infinite linear alternate-reverse;
 }
 .distort:hover:before {
 
     left: -5px;
-    text-shadow: 5px 0 rgba(96, 25, 0, 0.5);
+    text-shadow: 5px 0 rgba(200, 251, 244, 1.0);
     animation: distort-two 3s infinite linear alternate-reverse;
 }

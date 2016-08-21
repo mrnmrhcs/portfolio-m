@@ -26,7 +26,7 @@ nav {
 
 header {
 
-    background: $clr-p-lighter;
+    background: $c-nav-bg;
     opacity: 0;
     visibility: hidden;
     overflow-y: scroll;
@@ -63,7 +63,7 @@ header {
         }
         @media screen and (min-width: 1200px) {
 
-            padding: 200px 100px 140px 100px;
+            padding: 260px 100px 140px 100px;
         }
         a {
 
@@ -72,7 +72,7 @@ header {
             line-height: 40px;
             font-weight: 900;
             letter-spacing: -1.25px;
-            color: $clr-p-light;
+            color: $c-nav-link;
             text-decoration: none;
 
             display: block;
@@ -80,7 +80,7 @@ header {
 
             &:hover {
 
-                color: #fff;
+                color: $c-nav-hover;
             }
             @media screen and (min-width: 400px) {
 
@@ -121,13 +121,13 @@ html.open {
 
         #ico-menu {
 
-            color: #fff;
+            color: $c-nav-link;
         }
         &:hover {
 
             #ico-menu {
 
-                color: $clr-light;
+                color: $c-nav-hover;
             }
         }
     }

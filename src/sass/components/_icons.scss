@@ -6,13 +6,12 @@
     fill: currentColor;
 }
 
-
 /*  Types
     =================================================== */
 
 #ico-menu {
 
-    color: #fff;
+    color: $c-ico-link;
 
     width: 12px;
 
@@ -21,18 +20,18 @@
 }
 #ico-link {
 
-    color: #fff;
+    color: $c-ico-link;
 }
 #ico-dav {
 
-    color: $clr-p-light;
+    color: $c-bg-object;
 
     position: relative;
     z-index: -999;
 }
 #ico-universal {
 
-    color: $clr-p-light;
+    color: $c-bg-object;
 
     position: relative;
     z-index: -999;

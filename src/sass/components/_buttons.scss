@@ -16,17 +16,17 @@
 
         #ico-menu {
 
-            color: $clr-dark;
+            color: $c-ico-link;
         }
         #ico-link {
 
-            color: $clr-dark;
+            color: $c-ico-hover;
         }
     }
 }
 .btn-circle {
 
-    background-color: $clr-p-light;
+    background-color: $c-btn-link;
     border-radius: 50%;
     display: block;
 
@@ -37,7 +37,7 @@
 
     &:hover {
 
-        background-color: #fff;
+        background-color: $c-btn-hover;
     }
 }
 
