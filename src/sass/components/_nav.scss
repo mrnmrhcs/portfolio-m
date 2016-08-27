@@ -67,10 +67,10 @@ header {
         }
         a {
 
-            font-family: 'Larsseit';
+            font-family: 'Simplon';
             font-size: ms(0);
             line-height: 40px;
-            font-weight: 900;
+            font-weight: 700;
             letter-spacing: -1.25px;
             color: $c-nav-link;
             text-decoration: none;
@@ -103,7 +103,7 @@ header {
             @media screen and (min-width: 1200px) {
 
                 font-size: ms(4);
-                letter-spacing: -14px;
+                letter-spacing: -10px;
                 line-height: 180px;
             }
         }
