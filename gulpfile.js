@@ -81,7 +81,7 @@ gulp.task('icons', function() {
     .pipe(gulp.dest('dist/assets/icons'));
 });
 gulp.task('fonts', function() {
-    return gulp.src('./src/assets/fonts/*')
+    return gulp.src('./src/assets/fonts/**/*')
     .pipe(gulp.dest('dist/assets/fonts'));
 });
 gulp.task('clean:dist', function() {
