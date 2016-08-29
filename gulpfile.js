@@ -84,6 +84,10 @@ gulp.task('fonts', function() {
     return gulp.src('./src/assets/fonts/**/*')
     .pipe(gulp.dest('dist/assets/fonts'));
 });
+gulp.task('dwnld', function() {
+    return gulp.src('./src/assets/dwnld/*')
+    .pipe(gulp.dest('dist/assets/dwnld'));
+});
 gulp.task('clean:dist', function() {
     return del.sync('dist');
 });
@@ -94,7 +98,7 @@ gulp.task('default', function (callback) {
     runSequence('clear:cache',['sass','browserSync','watch'],callback);
 });
 gulp.task('build', function (callback) {
-    runSequence('clean:dist',['sass','useref','images','icons','fonts'],callback);
+    runSequence('clean:dist',['sass','useref','images','icons','fonts','dwnld' ],callback);
 });
 
 
