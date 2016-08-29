@@ -77,17 +77,17 @@ h2 {
 
     font-size: ms(0);
     line-height: 20px;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
     @media screen and (min-width: 400px) {
 
         font-size: ms(1);
-        letter-spacing: -3px;
+        letter-spacing: -2px;
         line-height: 40px;
     }
     @media screen and (min-width: 840px) {
 
         font-size: ms(2);
-        letter-spacing: -5px;
+        letter-spacing: -3px;
         line-height: 60px;
     }
 }
@@ -95,12 +95,12 @@ h3 {
 
     font-size: ms(0);
     line-height: 20px;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
 
     @media screen and (min-width: 840px) {
 
         font-size: ms(1);
-        letter-spacing: -3px;
+        letter-spacing: -2px;
         line-height: 40px;
     }
 }
