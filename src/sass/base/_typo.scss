@@ -7,7 +7,8 @@ html {
     font-size: ms(0);
     line-height: 40px;
     letter-spacing: -1.25px;
-    @media screen and (min-width: 400px) {
+
+    @media screen and (min-width: 544px) {
 
         letter-spacing: 0;
     }
@@ -19,6 +20,7 @@ body {
     font-style: normal;
 
     color: $c-text;
+
 }
 h1, h2, h3, h4 {
 
@@ -28,7 +30,6 @@ h1, h2, h3, h4 {
 
     color: $c-headline;
 
-    padding: 20px 0 40px 0;
     margin: 0;
 }
 h4, h5 {
@@ -40,30 +41,39 @@ h4, h5 {
 h1 {
 
     font-size: ms(2);
+
     line-height: 58px;
 
     font-weight: 900;
-    letter-spacing: -1.5px;
+    letter-spacing: -2px;
 
-    // padding: 0 0 160px 0;
+    padding: 120px 0 40px 0;
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 544px) {
 
         font-size: ms(2);
-        letter-spacing: -3px;
+        // letter-spacing: -3px;
         line-height: 58px;
+
+        // padding: 120px 0 40px 0;
+
     }
-    @media screen and (min-width: 640px) {
+    @media screen and (min-width: 768px) {
 
         font-size: ms(3);
         letter-spacing: -6px;
         line-height: 90px;
+
+        padding: 140px 0 60px 0;
+
     }
-    @media screen and (min-width: 840px) {
+    @media screen and (min-width: 992px) {
 
         font-size: ms(4);
         letter-spacing: -10px;
         line-height: 140px;
+
+        padding: 160px 0 80px 0;
 
     }
     @media screen and (min-width: 1200px) {
@@ -71,6 +81,9 @@ h1 {
         font-size: ms(5);
         letter-spacing: -12px;
         line-height: 220px;
+
+        padding: 200px 0 120px 0;
+
     }
 }
 h2 {
@@ -78,13 +91,14 @@ h2 {
     font-size: ms(0);
     line-height: 20px;
     letter-spacing: -1px;
-    @media screen and (min-width: 400px) {
+
+    @media screen and (min-width: 544px) {
 
         font-size: ms(1);
         letter-spacing: -2px;
         line-height: 40px;
     }
-    @media screen and (min-width: 840px) {
+    @media screen and (min-width: 768px) {
 
         font-size: ms(2);
         letter-spacing: -3px;
@@ -97,7 +111,7 @@ h3 {
     line-height: 20px;
     letter-spacing: -1px;
 
-    @media screen and (min-width: 840px) {
+    @media screen and (min-width: 768px) {
 
         font-size: ms(1);
         letter-spacing: -2px;

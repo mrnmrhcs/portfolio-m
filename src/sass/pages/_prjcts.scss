@@ -4,37 +4,11 @@
 
 .prjct .content {
 
-    img {
-
-        width: 100%;
-        height: auto;
-    }
     .prjct-header {
 
         .row {
 
             overflow: visible;
-        }
-        h1 {
-
-            padding: 200px 10px 100px 0px;
-
-            @media screen and (min-width: 400px) {
-
-                padding: 240px 20px 200px 20px;
-            }
-            @media screen and (min-width: 640px) {
-
-                padding: 280px 40px 240px 60px;
-            }
-            @media screen and (min-width: 840px) {
-
-                padding: 260px 40px 180px 80px;
-            }
-            @media screen and (min-width: 1200px) {
-
-                padding: 260px 0 150px 0;
-            }
         }
         .prjct-hero-img {
 
@@ -42,6 +16,7 @@
 
                 width: 100%;
                 height: auto;
+
             }
         }
     }
@@ -49,15 +24,15 @@
 
         padding: 60px 0 80px 0;
 
-        @media screen and (min-width: 400px) {
+        @media screen and (min-width: 544px) {
 
             padding: 100px 0 160px 0;
         }
-        @media screen and (min-width: 640px) {
+        @media screen and (min-width: 768px) {
 
             padding: 120px 0 200px 0;
         }
-        @media screen and (min-width: 840px) {
+        @media screen and (min-width: 992px) {
 
             padding: 140px 0 180px 0;
         }
@@ -68,15 +43,15 @@
             padding-left: 10px;
             padding-right: 0;
 
-            @media screen and (min-width: 400px) {
+            @media screen and (min-width: 544px) {
 
                 padding-left: 20px;
             }
-            @media screen and (min-width: 640px) {
+            @media screen and (min-width: 768px) {
 
                 padding-left: 80px;
             }
-            @media screen and (min-width: 840px) {
+            @media screen and (min-width: 992px) {
 
                 padding-left: 160px;
             }
@@ -95,7 +70,7 @@
 
             display: none;
 
-            @media screen and (min-width: 840px) {
+            @media screen and (min-width: 768px) {
 
                 display: block;
                 margin: 0 auto;
@@ -104,10 +79,11 @@
         .prjct-bg-img {
 
             display: none;
-            @media screen and (min-width: 840px) {
+
+            @media screen and (min-width: 768px) {
 
                 display: block;
-                // margin: 0 auto;
+
             }
         }
         .prjct-phone-img {
@@ -116,7 +92,7 @@
             max-width: 434px;
             margin: 0 auto;
 
-            @media screen and (min-width: 840px) {
+            @media screen and (min-width: 768px) {
 
                 width: 100%;
                 margin-top: -580px;
@@ -127,7 +103,7 @@
             margin-top: 80px;
             margin-bottom: 40px;
 
-            @media screen and (min-width: 840px) {
+            @media screen and (min-width: 768px) {
 
                 margin-top: 200px;
                 margin-bottom: 200px;
@@ -140,7 +116,7 @@
                 margin: 0 auto;
                 margin-bottom: 40px;
 
-                @media screen and (min-width: 600px) {
+                @media screen and (min-width: 544px) {
 
                     margin: 0 auto;
                 }
@@ -151,15 +127,15 @@
 
         padding: 100px 0;
 
-        @media screen and (min-width: 400px) {
+        @media screen and (min-width: 544px) {
 
             padding: 120px 0;
         }
-        @media screen and (min-width: 640px) {
+        @media screen and (min-width: 768px) {
 
             padding: 140px 0;
         }
-        @media screen and (min-width: 840px) {
+        @media screen and (min-width: 992px) {
 
             padding: 160px 0;
         }
