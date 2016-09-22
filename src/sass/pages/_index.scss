@@ -4,93 +4,84 @@
 
 #home  {
 
-    padding-bottom: 160px;
-
-    @media screen and (min-width: 768px) {
-
-        padding-bottom: 200px;
-    }
-    @media screen and (min-width: 992px) {
-
-        padding-bottom: 270px
-    }
-    @media screen and (min-width: 1200px) {
-
-
-    }
-
-    .home-hero {
+    .hero-teaser {
 
         position: relative;
-        margin: 240px 0 80px 0;
+
+        margin: 200px 0 80px 0;
 
         @media screen and (min-width: 768px) {
 
-            margin: 2400px 0 270px 0;
+            margin: 240px 0 270px 0;
         }
         @media screen and (min-width: 992px) {
 
-            margin: 600px 0 300px 0;
+            margin: 480px 0 300px 0;
         }
         @media screen and (min-width: 1200px) {
 
-
+            margin: 560px 0 300px 0;
         }
         h1 {
 
             position: absolute;
             top: -30px;
             left: 0;
+            z-index: 666;
 
             padding: 0;
 
-            color: $c-text;
+            // color: $c-text;
             text-transform: uppercase;
 
             @media screen and (min-width: 768px) {
 
                 top: -40px;
-                left: 0;
+                left: 15px;
             }
             @media screen and (min-width: 992px) {
 
                 top: -200px;
-                left: 0;
+                // left: 0;
             }
             @media screen and (min-width: 1200px) {
 
-                top: -360px;
-                left: 0;
+                top: -330px;
+                // left: 0;
 
-                letter-spacing: -22px;
                 line-height: 240px;
             }
         }
+
         .prjct-hero-img {
 
+            background-image: url('../assets/img/prjct-hero.jpg');
+            background-size: cover;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+
             width: 100%;
-            height: auto;
+            padding-bottom: 400px;
 
             @media screen and (min-width: 768px) {
 
-
+                padding-bottom: 480px;
             }
             @media screen and (min-width: 992px) {
 
                 float: right;
-                width: 75%;
+                width: 84%;
+
+                padding-bottom: 560px;
             }
             @media screen and (min-width: 1200px) {
 
 
+
             }
         }
-        &::after {
-            clear: both;
-            content: "";
-            display: table;
-        }
     }
+
     .prjct-home {
 
         position: relative;
@@ -115,5 +106,20 @@
 
 
         }
+    }
+
+    padding-bottom: 160px;
+
+    @media screen and (min-width: 768px) {
+
+        padding-bottom: 200px;
+    }
+    @media screen and (min-width: 992px) {
+
+        padding-bottom: 270px
+    }
+    @media screen and (min-width: 1200px) {
+
+
     }
 }
