@@ -20,7 +20,7 @@
 
         span {
 
-            font-size: 12px;
+            font-size: 11px;
             line-height: 20px;
             letter-spacing: 1.5px;
             text-transform: uppercase;
@@ -28,6 +28,16 @@
             color: $c-white;
 
             display: block;
+
+            @media screen and (min-width: 544px) {
+
+                font-size: 10px;
+            }
+
+            @media screen and (min-width: 768px) {
+
+                font-size: 11px;
+            }
         }
     }
 
@@ -86,7 +96,7 @@
 
                 position: absolute;
 
-                bottom: -450px;
+                bottom: -470px;
                 right: -1160px;
             }
         }
@@ -156,20 +166,89 @@
                 height: 100%;
 
                 .prjct-title-01 {
-                    top: 65px;
-                    right: -25px;
+
+                    top: 58px;
+                    right: -24px;
+
+                    @media screen and (min-width: 544px) {
+
+                        top: 50px;
+                        right: -28px;
+                    }
+                    @media screen and (min-width: 768px) {
+
+                        top: 58px;
+                        right: -27px;
+                    }
+                    @media screen and (min-width: 992px) {
+
+                        top: 58px;
+                        right: -24px;
+                    }
+
                 }
                 .prjct-title-02 {
-                    bottom: 90px;
-                    right: -50px;
+
+                    bottom: 80px;
+                    right: -48px;
+
+                    @media screen and (min-width: 544px) {
+
+                        bottom: 68px;
+                        right: -52px;
+                    }
+                    @media screen and (min-width: 768px) {
+
+                        bottom: 80px;
+                        right: -53px;
+                    }
+                    @media screen and (min-width: 992px) {
+
+                        bottom: 80px;
+                        right: -48px;
+                    }
                 }
                 .prjct-title-03 {
+
                     top: 65px;
-                    left: -25px;
+                    left: -28px;
+
+                    @media screen and (min-width: 544px) {
+
+                        top: 52px;
+                        left: -32px;
+                    }
+                    @media screen and (min-width: 768px) {
+
+                        top: 65px;
+                        left: -32px;
+                    }
+                    @media screen and (min-width: 992px) {
+
+                        top: 65px;
+                        left: -28px;
+                    }
                 }
                 .prjct-title-04 {
-                    bottom: 75px;
-                    left: -35px;
+
+                    bottom: 70px;
+                    left: -32px;
+
+                    @media screen and (min-width: 544px) {
+
+                        bottom: 58px;
+                        left: -38px;
+                    }
+                    @media screen and (min-width: 768px) {
+
+                        bottom: 70px;
+                        left: -35px;
+                    }
+                    @media screen and (min-width: 992px) {
+
+                        bottom: 70px;
+                        left: -32px;
+                    }
                 }
             }
         }
