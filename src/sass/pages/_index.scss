@@ -4,6 +4,33 @@
 
 #home  {
 
+    .prjct-home {
+
+        position: relative;
+    }
+    .prjct-title {
+
+        position: absolute;
+        -moz-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+
+        transform: rotate(270deg);
+
+        span {
+
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            color: $c-white;
+
+            display: block;
+        }
+    }
+
     .hero-teaser {
 
         position: relative;
@@ -51,6 +78,18 @@
                 line-height: 240px;
             }
         }
+        .hero-teaser-link {
+
+            position: relative;
+
+            .prjct-title {
+
+                position: absolute;
+
+                bottom: -450px;
+                right: -1160px;
+            }
+        }
 
         .prjct-hero-img {
 
@@ -74,7 +113,6 @@
                 padding-bottom: 560px;
             }
             @media screen and (min-width: 1200px) {
-
 
 
             }
@@ -111,50 +149,76 @@
             position: relative;
             margin-bottom: 30px;
 
-            .prjct-img-01, .prjct-img-02, .prjct-img-03, .prjct-img-04 {
+            .prjct-link {
 
-                background-size: cover;
-                background-position: 50% 50%;
-                background-repeat: no-repeat;
-
+                position: absolute;
                 width: 100%;
-                height: auto;
+                height: 100%;
 
-                padding-bottom: 84vw;
-                @media screen and (min-width: 544px) {
-
-                    padding-bottom: 236px;
+                .prjct-title-01 {
+                    top: 65px;
+                    right: -25px;
                 }
-
-                @media screen and (min-width: 768px) {
-
-                    padding-bottom: 304px;
+                .prjct-title-02 {
+                    bottom: 90px;
+                    right: -50px;
                 }
-                @media screen and (min-width: 992px) {
-
-                    padding-bottom: 406px;
+                .prjct-title-03 {
+                    top: 65px;
+                    left: -25px;
                 }
-                @media screen and (min-width: 1200px) {
-
-                    padding-bottom: 500px;
+                .prjct-title-04 {
+                    bottom: 75px;
+                    left: -35px;
                 }
             }
-            .prjct-img-01 {
+        }
+        .prjct-img-01, .prjct-img-02, .prjct-img-03, .prjct-img-04 {
 
-                background-image: url('../assets/img/prjct-home-1.jpg');
-            }
-            .prjct-img-02 {
+            background-size: cover;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
 
-                background-image: url('../assets/img/prjct-home-2.jpg');
-            }
-            .prjct-img-03 {
+            width: 100%;
+            height: auto;
 
-                background-image: url('../assets/img/prjct-home-3.jpg');
-            }
-            .prjct-img-04 {
+            padding-bottom: 84vw;
+            @media screen and (min-width: 544px) {
 
-                background-image: url('../assets/img/prjct-home-4.jpg');
+                padding-bottom: 236px;
             }
+
+            @media screen and (min-width: 768px) {
+
+                padding-bottom: 304px;
+            }
+            @media screen and (min-width: 992px) {
+
+                padding-bottom: 406px;
+            }
+            @media screen and (min-width: 1200px) {
+
+                padding-bottom: 500px;
+            }
+        }
+        .prjct-img-01 {
+
+            background-image: url('../assets/img/prjct-home-1.jpg');
+
+        }
+        .prjct-img-02 {
+
+            background-image: url('../assets/img/prjct-home-2.jpg');
+
+        }
+        .prjct-img-03 {
+
+            background-image: url('../assets/img/prjct-home-3.jpg');
+
+        }
+        .prjct-img-04 {
+
+            background-image: url('../assets/img/prjct-home-4.jpg');
         }
         .prjct-up {
             @media screen and (min-width: 768px) {
