@@ -130,17 +130,17 @@
                     }
                     @media screen and (min-width: 768px) {
 
-                        bottom: 154px;
+                        bottom: 175px;
                         right: 15px;
                     }
                     @media screen and (min-width: 992px) {
 
-                        bottom: 162px;
+                        bottom: 175px;
                         right: 20px;
                     }
                     @media screen and (min-width: 1200px) {
 
-                        bottom: 162px;
+                        bottom: 175px;
                         right: 25px;
                     }
                 }
@@ -197,7 +197,7 @@
 
                     @media screen and (min-width: 544px) {
 
-                        top: 10px;
+                        top: 4px;
                         right: 12px;
                     }
                     @media screen and (min-width: 768px) {
@@ -223,12 +223,14 @@
 
                     transform-origin: right;
 
-                    bottom: 158px;
+                    top: 20px;
                     right: 15px;
 
                     @media screen and (min-width: 544px) {
 
-                        bottom: 140px;
+                        top: initial;
+                        right: initial;
+                        bottom: 132px;
                         right: 12px;
                     }
                     @media screen and (min-width: 768px) {
@@ -259,7 +261,7 @@
 
                     @media screen and (min-width: 544px) {
 
-                        top: 105px;
+                        top: 96px;
                         left: 14px;
                     }
                     @media screen and (min-width: 768px) {
@@ -285,12 +287,14 @@
 
                     transform-origin: left;
 
-                    bottom: 20px;
+                    top: 132px;
                     left: 18px;
 
                     @media screen and (min-width: 544px) {
 
-                        bottom: 10px;
+                        top: initial;
+                        right: initial;
+                        bottom: 4px;
                         left: 14px;
                     }
                     @media screen and (min-width: 768px) {
