@@ -4,21 +4,13 @@
 
 .prjct .content {
 
-    .prjct-header {
+    .prjct-img-full {
 
-        .row {
-
-            overflow: visible;
-        }
-        .prjct-hero-img {
-
-            img {
-
-                width: 100%;
-                height: auto;
-
-            }
-        }
+        margin: 0 -15px;
+    }
+    .prjct-img-hero {
+        
+        margin-bottom: 200px;
     }
     .prjct-info {
 
