@@ -149,7 +149,7 @@
     }
     .home-content {
 
-        .prjct-row-one, .prjct-row-two {
+        .prjct-row-01, .prjct-row-02, .prjct-row-03 {
 
             &::after {
                 content: "";
@@ -157,7 +157,7 @@
                 clear: both;
             }
         }
-        .prjct-row-one {
+        .prjct-row-01, .prjct-row-02  {
 
             margin-bottom: 0;
 
@@ -167,7 +167,7 @@
             }
             @media screen and (min-width: 992px) {
 
-                margin-bottom: 240px;
+                margin-bottom: 200px;
             }
             @media screen and (min-width: 1200px) {
 
@@ -256,7 +256,7 @@
 
                     transform-origin: left;
 
-                    top: 120px;
+                    top: 105px;
                     left: 18px;
 
                     @media screen and (min-width: 544px) {
@@ -271,12 +271,12 @@
                     }
                     @media screen and (min-width: 992px) {
 
-                        top: 120px;
+                        top: 110px;
                         left: 22px;
                     }
                     @media screen and (min-width: 1200px) {
 
-                        top: 120px;
+                        top: 110px;
                         left: 28px;
                     }
                 }
@@ -293,7 +293,7 @@
                     @media screen and (min-width: 544px) {
 
                         top: initial;
-                        right: initial;
+                        // right: initial;
                         bottom: 4px;
                         left: 14px;
                     }
@@ -313,9 +313,73 @@
                         left: 28px;
                     }
                 }
+                .prjct-title-05 {
+
+                    -webkit-transform-origin: right;
+                    -ms-transform-origin: right;
+
+                    transform-origin: right;
+
+                    top: 20px;
+                    right: 15px;
+
+                    @media screen and (min-width: 544px) {
+
+                        top: initial;
+
+                        bottom: 100px;
+                        right: 12px;
+                    }
+                    @media screen and (min-width: 768px) {
+
+                        bottom: 115px;
+                        right: 15px;
+                    }
+                    @media screen and (min-width: 992px) {
+
+                        bottom: 120px;
+                        right: 20px;
+                    }
+                    @media screen and (min-width: 1200px) {
+
+                        bottom: 120px;
+                        right: 25px;
+                    }
+                }
+                .prjct-title-06 {
+
+                    -webkit-transform-origin: right;
+                    -ms-transform-origin: right;
+
+                    transform-origin: right;
+
+                    top: 20px;
+                    right: 15px;
+
+                    @media screen and (min-width: 544px) {
+
+                        top: 5px;
+                        right: 12px;
+                    }
+                    @media screen and (min-width: 768px) {
+
+                        top: 15px;
+                        right: 15px;
+                    }
+                    @media screen and (min-width: 992px) {
+
+                        top: 25px;
+                        right: 20px;
+                    }
+                    @media screen and (min-width: 1200px) {
+
+                        top: 25px;
+                        right: 25px;
+                    }
+                }
             }
         }
-        .prjct-img-01, .prjct-img-02, .prjct-img-03, .prjct-img-04 {
+        .prjct-img-01, .prjct-img-02, .prjct-img-03, .prjct-img-04, .prjct-img-05, .prjct-img-06 {
 
             background-size: cover;
             background-position: 50% 50%;
@@ -361,6 +425,16 @@
         .prjct-img-04 {
 
             background-image: url('../assets/img/prjct-home-4.jpg');
+
+        }
+        .prjct-img-05 {
+
+            background-image: url('../assets/img/prjct-home-5.jpg');
+
+        }
+        .prjct-img-06 {
+
+            background-image: url('../assets/img/prjct-home-6.jpg');
 
         }
         .prjct-up {
