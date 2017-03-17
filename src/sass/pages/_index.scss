@@ -42,15 +42,15 @@
 
         @media screen and (min-width: 768px) {
 
-            margin: 240px 0 270px 0;
+            margin: 240px 0 240px 0;
         }
         @media screen and (min-width: 992px) {
 
-            margin: 480px 0 300px 0;
+            margin: 480px 0 270px 0;
         }
         @media screen and (min-width: 1200px) {
 
-            margin: 560px 0 300px 0;
+            margin: 560px 0 270px 0;
         }
         h1 {
 
@@ -149,34 +149,10 @@
     }
     .home-content {
 
-        .prjct-row-01, .prjct-row-02, .prjct-row-03 {
-
-            &::after {
-                content: "";
-                display: table;
-                clear: both;
-            }
-        }
-        .prjct-row-01, .prjct-row-02  {
-
-            margin-bottom: 0;
-
-            @media screen and (min-width: 768px) {
-
-                margin-bottom: 120px;
-            }
-            @media screen and (min-width: 992px) {
-
-                margin-bottom: 200px;
-            }
-            @media screen and (min-width: 1200px) {
-
-            }
-        }
         .prjct-home {
-
+            width: 100%;
             position: relative;
-            margin-bottom: 30px;
+            margin-bottom: 60px;
 
             .prjct-link {
 
