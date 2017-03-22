@@ -102,8 +102,6 @@ gulp.task('default', function (callback) {
     runSequence('clear:cache',['sass','browserSync','watch'],callback);
 });
 gulp.task('build', function (callback) {
-    runSequence('clean:dist',['sass','useref','images','icons','favicon','fonts','dwnld' ],callback);
+    runSequence('clean:dist',['sass','useref','images','icons','favicon','fonts','dwnld'],callback);
 });
-
-
 gulp.task('deploy', require('./glp/deploy')(gulp, plugins));
