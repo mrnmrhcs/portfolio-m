@@ -85,6 +85,16 @@ header {
 
                 color: $c-nav-hover;
             }
+            &.active {
+
+                color: $c-nav-active;
+                text-decoration: underline;
+
+                &:hover {
+
+                    color: $c-nav-hover;
+                }
+            }
             @media screen and (min-width: 400px) {
 
                 font-size: ms(1);
