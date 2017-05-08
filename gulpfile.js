@@ -1,9 +1,9 @@
 'use strict';
 
 var gulp = require('gulp');
-var gutil = require( 'gulp-util' );
+var gutil = require('gulp-util');
 var gnf = require('gulp-npm-files');
-var rename = require("gulp-rename");
+var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var cssnano = require('gulp-cssnano');
 var sourcemaps = require('gulp-sourcemaps');
@@ -13,7 +13,7 @@ var gulpIf = require('gulp-if');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
-var ftp = require( 'vinyl-ftp' );
+var ftp = require('vinyl-ftp');
 var del = require('del');
 var plugins = require('gulp-load-plugins')();
 var runSequence = require('run-sequence');

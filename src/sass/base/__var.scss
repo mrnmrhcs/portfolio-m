@@ -2,10 +2,10 @@
 /*  Modular Scales
     =================================================== */
 
-    $ms-base:  24px;
-    $ms-ratio: $golden;
-    $ms-range: null;
-    $ms-fluid: true;
+    $modularscale: (
+        base: 24px,
+        ratio: $golden
+    );
 
 /*  Color 1
     =================================================== */
