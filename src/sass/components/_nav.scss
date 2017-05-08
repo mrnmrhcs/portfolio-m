@@ -27,7 +27,7 @@ nav {
     }
 }
 
-header {
+.menu {
 
     background: $c-nav-bg;
     opacity: 0;
@@ -143,7 +143,7 @@ html.open {
             }
         }
     }
-    header {
+    .menu {
 
         opacity: 1;
         visibility: visible;
