@@ -127,12 +127,26 @@ h3 {
         line-height: 40px;
     }
 }
+h4 {
+
+    font-size: ms(0);
+    line-height: 20px;
+
+    padding: 20px 0 20px 0;
+
+    @media screen and (min-width: 768px) {
+
+        line-height: 40px;
+    }
+}
 ul, ol {
 
     list-style-position: inside;
     color: $c-text;;
 
     margin: 0;
+
+    padding: 20px 0 20px 0;
 }
 p {
 

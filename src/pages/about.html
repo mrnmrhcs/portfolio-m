@@ -42,33 +42,59 @@
                 <li><a class="active" href="./about.html">About</a></li>
             </ul>
         </header>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="intro">
-                        <h1>About</h1>
-                        <p class="lead">I'm Marian Schramm, a design professional with an understanding of CSS3 &amp; HTML5 to build digital products in a clean, modern and usable manner.</p>
+        <main class="content">
+            <header class="intro">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>About</h1>
+                            <p class="lead">I'm Marian Schramm, a design professional with an understanding of CSS3 &amp; HTML5 to build digital products in a clean, modern and usable manner.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-10">
-                    <div class="content">
-                        <h2>Work Experience</h2>
-                        <p>For many years I've worked at Taikonauten Digital Agency where i have helped to build and design successful digital products for both small and large companies. </p>
-                        <h3>Interests and Capabilities</h3>
-                        <ul>
-                            <li>Interface Design</li>
-                            <li>Print Design</li>
-                            <li>Prototypes</li>
-                            <li>Styleguides</li>
-                            <li>UX Design</li>
-                            <li>Visual Design</li>
-                            <li>Web Design</li>
-                            <li>Wireframes</li>
-                        </ul>
+            </header>
+            <section class="info-skill">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Experience</h2>
+                            <p>For many years I've worked at Taikonauten Digital Agency where i have helped to build and design successful digital products for both small and large companies. </p>
+                            <h3>Interests and Capabilities</h3>
+                            <ul>
+                                <li>Interface Design</li>
+                                <li>Print Design</li>
+                                <li>Prototypes</li>
+                                <li>Styleguides</li>
+                                <li>UX Design</li>
+                                <li>Visual Design</li>
+                                <li>Web Design</li>
+                                <li>Wireframes</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+            <section class="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Contact</h2>
+                            <form action="/contact" method="post">
+                                <p>
+                                    <label>Name</label><br>
+                                    <input type="text" name="name" placeholder="Your name">
+                                </p>
+                                <p>
+                                    <label>Message</label><br>
+                                    <textarea name="message" rows="3" placeholder="Your message"></textarea>
+                                </p>
+                                <button>Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
         <script src="../js/main.min.js"></script>
     </body>
 </html>
