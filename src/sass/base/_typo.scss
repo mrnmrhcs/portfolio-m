@@ -41,9 +41,7 @@ h4, h5 {
 h1 {
 
     font-size: ms(2);
-
     line-height: 58px;
-
     font-weight: 900;
     letter-spacing: -2px;
 
@@ -52,7 +50,6 @@ h1 {
     @media screen and (min-width: 544px) {
 
         font-size: ms(2);
-        // letter-spacing: -3px;
         line-height: 58px;
 
         // padding: 120px 0 40px 0;
@@ -91,6 +88,8 @@ h2 {
     line-height: 20px;
     letter-spacing: -1px;
 
+    padding: 20px 0 40px 0;
+
     @media screen and (min-width: 544px) {
 
         font-size: ms(1);
@@ -103,12 +102,23 @@ h2 {
         letter-spacing: -3px;
         line-height: 60px;
     }
+    @media screen and (min-width: 992px) {
+
+        padding: 40px 0 40px 0;
+
+    }
+    @media screen and (min-width: 1200px) {
+
+        padding: 60px 0 40px 0;
+    }
 }
 h3 {
 
     font-size: ms(0);
     line-height: 20px;
     letter-spacing: -1px;
+
+    padding: 40px 0 40px 0;
 
     @media screen and (min-width: 768px) {
 
@@ -130,6 +140,9 @@ p {
 
     padding: 0 0 40px 0;
     margin: 0;
+
+
+
 }
 a {
 

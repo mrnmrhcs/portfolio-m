@@ -3,17 +3,17 @@
 
 #prjct-dav {
 
-    .prjct-content .row {
-        
-        overflow: visible;
+    .prjct-img-hero {
+
+        margin-bottom: 0;
     }
     .prjct-mobile-wrap {
 
-        padding-top: 0px;
+        margin-top: 0;
 
-        @media screen and (min-width: 840px) {
+        @media screen and (min-width: 768px) {
 
-            padding-top: 318px;
+            margin-top: 310px;
         }
     }
 }
