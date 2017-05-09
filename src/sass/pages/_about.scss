@@ -19,10 +19,19 @@ section {
 
     background-color: white;
 
-    padding-top: 60px;
+    padding-top: 40px;
+
+    @media screen and (min-width: 768px) {
+
+        padding-top: 40px;
+    }
+    @media screen and (min-width: 992px) {
+
+        padding-top: 50px;
+    }
 
     h2 {
-        color: $c-2;
+        color: $c-3;
     }
 
     ::-webkit-input-placeholder {   /* Chrome/Opera/Safari */
