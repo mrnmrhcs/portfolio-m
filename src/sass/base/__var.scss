@@ -1,11 +1,16 @@
-
 /*  Modular Scales
     =================================================== */
 
     $modularscale: (
+
         base: 24px,
         ratio: $golden
     );
+
+    // @debug ms(-1);
+    // @debug ms(0);
+    // @debug ms(1);
+    // @debug ms(2);
 
 /*  Color 1
     =================================================== */
@@ -13,7 +18,8 @@
     $c-white        :   #FFF;
 
     $c-1            :   #C8CBD2;
-    $c-2            :   #F0522B;
+    $c-2            :   #C2C5CC;
+    $c-3            :   #F3F3F5;
 
     $c-bg           :   #C8CBD2;
 
