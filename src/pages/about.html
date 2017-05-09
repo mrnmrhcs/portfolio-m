@@ -79,16 +79,16 @@
                     <div class="row">
                         <div class="col-12">
                             <h2>Contact</h2>
-                            <form action="/contact" method="post">
+                            <form id="form-contact" name="form-contact" method="post" action="/">
                                 <p>
-                                    <label>Name</label><br>
-                                    <input type="text" name="name" placeholder="Your name">
+                                    <label for="name">Name</label><br>
+                                    <input name="name" type="text" id="name" placeholder="Your name" tabindex="100">
                                 </p>
                                 <p>
-                                    <label>Message</label><br>
-                                    <textarea name="message" rows="6" placeholder="Your message"></textarea>
+                                    <label for="message">Message</label><br>
+                                    <textarea name="message" id="message" rows="6" placeholder="Your message" tabindex="110"></textarea>
                                 </p>
-                                <button class="btn btn-normal">Send</button>
+                                <input type="submit" class="btn btn-normal" value="Send" tabindex="120">
                             </form>
                         </div>
                     </div>

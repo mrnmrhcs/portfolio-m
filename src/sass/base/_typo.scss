@@ -87,7 +87,7 @@ h2 {
     line-height: 20px;
     letter-spacing: -1px;
 
-    padding: 20px 0 40px 0;
+    padding: 20px 0 20px 0;
 
     @media screen and (min-width: 544px) {
 
@@ -100,15 +100,17 @@ h2 {
         font-size: ms(2);
         letter-spacing: -3px;
         line-height: 60px;
+
+        padding: 40px 0 50px 0;
     }
     @media screen and (min-width: 992px) {
 
-        padding: 40px 0 40px 0;
+        padding: 40px 0 50px 0;
 
     }
     @media screen and (min-width: 1200px) {
 
-        padding: 40px 0 40px 0;
+        padding: 30px 0 50px 0;
     }
 }
 h3 {
@@ -117,13 +119,15 @@ h3 {
     line-height: 20px;
     letter-spacing: -1px;
 
-    padding: 40px 0 40px 0;
+    padding: 20px 0 20px 0;
 
     @media screen and (min-width: 768px) {
 
         font-size: ms(1);
         letter-spacing: -2px;
         line-height: 40px;
+
+        padding: 30px 0 30px 0;
     }
 }
 h4 {
@@ -156,16 +160,18 @@ p {
 }
 .lead {
 
-    font-size: ms(0);
-    line-height: 20px;
+    font-size: ms(1);
+    line-height: 50px;
     letter-spacing: -1px;
 
-    padding: 0 0 80px 0;
+    padding: 0 0 60px 0;
 
     @media screen and (min-width: 768px) {
 
         font-size: ms(2);
         line-height: 80px;
+
+        padding: 0 0 80px 0;
     }
 }
 a {
