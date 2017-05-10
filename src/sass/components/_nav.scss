@@ -20,13 +20,11 @@ nav {
 
         top: 60px;
     }
-
     path {
 
         transition: transform .4s .45s cubic-bezier(0.20, 0, 0.10, 0.95);
     }
 }
-
 .menu {
 
     background: $c-nav-bg;
