@@ -2,115 +2,23 @@
 /*  About Styles
     =================================================== */
 
-main {
+#about main {
 
-    // padding-bottom: 200px;
-}
-section {
+    padding-bottom: 200px;
 
-    padding-bottom: 100px;
+    .title {
 
-    &:last-of-type {
+        position: relative;
 
-        padding-bottom: 40px;
-    }
-}
-.contact {
+        .line {
 
-    background-color: $c-4;
-
-    padding-top: 40px;
-
-    @media screen and (min-width: 768px) {
-
-        padding-top: 60px;
-    }
-    @media screen and (min-width: 992px) {
-
-        padding-top: 60px;
-    }
-
-    h2 {
-        color: white;
-    }
-
-    ::-webkit-input-placeholder {   /* Chrome/Opera/Safari */
-        color: $c-4;
-    }
-    ::-moz-placeholder {            /* Firefox 19+ */
-        color: $c-4;
-    }
-    :-ms-input-placeholder {        /* IE 10+ */
-        color: $c-nav-link;
-    }
-    :-moz-placeholder {             /* Firefox 18- */
-        color: $c-nav-link;
-    }
-
-    form {
-
-        padding: 0px 0 20px 0;
-
-        @media screen and (min-width: 768px) {
-
-            padding: 40px 0 40px 0;
-
-        }
-
-        label {
-
-            font-size: 20px;
-            color: white;
-
-            padding: 0 0 20px 0;
             margin: 0;
-        }
-        input {
-
-            font-size: 20px;
-            background-color: $c-1;
-
-            width: 100%;
-            height: 70px;
-            border-width: 0px;
-
-            padding: 0 20px;
-
-            &:focus {
-
-                outline: 2px solid white;
-                // background-color: $c-3;
-            }
-            &.btn {
-
-                font-size: 16px;
-                background-color: black;
-                width: 160px;
-                padding: 0;
-
-                margin: 20px 0 40px 0;
-
-                &:hover {
-
-                    background-color: $c-btn-hover;
-                }
-            }
-        }
-        textarea {
-
-            font-size: 20px;
-            background-color: $c-1;
-
-            width: 100%;
-            border-width: 0px;
-
-            padding: 20px 20px;
-
-            &:focus {
-
-                outline: 2px solid white;
-                // background-color: $c-3;
-            }
+            position: absolute;
+            top: 50%;
+            right: 45px;
+            width: 35px;
+            height: 1px;
+            background: #fff;
         }
     }
 }

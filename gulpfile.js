@@ -21,14 +21,26 @@ var browserSync = require('browser-sync').create();
 
 //  development
 
+
 gulp.task('browserSync', function() {
     browserSync.init({
-        server: {
-            baseDir: "./src",
-            routes: {
-                "/node_modules": "node_modules",
-                "/browser-sync": "browser-sync"
-            }
+        host: 'portfolio-m.dev',
+        proxy: 'portfolio-m.dev',
+        port: 8013,
+
+        open: 'external',
+        browser: 'vivaldi',
+        logLevel: 'warn',
+
+        ui: false,
+        notify: false,
+        injectChanges: false,
+        ghostMode: false,
+        scrollProportionally: false,
+
+        routes: {
+            '/node_modules': 'node_modules',
+            '/browser-sync': 'browser-sync'
         }
     });
 });
