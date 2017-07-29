@@ -4,13 +4,6 @@
 
 #about main {
 
-    padding-bottom: 200px;
-
-    .intro {
-
-        padding-top: 100px;
-    }
-
     .title {
 
         position: relative;
@@ -38,9 +31,21 @@
 
         .info {
 
-            padding-bottom: 20px;
-        }
+            padding-bottom: 0px;
 
+            @include media-breakpoint-up(sm) {
+
+                padding-bottom: 40px;
+            }
+            @include media-breakpoint-up(md) {
+
+                padding-bottom: 20px;
+            }
+            @include media-breakpoint-up(lg) {
+
+                padding-bottom: 0px;
+            }
+        }
         .skill {
 
             padding-top: 0;
@@ -51,24 +56,23 @@
             }
             @include media-breakpoint-up(md) {
 
-                padding-top: 300px;
+                padding-top: 20px;
             }
             @include media-breakpoint-up(lg) {
 
-                padding-top: 350px;
+                padding-top: 420px;
             }
             @include media-breakpoint-up(xl) {
 
-                padding-top: 400px;
+                padding-top: 440px;
             }
-
             ul li {
 
-                font-size: 22px;
+                font-size: 21px;
 
                 @include media-breakpoint-up(sm) {
 
-                    font-size: 23px;
+                    font-size: 21px;
                 }
                 @include media-breakpoint-up(md) {
 
@@ -80,7 +84,7 @@
                 }
                 @include media-breakpoint-up(xl) {
 
-                    font-size: 23px;
+                    font-size: 21px;
                 }
             }
         }
