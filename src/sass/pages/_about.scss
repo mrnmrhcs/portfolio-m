@@ -6,19 +6,83 @@
 
     padding-bottom: 200px;
 
+    .intro {
+
+        padding-top: 100px;
+    }
+
     .title {
 
         position: relative;
 
+        h1 {
+
+            font-size: 18px;
+            line-height: 50px;
+            letter-spacing: -1px;
+
+            padding-left: 90px;
+        }
         .line {
 
             margin: 0;
             position: absolute;
             top: 50%;
-            right: 45px;
-            width: 35px;
+            left: 0px;
+            width: 70px;
             height: 1px;
             background: #fff;
+        }
+    }
+    .info-skill {
+
+        .info {
+
+            padding-bottom: 20px;
+        }
+
+        .skill {
+
+            padding-top: 0;
+
+            @include media-breakpoint-up(sm) {
+
+                padding-top: 0px;
+            }
+            @include media-breakpoint-up(md) {
+
+                padding-top: 300px;
+            }
+            @include media-breakpoint-up(lg) {
+
+                padding-top: 350px;
+            }
+            @include media-breakpoint-up(xl) {
+
+                padding-top: 400px;
+            }
+
+            ul li {
+
+                font-size: 22px;
+
+                @include media-breakpoint-up(sm) {
+
+                    font-size: 23px;
+                }
+                @include media-breakpoint-up(md) {
+
+                    font-size: 18px;
+                }
+                @include media-breakpoint-up(lg) {
+
+                    font-size: 21px;
+                }
+                @include media-breakpoint-up(xl) {
+
+                    font-size: 23px;
+                }
+            }
         }
     }
 }
