@@ -19,6 +19,7 @@ var plugins = require('gulp-load-plugins')();
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
 
+
 //  development
 
 
@@ -26,10 +27,10 @@ gulp.task('browserSync', function() {
     browserSync.init({
         host: 'portfolio-m.dev',
         proxy: 'portfolio-m.dev',
-        port: 8013,
+        port: 8020,
 
         open: 'external',
-        browser: 'vivaldi',
+        browser: 'google chrome',
         logLevel: 'warn',
 
         ui: false,
@@ -107,6 +108,11 @@ gulp.task('dwnld', function() {
 gulp.task('clean:dist', function() {
     return del.sync('dist');
 });
+
+//  deploy
+
+
+
 
 //  sequences
 
