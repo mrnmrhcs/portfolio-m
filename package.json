@@ -19,9 +19,9 @@
     },
     "dependencies": {
         "bootstrap": "^4.0.0-beta.2",
-        "modularscale-sass": "^3.0.2",
         "jquery": "^3.2.1",
-        "popper.js": "^1.12.7"
+        "modularscale-sass": "^3.0.2",
+        "popper.js": "^1.12.8"
     },
     "devDependencies": {
         "browser-sync": "^2.18.13",
