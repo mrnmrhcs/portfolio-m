@@ -141,16 +141,16 @@ gulp.task('dist:base', function() {
     return gulp.src(pkg.globs.src).pipe(gulp.dest(pkg.paths.dist.base));
 });
 
-gulp.task('dist:html', function() {
-    return gulp.src(pkg.paths.src.html + '*.html').pipe(gulp.dest(pkg.paths.dist.html));
+gulp.task('dist:js', function() {
+    return gulp.src(pkg.globs.js).pipe(gulp.dest(pkg.paths.dist.js));
 });
 
 gulp.task('dist:css', function() {
     return gulp.src(pkg.paths.src.css + '*.css').pipe(gulp.dest(pkg.paths.dist.css));
 });
 
-gulp.task('dist:js', function() {
-    return gulp.src(pkg.globs.js).pipe(gulp.dest(pkg.paths.dist.js));
+gulp.task('dist:html', function() {
+    return gulp.src(pkg.paths.src.html + '*.html').pipe(gulp.dest(pkg.paths.dist.html));
 });
 
 gulp.task('dist:favicons', () => {
