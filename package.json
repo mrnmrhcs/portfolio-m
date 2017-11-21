@@ -54,8 +54,8 @@
             "./src/js/bootstrap.bundle.min.js",
             "./src/js/main.min.js"
         ],
-        "src": [ 
-            "./src/index.html", 
+        "src": [
+            "./src/index.html",
             "./src/*.{png,ico}"
         ]
     },
