@@ -183,7 +183,7 @@ gulp.task('dist:dwnld', () => {
 
 //  deploy
 
-gulp.task('clean:ftp', function (callback) {
+gulp.task('clean:ftp', function (cb) {
     var conn                = ftp.create( {
         host:               gulpftp.config.host,
         user:               gulpftp.config.user,
@@ -194,8 +194,7 @@ gulp.task('clean:ftp', function (callback) {
         debug:              gutil.log,
         log:                gutil.log
     })
-    conn.rmdir('./dist')
-    callback();
+    conn.rmdir('.', cb)
 });
 
 gulp.task('upload:ftp', function (callback) {
@@ -212,7 +211,7 @@ gulp.task('upload:ftp', function (callback) {
         'dist/**/*',
         'dist/**'
     ]
-    gulp.src(globs, {base: '.', buffer: false })
+    gulp.src(globs, {base: './dist', buffer: false })
     .pipe(conn.dest('/'))
     callback();
 });
