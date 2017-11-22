@@ -9,8 +9,10 @@ const $ = require('gulp-load-plugins')({
     scope: ['devDependencies']
 });
 
-var browserSync = require('browser-sync').create();
-var gulpftp = require('./glp/config.js');
+var gutil                       = require('gulp-util');
+var browserSync                 = require('browser-sync').create();
+var ftp                         = require('vinyl-ftp');
+var gulpftp                     = require('./glp/config.js');
 
 //  development
 
@@ -211,9 +213,7 @@ gulp.task('upload:ftp', function (callback) {
         'dist/**/*',
         'dist/**'
     ]
-    gulp.src(globs, {base: './dist', buffer: false })
-    .pipe(conn.dest('/'))
-    callback();
+    return gulp.src(globs, {base: './dist', buffer: false }).pipe(conn.dest('/'))
 });
 
 //  watch
