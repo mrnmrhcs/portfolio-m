@@ -5,14 +5,27 @@ const pkg = require('./package.json');
 const gulp = require('gulp');
 
 const $ = require('gulp-load-plugins')({
-    pattern: ['*'],
-    scope: ['devDependencies']
+
+        pattern: ['*'],
+        scope: ['devDependencies']
+
 });
 
 var gutil                       = require('gulp-util');
 var browserSync                 = require('browser-sync').create();
 var ftp                         = require('vinyl-ftp');
 var gulpftp                     = require('./glp/config.js');
+
+var conn                        = ftp.create( {
+    host:                       gulpftp.config.host,
+    user:                       gulpftp.config.user,
+    password:                   gulpftp.config.pass,
+    parallel:                   2,
+    maxConnections:             2,
+    secure:                     false,
+    debug:                      gutil.log,
+    log:                        gutil.log
+});
 
 //  development
 
@@ -135,10 +148,6 @@ gulp.task('favicons:platforms', () => {
 
 //  production
 
-gulp.task('clean:dist', function() {
-    return $.del.sync('dist');
-});
-
 gulp.task('dist:base', function() {
     return gulp.src(pkg.globs.src).pipe(gulp.dest(pkg.paths.dist.base));
 });
@@ -183,43 +192,26 @@ gulp.task('dist:dwnld', () => {
     return gulp.src(pkg.paths.src.dwnld + '**/*').pipe(gulp.dest(pkg.paths.dist.dwnld));
 });
 
-//  deploy
+//  cleanup
 
-gulp.task('clean:ftp', function (cb) {
-    var conn                = ftp.create( {
-        host:               gulpftp.config.host,
-        user:               gulpftp.config.user,
-        password:           gulpftp.config.pass,
-        parallel:           3,
-        maxConnections:     3,
-        secure:             false,
-        debug:              gutil.log,
-        log:                gutil.log
-    })
+gulp.task('clean:local:dist', function() {
+    return $.del.sync('dist');
+});
+
+gulp.task('clean:server', function (cb) {
     conn.rmdir('.', cb)
 });
 
-gulp.task('upload:ftp', function (callback) {
-    var conn                = ftp.create( {
-        host:               gulpftp.config.host,
-        user:               gulpftp.config.user,
-        password:           gulpftp.config.pass,
-        parallel:           3,
-        maxConnections:     3,
-        secure:             false,
-        log:                gutil.log
-    })
-    var globs = [
-        'dist/**/*',
-        'dist/**'
-    ]
-    return gulp.src(globs, {base: './dist', buffer: false }).pipe(conn.dest('/'))
+//  deploy
+
+gulp.task('deploy:server', function () {
+    return gulp.src(pkg.globs.serverDeploy, {base: './dist', buffer: false }).pipe(conn.dest('/'))
 });
 
 //  watch
 
 gulp.task('watch', ['browserSync'], () => {
-    gulp.watch([pkg.paths.src.scss + '*.scss'], ['scss']);
+    gulp.watch([pkg.paths.src.scss + '**/*.scss'], ['scss']);
     gulp.watch([pkg.paths.src.js + 'main.js'], ['js']);
     gulp.watch([pkg.paths.src.html + '*.{html,htm}'], browserSync.reload);
     gulp.watch([pkg.paths.src.base + '*.{html,htm}'], browserSync.reload);
@@ -232,11 +224,11 @@ gulp.task('favicons', function (cb) {
 });
 
 gulp.task('build', function (cb) {
-    $.runSequence('clean:dist', ['dist:base', 'dist:html', 'dist:css', 'dist:js', 'dist:favicons', 'dist:icons', 'dist:fonts', 'dist:img', 'dist:dwnld'], cb);
+    $.runSequence('clean:local:dist', ['dist:base', 'dist:html', 'dist:css', 'dist:js', 'dist:favicons', 'dist:icons', 'dist:fonts', 'dist:img', 'dist:dwnld'], cb);
 });
 
 gulp.task('deploy', function (cb) {
-    $.runSequence('clean:ftp', ['upload:ftp'], cb);
+    $.runSequence('clean:server', ['deploy:server'], cb);
 });
 
 gulp.task('default', function (cb) {

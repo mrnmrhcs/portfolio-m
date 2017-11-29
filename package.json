@@ -57,6 +57,10 @@
         "src": [
             "./src/index.html",
             "./src/*.{png,ico}"
+        ],
+        "serverDeploy": [
+            "dist/**/*",
+            "dist/**"
         ]
     },
     "urls": {
