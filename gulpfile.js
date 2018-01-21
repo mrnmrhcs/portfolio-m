@@ -1,10 +1,8 @@
 "use strict";
 
-const pkg = require('./package.json');
-
-const gulp = require('gulp');
-
-const $ = require('gulp-load-plugins')({
+const pkg                       = require('./package.json');
+const gulp                      = require('gulp');
+const $                         = require('gulp-load-plugins')({
 
         pattern: ['*'],
         scope: ['devDependencies']
@@ -31,13 +29,15 @@ var conn                        = ftp.create( {
 
 gulp.task('browserSync', function () {
     browserSync.init({
-        host:                   'portfolio-m.dev',
-        proxy:                  'portfolio-m.dev',
+        host:                   'portfolio-m.test',
+        proxy:                  'portfolio-m.test',
         port:                   8010,
 
-        open:                   false,
         logLevel:               'info',
         logPrefix:              'portfolio-m',
+
+        open:                   'external',
+        browser:                "google chrome",
 
         ui:                     false,
         notify:                 false,
