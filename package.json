@@ -1,106 +1,107 @@
 {
-    "name": "portfolio-m",
-    "version": "1.0.0",
-    "description": "Code/Design Work Showcase",
-    "main": "gulpfile.js",
-    "author": "Marian Schramm",
-    "license": "ISC",
-    "paths": {
-        "src": {
-            "base": "./src/",
-            "html": "./src/html/",
-            "scss": "./src/scss/",
-            "css": "./src/css/",
-            "js": "./src/js/",
-            "favicons": "./src/assets/favicons/",
-            "icons": "./src/assets/icons/svg/",
-            "fonts": "./src/assets/fonts/",
-            "img": "./src/assets/img/",
-            "dwnld": "./src/assets/dwnld/"
-        },
-        "dist": {
-            "base": "./dist/",
-            "html": "./dist/html/",
-            "css": "./dist/css/",
-            "js": "./dist/js/",
-            "favicons": "./dist/assets/favicons/",
-            "icons": "./dist/assets/icons/svg/",
-            "fonts": "./dist/assets/fonts/",
-            "img": "./dist/assets/img/",
-            "dwnld": "./dist/assets/dwnld/"
-        },
-        "favicon": {
-            "src": "./src/assets/favicons/favicon_src.png",
-            "basedest": "./src/",
-            "basepath": "/",
-            "platformsdest": "./src/assets/favicons",
-            "platformspath": "/assets/favicons"
-        }
+  "name": "portfolio-m",
+  "version": "1.0.0",
+  "description": "Code/Design Work Showcase",
+  "main": "gulpfile.js",
+  "author": "Marian Schramm",
+  "license": "ISC",
+  "paths": {
+    "src": {
+      "base": "./src/",
+      "html": "./src/html/",
+      "scss": "./src/scss/",
+      "css": "./src/css/",
+      "js": "./src/js/",
+      "favicons": "./src/assets/favicons/",
+      "icons": "./src/assets/icons/svg/",
+      "fonts": "./src/assets/fonts/",
+      "img": "./src/assets/img/",
+      "dwnld": "./src/assets/dwnld/"
     },
-    "vars": {
-        "scssName": "main.scss",
-        "cssName": "main.min.css",
-        "jsName": "main.js"
+    "dist": {
+      "base": "./dist/",
+      "html": "./dist/html/",
+      "css": "./dist/css/",
+      "js": "./dist/js/",
+      "favicons": "./dist/assets/favicons/",
+      "icons": "./dist/assets/icons/svg/",
+      "fonts": "./dist/assets/fonts/",
+      "img": "./dist/assets/img/",
+      "dwnld": "./dist/assets/dwnld/"
     },
-    "globs": {
-        "pluginJs": [
-            "node_modules/jquery/dist/jquery.min.js",
-            "node_modules/jquery/dist/jquery.min.map",
-            "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-            "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map"
-        ],
-        "js": [
-            "./src/js/jquery.min.js",
-            "./src/js/bootstrap.bundle.min.js",
-            "./src/js/main.min.js"
-        ],
-        "src": [
-            "./src/index.html",
-            "./src/*.{png,ico}"
-        ],
-        "serverDeploy": [
-            "dist/**/*",
-            "dist/**"
-        ]
-    },
-    "urls": {
-        "live": "http://m.kaimberg.com/",
-        "local": "http://portfolio-m.dev/"
-    },
-    "dependencies": {
-        "bootstrap": "^4.0.0",
-        "jquery": "^3.3.1",
-        "modularscale-sass": "^3.0.4"
-    },
-    "devDependencies": {
-        "browser-sync": "^2.23.5",
-        "del": "^3.0.0",
-        "gulp": "^3.9.1",
-        "gulp-autoprefixer": "^4.1.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-cssnano": "^2.1.2",
-        "gulp-favicons": "^2.2.7",
-        "gulp-if": "^2.0.2",
-        "gulp-imagemin": "^4.1.0",
-        "gulp-load-plugins": "^1.5.0",
-        "gulp-rename": "^1.2.2",
-        "gulp-sass": "^3.1.0",
-        "gulp-size": "^2.1.0",
-        "gulp-sourcemaps": "^2.6.3",
-        "gulp-uglify": "^3.0.0",
-        "gulp-util": "^3.0.8",
-        "run-sequence": "^2.2.1",
-        "vinyl-ftp": "^0.6.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/mrnschrmm/portfolio-m.git"
-    },
-    "bugs": {
-        "url": "https://github.com/mrnschrmm/portfolio-m/issues"
-    },
-    "scripts": {
-        "start": "gulp",
-        "build": "gulp build"
+    "favicon": {
+      "src": "./src/assets/favicons/favicon_src.png",
+      "basedest": "./src/",
+      "basepath": "/",
+      "platformsdest": "./src/assets/favicons",
+      "platformspath": "/assets/favicons"
     }
+  },
+  "vars": {
+    "scssName": "main.scss",
+    "cssName": "main.min.css",
+    "jsName": "main.js"
+  },
+  "globs": {
+    "pluginJs": [
+      "node_modules/jquery/dist/jquery.min.js",
+      "node_modules/jquery/dist/jquery.min.map",
+      "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map"
+    ],
+    "js": [
+      "./src/js/jquery.min.js",
+      "./src/js/bootstrap.bundle.min.js",
+      "./src/js/main.min.js"
+    ],
+    "src": [
+      "./src/index.html",
+      "./src/*.{png,ico}"
+    ],
+    "serverDeploy": [
+      "dist/**/*",
+      "dist/**"
+    ]
+  },
+  "urls": {
+    "live": "http://m.kaimberg.com/",
+    "local": "http://portfolio-m.dev/"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.1",
+    "modularscale-sass": "^3.0.4"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.23.5",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-favicons": "^2.2.7",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-size": "^3.0.0",
+    "gulp-sourcemaps": "^2.6.3",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "run-sequence": "^2.2.1",
+    "vinyl-ftp": "^0.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrnschrmm/portfolio-m.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mrnschrmm/portfolio-m/issues"
+  },
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  }
 }
