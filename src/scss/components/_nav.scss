@@ -29,9 +29,7 @@ nav {
 
     background: $c-nav-bg;
     opacity: 0;
-    visibility: hidden;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    display: none;
 
     position: fixed;
     top: 0;
@@ -120,7 +118,7 @@ nav {
     }
 }
 
-/*  Behavior
+/*   #Behavior
     =================================================== */
 
 html.open {
@@ -144,7 +142,9 @@ html.open {
     .menu {
 
         opacity: 1;
-        visibility: visible;
+        display: block;
+        overflow-y: scroll;
+        overflow-x: hidden;
         transition: all .5s cubic-bezier(0.80, 0.05, 0.35, 1.00);
     }
     #ico-object-top {
