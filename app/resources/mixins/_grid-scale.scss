@@ -1,0 +1,50 @@
+////////////////////////////////////////////////////////////////////////////////
+//  MIXIN-GRID-SCALE
+////////////////////////////////////////////////////////////////////////////////
+
+@mixin grid-scale(
+  $columns,
+  $alignment: flex-start,
+  $gutter-horizontal: $gutter-width,
+  $gutter-vertical: $gutter-width
+) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: $alignment;
+  width: 100%;
+
+  > * {
+    width: calc((#{100% / $columns}) -
+    (#{$columns - 1} / #{$columns} * #{$gutter-horizontal}));
+
+    &:nth-child(n) {
+      margin-right: $gutter-horizontal;
+      margin-top: 0;
+    }
+
+    &:nth-child(1n + #{$columns + 1}) {
+      margin-top: $gutter-vertical;
+    }
+
+    &:nth-child(#{$columns}n) {
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@mixin reset-grid {
+  display: block;
+
+  > * {
+    width: auto;
+
+    &:nth-child(n) {
+      margin-right: 0;
+      margin-top: 0;
+    }
+  }
+}

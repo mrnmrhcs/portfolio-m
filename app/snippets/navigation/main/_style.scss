@@ -1,0 +1,104 @@
+[is="navigation-main"] {
+  nav {
+    text-align: center;
+    position: fixed;
+    top: 40px;
+    left: 50vw;
+    z-index: 999;
+    line-height: 20px;
+    height: 20px;
+    width: 12px;
+    margin-left: -6px;
+
+    @media screen and (min-width: 400px) {
+      top: 60px;
+    }
+    path {
+      transition: transform 0.4s 0.45s cubic-bezier(0.2, 0, 0.1, 0.95);
+    }
+  }
+  .menu {
+    background: $c-nav-bg;
+    opacity: 0;
+    display: none;
+
+    @at-root .snippet-isOpen#{&} {
+      display: block;
+      opacity: 1;
+      overflow: scroll;
+    }
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 777;
+
+    height: 100vh;
+    width: 100vw;
+
+    transform: translate3d(0, 0, 0);
+    transition: all 0.5s cubic-bezier(0.8, 0.05, 0.35, 1);
+
+    ul {
+      list-style: none;
+      text-align: left;
+      padding: 100px 20px 30px 20px;
+
+      @media screen and (min-width: 400px) {
+        padding: 240px 40px 80px 40px;
+      }
+      @media screen and (min-width: 640px) {
+        padding: 280px 40px 100px 40px;
+      }
+      @media screen and (min-width: 840px) {
+        padding: 180px 80px 120px 80px;
+      }
+      @media screen and (min-width: 1200px) {
+        padding: 180px 100px 140px 100px;
+      }
+      a {
+        font-family: "Simplon";
+        font-size: ms(0);
+        line-height: 40px;
+        font-weight: 700;
+        letter-spacing: -1.25px;
+        color: $c-nav-link;
+        text-decoration: none;
+
+        display: block;
+        position: relative;
+
+        &:hover {
+          color: $c-nav-hover;
+        }
+        &.active {
+          text-decoration: underline;
+
+          &:hover {
+            color: $c-nav-hover;
+          }
+        }
+        @media screen and (min-width: 400px) {
+          font-size: ms(1);
+          letter-spacing: -1px;
+          line-height: 50px;
+        }
+        @media screen and (min-width: 640px) {
+          font-size: ms(2);
+          letter-spacing: -4px;
+          line-height: 80px;
+        }
+        @media screen and (min-width: 840px) {
+          font-size: ms(3);
+          letter-spacing: -8px;
+          line-height: 120px;
+        }
+        @media screen and (min-width: 1200px) {
+          font-size: ms(4);
+          letter-spacing: -10px;
+          line-height: 180px;
+        }
+      }
+    }
+  }
+}

@@ -1,21 +1,19 @@
-# OSX system files #
-####################
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
+# FOLDER
+node_modules
+db
+dist
+backup
+
+# FILES
 .vscode
-ehthumbs.db
-Thumbs.db
 
-# Git #
-#######
-
+# GIT/LOGS/DB
 *.git
+*.log
+*.sql
+*.sqlite
 
-# Packages #
-############
+# PACKAGES
 *.7z
 *.dmg
 *.gz
@@ -25,62 +23,21 @@ Thumbs.db
 *.tar
 *.zip
 
-# Logs and databases #
-######################
-*.log
-*.sql
-*.sqlite
-
-# Wordpress #
-#############
-
-sitemap.xml
-sitemap.xml.gz
-wp-config.php
-wp-content/advanced-cache.php
-wp-content/backup-db/
-wp-content/backups/
-wp-content/blogs.dir/
-wp-content/cache/
-wp-content/upgrade/
-wp-content/uploads/
-wp-content/wp-cache-config.php
-wp-content/plugins/hello.php
-
-/readme.html
-/license.txt
-
-# Temporary #
-#############
-
-tmp
-.grunt
-
-# PHPStorm #
-############
-
-.idea/
-
-# NPM & BOWER #
-###############
-
-node_modules/
-bower_components/
-
-# SASS #
-########
-
-.sass-cache/
-*.css.map
-
-# Composer #
-############
-
-composer.phar
-composer.lock
-vendor/
-
-# CUSTOM #
-##########
-
-glp/
+# SYSTEM
+._*
+.DS_Store
+.AppleDouble
+.LSOverride
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+.apdisk
+Network Trash Folder
+Temporary Items
+Icon

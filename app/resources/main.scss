@@ -1,0 +1,33 @@
+////////////////////////////////////////////////////////////////////////////////
+// MAIN
+////////////////////////////////////////////////////////////////////////////////
+
+// VENDOR
+// -------------------------------------------------------------
+
+@import 
+    'node_modules/bootstrap/scss/bootstrap',
+    'node_modules/modularscale-sass/libsass/scss/main';
+
+// ABSTRACTS
+// -------------------------------------------------------------
+
+@import
+  'variables',
+  'mixins/font-face',
+  'mixins/rwd-scale',
+  'mixins/grid-scale';
+
+// BASE
+// -------------------------------------------------------------
+
+@import
+  'styles/base',
+  'styles/interaction',
+  'styles/layout';
+
+// SNIPPETS
+// -------------------------------------------------------------
+
+@import
+  '../snippets/navigation/inc';

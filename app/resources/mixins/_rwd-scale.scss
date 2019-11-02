@@ -1,0 +1,46 @@
+////////////////////////////////////////////////////////////////////////////////
+//  MIXIN-RESPONSIVE-SCALE
+////////////////////////////////////////////////////////////////////////////////
+
+//  Scale CSS values along a responsive scale relative to the viewport
+//
+//  EXAMPLE
+//  ----------------------------------------------------------------------------------------------
+//  rwd-scale('font-size', 14px, 20px, 320px, 1366px)
+//  rwd-scale('padding-top' 'padding-bottom', 2rem, 4rem, 320px, 1366px)
+
+@mixin rwd-scale($properties, $min-value, $max-value, $min-screen: $breakpoint-mobile-horizontal, $max-screen: $breakpoint-desktop-wide, $font-base-size: 16) {
+
+  // MINIMUM VALUE
+  @each $property in $properties {
+    @if unit($min-value) == 'px' {
+      #{$property}: (strip-unit($min-value / $font-base-size) * 1rem);
+    } @else if unit($min-value) == 'rem' or unit($min-value) == '%' {
+      #{$property}: $min-value;
+    }
+  }
+
+  // INTERPOLATION
+  @media screen and (min-width: $min-screen) {
+    @each $property in $properties {
+      @if unit($min-value) == 'px' {
+        #{$property}: calc(#{(strip-unit($min-value / $font-base-size) * 1rem)} + (#{strip-unit($max-value - $min-value)} / #{$font-base-size}) * ((100vw - #{(strip-unit($min-screen / $font-base-size) * 1rem)}) / (#{strip-unit($max-screen - $min-screen)} / #{$font-base-size})));
+      } @else if unit($min-value) == 'rem' {
+        #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * ((100vw - #{(strip-unit($min-screen / $font-base-size) * 1rem)}) / (#{strip-unit($max-screen - $min-screen)} / #{$font-base-size})));
+      } @else if unit($min-value) == '%' {
+        #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * ((100vw - #{$min-screen}) / #{strip-unit($max-screen - $min-screen)}));
+      }
+    }
+  }
+
+  // MAXIMUM VALUE
+  @media screen and (min-width: $max-screen) {
+    @each $property in $properties {
+      @if unit($max-value) == 'px' {
+        #{$property}: (strip-unit($max-value / $font-base-size) * 1rem);
+      } @else if unit($max-value) == 'rem' or unit($max-value) == '%' {
+        #{$property}: $max-value;
+      }
+    }
+  }
+}

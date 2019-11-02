@@ -1,107 +1,91 @@
 {
   "name": "portfolio-m",
-  "version": "1.0.0",
-  "description": "Code/Design Work Showcase",
+  "description": "clean",
+  "version": "2.0.0",
   "main": "gulpfile.js",
-  "author": "Marian Schramm",
-  "license": "ISC",
-  "paths": {
-    "src": {
-      "base": "./src/",
-      "html": "./src/html/",
-      "scss": "./src/scss/",
-      "css": "./src/css/",
-      "js": "./src/js/",
-      "favicons": "./src/assets/favicons/",
-      "icons": "./src/assets/icons/svg/",
-      "fonts": "./src/assets/fonts/",
-      "img": "./src/assets/img/",
-      "dwnld": "./src/assets/dwnld/"
-    },
-    "dist": {
-      "base": "./dist/",
-      "html": "./dist/html/",
-      "css": "./dist/css/",
-      "js": "./dist/js/",
-      "favicons": "./dist/assets/favicons/",
-      "icons": "./dist/assets/icons/svg/",
-      "fonts": "./dist/assets/fonts/",
-      "img": "./dist/assets/img/",
-      "dwnld": "./dist/assets/dwnld/"
-    },
-    "favicon": {
-      "src": "./src/assets/favicons/favicon_src.png",
-      "basedest": "./src/",
-      "basepath": "/",
-      "platformsdest": "./src/assets/favicons",
-      "platformspath": "/assets/favicons"
-    }
+  "scripts": {
+    "start": "gulp --dev",
+    "build": "gulp --prod",
+    "start.debug": "gulp --dev --debug",
+    "build.debug": "gulp --prod --debug"
   },
-  "vars": {
-    "scssName": "main.scss",
-    "cssName": "main.min.css",
-    "jsName": "main.js"
-  },
-  "globs": {
-    "pluginJs": [
-      "node_modules/jquery/dist/jquery.min.js",
-      "node_modules/jquery/dist/jquery.min.map",
-      "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-      "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map"
+  "browserslist": {
+    "production": [
+      "defaults"
     ],
-    "js": [
-      "./src/js/jquery.min.js",
-      "./src/js/bootstrap.bundle.min.js",
-      "./src/js/main.min.js"
-    ],
-    "src": [
-      "./src/index.html",
-      "./src/*.{png,ico}"
-    ],
-    "serverDeploy": [
-      "dist/**/*",
-      "dist/**"
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   },
-  "urls": {
-    "live": "http://m.kaimberg.com/",
-    "local": "http://portfolio-m.dev/"
+  "devDependencies": {
+    "browser-sync": "2.26.7",
+    "del": "5.1.0",
+    "eslint": "6.6.0",
+    "eslint-config-standard": "14.1.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-node": "10.0.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.1",
+    "esm": "3.2.25",
+    "gulp": "4.0.2",
+    "gulp-autoprefixer": "7.0.1",
+    "gulp-concat": "2.6.1",
+    "gulp-debug": "4.0.0",
+    "gulp-eslint": "6.0.0",
+    "gulp-favicons": "2.3.1",
+    "gulp-if": "3.0.0",
+    "gulp-imagemin": "6.1.1",
+    "gulp-phpcs": "3.1.0",
+    "gulp-rename": "1.4.0",
+    "gulp-sass": "4.0.2",
+    "gulp-stylelint": "10.0.0",
+    "gulp-uglify-es": "1.0.4",
+    "minimist": "1.2.0",
+    "node-sass": "4.12.0",
+    "stylelint": "11.1.1",
+    "stylelint-order": "3.1.1",
+    "stylelint-scss": "3.12.0"
   },
   "dependencies": {
-    "bootstrap": "^4.1.1",
-    "jquery": "^3.3.1",
-    "modularscale-sass": "^3.0.4",
-    "popper.js": "^1.14.3"
+    "body-scroll-lock": "2.6.4",
+    "bootstrap": "4.1.1",
+    "document-register-element": "1.14.3",
+    "jquery": "3.4.1",
+    "modularscale-sass": "3.0.4",
+    "popper.js": "1.14.3"
   },
-  "devDependencies": {
-    "browser-sync": "^2.24.4",
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-cssnano": "^2.1.3",
-    "gulp-favicons": "^2.2.7",
-    "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^4.1.0",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-rename": "^1.2.3",
-    "gulp-sass": "^3.1.0",
-    "gulp-size": "^3.0.0",
-    "gulp-sourcemaps": "^2.6.3",
-    "gulp-uglify": "^3.0.0",
-    "gulp-util": "^3.0.8",
-    "run-sequence": "^2.2.1",
-    "vinyl-ftp": "^0.6.0"
+  "stylelint": {
+    "extends": "./.stylelintrc",
+    "ignoreFiles": [
+      "dist/**",
+      "backup/**"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true
+    },
+    "extends": "eslint-config-standard",
+    "rules": {
+      "camelcase": "off",
+      "no-unneeded-ternary": "off",
+      "no-unused-vars": "off",
+      "spaced-comment": "off"
+    }
+  },
+  "eslintIgnore": [
+    "dist/**",
+    "backup/**"
+  ],
+  "author": "Marian Schramm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrnschrmm/portfolio-m/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mrnschrmm/portfolio-m.git"
-  },
-  "bugs": {
-    "url": "https://github.com/mrnschrmm/portfolio-m/issues"
-  },
-  "scripts": {
-    "start": "gulp",
-    "build": "gulp build"
   }
 }
