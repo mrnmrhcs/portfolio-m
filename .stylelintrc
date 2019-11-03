@@ -13,6 +13,7 @@
       "always",
       {
         "except": [
+          "blockless-after-blockless",
           "first-nested"
         ]
       }
