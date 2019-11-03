@@ -5,7 +5,6 @@
 // VENDOR
 // -------------------------------------------------------------
 
-// prettier-ignore
 @import
   'node_modules/bootstrap/scss/bootstrap',
   'node_modules/modularscale-sass/libsass/scss/main';
@@ -13,7 +12,6 @@
 // ABSTRACTS
 // -------------------------------------------------------------
 
-// prettier-ignore
 @import
   'variables',
   'mixins/font-face',
@@ -23,7 +21,6 @@
 // BASE
 // -------------------------------------------------------------
 
-// prettier-ignore
 @import
   'styles/base',
   'styles/interaction',
@@ -32,6 +29,5 @@
 // SNIPPETS
 // -------------------------------------------------------------
 
-// prettier-ignore
 @import
   '../snippets/navigation/inc';

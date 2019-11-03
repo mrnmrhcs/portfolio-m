@@ -22,7 +22,7 @@ module.exports = {
   vendor: {
     dest: 'dist',
     head: [
-      'node_modules/document-register-element/build/document-register-element.js',
+      'node_modules/document-register-element/build/document-register-element.js'
     ],
     src: [
       'node_modules/jquery/dist/jquery.js',
