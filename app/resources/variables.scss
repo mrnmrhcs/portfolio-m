@@ -1,43 +1,42 @@
 /*  Modular Scales
-    =================================================== */
+  =================================================== */
 
-    $modularscale: (
+$modularscale: (
+  base: 24px,
+  ratio: $golden
+);
 
-        base: 24px,
-        ratio: $golden
-    );
-
-    // @debug ms(-1);
-    // @debug ms(0);
-    // @debug ms(1);
-    // @debug ms(2);
+// @debug ms(-1);
+// @debug ms(0);
+// @debug ms(1);
+// @debug ms(2);
 
 /*  Color 1
-    =================================================== */
+  =================================================== */
 
-    $c-white        :   #FFF;
+$c-white: #fff;
 
-    $c-1            :   #C8CBD2;
-    $c-2            :   #C2C5CC;
-    $c-3            :   #F3F3F5;
-    $c-4            :   #B4B7BF;
+$c-1: #c8cbd2;
+$c-2: #c2c5cc;
+$c-3: #f3f3f5;
+$c-4: #b4b7bf;
 
-    $c-bg           :   #C8CBD2;
+$c-bg: #c8cbd2;
 
-    $c-headline     :   #fff;
-    $c-text         :   #18181A;
-    $c-link         :   #FBF88F;
-    $c-hover        :   #18181A;
+$c-headline: #fff;
+$c-text: #18181a;
+$c-link: #fbf88f;
+$c-hover: #18181a;
 
-    $c-nav-link     :   #C8CBD2;
-    $c-nav-hover    :   #18181A;
-    $c-nav-active   :   #61616b;
-    $c-nav-bg       :   #FFF;
+$c-nav-link: #c8cbd2;
+$c-nav-hover: #18181a;
+$c-nav-active: #61616b;
+$c-nav-bg: #fff;
 
-    $c-btn-link     :   #18181A;
-    $c-btn-hover    :   #F8F7CB;
+$c-btn-link: #18181a;
+$c-btn-hover: #f8f7cb;
 
-    $c-ico-link     :   #FFF;
-    $c-ico-hover    :   #18181A;
+$c-ico-link: #fff;
+$c-ico-hover: #18181a;
 
-    $c-bg-object    :   #FFF;
+$c-bg-object: #fff;

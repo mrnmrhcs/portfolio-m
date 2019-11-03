@@ -1,0 +1,10 @@
+{
+  "name": "mrnschrmm/portfolio-m",
+  "description": "web",
+  "config": {
+    "optimize-autoloader": false
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "3.5.2"
+  }
+}

@@ -3,8 +3,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 .btn {
-  border: 0;
   appearance: none;
+  border: 0;
   border-radius: 0;
   border-width: 0;
   cursor: pointer;
@@ -16,49 +16,49 @@
   text-decoration: none;
 
   &:-moz-focusring {
-    outline: 0;
     color: transparent;
+    outline: 0;
     text-shadow: 0 0 0 #000;
   }
+
   &:focus {
     box-shadow: none;
     outline: 0;
   }
+
   &:hover {
     #ico-menu {
-      color: white;
+      color: #fff;
     }
+
     #ico-link {
       color: $c-ico-hover;
     }
   }
 }
+
 .btn-circle {
   background-color: $c-btn-link;
   border-radius: 50%;
   display: block;
-
-  width: 100px;
   height: 100px;
-  padding: 28px;
   margin: 0 auto;
+  padding: 28px;
+  width: 100px;
 
   &:hover {
     background-color: $c-btn-hover;
   }
 }
+
 .btn-normal {
-  font-size: 16px;
-  color: $c-ico-link;
-
   background-color: $c-btn-link;
-
+  color: $c-ico-link;
   display: block;
-
-  width: 140px;
+  font-size: 16px;
   height: 60px;
-
-  margin: 40px 0 40px 0;
+  margin: 40px 0;
+  width: 140px;
 
   &:hover {
     background-color: $c-btn-hover;
@@ -71,6 +71,5 @@
 
 #btn-menu {
   background-color: transparent;
-
   height: 20px;
 }

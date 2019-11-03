@@ -1,6 +1,6 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/document/header/index.php'; ?>
 
-<main id="prjct-art" class="prjct content">
+<main class="prjct prjct-art content">
     <div class="prjct-header">
         <div class="container">
             <div class="row">

@@ -41,23 +41,25 @@
     "gulp-rename": "1.4.0",
     "gulp-sass": "4.0.2",
     "gulp-stylelint": "10.0.0",
-    "gulp-uglify-es": "1.0.4",
+    "gulp-uglify-es": "2.0.0",
     "minimist": "1.2.0",
-    "node-sass": "4.12.0",
+    "node-sass": "4.13.0",
     "stylelint": "11.1.1",
     "stylelint-order": "3.1.1",
-    "stylelint-scss": "3.12.0"
+    "stylelint-scss": "3.12.1"
   },
   "dependencies": {
     "body-scroll-lock": "2.6.4",
     "bootstrap": "4.1.1",
     "document-register-element": "1.14.3",
     "jquery": "3.4.1",
-    "modularscale-sass": "3.0.4",
-    "popper.js": "1.14.3"
+    "modularscale-sass": "3.0.10",
+    "popper.js": "1.16.0"
   },
   "stylelint": {
-    "extends": "./.stylelintrc",
+    "extends": [
+      "./.stylelintrc"
+    ],
     "ignoreFiles": [
       "dist/**",
       "backup/**"
@@ -67,7 +69,9 @@
     "env": {
       "browser": true
     },
-    "extends": "eslint-config-standard",
+    "extends": [
+      "eslint-config-standard"
+    ],
     "rules": {
       "camelcase": "off",
       "no-unneeded-ternary": "off",

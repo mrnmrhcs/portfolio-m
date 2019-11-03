@@ -3,8 +3,6 @@
   <description>Coding Standards</description>
 
   <exclude-pattern>node_modules/*</exclude-pattern>
-  <exclude-pattern>app/snippets/*.php</exclude-pattern>
-  <exclude-pattern>app/templates/*.php</exclude-pattern>
   <exclude-pattern>backup/*</exclude-pattern>
   <exclude-pattern>dist/*</exclude-pattern>
 
