@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "body-scroll-lock": "2.6.4",
-    "bootstrap": "4.1.1",
+    "bootstrap": "4.3.1",
     "document-register-element": "1.14.3",
     "jquery": "3.4.1",
     "modularscale-sass": "3.0.10",
