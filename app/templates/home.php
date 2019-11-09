@@ -4,9 +4,9 @@
   <section class="home-layout">
     <header class="home-header">
       <h1>Code<br>____ Dsgn</h1>
-      <a class="hero-teaser-link" href="/templates/prjct-2.php">
-        <div class="prjct-hero-img">
-          <div class="prjct-title">
+      <a class="hero-teaser-link" href="/templates/project-2.php">
+        <div class="project-hero-img">
+          <div class="project-title">
             <span>Universal Music Pitch</span>
           </div>
         </div>
@@ -15,54 +15,54 @@
     <main class="home-main">
       <div class="list">
         <div class="list-item">
-          <article class="prjct-home prjct-up prjct-img-01">
-            <a class="prjct-link" href="/templates/prjct-3.php">
-              <div class="prjct-title prjct-title-01">
+          <article class="project-home project-up project-img-01">
+            <a class="project-link" href="/templates/project-3.php">
+              <div class="project-title project-title-01">
                 <span>Behance Case</span>
               </div>
             </a>
           </article>
         </div>
         <div class="list-item">
-          <article class="prjct-home prjct-img-02">
-            <a class="prjct-link" href="/templates/prjct-4.php">
-              <div class="prjct-title prjct-title-02">
+          <article class="project-home project-img-02">
+            <a class="project-link" href="/templates/project-4.php">
+              <div class="project-title project-title-02">
                 <span>Taikonauten Design</span>
               </div>
             </a>
           </article>
         </div>
         <div class="list-item">
-          <article class="prjct-home prjct-up prjct-img-03">
-            <a class="prjct-link" href="/templates/prjct-5.php">
-              <div class="prjct-title prjct-title-03">
+          <article class="project-home project-up project-img-03">
+            <a class="project-link" href="/templates/project-5.php">
+              <div class="project-title project-title-03">
                 <span>Client Design</span>
               </div>
             </a>
           </article>
         </div>
         <div class="list-item">
-          <article class="prjct-home prjct-img-04">
-            <a class="prjct-link" href="/templates/prjct-1.php">
-              <div class="prjct-title prjct-title-04">
+          <article class="project-home project-img-04">
+            <a class="project-link" href="/templates/project-1.php">
+              <div class="project-title project-title-04">
                 <span>Der Audio Verlag</span>
               </div>
             </a>
           </article>
         </div>
         <div class="list-item">
-          <article class="prjct-home prjct-up prjct-img-05">
-            <a class="prjct-link" href="/templates/prjct-6.php">
-              <div class="prjct-title prjct-title-05">
+          <article class="project-home project-up project-img-05">
+            <a class="project-link" href="/templates/project-6.php">
+              <div class="project-title project-title-05">
                 <span>Artuner Design</span>
               </div>
             </a>
           </article>
         </div>
         <div class="list-item">
-          <article class="prjct-home prjct-img-06">
-            <a class="prjct-link" href="/templates/prjct-7.php">
-              <div class="prjct-title prjct-title-06">
+          <article class="project-home project-img-06">
+            <a class="project-link" href="/templates/project-7.php">
+              <div class="project-title project-title-06">
                 <span>iFurn Concept</span>
               </div>
             </a>
