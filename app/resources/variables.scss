@@ -1,18 +1,42 @@
-/*  Modular Scales
-  =================================================== */
+////////////////////////////////////////////////////////////////////////////////
+// VARIABLES
+////////////////////////////////////////////////////////////////////////////////
+
+// FONT
+// -------------------------------------------------------------
 
 $modularscale: (
   base: 24px,
   ratio: $golden
 );
 
-// @debug ms(-1);
-// @debug ms(0);
-// @debug ms(1);
-// @debug ms(2);
+// LAYOUT
+// -------------------------------------------------------------
 
-/*  Color 1
-  =================================================== */
+// WIDTH
+$global-document-max-width: 2560px;
+$global-container-width-m: 768px;
+$global-container-width-l: 992px;
+
+// PADDING
+$global-container-padding-s: 16px;
+$global-container-padding-m: 24px;
+$global-container-padding-l: 32px;
+
+// GRID
+$global-gutter-width: 2rem;
+
+// BREAKPOINTS
+$breakpoint-xxs: 375px;
+$breakpoint-xs: 480px;
+$breakpoint-s: 576px;
+$breakpoint-m: 768px;
+$breakpoint-l: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+// COLOR
+// -------------------------------------------------------------
 
 $c-white: #fff;
 

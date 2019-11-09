@@ -5,7 +5,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h1>Client <br /> Design</h1>
+          <h1>Client <br> Design</h1>
           <div class="prjct-img-hero prjct-img-full">
             <img src="../assets/images/client-hero-1160x1990.png" alt="">
           </div>

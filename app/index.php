@@ -1,1 +1,1 @@
-<?php include 'templates/home.php'; ?>
+<?php include 'templates/home.php';

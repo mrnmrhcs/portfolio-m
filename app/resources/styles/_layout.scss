@@ -13,11 +13,11 @@
       line-height: 20px;
       text-transform: uppercase;
 
-      @media screen and (min-width: 544px) {
+      @media (min-width: $breakpoint-s) {
         font-size: 10px;
       }
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: $breakpoint-m) {
         font-size: 11px;
       }
     }
@@ -35,16 +35,16 @@
       top: -35px;
       z-index: 666;
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: $breakpoint-m) {
         left: 15px;
         top: -46px;
       }
 
-      @media screen and (min-width: 992px) {
+      @media (min-width: $breakpoint-l) {
         top: -210px;
       }
 
-      @media screen and (min-width: 1200px) {
+      @media (min-width: $breakpoint-xl) {
         line-height: 220px;
         top: -330px;
       }
@@ -66,32 +66,32 @@
           transform-origin: right;
           z-index: 666;
 
-          @media screen and (min-width: 544px) {
+          @media (min-width: $breakpoint-s) {
             bottom: 140px;
             right: 12px;
           }
 
-          @media screen and (min-width: 768px) {
+          @media (min-width: $breakpoint-m) {
             bottom: 175px;
             right: 15px;
           }
 
-          @media screen and (min-width: 992px) {
+          @media (min-width: $breakpoint-l) {
             bottom: 175px;
             right: 20px;
           }
 
-          @media screen and (min-width: 1200px) {
+          @media (min-width: $breakpoint-xl) {
             bottom: 175px;
             right: 25px;
           }
         }
 
-        @media screen and (min-width: 768px) {
+        @media (min-width: $breakpoint-m) {
           padding-bottom: 480px;
         }
 
-        @media screen and (min-width: 992px) {
+        @media (min-width: $breakpoint-l) {
           float: right;
           padding-bottom: 560px;
           width: 84%;
@@ -99,15 +99,15 @@
       }
     }
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: $breakpoint-m) {
       margin: 210px 0 180px;
     }
 
-    @media screen and (min-width: 992px) {
+    @media (min-width: $breakpoint-l) {
       margin: 420px 0 210px;
     }
 
-    @media screen and (min-width: 1200px) {
+    @media (min-width: $breakpoint-xl) {
       margin: 510px 0 240px;
     }
   }
@@ -128,22 +128,22 @@
           top: 20px;
           transform-origin: right;
 
-          @media screen and (min-width: 544px) {
+          @media (min-width: $breakpoint-s) {
             right: 12px;
             top: 4px;
           }
 
-          @media screen and (min-width: 768px) {
+          @media (min-width: $breakpoint-m) {
             right: 15px;
             top: 15px;
           }
 
-          @media screen and (min-width: 992px) {
+          @media (min-width: $breakpoint-l) {
             right: 20px;
             top: 20px;
           }
 
-          @media screen and (min-width: 1200px) {
+          @media (min-width: $breakpoint-xl) {
             right: 25px;
             top: 20px;
           }
@@ -154,24 +154,24 @@
           top: 20px;
           transform-origin: right;
 
-          @media screen and (min-width: 544px) {
+          @media (min-width: $breakpoint-s) {
             bottom: 132px;
             right: initial;
             right: 12px;
             top: initial;
           }
 
-          @media screen and (min-width: 768px) {
+          @media (min-width: $breakpoint-m) {
             bottom: 148px;
             right: 15px;
           }
 
-          @media screen and (min-width: 992px) {
+          @media (min-width: $breakpoint-l) {
             bottom: 158px;
             right: 20px;
           }
 
-          @media screen and (min-width: 1200px) {
+          @media (min-width: $breakpoint-xl) {
             bottom: 158px;
             right: 25px;
           }
@@ -182,22 +182,22 @@
           top: 105px;
           transform-origin: left;
 
-          @media screen and (min-width: 544px) {
+          @media (min-width: $breakpoint-s) {
             left: 14px;
             top: 96px;
           }
 
-          @media screen and (min-width: 768px) {
+          @media (min-width: $breakpoint-m) {
             left: 17px;
             top: 110px;
           }
 
-          @media screen and (min-width: 992px) {
+          @media (min-width: $breakpoint-l) {
             left: 22px;
             top: 110px;
           }
 
-          @media screen and (min-width: 1200px) {
+          @media (min-width: $breakpoint-xl) {
             left: 28px;
             top: 110px;
           }
@@ -208,24 +208,24 @@
           top: 132px;
           transform-origin: left;
 
-          @media screen and (min-width: 544px) {
+          @media (min-width: $breakpoint-s) {
             // right: initial;
             bottom: 4px;
             left: 14px;
             top: initial;
           }
 
-          @media screen and (min-width: 768px) {
+          @media (min-width: $breakpoint-m) {
             bottom: 12px;
             left: 17px;
           }
 
-          @media screen and (min-width: 992px) {
+          @media (min-width: $breakpoint-l) {
             bottom: 20px;
             left: 22px;
           }
 
-          @media screen and (min-width: 1200px) {
+          @media (min-width: $breakpoint-xl) {
             bottom: 20px;
             left: 28px;
           }
@@ -236,23 +236,23 @@
           top: 20px;
           transform-origin: right;
 
-          @media screen and (min-width: 544px) {
+          @media (min-width: $breakpoint-s) {
             bottom: 100px;
             right: 12px;
             top: initial;
           }
 
-          @media screen and (min-width: 768px) {
+          @media (min-width: $breakpoint-m) {
             bottom: 115px;
             right: 15px;
           }
 
-          @media screen and (min-width: 992px) {
+          @media (min-width: $breakpoint-l) {
             bottom: 120px;
             right: 20px;
           }
 
-          @media screen and (min-width: 1200px) {
+          @media (min-width: $breakpoint-xl) {
             bottom: 120px;
             right: 25px;
           }
@@ -263,29 +263,29 @@
           top: 20px;
           transform-origin: right;
 
-          @media screen and (min-width: 544px) {
+          @media (min-width: $breakpoint-s) {
             right: 12px;
             top: 5px;
           }
 
-          @media screen and (min-width: 768px) {
+          @media (min-width: $breakpoint-m) {
             right: 15px;
             top: 15px;
           }
 
-          @media screen and (min-width: 992px) {
+          @media (min-width: $breakpoint-l) {
             right: 20px;
             top: 25px;
           }
 
-          @media screen and (min-width: 1200px) {
+          @media (min-width: $breakpoint-xl) {
             right: 25px;
             top: 25px;
           }
         }
       }
 
-      @media screen and (min-width: 544px) {
+      @media (min-width: $breakpoint-s) {
         margin-bottom: 60px;
       }
     }
@@ -303,19 +303,19 @@
       padding-bottom: 72vw;
       width: 100%;
 
-      @media screen and (min-width: 544px) {
+      @media (min-width: $breakpoint-s) {
         padding-bottom: 410px;
       }
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: $breakpoint-m) {
         padding-bottom: 300px;
       }
 
-      @media screen and (min-width: 992px) {
+      @media (min-width: $breakpoint-l) {
         padding-bottom: 420px;
       }
 
-      @media screen and (min-width: 1200px) {
+      @media (min-width: $breakpoint-xl) {
         padding-bottom: 520px;
       }
     }
@@ -345,17 +345,17 @@
     }
 
     .prjct-up {
-      @media screen and (min-width: 768px) {
+      @media (min-width: $breakpoint-m) {
         margin-top: -120px;
       }
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: $breakpoint-m) {
     padding-bottom: 120px;
   }
 
-  @media screen and (min-width: 992px) {
+  @media (min-width: $breakpoint-l) {
     padding-bottom: 260px;
   }
 }
@@ -380,32 +380,32 @@
       padding-left: 10px;
       padding-right: 0;
 
-      @media screen and (min-width: 544px) {
+      @media (min-width: $breakpoint-s) {
         padding-left: 20px;
       }
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: $breakpoint-m) {
         padding-left: 80px;
       }
 
-      @media screen and (min-width: 992px) {
+      @media (min-width: $breakpoint-l) {
         padding-left: 160px;
       }
 
-      @media screen and (min-width: 1200px) {
+      @media (min-width: $breakpoint-xl) {
         padding-left: 700px;
       }
     }
 
-    @media screen and (min-width: 544px) {
+    @media (min-width: $breakpoint-s) {
       padding: 100px 0 140px;
     }
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: $breakpoint-m) {
       padding: 120px 0 180px;
     }
 
-    @media screen and (min-width: 992px) {
+    @media (min-width: $breakpoint-l) {
       padding: 140px 0 160px;
     }
   }
@@ -417,7 +417,7 @@
     svg {
       display: none;
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: $breakpoint-m) {
         display: block;
         margin: 0 auto;
       }
@@ -426,7 +426,7 @@
     .prjct-bg-img {
       display: none;
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: $breakpoint-m) {
         display: block;
       }
     }
@@ -436,7 +436,7 @@
       max-width: 434px;
       width: 100%;
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: $breakpoint-m) {
         margin-top: -580px;
         width: 100%;
       }
@@ -452,12 +452,12 @@
         max-width: 375px;
         width: 100%;
 
-        @media screen and (min-width: 544px) {
+        @media (min-width: $breakpoint-s) {
           margin: 0 auto;
         }
       }
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: $breakpoint-m) {
         margin-bottom: 200px;
         margin-top: 200px;
       }
@@ -467,19 +467,19 @@
   .prjct-link {
     padding: 100px 0;
 
-    @media screen and (min-width: 544px) {
+    @media (min-width: $breakpoint-s) {
       padding: 120px 0;
     }
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: $breakpoint-m) {
       padding: 140px 0;
     }
 
-    @media screen and (min-width: 992px) {
+    @media (min-width: $breakpoint-l) {
       padding: 160px 0;
     }
 
-    @media screen and (min-width: 1200px) {
+    @media (min-width: $breakpoint-xl) {
       padding: 180px 0;
     }
   }
@@ -493,7 +493,7 @@
   .prjct-mobile-wrap {
     margin-top: 0;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: $breakpoint-m) {
       margin-top: 310px;
     }
   }
@@ -509,7 +509,7 @@
   .prjct-img-1 {
     margin-bottom: 80px;
 
-    @media screen and (min-width: 640px) {
+    @media (min-width: $breakpoint-m) {
       margin-bottom: 200px;
     }
   }
@@ -519,7 +519,7 @@
   .prjct-img-1 {
     margin-bottom: 40px;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: $breakpoint-m) {
       margin-bottom: 200px;
     }
   }
@@ -527,7 +527,7 @@
   .prjct-img-2 {
     margin-bottom: 80px;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: $breakpoint-m) {
       margin-bottom: 200px;
     }
   }
@@ -537,7 +537,7 @@
   .prjct-img-1 {
     margin-bottom: 40px;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: $breakpoint-m) {
       margin-bottom: 200px;
     }
   }
@@ -545,7 +545,7 @@
   .prjct-img-2 {
     margin-bottom: 80px;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: $breakpoint-m) {
       margin-bottom: 200px;
     }
   }
@@ -555,7 +555,7 @@
   .prjct-img-1 {
     margin-bottom: 40px;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: $breakpoint-m) {
       margin-bottom: 200px;
     }
   }
@@ -563,7 +563,7 @@
   .prjct-img-2 {
     margin-bottom: 80px;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: $breakpoint-m) {
       margin-bottom: 200px;
     }
   }
@@ -595,15 +595,15 @@
     .info {
       padding-bottom: 0;
 
-      @include media-breakpoint-up(sm) {
+      @media (min-width: $breakpoint-s) {
         padding-bottom: 40px;
       }
 
-      @include media-breakpoint-up(md) {
+      @media (min-width: $breakpoint-m) {
         padding-bottom: 20px;
       }
 
-      @include media-breakpoint-up(lg) {
+      @media (min-width: $breakpoint-l) {
         padding-bottom: 0;
       }
     }
@@ -611,42 +611,41 @@
     .skill {
       padding-top: 0;
 
-      @include media-breakpoint-up(sm) {
+      @media (min-width: $breakpoint-s) {
         padding-top: 0;
       }
 
-      @include media-breakpoint-up(md) {
+      @media (min-width: $breakpoint-m) {
         padding-top: 20px;
       }
 
-      @include media-breakpoint-up(lg) {
+      @media (min-width: $breakpoint-l) {
         padding-top: 300px;
       }
 
-      @include media-breakpoint-up(xl) {
+      @media (min-width: $breakpoint-xl) {
         padding-top: 320px;
       }
 
       ul li {
         font-size: 21px;
 
-        @include media-breakpoint-up(sm) {
+        @media (min-width: $breakpoint-s) {
           font-size: 21px;
         }
 
-        @include media-breakpoint-up(md) {
+        @media (min-width: $breakpoint-m) {
           font-size: 18px;
         }
 
-        @include media-breakpoint-up(lg) {
+        @media (min-width: $breakpoint-l) {
           font-size: 21px;
         }
 
-        @include media-breakpoint-up(xl) {
+        @media (min-width: $breakpoint-xl) {
           font-size: 21px;
         }
       }
     }
   }
 }
-
