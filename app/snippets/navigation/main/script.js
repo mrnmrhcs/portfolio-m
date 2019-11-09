@@ -20,7 +20,7 @@ class NavigationMain extends window.HTMLDivElement {
   }
 
   bindEvents () {
-    this.$.on('click', '#btn-menu', this.toggleMenu)
+    this.$.on('click', '.button--menu', this.toggleMenu)
   }
 
   resolveElements () {

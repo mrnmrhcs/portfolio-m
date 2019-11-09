@@ -2,74 +2,191 @@
 // INTERACTION
 ////////////////////////////////////////////////////////////////////////////////
 
-.btn {
-  appearance: none;
-  border: 0;
-  border-radius: 0;
-  border-width: 0;
-  cursor: pointer;
-  display: inline-block;
-  line-height: 1;
-  margin: 0;
-  outline: 0;
-  padding: 0;
-  text-decoration: none;
-
+a,
+button {
   &:-moz-focusring {
     color: transparent;
-    outline: 0;
     text-shadow: 0 0 0 #000;
+  }
+}
+
+// BUTTON
+// -------------------------------------------------------------
+
+.button {
+  appearance: none;
+  background: $c-btn-link;
+  border: 0;
+  border-radius: 100em;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  outline: 0;
+  padding: 1em calc(1.5em + 32px) 0.9em 1.5em;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color 200ms ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $c-btn-hover;
+  }
+
+  &::after {
+    background: center / 24px 24px no-repeat;
+    border-radius: 100em;
+    bottom: 0;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 48px;
+  }
+
+  &--circle {
+    border-radius: 50%;
+  }
+
+  &--menu {
+    background: transparent;
+    border-radius: 0;
+    display: block;
+    padding: 0;
+
+    &:focus,
+    &:hover {
+      background: transparent;
+    }
+
+    svg {
+      display: block;
+    }
+  }
+}
+
+// BADGE
+// -------------------------------------------------------------
+
+.badge {
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 2px;
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.15;
+  padding: 0.5625rem 1rem;
+  text-align: center;
+  transition: background-color 250ms, border-color 250ms;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  @at-root a#{&} {
+    &,
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &--solid {
+    background-color: $c-btn-link;
+    border-color: $c-btn-link;
+
+    @at-root a#{&} {
+      color: $c-btn-link;
+
+      &:hover,
+      &:focus {
+        background-color: $c-btn-hover;
+        border-color: $c-btn-hover;
+        color: $c-hover;
+      }
+    }
+  }
+
+  &--outline {
+    background-color: rgba($c-white, 0);
+    border-color: $c-white;
+
+    @at-root a#{&} {
+      color: $c-white;
+
+      &:hover,
+      &:focus {
+        background-color: $c-btn-hover;
+        border-color: $c-btn-hover;
+        color: $c-hover;
+      }
+    }
+  }
+
+  &-isActive {
+    background-color: $c-btn-hover;
+    border-color: $c-btn-hover;
+    color: $c-hover;
+  }
+
+  &--pill {
+    border-radius: 10rem;
+    padding-left: 1.625rem;
+    padding-right: 1.625rem;
+  }
+}
+
+// FORM
+// -------------------------------------------------------------
+
+// GENERAL
+
+label,
+input,
+select,
+textarea,
+option {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.25;
+
+  &::placeholder {
+    color: #999;
+    font-size: inherit;
+    font-weight: 400;
   }
 
   &:focus {
-    box-shadow: none;
     outline: 0;
   }
-
-  &:hover {
-    #ico-menu {
-      color: #fff;
-    }
-
-    #ico-link {
-      color: $c-ico-hover;
-    }
-  }
 }
 
-.btn-circle {
-  background-color: $c-btn-link;
-  border-radius: 50%;
-  display: block;
-  height: 100px;
-  margin: 0 auto;
-  padding: 28px;
-  width: 100px;
+// FIELD
 
-  &:hover {
-    background-color: $c-btn-hover;
-  }
-}
+$input-padding-vertical: 5px;
+$input-padding-horizontal: 10px;
+$input-padding: ($input-padding-vertical + 1px) $input-padding-horizontal $input-padding-vertical $input-padding-horizontal;
 
-.btn-normal {
-  background-color: $c-btn-link;
-  color: $c-ico-link;
-  display: block;
-  font-size: 16px;
-  height: 60px;
-  margin: 40px 0;
-  width: 140px;
-
-  &:hover {
-    background-color: $c-btn-hover;
-    color: $c-ico-hover;
-  }
-}
-
-/*  Types
-    =================================================== */
-
-#btn-menu {
+input:not([type='checkbox']):not([type='radio']),
+select,
+textarea {
+  appearance: none;
   background-color: transparent;
-  height: 20px;
+  border: 1px solid $c-white;
+  border-radius: 0;
+  color: $c-white;
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  padding: $input-padding;
+
+  &:hover,
+  &:focus {
+    border-color: $c-btn-hover;
+    color: $c-white;
+    cursor: pointer;
+  }
 }

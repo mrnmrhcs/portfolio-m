@@ -1,0 +1,55 @@
+////////////////////////////////////////////////////////////////////////////////
+// DOCUMENT
+////////////////////////////////////////////////////////////////////////////////
+
+.app {
+  position: relative;
+
+  body {
+    margin: 0;
+    max-width: none;
+    padding: 0;
+  }
+
+  &-side {
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: absolute;
+  }
+}
+
+.document {
+  padding: 8rem 0 7.5rem;
+
+  @media (min-width: $breakpoint-xs) {
+    padding: 9rem 0 8.5rem;
+  }
+
+  @media (min-width: $breakpoint-s) {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 24%;
+    padding-top: 24%;
+  }
+
+  @media (min-width: $breakpoint-m) {
+    padding-bottom: 20%;
+    padding-top: 20%;
+  }
+
+  @media (min-width: $breakpoint-l) {
+    padding-bottom: 16%;
+    padding-top: 16%;
+  }
+
+  .home & {
+    // style
+  }
+
+  &-layout {
+    margin-bottom: auto;
+    margin-top: auto;
+  }
+}
