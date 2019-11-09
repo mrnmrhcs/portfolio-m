@@ -1,32 +1,26 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/document/header/index.php'; ?>
 
-<main class="prjct prjct-client content">
-  <div class="prjct-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h1>Client <br> Design</h1>
-          <div class="prjct-img-hero prjct-img-full">
-            <img src="../assets/images/client-hero-1160x1990.png" alt="">
-          </div>
+<div class="snippet" is="layout-project">
+  <section class="project project--client">
+    <div class="project-layout">
+      <header class="project-header">
+        <h1 class="project-title">Client<br>Design</h1>
+        <div class="project-img project-img--hero">
+          <img src="../assets/images/client-hero-1160x1990.png" alt="">
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="prjct-content">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="prjct-img-1 prjct-img-full">
+      </header>
+      <main class="project-main">
+        <div class="project-content">
+          <div class="project-img project-img--screen">
             <img src="../assets/images/client-img-01-1160x1900.png" alt="">
           </div>
-          <div class="prjct-img-2 prjct-img-full">
-            <img src="../assets/images/client-img-02-1160x2056.png" alt="">
+          <div class="project-img project-img--screen">
+            <img src="../assets/images/client-img-02-1160x1900.png" alt="">
           </div>
         </div>
-      </div>
+      </main>
     </div>
-  </div>
-</main>
+  </section>
+</div>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/document/footer/index.php'; ?>

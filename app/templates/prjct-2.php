@@ -1,42 +1,42 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/document/header/index.php'; ?>
 
-<main class="prjct prjct-universal content">
-  <div class="prjct-header">
-    <h1>Universal<br>Music</h1>
-    <div class=".prjct-img-hero prjct-img-full">
-      <img src="../assets/images/universal-hero-1160x1400.png" alt="">
-    </div>
-  </div>
-  <div class="prjct-info">
-    <ul class="prjct-stats">
-      <li>Prjct - Universal Music Pitch</li>
-      <li>Role - Concept, Design</li>
-      <li>Agency - Taikonauten</li>
-      <li>Year - 2015</li>
-    </ul>
-  </div>
-  <div class="prjct-content">
-    <div class="prjct-mobile-wrap">
-      <div class="prjct-bg-img">
-        <img src="../assets/images/universal-mobile-bg.jpg" alt="">
-      </div>
-      <div class="prjct-phone-img">
-        <img src="../assets/images/universal-mobile-434x882.png" alt="">
-      </div>
-      <div class="prjct-mobile">
-        <div class="col-6">
-          <div class="prjct-mobile-img">
-            <img src="../assets/images/universal-mobile-01-375x660.jpg" alt="">
+<div class="snippet" is="layout-project">
+  <section class="project project--universal">
+    <div class="project-layout">
+      <header class="project-header">
+        <h1 class="project-title">Universal<br>Music</h1>
+        <div class="project-img project-img--hero">
+          <img src="../assets/images/universal-hero-1160x1400.png" alt="">
+        </div>
+      </header>
+      <main class="project-main">
+        <div class="project-info">
+          <ul class="project-stats">
+            <li>Prjct - Universal Music Pitch</li>
+            <li>Role - Concept, Design</li>
+            <li>Agency - Taikonauten</li>
+            <li>Year - 2015</li>
+          </ul>
+        </div>
+        <div class="project-content">
+          <div class="project-mobile-wrap">
+            <div class="project-img project-img--background">
+              <img src="../assets/images/universal-mobile-bg.jpg" alt="">
+            </div>
+            <div class="project-img project-img--phone">
+              <img src="../assets/images/universal-mobile-434x882.png" alt="">
+            </div>
+            <div class="project-img project-img--screen">
+              <img src="../assets/images/universal-mobile-01-375x660.jpg" alt="">
+            </div>
+            <div class="project-img project-img--screen">
+              <img src="../assets/images/universal-mobile-02-375x660.jpg" alt="">
+            </div>
           </div>
         </div>
-        <div class="col-6">
-          <div class="prjct-mobile-img">
-            <img src="../assets/images/universal-mobile-02-375x660.jpg" alt="">
-          </div>
-        </div>
-      </div>
+      </main>
     </div>
-  </div>
-</main>
+  </section>
+</div>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/document/footer/index.php'; ?>

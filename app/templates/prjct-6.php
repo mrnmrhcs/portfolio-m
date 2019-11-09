@@ -1,12 +1,16 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/document/header/index.php'; ?>
 
-<main class="prjct prjct-art content">
-  <div class="prjct-header">
-    <h1>Artuner <br> Shop</h1>
-    <div class="prjct-img-hero prjct-img-full">
-      <img src="../../assets/images/artuner-hero.png" alt="">
+<div class="snippet" is="layout-project">
+  <section class="project project--artuner">
+    <div class="project-layout">
+      <header class="project-header">
+        <h1 class="project-title">Artuner<br>Shop</h1>
+        <div class="project-img project-img--hero">
+          <img src="../assets/images/artuner-hero.png" alt="">
+        </div>
+      </header>
     </div>
-  </div>
-</main>
+  </section>
+</div>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/document/footer/index.php'; ?>
