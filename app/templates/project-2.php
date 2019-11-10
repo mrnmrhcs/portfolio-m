@@ -1,8 +1,8 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/document/header/index.php'; ?>
 
 <div class="snippet" is="layout-project">
-  <section class="project project--universal">
-    <div class="project-layout">
+  <div class="project project--universal">
+    <section class="project-layout">
       <header class="project-header">
         <h1 class="project-title">Universal<br>Music</h1>
         <div class="project-img project-img--hero">
@@ -35,8 +35,8 @@
           </div>
         </div>
       </main>
-    </div>
-  </section>
+    </section>
+  </div>
 </div>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/document/footer/index.php'; ?>
