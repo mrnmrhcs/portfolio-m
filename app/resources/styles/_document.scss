@@ -7,13 +7,13 @@
 
   body {
     margin: 0;
-    max-width: none;
     padding: 0;
+    width: 100vw;
   }
 }
 
 .document {
   &-layout {
-    padding: 48px 0;
+    padding: 3rem 0;
   }
 }
