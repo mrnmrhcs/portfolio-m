@@ -5,18 +5,18 @@
 // FONT
 // -------------------------------------------------------------
 
-$modularscale: (
-  base: 24px,
-  ratio: $golden
-);
+$font-base-size: 16;
 
 // LAYOUT
 // -------------------------------------------------------------
 
 // WIDTH
 $global-document-max-width: 2560px;
+
 $global-container-width-m: 768px;
 $global-container-width-l: 992px;
+$global-container-width-xl: 1200px;
+$global-container-width-xxl: 1400px;
 
 // PADDING
 $global-container-padding-s: 16px;

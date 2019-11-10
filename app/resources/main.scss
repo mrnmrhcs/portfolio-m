@@ -2,17 +2,19 @@
 // MAIN
 ////////////////////////////////////////////////////////////////////////////////
 
-// VENDOR
+@import
+  'variables';
+
+// FUNCTIONS
 // -------------------------------------------------------------
 
 @import
-  'node_modules/modularscale-sass/libsass/scss/main';
+  'functions/strip-unit';
 
-// ABSTRACTS
+// MIXINS
 // -------------------------------------------------------------
 
 @import
-  'variables',
   'mixins/font-face',
   'mixins/rwd-scale',
   'mixins/grid-scale';
@@ -25,6 +27,7 @@
   'styles/interaction',
   'styles/document',
   'styles/layout',
+  'styles/media',
   'styles/spacing',
   'styles/theme';
 

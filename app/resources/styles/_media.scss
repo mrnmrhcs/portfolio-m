@@ -1,0 +1,30 @@
+////////////////////////////////////////////////////////////////////////////////
+// MEDIA
+////////////////////////////////////////////////////////////////////////////////
+
+img {
+  display: block;
+  width: 100%;
+}
+
+[is='layout-home'] {
+  .image {
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      height: 0;
+      width: 100%;
+    }
+
+    &__tag {
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+}

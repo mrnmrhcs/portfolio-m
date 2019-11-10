@@ -1,36 +1,50 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/document/header/index.php'; ?>
 
 <div class="snippet" is="layout-project">
-  <div class="project project--universal">
-    <section class="project-layout">
-      <header class="project-header">
-        <h1 class="project-title">Universal<br>Music</h1>
-        <div class="project-img project-img--hero">
-          <img src="../assets/images/universal-hero-1160x1400.png" alt="">
+  <div class="project project_universal context-content">
+    <section class="project__layout">
+      <header class="project__header">
+        <div class="container">
+          <h1 class="project__title">Universal<br>Music</h1>
+          <div class="project__image project__image_hero">
+            <div class="image">
+              <img class="image__tag" src="../assets/images/universal-hero-1160x1400.png" alt="">
+            </div>
+          </div>
         </div>
       </header>
-      <main class="project-main">
-        <div class="project-info">
-          <ul class="project-stats">
-            <li>Prjct - Universal Music Pitch</li>
-            <li>Role - Concept, Design</li>
-            <li>Agency - Taikonauten</li>
-            <li>Year - 2015</li>
-          </ul>
+      <main class="project__main">
+        <div class="project__facts">
+          <div class="container">
+            <ul class="list list_facts">
+              <li class="list__item">Prjct - Universal Music Pitch</li>
+              <li class="list__item">Role - Concept, Design</li>
+              <li class="list__item">Agency - Taikonauten</li>
+              <li class="list__item">Year - 2015</li>
+            </ul>
+          </div>
         </div>
-        <div class="project-content">
-          <div class="project-mobile-wrap">
-            <div class="project-img project-img--background">
-              <img src="../assets/images/universal-mobile-bg.jpg" alt="">
+        <div class="project__media">
+          <div class="example-mobile">
+            <div class="example-mobile__image example-mobile__image_background">
+              <div class="image">
+                <img class="image__tag" src="../assets/images/universal-mobile-bg.jpg" alt="">
+              </div>
             </div>
-            <div class="project-img project-img--phone">
-              <img src="../assets/images/universal-mobile-434x882.png" alt="">
+            <div class="example-mobile__image example-mobile__image_phone">
+              <div class="image">
+                <img class="image__tag" src="../assets/images/universal-mobile-434x882.png" alt="">
+              </div>
             </div>
-            <div class="project-img project-img--screen">
-              <img src="../assets/images/universal-mobile-01-375x660.jpg" alt="">
+            <div class="example-mobile__image example-mobile__image_screen">
+              <div class="image">
+                <img class="image__tag" src="../assets/images/universal-mobile-01-375x660.jpg" alt="">
+              </div>
             </div>
-            <div class="project-img project-img--screen">
-              <img src="../assets/images/universal-mobile-02-375x660.jpg" alt="">
+            <div class="example-mobile__image example-mobile__image_screen">
+              <div class="image">
+                <img class="image__tag" src="../assets/images/universal-mobile-02-375x660.jpg" alt="">
+              </div>
             </div>
           </div>
         </div>

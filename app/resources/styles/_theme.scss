@@ -2,250 +2,183 @@
 // THEME
 ////////////////////////////////////////////////////////////////////////////////
 
-// LAYOUT
-// -------------------------------------------------------------
+.theme-default {
+  &,
+  body {
+    background-color: $c-bg;
+    color: $c-white;
+    font-family: 'Simplon', Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+  }
 
-html {
-  main {
-    padding-bottom: 140px;
-    padding-top: 60px;
+  .context-content {
 
-    @media (min-width: $breakpoint-s) {
-      padding-bottom: 180px;
-      padding-top: 80px;
+    // PARAGRAPH
+    // -------------------------------------------------------------
+
+    p {
+      font-size: 0.9375rem;
+      line-height: 1.5;
+
+      @media (min-width: $breakpoint-m) {
+        font-size: 1rem;
+      }
     }
 
-    @media (min-width: $breakpoint-m) {
-      padding-bottom: 200px;
-      padding-top: 100px;
+    a {
+      color: $c-link;
+
+      &:focus {
+        outline: 0;
+      }
+
+      &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 #000;
+      }
+    }
+
+    // HEADLINE
+    // -------------------------------------------------------------
+
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      color: $c-headline;
+      line-height: 1.25;
+    }
+
+    h1, h2, .h1, .h2 {
+      font-weight: 300;
+    }
+
+    h3, h4, h5, h6, .h3, .h4, .h5, .h6 {
+      font-weight: 300;
+    }
+
+    h1 {
+      @include rwd-scale('font-size', 3rem, 12rem, 320px, 1200px);
+    }
+
+    h2 {
+      @include rwd-scale('font-size', 1.25rem, 4rem, 320px, 1200px);
+    }
+
+    h3 {
+      @include rwd-scale('font-size', 0.875rem, 1.5rem, 320px, 1200px);
+    }
+
+    // LIST
+    // -------------------------------------------------------------
+
+    ul,
+    ol {
+      line-height: 1.625;
+    }
+
+    ul > li {
+      list-style-type: disc;
+
+      ul > li {
+        list-style-type: circle;
+
+        ul > li {
+          list-style-type: circle;
+        }
+      }
+    }
+
+    ol > li {
+      ul > li {
+        list-style-type: disc;
+
+        ul > li {
+          list-style-type: circle;
+        }
+      }
+    }
+
+    // INLINE
+    // -------------------------------------------------------------
+
+    b,
+    strong,
+    code,
+    kbd,
+    samp,
+    dt {
+      font-size: inherit;
+      font-weight: 700;
+    }
+
+    abbr,
+    dfn,
+    var {
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    abbr,
+    dfn {
+      text-decoration: underline;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    mark {
+      background-color: $c-link;
+      color: $c-white;
+    }
+
+    code {
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    kbd {
+      background-color: $c-link;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    hr {
+      border: 0;
+      display: block;
+      height: 1px;
+    }
+
+    pre {
+      white-space: pre-wrap;
+    }
+
+    pre > code {
+      background-color: transparent;
+      display: block;
+    }
+
+    // QUOTE
+    // -------------------------------------------------------------
+
+    q,
+    blockquote {
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    blockquote + figcaption {
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    cite {
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    figcaption {
+      font-weight: 400;
+    }
+
+    img + figcaption {
+      text-align: left;
     }
   }
-}
-
-body {
-  background-color: $c-bg;
-
-  img {
-    height: auto;
-    width: 100%;
-  }
-}
-
-// TYPO
-// -------------------------------------------------------------
-
-html {
-  font-size: ms(0);
-  letter-spacing: -1.25px;
-  line-height: 40px;
-
-  @media (min-width: $breakpoint-s) {
-    letter-spacing: 0;
-  }
-}
-
-body {
-  color: $c-text;
-  font-family: 'Simplon', Arial, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  color: $c-headline;
-  font-family: 'Simplon';
-  font-style: inherit;
-  font-weight: 600;
-  margin: 0;
-}
-
-h4,
-h5 {
-  letter-spacing: -1px;
-  margin: 0;
-}
-
-h1 {
-  font-size: ms(2);
-  font-weight: 600;
-  letter-spacing: -2px;
-  line-height: 58px;
-  padding: 40px 0;
-
-  @media (min-width: $breakpoint-s) {
-    font-size: ms(2);
-    line-height: 58px;
-    padding: 40px 0;
-  }
-
-  @media (min-width: $breakpoint-m) {
-    font-size: ms(3);
-    letter-spacing: -6px;
-    line-height: 90px;
-    padding: 60px 0;
-  }
-
-  @media (min-width: $breakpoint-l) {
-    font-size: ms(4);
-    letter-spacing: -10px;
-    line-height: 140px;
-    padding: 80px 0;
-  }
-
-  @media (min-width: $breakpoint-xl) {
-    font-size: ms(5);
-    letter-spacing: -12px;
-    line-height: 220px;
-    padding: 80px 0;
-  }
-}
-
-h2 {
-  font-size: ms(0);
-  letter-spacing: -1px;
-  line-height: 20px;
-  padding: 20px 0 30px;
-
-  @media (min-width: $breakpoint-s) {
-    font-size: 30px;
-    letter-spacing: -2px;
-    line-height: 40px;
-  }
-
-  @media (min-width: $breakpoint-m) {
-    font-size: ms(1);
-    letter-spacing: -3px;
-    line-height: 60px;
-    padding: 30px 0;
-  }
-
-  @media (min-width: $breakpoint-l) {
-    padding: 40px 0 50px;
-  }
-
-  @media (min-width: $breakpoint-xl) {
-    padding: 30px 0 40px;
-  }
-}
-
-h3 {
-  font-size: 20px;
-  letter-spacing: -1px;
-  line-height: 20px;
-  padding: 20px 0 10px;
-
-  @media (min-width: $breakpoint-s) {
-    font-size: 20px;
-    letter-spacing: -1px;
-    line-height: 30px;
-    padding: 10px 0;
-  }
-
-  @media (min-width: $breakpoint-m) {
-    padding: 15px 0 5px;
-  }
-}
-
-h4 {
-  font-size: ms(0);
-  line-height: 20px;
-  padding: 20px 0;
-
-  @media (min-width: $breakpoint-s) {
-    line-height: 40px;
-  }
-}
-
-ul,
-ol {
-  color: $c-text;
-  list-style-position: inside;
-  margin: 0;
-  padding: 20px 0;
-}
-
-p {
-  color: $c-text;
-  font-size: 20px;
-  margin: 0;
-  padding: 0 0 40px;
-
-  @media (min-width: $breakpoint-s) {
-    font-size: 23px;
-  }
-
-  @media (min-width: $breakpoint-m) {
-    font-size: 19px;
-  }
-
-  @media (min-width: $breakpoint-l) {
-    font-size: 23px;
-  }
-}
-
-.lead {
-  font-size: 28px;
-  font-weight: 400;
-  letter-spacing: -1px;
-  line-height: 42px;
-  padding: 0 0 30px;
-
-  @media (min-width: $breakpoint-s) {
-    font-size: 32px;
-    line-height: 50px;
-    padding: 0 0 50px;
-  }
-
-  @media (min-width: $breakpoint-m) {
-    font-size: 46px;
-    line-height: 65px;
-    padding: 0 0 60px;
-  }
-
-  @media (min-width: $breakpoint-l) {
-    font-size: 58px;
-    line-height: 80px;
-    padding: 0 0 70px;
-  }
-
-  @media (min-width: $breakpoint-xl) {
-    padding: 0 0 90px;
-  }
-}
-
-a {
-  color: $c-link;
-}
-
-// ICON
-// -------------------------------------------------------------
-
-.ico {
-  fill: currentColor;
-}
-
-#ico-menu {
-  color: $c-ico-link;
-  position: relative;
-  width: 12px;
-  z-index: 999;
-}
-
-#ico-link {
-  color: $c-ico-link;
-}
-
-#ico-dav {
-  color: $c-bg-object;
-  position: relative;
-  z-index: -999;
-}
-
-#ico-universal {
-  color: $c-bg-object;
-  position: relative;
-  z-index: -999;
 }

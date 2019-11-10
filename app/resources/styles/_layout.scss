@@ -4,9 +4,9 @@
 
 [is|='layout'] {
   > section {
-    > [class$='-header'],
-    > [class$='-main'],
-    > [class$='-footer'] {
+    > [class$='__header'],
+    > [class$='__main'],
+    > [class$='__footer'] {
       margin: 1.75rem 0 0;
 
       @media (min-width: $breakpoint-s) {
@@ -16,6 +16,130 @@
       &:first-child {
         margin-top: 0;
       }
+    }
+  }
+
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $global-container-width-xxl;
+  }
+}
+
+[is='layout-home'] {
+  .home {
+    .featured {
+      position: relative;
+
+      &__link {
+        display: block;
+      }
+
+      &__title {
+        @include rwd-scale('font-size', 0.875rem, 1.5rem, 320px, 1200px);
+        bottom: 0.5rem;
+        left: 0.75rem;
+        position: absolute;
+      }
+
+      .image {
+        &::after {
+          padding-bottom: calc(280 / 467 * 100%);
+        }
+      }
+    }
+
+    .list {
+      &_projects {
+        column-gap: 2.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 2.5rem;
+      }
+    }
+
+    .card {
+      position: relative;
+
+      &__link {
+        display: block;
+      }
+
+      .image {
+        &::after {
+          padding-bottom: calc(25 / 27 * 100%);
+        }
+      }
+
+      &__title {
+        bottom: 0.5rem;
+        left: 0.75rem;
+        position: absolute;
+      }
+    }
+  }
+}
+
+[is='layout-project'] {
+  .project {
+    &__title {
+      // style
+    }
+
+    &__img {
+      // style
+    }
+
+    &_dav {
+      // style
+    }
+
+    &_universal {
+      // style
+    }
+
+    &_behance {
+      // style
+    }
+
+    &_taikonauts {
+      // style
+    }
+
+    &_client {
+      // style
+    }
+
+    &_artuner {
+      // style
+    }
+
+    &_ifurn {
+      // style
+    }
+  }
+}
+
+[is='layout-about'] {
+  .about {
+    &__title {
+      // style
+    }
+
+    &__intro {
+      // style
+    }
+
+    &__experience {
+      // style
+    }
+
+    &__skills {
+      // style
+    }
+
+    &__skill {
+      // style
     }
   }
 }

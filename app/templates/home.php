@@ -1,76 +1,103 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/document/header/index.php'; ?>
 
 <div class="snippet" is="layout-home">
-  <section class="home-layout">
-    <header class="home-header">
-      <h1>Code<br>____ Dsgn</h1>
-      <a class="hero-teaser-link" href="/templates/project-2.php">
-        <div class="project-hero-img">
-          <div class="project-title">
-            <span>Universal Music Pitch</span>
+  <div class="home context-content">
+    <section class="home__layout">
+      <header class="home__header">
+        <h1 class="home__title">Code<br>____ Dsgn</h1>
+        <div class="home__featured">
+          <div class="featured">
+            <a class="featured__link" href="/templates/project-2.php">
+              <div class="featured__media">
+                <div class="image">
+                  <img class="image__tag" src="../assets/images/project-hero.jpg" alt="">
+                </div>
+              </div>
+            </a>
+            <h2 class="featured__title">Universal Music</h2>
           </div>
         </div>
-      </a>
-    </header>
-    <main class="home-main">
-      <div class="list">
-        <div class="list-item">
-          <article class="project-home project-up project-img-01">
-            <a class="project-link" href="/templates/project-3.php">
-              <div class="project-title project-title-01">
-                <span>Behance Case</span>
+      </header>
+      <main class="home__main">
+        <div class="container">
+          <div class="list list_projects">
+            <div class="list__item">
+              <div class="card">
+                <a class="card__link" href="/templates/project-3.php">
+                  <div class="card__media">
+                    <div class="image">
+                      <img class="image__tag" src="../assets/images/project-home-1.jpg" alt="">
+                    </div>
+                  </div>
+                </a>
+                <h3 class="card__title">Behance</h3>
               </div>
-            </a>
-          </article>
-        </div>
-        <div class="list-item">
-          <article class="project-home project-img-02">
-            <a class="project-link" href="/templates/project-4.php">
-              <div class="project-title project-title-02">
-                <span>Taikonauten Design</span>
+            </div>
+            <div class="list__item">
+              <div class="card">
+                <a class="card__link" href="/templates/project-4.php">
+                  <div class="card__media">
+                    <div class="image">
+                      <img class="image__tag" src="../assets/images/project-home-2.jpg" alt="">
+                    </div>
+                  </div>
+                </a>
+                <h3 class="card__title">Taikonauten</h3>
               </div>
-            </a>
-          </article>
-        </div>
-        <div class="list-item">
-          <article class="project-home project-up project-img-03">
-            <a class="project-link" href="/templates/project-5.php">
-              <div class="project-title project-title-03">
-                <span>Client Design</span>
+            </div>
+            <div class="list__item">
+              <div class="card">
+                <a class="card__link" href="/templates/project-5.php">
+                  <div class="card__media">
+                    <div class="image">
+                      <img class="image__tag" src="../assets/images/project-home-3.jpg" alt="">
+                    </div>
+                  </div>
+                </a>
+                <h3 class="card__title">Client Design</h3>
               </div>
-            </a>
-          </article>
-        </div>
-        <div class="list-item">
-          <article class="project-home project-img-04">
-            <a class="project-link" href="/templates/project-1.php">
-              <div class="project-title project-title-04">
-                <span>Der Audio Verlag</span>
+            </div>
+            <div class="list__item">
+              <div class="card">
+                <a class="card__link" href="/templates/project-1.php">
+                  <div class="card__media">
+                    <div class="image">
+                      <img class="image__tag" src="../assets/images/project-home-4.jpg" alt="">
+                    </div>
+                  </div>
+                </a>
+                <h3 class="card__title">Audio Verlag</h3>
               </div>
-            </a>
-          </article>
-        </div>
-        <div class="list-item">
-          <article class="project-home project-up project-img-05">
-            <a class="project-link" href="/templates/project-6.php">
-              <div class="project-title project-title-05">
-                <span>Artuner Design</span>
+            </div>
+            <div class="list__item">
+              <div class="card">
+                <a class="card__link" href="/templates/project-5.php">
+                  <div class="card__media">
+                    <div class="image">
+                      <img class="image__tag" src="../assets/images/project-home-5.jpg" alt="">
+                    </div>
+                  </div>
+                </a>
+                <h3 class="card__title">Artuner</h3>
               </div>
-            </a>
-          </article>
-        </div>
-        <div class="list-item">
-          <article class="project-home project-img-06">
-            <a class="project-link" href="/templates/project-7.php">
-              <div class="project-title project-title-06">
-                <span>iFurn Concept</span>
+            </div>
+            <div class="list__item">
+              <div class="card">
+                <a class="card__link" href="/templates/project-6.php">
+                  <div class="card__media">
+                    <div class="image">
+                      <img class="image__tag" src="../assets/images/project-home-6.jpg" alt="">
+                    </div>
+                  </div>
+                </a>
+                <h3 class="card__title">iFurn</h3>
               </div>
-            </a>
-          </article>
+            </div>
+          </div>
         </div>
-      </div>
-    </main>
-  </section>
+      </main>
+    </section>
+  </div>
 </div>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/document/footer/index.php'; ?>

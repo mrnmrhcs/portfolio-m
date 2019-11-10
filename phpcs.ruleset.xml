@@ -2,9 +2,10 @@
 <ruleset name="PHP Coding Standards">
   <description>Coding Standards</description>
 
-  <exclude-pattern>node_modules/*</exclude-pattern>
-  <exclude-pattern>backup/*</exclude-pattern>
-  <exclude-pattern>dist/*</exclude-pattern>
+  <exclude-pattern>**/node_modules/*</exclude-pattern>
+  <exclude-pattern>**/backup/*</exclude-pattern>
+  <exclude-pattern>**/vendor/*</exclude-pattern>
+  <exclude-pattern>**/dist/*</exclude-pattern>
 
   <file>.</file>
 
@@ -17,4 +18,10 @@
   <arg value="n"/>
 
   <rule ref="PSR2"/>
+
+  <rule ref="Generic.Files.LineEndings">
+    <properties>
+      <property name="eolChar" value="\r\n"/>
+    </properties>
+  </rule>
 </ruleset>

@@ -20,11 +20,11 @@ class NavigationMain extends window.HTMLDivElement {
   }
 
   bindEvents () {
-    this.$.on('click', '.button--menu', this.toggleMenu)
+    this.$.on('click', '.navigation-main__button', this.toggleMenu)
   }
 
   resolveElements () {
-    this.$menu = $('.menu', this)
+    this.$menu = $('.navigation-main__menu', this)
   }
 
   connectedCallback () {
@@ -32,8 +32,8 @@ class NavigationMain extends window.HTMLDivElement {
   }
 
   toggleMenu (e) {
-    this.$.toggleClass('snippet-isOpen')
-    if (this.$.hasClass('snippet-isOpen')) {
+    this.$.toggleClass('snippet_is_open')
+    if (this.$.hasClass('snippet_is_open')) {
       disableBodyScroll(this.$menu.get(0))
     } else {
       enableBodyScroll(this.$menu.get(0))
