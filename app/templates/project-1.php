@@ -5,7 +5,7 @@
     <section class="project__layout">
       <header class="project__header">
         <div class="container">
-          <h1 class="project__title">Der Audio<br>Verlag</h1>
+          <h1 class="project__title">Audio<br>Verlag</h1>
           <div class="project__image project__image_hero">
             <div class="image">
               <img class="image__tag" src="../assets/images/dav-hero-1160x860.png" alt="">

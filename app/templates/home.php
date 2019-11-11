@@ -4,9 +4,9 @@
   <div class="home context-content">
     <section class="home__layout">
       <header class="home__header">
-        <h1 class="home__title">Code<br>____ Dsgn</h1>
         <div class="home__featured">
           <div class="featured">
+            <h1 class="home__title">Future Guy</h1>
             <a class="featured__link" href="/templates/project-2.php">
               <div class="featured__media">
                 <div class="image">

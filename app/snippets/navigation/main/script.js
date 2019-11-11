@@ -24,6 +24,7 @@ class NavigationMain extends window.HTMLDivElement {
   }
 
   resolveElements () {
+    this.$html = $('.app')
     this.$menu = $('.navigation-main__menu', this)
   }
 
@@ -33,11 +34,12 @@ class NavigationMain extends window.HTMLDivElement {
 
   toggleMenu (e) {
     this.$.toggleClass('snippet_is_open')
-    if (this.$.hasClass('snippet_is_open')) {
-      disableBodyScroll(this.$menu.get(0))
-    } else {
-      enableBodyScroll(this.$menu.get(0))
-    }
+    this.$html.toggleClass('app_menu')
+    // if (this.$.hasClass('snippet_is_open')) {
+    //   disableBodyScroll(this.$menu.get(0))
+    // } else {
+    //   enableBodyScroll(this.$menu.get(0))
+    // }
   }
 }
 

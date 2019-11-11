@@ -1,9 +1,7 @@
-        </section>
-
-        <footer class="document-footer">
-          <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/navigation/footer/index.php' ?>
-        </footer>
-
+      </section>
+      <footer class="document-footer">
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/navigation/footer/index.php' ?>
+      </footer>
       </div>
     </div>
 

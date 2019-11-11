@@ -5,7 +5,7 @@
     <section class="project__layout">
       <header class="project__header">
         <div class="container">
-          <h1 class="project__title">Behance<br>Case</h1>
+          <h1 class="project__title">Behance</h1>
           <div class="project__image project__image_hero">
             <div class="image">
               <img class="image__tag" src="../assets/images/biskitty-img-1160x2700.png" alt="">

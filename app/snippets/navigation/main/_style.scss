@@ -1,6 +1,7 @@
 [is='navigation-main'] {
   .navigation-main {
-    height: 116px;
+    height: 7.25rem;
+    position: relative;
 
     &__toggle {
       height: 20px;
@@ -44,10 +45,10 @@
       top: 0;
       transform: translate3d(0, 0, 0);
       transition: all 0.5s cubic-bezier(0.8, 0.05, 0.35, 1);
-      width: 100vw;
+      width: 100%;
       z-index: 777;
 
-      @at-root .snippet_is_open#{&} {
+      @at-root .app_menu #{&} {
         display: block;
         opacity: 1;
         overflow: scroll;
@@ -58,24 +59,8 @@
   .list {
     &_menu {
       list-style: none;
-      padding: 100px 20px 30px;
+      padding: 7.25rem 0 3rem;
       text-align: left;
-
-      @media (min-width: $breakpoint-xs) {
-        padding: 240px 40px 80px;
-      }
-
-      @media (min-width: $breakpoint-m) {
-        padding: 280px 40px 100px;
-      }
-
-      @media (min-width: $breakpoint-l) {
-        padding: 180px 80px 120px;
-      }
-
-      @media (min-width: $breakpoint-xl) {
-        padding: 180px 100px 140px;
-      }
     }
 
     &__link {
