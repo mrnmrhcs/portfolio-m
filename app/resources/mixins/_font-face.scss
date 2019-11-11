@@ -5,7 +5,6 @@
 @mixin font-face($family, $file, $weight: 'normal', $style: 'normal', $woff2: true, $base-path: 'assets/fonts/') {
   @font-face {
     font-family: $family;
-
     font-style: unquote($style);
     font-weight: unquote($weight);
 
