@@ -18,9 +18,9 @@
   </head>
 
   <body>
-    <div class="app-main">
+    <div class="app__main">
       <div class="document">
-        <header class="document-header">
+        <header class="document__header">
           <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/navigation/main/index.php'; ?>
         </header>
-        <section class="document-layout">
+        <section class="document__layout">
