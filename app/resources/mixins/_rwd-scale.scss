@@ -9,7 +9,7 @@
 //  rwd-scale('font-size', 14px, 20px, 320px, 1366px)
 //  rwd-scale('padding-top' 'padding-bottom', 2rem, 4rem, 320px, 1366px)
 
-@mixin rwd-scale($properties, $min-value, $max-value, $min-screen: $breakpoint-mobile-horizontal, $max-screen: $breakpoint-desktop-wide, $font-base-size: 16) {
+@mixin rwd-scale($properties, $min-value, $max-value, $min-screen: $breakpoint-sm, $max-screen: $breakpoint-xl, $font-base-size: $global-font-base-size) {
 
   // MINIMUM VALUE
 

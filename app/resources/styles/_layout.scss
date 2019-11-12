@@ -22,6 +22,8 @@
 
 [is='layout-home'] {
   .home {
+    $block: 'home';
+
     &__title {
       left: 50%;
       position: absolute;
@@ -31,8 +33,10 @@
       width: 75%;
       z-index: 222;
 
-      .theme-default .context-content & {
-        font-size: 3rem;
+      @at-root {
+        .theme-default .context-content .#{$block} {
+          font-size: 3rem;
+        }
       }
     }
 
@@ -46,6 +50,7 @@
       &__title {
         @include rwd-scale('font-size', 0.875rem, 1.5rem, 320px, 1200px);
         bottom: 0.5rem;
+        font-weight: normal;
         left: 0.75rem;
         position: absolute;
       }
@@ -81,6 +86,7 @@
 
       &__title {
         bottom: 0.5rem;
+        font-weight: normal;
         left: 0.75rem;
         position: absolute;
       }

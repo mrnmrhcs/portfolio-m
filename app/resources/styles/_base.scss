@@ -5,14 +5,9 @@
 // FONT
 // -------------------------------------------------------------
 
-@include font-face('Simplon', 'simplon/simplonbp-light-webfont', '300', 'normal');
-@include font-face('Simplon', 'simplon/simplonbp-lightitalic-webfont', '300', 'italic');
-@include font-face('Simplon', 'simplon/simplonbpregular-webfont', 'normal', 'normal');
-@include font-face('Simplon', 'simplon/simplonbpregular-italic-webfont', 'normal', 'italic');
-@include font-face('Simplon', 'simplon/simplonbp-medium-webfont', '600', 'normal');
-@include font-face('Simplon', 'simplon/simplonbp-mediumitalic-webfont', '600', 'italic');
-@include font-face('Simplon', 'simplon/simplonbp-bold-webfont', '700', 'normal');
-@include font-face('Simplon', 'simplon/simplonbp-bolditalic-webfont', '700', 'italic');
+@include font-face('Alpha', 'alpha/alpha-light', '300', 'normal', false);
+@include font-face('Alpha', 'alpha/alpha', 'normal', 'normal', false);
+@include font-face('Alpha', 'alpha/alpha-medium', '600', 'normal', false);
 
 // ROOT
 // -------------------------------------------------------------

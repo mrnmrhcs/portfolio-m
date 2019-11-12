@@ -5,7 +5,7 @@
     <section class="project__layout">
       <header class="project__header">
         <div class="container">
-          <h1 class="project__title">Universal<br>Music</h1>
+          <h1 class="project__title">Universal Music</h1>
           <div class="project__image project__image_hero">
             <div class="image">
               <img class="image__tag" src="../assets/images/universal-hero-1160x1400.png" alt="">

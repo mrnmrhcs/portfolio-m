@@ -7,19 +7,18 @@
       </button>
     </nav>
     <header class="navigation-main__menu">
-      <div class="container">
-        <ul class="list list_menu">
-          <li class="list__item"><a class="list__link" href="/">Home</a></li>
-          <li class="list__item"><a class="list__link" href="/templates/project-1.php">Audio Verlag</a></li>
-          <li class="list__item"><a class="list__link" href="/templates/project-2.php">Universal Music</a></li>
-          <li class="list__item"><a class="list__link" href="/templates/project-4.php">Taikonauten</a></li>
-          <li class="list__item"><a class="list__link" href="/templates/project-5.php">Client Design</a></li>
-          <li class="list__item"><a class="list__link" href="/templates/project-6.php">Artuner</a></li>
-          <li class="list__item"><a class="list__link" href="/templates/project-7.php">iFurn</a></li>
-          <li class="list__item"><a class="list__link" href="/templates/project-3.php">Behance</a></li>
-          <li class="list__item"><a class="list__link" href="/templates/about.php">About</a></li>
-        </ul>
-      </div>
+      <ul class="list list_menu">
+        <li class="list__item">
+          <a class="link" href="/">
+            <span class="link__text">Begin</span>
+          </a>
+        </li>
+        <li class="list__item">
+          <a class="link" href="/templates/about.php">
+            <span class="link__text">Future</span>
+          </a>
+        </li>
+      </ul>
     </header>
   </div>
 </div>

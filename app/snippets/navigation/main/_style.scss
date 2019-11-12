@@ -58,30 +58,39 @@
 
   .list {
     &_menu {
+      @include grid-scale(2, center, 0, 0);
+      height: 100vh;
       list-style: none;
-      padding: 7.25rem 0 3rem;
-      text-align: left;
+      margin: 0;
+      padding: 0;
+      text-align: center;
     }
 
-    &__link {
+    .link {
+      $block: 'link';
+
       @include rwd-scale('font-size', 1.5rem, 11rem, 320px, 1400px);
-      color: $c-nav-link;
-      display: block;
-      font-weight: 700;
+      align-items: center;
+      background-color: $c-bg;
+      color: $c-white;
+      display: flex;
+      font-weight: 600;
+      height: 100%;
       letter-spacing: -2px;
       line-height: 1.025;
-      position: relative;
       text-decoration: none;
+      width: 100%;
 
-      &:hover {
-        color: $c-nav-hover;
+      &__text {
+        display: block;
+        margin: 0 auto;
       }
 
-      &_is_active {
-        text-decoration: underline;
+      &:hover {
+        background-color: $c-white;
 
-        &:hover {
-          color: $c-nav-hover;
+        .#{$block}__text {
+          color: $c-nav-link;
         }
       }
     }

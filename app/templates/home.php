@@ -5,16 +5,17 @@
     <section class="home__layout">
       <header class="home__header">
         <div class="home__featured">
-          <div class="featured">
-            <h1 class="home__title">Future Guy</h1>
-            <a class="featured__link" href="/templates/project-2.php">
-              <div class="featured__media">
-                <div class="image">
-                  <img class="image__tag" src="../assets/images/project-hero.jpg" alt="">
+          <div class="container">
+            <div class="featured">
+              <h1 class="home__title">Hello</h1>
+              <a class="featured__link" href="/templates/project-2.php">
+                <div class="featured__media">
+                  <div class="image">
+                    <img class="image__tag" src="../assets/images/project-hero.jpg" alt="">
+                  </div>
                 </div>
-              </div>
-            </a>
-            <h2 class="featured__title">Universal Music</h2>
+              </a>
+            </div>
           </div>
         </div>
       </header>

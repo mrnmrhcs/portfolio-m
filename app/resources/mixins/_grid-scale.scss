@@ -5,25 +5,33 @@
 @mixin grid-scale(
   $columns,
   $alignment: flex-start,
-  $gutter-horizontal: $gutter-width,
-  $gutter-vertical: $gutter-width
+  $gutter-h: $global-gutter-width,
+  $gutter-v: $global-gutter-width
 ) {
   display: flex;
   flex-wrap: wrap;
   justify-content: $alignment;
-  width: 100%;
+  width: 100vw;
 
   > * {
+    @if unitless($gutter-h) {
+      $gutter-h: $gutter-h * 1rem;
+    }
+
+    @if unitless($gutter-v) {
+      $gutter-v: $gutter-v * 1rem;
+    }
+
     width: calc((#{100% / $columns}) -
-    (#{$columns - 1} / #{$columns} * #{$gutter-horizontal}));
+    (#{$columns - 1} / #{$columns} * #{$gutter-h}));
 
     &:nth-child(n) {
-      margin-right: $gutter-horizontal;
+      margin-right: $gutter-h;
       margin-top: 0;
     }
 
     &:nth-child(1n + #{$columns + 1}) {
-      margin-top: $gutter-vertical;
+      margin-top: $gutter-v;
     }
 
     &:nth-child(#{$columns}n) {
