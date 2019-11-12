@@ -4,14 +4,14 @@
     position: relative;
 
     &__toggle {
-      height: 20px;
+      height: 1.25rem;
       left: 50vw;
-      line-height: 20px;
+      line-height: 1.25rem;
       position: fixed;
       text-align: center;
-      top: 48px;
+      top: 3rem;
       transform: translateX(-50%);
-      width: 12px;
+      width: 0.75rem;
       z-index: 999;
     }
 
@@ -51,7 +51,6 @@
       @at-root .app_menu #{&} {
         display: block;
         opacity: 1;
-        overflow: scroll;
       }
     }
   }
