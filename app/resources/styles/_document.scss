@@ -1,6 +1,6 @@
-////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////
 // DOCUMENT
-////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////
 
 .app {
   height: 100%;
@@ -13,8 +13,6 @@
 body {
   height: 100%;
   margin: 0;
-  // overflow-x: hidden;
-  // overflow-y: overlay;
   padding: 0;
   width: 100%;
 
@@ -25,14 +23,59 @@ body {
 }
 
 .document {
+  &__header {
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 999;
+  }
+
   &__layout {
-    padding: 0 0 3rem;
+    padding: 7.25rem 0 3rem;
+
+    @media (min-width: $breakpoint-s) {
+      padding-bottom: 4rem;
+    }
+
+    @media (min-width: $breakpoint-l) {
+      padding-bottom: 6rem;
+    }
+
+    @media (min-width: $breakpoint-max) {
+      padding-bottom: 8rem;
+    }
   }
 }
 
 .container {
   margin-left: auto;
   margin-right: auto;
-  max-width: $global-container-width-xxl;
-  padding: 0 48px;
+  max-width: 1696px;
+  padding: 0 $container-padding-s;
+
+  @media (min-width: $breakpoint-s) {
+    padding-left: $container-padding-m;
+    padding-right: $container-padding-m;
+  }
+
+  @media (min-width: $breakpoint-xs) {
+    padding-left: $container-padding-l;
+    padding-right: $container-padding-l;
+  }
+
+  @media (min-width: $breakpoint-l) {
+    padding-left: $container-padding-xl;
+    padding-right: $container-padding-xl;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    padding-left: $container-padding-xxl;
+    padding-right: $container-padding-xxl;
+  }
+
+  @media (min-width: 1696px) {
+    max-width: $breakpoint-max;
+    padding: 0;
+  }
 }

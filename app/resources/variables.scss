@@ -1,6 +1,6 @@
-////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////
 // VARIABLES
-////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////
 
 // FONT
 // -------------------------------------------------------------
@@ -11,17 +11,16 @@ $global-font-base-size: 16;
 // -------------------------------------------------------------
 
 // WIDTH
-$global-document-max-width: 2560px;
-
-$global-container-width-m: 768px;
-$global-container-width-l: 992px;
-$global-container-width-xl: 1200px;
-$global-container-width-xxl: 1400px;
+$document-max: 2560px;
 
 // PADDING
-$global-container-padding-s: 16px;
-$global-container-padding-m: 24px;
-$global-container-padding-l: 32px;
+$container-padding-xxs: 8px;
+$container-padding-xs: 16px;
+$container-padding-s: 24px;
+$container-padding-m: 32px;
+$container-padding-l: 40px;
+$container-padding-xl: 48px;
+$container-padding-xxl: 64px;
 
 // GRID
 $global-gutter-width: 2rem;
@@ -34,6 +33,7 @@ $breakpoint-m: 768px;
 $breakpoint-l: 992px;
 $breakpoint-xl: 1200px;
 $breakpoint-xxl: 1400px;
+$breakpoint-max: 1600px;
 
 // COLOR
 // -------------------------------------------------------------

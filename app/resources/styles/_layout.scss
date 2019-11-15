@@ -1,6 +1,6 @@
-////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////
 // LAYOUT
-////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////
 
 [is|='layout'] {
   > section {
@@ -22,73 +22,252 @@
 
 [is='layout-home'] {
   .home {
-    $block: 'home';
+    &__main {
+      margin: 3rem 0 0;
 
-    &__title {
-      left: 50%;
-      position: absolute;
-      text-align: center;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 75%;
-      z-index: 222;
+      @media (min-width: $breakpoint-s) {
+        margin-top: 4rem;
+      }
 
-      @at-root {
-        .theme-default .context-content .#{$block} {
-          font-size: 3rem;
-        }
+      @media (min-width: $breakpoint-l) {
+        margin-top: 6rem;
+      }
+
+      @media (min-width: $breakpoint-max) {
+        margin-top: 8rem;
       }
     }
 
-    .featured {
-      position: relative;
+    &__featured {
+      column-gap: 1.125rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
 
-      &__link {
-        display: block;
+      @media (min-width: $breakpoint-s) {
+        column-gap: 1.5rem;
       }
 
-      &__title {
-        @include rwd-scale('font-size', 0.875rem, 1.5rem, 320px, 1200px);
-        bottom: 0.5rem;
-        font-weight: normal;
-        left: 0.75rem;
-        position: absolute;
+      @media (min-width: $breakpoint-m) {
+        grid-template-columns: 1fr 1fr 1fr;
       }
 
-      .image {
-        &::after {
-          padding-bottom: calc(280 / 467 * 100%);
+      @media (min-width: $breakpoint-xxl) {
+        column-gap: 2rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+
+      .card {
+        $block: 'card';
+
+        &_hello {
+          .#{$block}__link {
+            line-height: 1;
+          }
+
+          .#{$block}__title {
+            color: #fff;
+            // @include rwd-scale('font-size', 6rem, 24rem, 375px, 1696px);
+            font-size: 32px;
+            position: static;
+          }
         }
+
+        &:first-child {
+          grid-column-end: 3;
+          grid-column-start: 1;
+
+          @media (min-width: $breakpoint-xs) {
+            grid-column-end: 2;
+            grid-column-start: 1;
+          }
+
+          @media (min-width: $breakpoint-m) {
+            grid-column-end: 2;
+            grid-column-start: 1;
+            grid-row-end: 3;
+            grid-row-start: 1;
+          }
+
+          @media (min-width: $breakpoint-xxl) {
+            grid-column-end: 3;
+          }
+        }
+
+        &:nth-child(3) {
+          @media (min-width: $breakpoint-xs) {
+            grid-column-end: 3;
+            grid-column-start: 2;
+          }
+
+          @media (min-width: $breakpoint-m) {
+            grid-column-end: auto;
+            grid-column-start: auto;
+          }
+        }
+
+        // &:nth-last-child(-1n+2) {
+        //   margin: 3rem 0 0;
+
+        //   @media (min-width: $breakpoint-s) {
+        //     margin-top: 4rem;
+        //   }
+
+        //   @media (min-width: $breakpoint-l) {
+        //     margin-top: 6rem;
+        //   }
+
+        //   @media (min-width: $breakpoint-max) {
+        //     margin-top: 8rem;
+        //   }
+        // }
       }
     }
 
     .list {
+      $block: 'list';
+
       &_projects {
-        column-gap: 2.5rem;
+        column-gap: 1.25rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        row-gap: 2.5rem;
+
+        @media (min-width: $breakpoint-m) {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @media (min-width: $breakpoint-l) {
+          column-gap: 1.5rem;
+        }
+
+        @media (min-width: $breakpoint-xxl) {
+          column-gap: 2rem;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        .#{$block}__item {
+          &:nth-child(3) {
+            grid-column-end: 3;
+            grid-column-start: 1;
+
+            @media (min-width: $breakpoint-m) {
+              grid-column-end: 4;
+              grid-column-start: 2;
+            }
+
+            @media (min-width: $breakpoint-xxl) {
+              grid-column-end: 5;
+              grid-column-start: 3;
+            }
+          }
+        }
+      }
+
+      &_social {
+        @media (min-width: $breakpoint-xxs) {
+          column-gap: 1.25rem;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        @media (min-width: $breakpoint-s) {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @media (min-width: $breakpoint-m) {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @media (min-width: $breakpoint-l) {
+          column-gap: 1.5rem;
+        }
+
+        @media (min-width: $breakpoint-xxl) {
+          column-gap: 2rem;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        .#{$block}__item {
+          &:nth-child(3) {
+            grid-column-end: auto;
+            grid-column-start: auto;
+
+            @media (min-width: $breakpoint-xxl) {
+              grid-column-end: 5;
+              grid-column-start: 4;
+            }
+          }
+        }
+
+        .social {
+          background-color: #000;
+          display: block;
+          height: 0;
+          margin: 3rem 0 0;
+          padding-bottom: calc(9 / 21 * 100%);
+          position: relative;
+
+          @media (min-width: $breakpoint-s) {
+            margin-top: 4rem;
+          }
+
+          @media (min-width: $breakpoint-l) {
+            margin-top: 6rem;
+          }
+
+          @media (min-width: $breakpoint-max) {
+            margin-top: 8rem;
+          }
+
+          &__link {
+            @include rwd-scale('font-size', 1.125rem, 1.5625rem, 375px, 1400px);
+            font-weight: 600;
+            height: 100%;
+            left: 1.125rem;
+            position: absolute;
+            text-decoration: none;
+            top: 1.125rem;
+            z-index: 22;
+          }
+        }
       }
     }
 
     .card {
-      position: relative;
-
       &__link {
         display: block;
-      }
-
-      .image {
-        &::after {
-          padding-bottom: calc(25 / 27 * 100%);
-        }
+        position: relative;
+        text-decoration: none;
       }
 
       &__title {
-        bottom: 0.5rem;
-        font-weight: normal;
-        left: 0.75rem;
+        @include rwd-scale('font-size', 1.125rem, 1.5625rem, 375px, 1400px);
+        font-weight: 600;
+        left: 1.125rem;
         position: absolute;
+        top: 1.125rem;
+        z-index: 22;
+      }
+
+      .image {
+        padding-bottom: calc(9 / 21 * 100%);
+      }
+
+      &_vertical {
+        .image {
+          padding-bottom: calc(8 / 5 * 100%);
+        }
+      }
+
+      &_horizontal {
+        .image {
+          padding-bottom: calc(2 / 3 * 100%);
+        }
+      }
+
+      &_square {
+        .image {
+          padding-bottom: 100%;
+        }
       }
     }
   }
