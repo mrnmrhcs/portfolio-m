@@ -22,7 +22,8 @@
 
 [is='layout-home'] {
   .home {
-    &__main {
+    &__main,
+    &__footer {
       margin: 3rem 0 0;
 
       @media (min-width: $breakpoint-s) {
@@ -38,96 +39,112 @@
       }
     }
 
-    &__featured {
-      column-gap: 1.125rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      @media (min-width: $breakpoint-s) {
-        column-gap: 1.5rem;
-      }
-
-      @media (min-width: $breakpoint-m) {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-
-      @media (min-width: $breakpoint-xxl) {
-        column-gap: 2rem;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-      }
-
-      .card {
-        $block: 'card';
-
-        &_hello {
-          .#{$block}__link {
-            line-height: 1;
-          }
-
-          .#{$block}__title {
-            color: #fff;
-            // @include rwd-scale('font-size', 6rem, 24rem, 375px, 1696px);
-            font-size: 32px;
-            position: static;
-          }
-        }
-
-        &:first-child {
-          grid-column-end: 3;
-          grid-column-start: 1;
-
-          @media (min-width: $breakpoint-xs) {
-            grid-column-end: 2;
-            grid-column-start: 1;
-          }
-
-          @media (min-width: $breakpoint-m) {
-            grid-column-end: 2;
-            grid-column-start: 1;
-            grid-row-end: 3;
-            grid-row-start: 1;
-          }
-
-          @media (min-width: $breakpoint-xxl) {
-            grid-column-end: 3;
-          }
-        }
-
-        &:nth-child(3) {
-          @media (min-width: $breakpoint-xs) {
-            grid-column-end: 3;
-            grid-column-start: 2;
-          }
-
-          @media (min-width: $breakpoint-m) {
-            grid-column-end: auto;
-            grid-column-start: auto;
-          }
-        }
-
-        // &:nth-last-child(-1n+2) {
-        //   margin: 3rem 0 0;
-
-        //   @media (min-width: $breakpoint-s) {
-        //     margin-top: 4rem;
-        //   }
-
-        //   @media (min-width: $breakpoint-l) {
-        //     margin-top: 6rem;
-        //   }
-
-        //   @media (min-width: $breakpoint-max) {
-        //     margin-top: 8rem;
-        //   }
-        // }
-      }
-    }
-
     .list {
       $block: 'list';
 
+      &__item {
+        margin: 3rem 0 0;
+
+        @media (min-width: $breakpoint-s) {
+          margin-top: 4rem;
+        }
+
+        @media (min-width: $breakpoint-l) {
+          margin-top: 6rem;
+        }
+
+        @media (min-width: $breakpoint-max) {
+          margin-top: 8rem;
+        }
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      &_featured {
+        column-gap: 1.125rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        @media (min-width: $breakpoint-s) {
+          column-gap: 1.5rem;
+        }
+
+        @media (min-width: $breakpoint-m) {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @media (min-width: $breakpoint-xxl) {
+          column-gap: 2rem;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        .#{$block}__item {
+          &:first-child {
+            grid-column-end: 3;
+            grid-column-start: 1;
+
+            @media (min-width: $breakpoint-xs) {
+              grid-column-end: 2;
+              grid-column-start: 1;
+            }
+
+            @media (min-width: $breakpoint-m) {
+              grid-column-end: 2;
+              grid-column-start: 1;
+              grid-row-end: 3;
+              grid-row-start: 1;
+            }
+
+            @media (min-width: $breakpoint-xxl) {
+              grid-column-end: 3;
+            }
+          }
+
+          &:nth-child(3) {
+            @media (min-width: $breakpoint-xs) {
+              grid-column-end: 3;
+              grid-column-start: 2;
+            }
+
+            @media (min-width: $breakpoint-m) {
+              grid-column-end: auto;
+              grid-column-start: auto;
+            }
+          }
+
+          @media (min-width: $breakpoint-xs) {
+            &:nth-child(-1n+2) {
+              margin-top: 0;
+            }
+          }
+
+          @media (min-width: $breakpoint-m) {
+            &:nth-child(-1n+3) {
+              margin-top: 0;
+            }
+          }
+
+          .card {
+            &_hello {
+              .card__link {
+                line-height: 1;
+              }
+
+              .card__title {
+                color: #fff;
+                // @include rwd-scale('font-size', 6rem, 24rem, 375px, 1696px);
+                font-size: 32px;
+                position: static;
+              }
+            }
+          }
+        }
+      }
+
       &_projects {
-        column-gap: 1.25rem;
+        column-gap: 1.125rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
 
@@ -159,12 +176,28 @@
               grid-column-start: 3;
             }
           }
+
+          &:nth-child(-1n+2) {
+            margin-top: 0;
+          }
+
+          @media (min-width: $breakpoint-m) {
+            &:nth-child(-1n+2) {
+              margin-top: 0;
+            }
+          }
+
+          @media (min-width: $breakpoint-xxl) {
+            &:nth-child(-1n+3) {
+              margin-top: 0;
+            }
+          }
         }
       }
 
       &_social {
         @media (min-width: $breakpoint-xxs) {
-          column-gap: 1.25rem;
+          column-gap: 1.125rem;
           display: grid;
           grid-template-columns: 1fr 1fr;
         }
@@ -196,27 +229,26 @@
               grid-column-start: 4;
             }
           }
+
+          @media (min-width: $breakpoint-xxs) {
+            &:nth-child(-1n+2) {
+              margin-top: 0;
+            }
+          }
+
+          @media (min-width: $breakpoint-s) {
+            &:nth-child(-1n+3) {
+              margin-top: 0;
+            }
+          }
         }
 
         .social {
           background-color: #000;
           display: block;
           height: 0;
-          margin: 3rem 0 0;
           padding-bottom: calc(9 / 21 * 100%);
           position: relative;
-
-          @media (min-width: $breakpoint-s) {
-            margin-top: 4rem;
-          }
-
-          @media (min-width: $breakpoint-l) {
-            margin-top: 6rem;
-          }
-
-          @media (min-width: $breakpoint-max) {
-            margin-top: 8rem;
-          }
 
           &__link {
             @include rwd-scale('font-size', 1.125rem, 1.5625rem, 375px, 1400px);
