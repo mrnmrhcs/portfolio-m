@@ -131,7 +131,7 @@ function clean__templates () { return del([templates__dest]) }
 
 function lint__logic () {
   return src(['./app/{templates,snippets}/**/*.php', '!index.php'])
-    // .pipe(gulpif(DEBUG, debug({ title: '## LOGIC:' })))
+    .pipe(gulpif(DEBUG, debug({ title: '## LOGIC:' })))
     .pipe(phpcs({ bin: 'vendor/bin/phpcs', standard: './phpcs.ruleset.xml' }))
     .pipe(phpcs.reporter('log'))
 }
@@ -140,25 +140,25 @@ function lint__logic () {
 
 function copy__htaccess () {
   return src([index__src + '.htaccess'])
-    // .pipe(gulpif(DEBUG, debug({ title: '## HTACCESS:' })))
+    .pipe(gulpif(DEBUG, debug({ title: '## HTACCESS:' })))
     .pipe(dest(index__dest))
 }
 
 function copy__index () {
   return src([index__src + 'index.php'])
-    // .pipe(gulpif(DEBUG, debug({ title: '## INDEX:' })))
+    .pipe(gulpif(DEBUG, debug({ title: '## INDEX:' })))
     .pipe(dest(index__dest))
 }
 
 function copy__snippets () {
   return src([snippets__src + '**/*.php'])
-    // .pipe(gulpif(DEBUG, debug({ title: '## SNIPPETS:' })))
+    .pipe(gulpif(DEBUG, debug({ title: '## SNIPPETS:' })))
     .pipe(dest(snippets__dest))
 }
 
 function copy__templates () {
   return src([templates__src + '**/*.php'])
-    // .pipe(gulpif(DEBUG, debug({ title: '## TEMPLATES:' })))
+    .pipe(gulpif(DEBUG, debug({ title: '## TEMPLATES:' })))
     .pipe(dest(templates__dest))
 }
 
@@ -205,7 +205,7 @@ function clean__fonts () { return del([assets__fonts__dest]) }
 
 function process__images () {
   return src(assets__images__src + '**/*.{png,jpg,jpeg,gif}')
-    .pipe(gulpif(DEBUG, debug({ title: '## IMAGES:' })))
+    .pipe(debug({ title: '## IMAGES:' }))
     .pipe(cache(imagemin([
       imagemin.gifsicle({ interlaced: true }),
       imagemin.jpegtran({ progressive: true }),
@@ -216,7 +216,7 @@ function process__images () {
 
 function process__icons () {
   return src(assets__icons__src + '**/*.svg')
-    .pipe(gulpif(DEBUG, debug({ title: '## ICONS:' })))
+    .pipe(debug({ title: '## ICONS:' }))
     .pipe(cache(imagemin([
       imagemin.svgo({
         plugins: [
@@ -225,7 +225,7 @@ function process__icons () {
           { cleanupIDs: true },
           { removeXMLNS: false }
         ],
-        verbose: DEBUG ? true : false
+        verbose: true
       })
     ])))
     .pipe(dest(assets__icons__dest))
@@ -239,7 +239,7 @@ function process__favicons () {
       url: config.host.live,
       display: 'standalone',
       orientation: 'portrait',
-      logging: DEBUG ? true : false,
+      logging: true,
       online: false,
       replace: true,
       icons: {
@@ -259,7 +259,7 @@ function process__favicons () {
 
 function copy__fonts () {
   return src([assets__fonts__src + '**/*.{woff,woff2}'])
-    // .pipe(gulpif(DEBUG, debug({ title: '## FONTS:' })))
+    .pipe(gulpif(DEBUG, debug({ title: '## FONTS:' })))
     .pipe(dest(assets__fonts__dest))
 }
 
@@ -294,7 +294,7 @@ function clean__scripts__main () { return del(scripts__dest + 'main.min.{js,js.m
 
 function lint__scripts () {
   return src([scripts__src + 'main.js', snippets__src + '**/script.js'])
-    // .pipe(gulpif(DEBUG, debug({ title: '## MAIN:' })))
+    .pipe(gulpif(DEBUG, debug({ title: '## MAIN:' })))
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(gulpif(PROD, eslint.failAfterError()))
@@ -304,7 +304,7 @@ function lint__scripts () {
 
 function process__scripts__main () {
   return src([scripts__src + 'main.js', snippets__src + '**/script.js'], { sourcemaps: !PROD ? true : false })
-    // .pipe(gulpif(DEBUG, debug({ title: '## MAIN:' })))
+    .pipe(gulpif(DEBUG, debug({ title: '## MAIN:' })))
     .pipe(concat('main.js'))
     .pipe(gulpif(PROD, uglify()))
     .pipe(rename({ suffix: '.min' }))
@@ -336,7 +336,7 @@ function clean__styles () { return del(styles__dest + '*.min.{css,css.map}') }
 
 function lint__styles () {
   return src([styles__src + '**/*.scss', snippets__src + '**/*.scss'])
-    // .pipe(gulpif(DEBUG, debug({ title: '## STYLE:' })))
+    .pipe(gulpif(DEBUG, debug({ title: '## STYLE:' })))
     .pipe(stylelint({ syntax: 'scss', reporters: [{ formatter: 'string', console: true }], failAfterError: PROD ? true : false }))
 }
 
@@ -345,7 +345,7 @@ function lint__styles () {
 function process__styles () {
   scss.compiler = sass
   return src(styles__src + 'main.scss', { sourcemaps: !PROD ? true : false })
-    // .pipe(gulpif(DEBUG, debug({ title: '## STYLE:' })))
+    .pipe(gulpif(DEBUG, debug({ title: '## STYLE:' })))
     .pipe(scss({ outputStyle: PROD ? 'compressed' : 'expanded' }).on('error', scss.logError))
     .pipe(autoprefixer()).pipe(rename({ suffix: '.min' }))
     .pipe(dest(styles__dest, { sourcemaps: !PROD ? '.' : false }))
