@@ -15,7 +15,7 @@
         </li>
         <li class="list__item">
           <a class="link" href="/templates/about.php">
-            <span class="link__text">Future</span>
+            <span class="link__text">Hello</span>
           </a>
         </li>
       </ul>

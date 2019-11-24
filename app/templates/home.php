@@ -116,7 +116,7 @@
             </div>
             <div class="list__item">
               <div class="social">
-                <a class="social__link" href="/templates/project-5.php">Soundcloud</a>
+                <a class="social__link" href="/templates/about.php">Hello</a>
               </div>
             </div>
             <div class="list__item">
