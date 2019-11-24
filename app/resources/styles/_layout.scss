@@ -160,7 +160,7 @@
                 }
 
                 @media (min-width: $breakpoint-xxl) {
-                  @include rwd-scale('font-size', 16rem, 21rem, 1401px, 1696px);
+                  @include rwd-scale('font-size', 16rem, 20rem, 1401px, 1696px);
                 }
               }
             }
