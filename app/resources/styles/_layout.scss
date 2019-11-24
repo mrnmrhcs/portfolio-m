@@ -139,16 +139,16 @@
             &_hello {
               .card__title {
                 color: #fff;
-                font-size: 8rem;
+                font-size: 9rem;
                 line-height: 1;
                 position: static;
 
                 @media (min-width: $breakpoint-xxs) {
-                  @include rwd-scale('font-size', 8rem, 12rem, 376px, 480px);
+                  @include rwd-scale('font-size', 9rem, 12rem, 376px, 480px);
                 }
 
                 @media (min-width: $breakpoint-xs) {
-                  @include rwd-scale('font-size', 6rem, 10rem, 481px, 768px);
+                  @include rwd-scale('font-size', 6rem, 9rem, 481px, 768px);
                 }
 
                 @media (min-width: $breakpoint-m) {
