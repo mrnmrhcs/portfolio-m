@@ -9,12 +9,12 @@
     > [class$='__footer'] {
       margin: 1.75rem 0 0;
 
-      @media (min-width: $breakpoint-s) {
-        margin-top: 2rem;
-      }
-
       &:first-child {
         margin-top: 0;
+      }
+
+      @media (min-width: $breakpoint-s) {
+        margin-top: 2rem;
       }
     }
   }
@@ -41,9 +41,33 @@
 
     .list {
       $block: 'list';
+      column-gap: 1.125rem;
+      display: grid;
+
+      &_featured,
+      &_projects {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @media (min-width: $breakpoint-m) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      @media (min-width: $breakpoint-l) {
+        column-gap: 1.5rem;
+      }
+
+      @media (min-width: $breakpoint-xxl) {
+        column-gap: 2rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
 
       &__item {
         margin: 3rem 0 0;
+
+        &:first-child {
+          margin-top: 0;
+        }
 
         @media (min-width: $breakpoint-s) {
           margin-top: 4rem;
@@ -56,30 +80,9 @@
         @media (min-width: $breakpoint-max) {
           margin-top: 8rem;
         }
-
-        &:first-child {
-          margin-top: 0;
-        }
       }
 
       &_featured {
-        column-gap: 1.125rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-        @media (min-width: $breakpoint-s) {
-          column-gap: 1.5rem;
-        }
-
-        @media (min-width: $breakpoint-m) {
-          grid-template-columns: 1fr 1fr 1fr;
-        }
-
-        @media (min-width: $breakpoint-xxl) {
-          column-gap: 2rem;
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-
         .#{$block}__item {
           &:first-child {
             grid-column-end: 3;
@@ -128,15 +131,31 @@
 
           .card {
             &_hello {
-              .card__link {
-                line-height: 1;
-              }
-
               .card__title {
                 color: #fff;
-                // @include rwd-scale('font-size', 6rem, 24rem, 375px, 1696px);
-                font-size: 32px;
+                font-size: 8rem;
+                line-height: 1;
                 position: static;
+
+                @media (min-width: $breakpoint-xxs) {
+                  @include rwd-scale('font-size', 8rem, 12rem, 376px, 480px);
+                }
+
+                @media (min-width: $breakpoint-xs) {
+                  @include rwd-scale('font-size', 6rem, 10rem, 481px, 768px);
+                }
+
+                @media (min-width: $breakpoint-m) {
+                  @include rwd-scale('font-size', 8rem, 10rem, 769px, 1200px);
+                }
+
+                @media (min-width: $breakpoint-xl) {
+                  @include rwd-scale('font-size', 10rem, 14rem, 1201px, 1400px);
+                }
+
+                @media (min-width: $breakpoint-xxl) {
+                  @include rwd-scale('font-size', 16rem, 21rem, 1401px, 1696px);
+                }
               }
             }
           }
@@ -144,23 +163,6 @@
       }
 
       &_projects {
-        column-gap: 1.125rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-        @media (min-width: $breakpoint-m) {
-          grid-template-columns: 1fr 1fr 1fr;
-        }
-
-        @media (min-width: $breakpoint-l) {
-          column-gap: 1.5rem;
-        }
-
-        @media (min-width: $breakpoint-xxl) {
-          column-gap: 2rem;
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-
         .#{$block}__item {
           &:nth-child(3) {
             grid-column-end: 3;
@@ -196,29 +198,6 @@
       }
 
       &_social {
-        @media (min-width: $breakpoint-xxs) {
-          column-gap: 1.125rem;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-        }
-
-        @media (min-width: $breakpoint-s) {
-          grid-template-columns: 1fr 1fr 1fr;
-        }
-
-        @media (min-width: $breakpoint-m) {
-          grid-template-columns: 1fr 1fr 1fr;
-        }
-
-        @media (min-width: $breakpoint-l) {
-          column-gap: 1.5rem;
-        }
-
-        @media (min-width: $breakpoint-xxl) {
-          column-gap: 2rem;
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-
         .#{$block}__item {
           &:nth-child(3) {
             grid-column-end: auto;
@@ -244,7 +223,7 @@
         }
 
         .social {
-          background-color: #000;
+          background-color: #fff;
           display: block;
           height: 0;
           padding-bottom: calc(9 / 21 * 100%);
@@ -252,6 +231,7 @@
 
           &__link {
             @include rwd-scale('font-size', 1.125rem, 1.5625rem, 375px, 1400px);
+            color: $c-bg;
             font-weight: 600;
             height: 100%;
             left: 1.125rem;
@@ -260,6 +240,15 @@
             top: 1.125rem;
             z-index: 22;
           }
+        }
+
+        @media (min-width: $breakpoint-xxs) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        @media (min-width: $breakpoint-s) {
+          grid-template-columns: 1fr 1fr 1fr;
         }
       }
     }
