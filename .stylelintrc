@@ -110,7 +110,7 @@
     "scss/selector-no-redundant-nesting-selector": true,
     "selector-max-compound-selectors": 8,
     "selector-max-id": 0,
-    "selector-no-qualifying-type": true,
+    "selector-no-qualifying-type": null,
     "selector-no-vendor-prefix": true,
     "selector-pseudo-element-colon-notation": "double",
     "selector-pseudo-element-no-unknown": true,
