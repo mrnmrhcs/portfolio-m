@@ -40,9 +40,7 @@
             </div>
           </div>
         </div>
-        <!-- <div class="about__contribution">
-            <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/component/block-graph-contribution/index.php'; ?>
-        </div> -->
+        <div class="about__contribution"><?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/component/block-graph-contribution/index.php'; ?></div>
       </main>
     </section>
   </div>

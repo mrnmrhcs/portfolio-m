@@ -148,19 +148,19 @@
                 }
 
                 @media (min-width: $breakpoint-xs) {
-                  @include rwd-scale('font-size', 6rem, 9rem, 481px, 768px);
+                  @include rwd-scale('font-size', 5rem, 8rem, 481px, 768px);
                 }
 
                 @media (min-width: $breakpoint-m) {
-                  @include rwd-scale('font-size', 8rem, 10rem, 769px, 1200px);
+                  @include rwd-scale('font-size', 6rem, 8rem, 769px, 1200px);
                 }
 
                 @media (min-width: $breakpoint-xl) {
-                  @include rwd-scale('font-size', 10rem, 14rem, 1201px, 1400px);
+                  @include rwd-scale('font-size', 10rem, 12rem, 1201px, 1400px);
                 }
 
                 @media (min-width: $breakpoint-xxl) {
-                  @include rwd-scale('font-size', 16rem, 20rem, 1401px, 1696px);
+                  @include rwd-scale('font-size', 14rem, 18rem, 1401px, 1696px);
                 }
               }
             }
