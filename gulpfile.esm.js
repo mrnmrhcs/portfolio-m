@@ -208,7 +208,7 @@ function process__images () {
     .pipe(debug({ title: '## IMAGES:' }))
     .pipe(cache(imagemin([
       imagemin.gifsicle({ interlaced: true }),
-      imagemin.jpegtran({ progressive: true }),
+      imagemin.mozjpeg({ quality: 75, progressive: true }),
       imagemin.optipng({ optimizationLevel: 7 })
     ])))
     .pipe(dest(assets__images__dest))
