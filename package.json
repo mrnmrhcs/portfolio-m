@@ -6,6 +6,10 @@
   "scripts": {
     "start": "gulp --dev",
     "build": "gulp --prod",
+    "build.preview": "gulp --preview",
+    "clone": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./run/clone.ps1",
+    "deploy": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./run/deploy.ps1",
+    "deploy.preview": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./run/deploy.ps1 -preview",
     "start.debug": "gulp --dev --debug",
     "build.debug": "gulp --prod --debug"
   },
