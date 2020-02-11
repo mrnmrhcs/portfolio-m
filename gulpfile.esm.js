@@ -21,7 +21,6 @@ import sass from 'node-sass'
 import sync from 'browser-sync'
 import minimist from 'minimist'
 import del from 'del'
-import Parcel from 'parcel-bundler'
 
 import config from './config'
 
