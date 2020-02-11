@@ -4,14 +4,14 @@ Function TransferHandler()
     {
         foreach ($filemask in $args[5])
         {
-            $transfer = $args[1].PutFiles($args[3] + $args[0] + '\' + $filemask, ($args[4] + $args[0] + '/*__up'), $False, $args[2])
+            $transfer = $args[1].PutFiles($args[3] + $filemask, ($args[4] + '/*__up'), $False, $args[2])
             $transfer.Check()
         }
 
         return $True
     }
 
-    if ($args[0] -eq 'kirby' -OR $args[0] -eq 'site')
+    if ($args[0] -eq 'assets' -OR $args[0] -eq 'snippets' -OR $args[0] -eq 'templates')
     {
         $transfer = $args[1].PutFiles($args[3] + $args[0], ($args[4] + $args[0] + '__up'), $False, $args[2])
         $transfer.Check()
@@ -68,7 +68,7 @@ Function ActionHandler()
         }
     }
 
-    if ($args[3] -eq 'kirby' -OR $args[3] -eq 'site')
+    if ($args[0] -eq 'assets' -OR $args[0] -eq 'snippets' -OR $args[0] -eq 'templates')
     {
         if ($args[0] -eq 'unlink')
         {
@@ -111,11 +111,6 @@ Function ActionHandler()
 
             $args[1].RemoveFiles($args[2] + $args[3] + '__del')
 
-            # if (!(Test-Path ($args[3] + '__del') -PathType container))
-            # {
-            #     $args[1].RemoveFiles($file + '__del')
-            # }
-
             return $True
         }
     }
@@ -145,7 +140,7 @@ Function TransferQueueHandler
         return $True
     }
 
-    if ($args[0] -eq 'kirby' -OR $args[0] -eq 'site')
+    if ($args[0] -eq 'assets' -OR $args[0] -eq 'snippets' -OR $args[0] -eq 'templates')
     {
         Write-Host
         Write-Host "## TransferQueue ##" $scope.ToTitleCase($args[0])
@@ -158,18 +153,6 @@ Function TransferQueueHandler
         while ($done -eq $False)
 
         $done = $False
-
-        return $True
-    }
-
-    if ($args[0] -eq 'clone')
-    {
-        Write-Host
-        Write-Host '## TransferQueue ## Content'
-        Write-Host
-
-        $transfer = $args[1].GetFiles($args[2] + '*', $args[3] + '*')
-        $transfer.Check()
 
         return $True
     }
@@ -213,7 +196,7 @@ Function FileActionsHandler
         return $True
     }
 
-    if ($args[0] -eq 'kirby' -OR $args[0] -eq 'site')
+    if ($args[0] -eq 'assets' -OR $args[0] -eq 'snippets' -OR $args[0] -eq 'templates')
     {
         ## MOVE
         Write-Host
@@ -242,39 +225,6 @@ Function FileActionsHandler
         while($done -eq $False)
 
         $done = $False
-
-        return $True
-    }
-
-    if ($args[0] -eq 'clone')
-    {
-        if (!(Test-Path $args[3] -PathType container))
-        {
-            New-Item -Path $args[1] -Name "db" -ItemType "directory" | Out-Null
-        }
-
-        elseif (!(Get-ChildItem $args[3] | Measure-Object).Count -eq 0)
-        {
-            Write-Host
-            Write-Host "## TransferQueue ## Backup"
-            Write-Host
-
-            $timestamp = $(Get-Date -Format "yyyyMMddHHmmss")
-
-            if (!(Test-Path $args[2] -PathType container))
-            {
-                New-Item -Path $args[1] -Name "backup" -ItemType "directory" | Out-Null
-            }
-
-            Write-Host "$(Get-Date -Format 'HH:mm:ss') Working... Prepare Backup Folder"
-            New-Item -Path $args[2] -Name $timestamp -ItemType "directory" | Out-Null
-
-            if (Test-Path ($args[2] + $timestamp) -PathType container)
-            {
-                Write-Host "$(Get-Date -Format 'HH:mm:ss') Working... Backup Content Data"
-                Copy-Item ($args[3] + '*') ($args[2] + $timestamp) -Recurse
-            }
-        }
 
         return $True
     }

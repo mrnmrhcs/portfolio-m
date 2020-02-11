@@ -1,7 +1,7 @@
 # Scope
-$id = "firma"
+$id = "portfolio-m"
 $HostName = "wp1177004.server-he.de"
-$UserName = if ($args -eq '-preview') { "ftp1177004-spreview" } else { "ftp1177004-s" }
+$UserName = if ($args -eq '-preview') { "ftp1177004-mpreview" } else { "ftp1177004-m" }
 
 # Location
 $baseLocalEntry = 'E:\Sites\'
@@ -56,7 +56,7 @@ try
 
         do
         {
-            $done = TransferQueueHandler "site" $session $transferOptions $baseLocalDist $baseRemoteEntry
+            $done = TransferQueueHandler "assets" $session $transferOptions $baseLocalDist $baseRemoteEntry
         }
         while ($done -eq $False)
 
@@ -64,7 +64,15 @@ try
 
         do
         {
-            $done = TransferQueueHandler "kirby" $session $transferOptions $baseLocalDist $baseRemoteEntry
+            $done = TransferQueueHandler "snippets" $session $transferOptions $baseLocalDist $baseRemoteEntry
+        }
+        while ($done -eq $False)
+
+        $done = $False
+
+        do
+        {
+            $done = TransferQueueHandler "templates" $session $transferOptions $baseLocalDist $baseRemoteEntry
         }
         while($done -eq $False)
 
@@ -80,7 +88,7 @@ try
 
         do
         {
-            $done = FileActionsHandler "site" $session $baseRemoteEntry
+            $done = FileActionsHandler "assets" $session $baseRemoteEntry
         }
         while($done -eq $False)
 
@@ -88,7 +96,15 @@ try
 
         do
         {
-            $done = FileActionsHandler "kirby" $session $baseRemoteEntry
+            $done = FileActionsHandler "snippets" $session $baseRemoteEntry
+        }
+        while($done -eq $False)
+
+        $done = $False
+
+        do
+        {
+            $done = FileActionsHandler "templates" $session $baseRemoteEntry
         }
         while($done -eq $False)
 
