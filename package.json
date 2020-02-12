@@ -61,8 +61,7 @@
       "./.stylelintrc"
     ],
     "ignoreFiles": [
-      "dist/**",
-      "backup/**"
+      "dist/**"
     ]
   },
   "eslintConfig": {
@@ -80,8 +79,7 @@
     }
   },
   "eslintIgnore": [
-    "dist/**",
-    "backup/**"
+    "dist/**"
   ],
   "author": "Marian Schramm",
   "license": "ISC",
