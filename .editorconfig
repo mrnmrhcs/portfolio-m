@@ -14,22 +14,11 @@ indent_size = 2
 [*.js]
 indent_size = 2
 
+[*.php]
+indent_size = 2
+
 [*.svg]
 insert_final_newline = false
 
 [*.{ahk,bat,cmd}]
 end_of_line = crlf
-
-# [*.php]
-# indent_size = 4
-
-# [*.{ps1,psm1}]
-# indent_size = 4
-
-
-# [app/templates/*.php]
-# indent_size = 4
-
-# [app/snippets/**/index.php]
-# indent_size = 2
-

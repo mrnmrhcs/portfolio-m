@@ -5,8 +5,8 @@
       </div>
     </div>
 
-    <script src="../vendor.min.js"></script>
-    <script src="../main.min.js"></script>
+  <script src="../vendor.min.js"></script>
+  <script src="../main.min.js"></script>
 
   </body>
 

@@ -1,6 +1,6 @@
 {
   "name": "portfolio-m",
-  "description": "clean",
+  "description": "Portfolio Website",
   "version": "2.0.0",
   "main": "gulpfile.js",
   "scripts": {
@@ -86,10 +86,10 @@
   "author": "Marian Schramm",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mrnschrmm/portfolio-m/issues"
+    "url": "https://github.com/mrnmrhcs/portfolio-m/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrnschrmm/portfolio-m.git"
+    "url": "git+https://github.com/mrnmrhcs/portfolio-m.git"
   }
 }

@@ -4,7 +4,7 @@ Function TransferHandler()
     {
         foreach ($filemask in $args[5])
         {
-            $transfer = $args[1].PutFiles($args[3] + $filemask, ($args[4] + '/*__up'), $False, $args[2])
+            $transfer = $args[1].PutFiles($args[3] + $filemask, ($args[4] + '*__up'), $False, $args[2])
             $transfer.Check()
         }
 
@@ -26,7 +26,7 @@ Function ActionHandler()
     {
         if ($args[0] -eq 'unlink')
         {
-            $files = $args[1].EnumerateRemoteFiles($args[2] + $args[3], '*', [WinSCP.EnumerationOptions]::None)
+            $files = $args[1].EnumerateRemoteFiles($args[2], '*', [WinSCP.EnumerationOptions]::None)
 
             foreach ($file in $files)
             {
@@ -41,7 +41,7 @@ Function ActionHandler()
 
         if ($args[0] -eq 'link')
         {
-            $files = $args[1].EnumerateRemoteFiles($args[2] + $args[3], '*', [WinSCP.EnumerationOptions]::None)
+            $files = $args[1].EnumerateRemoteFiles($args[2], '*', [WinSCP.EnumerationOptions]::None)
 
             foreach ($file in $files)
             {
@@ -62,17 +62,18 @@ Function ActionHandler()
             Write-Host "$(Get-Date -Format 'HH:mm:ss') Working... Remove Outdated $($args[3]) Files"
             Write-Host
 
-            $args[1].RemoveFiles($args[2] + $args[3] + '/*__del')
+            $args[1].RemoveFiles($args[2] + '*__del')
 
             return $True
         }
     }
 
-    if ($args[0] -eq 'assets' -OR $args[0] -eq 'snippets' -OR $args[0] -eq 'templates')
+    if ($args[3] -eq 'assets' -OR $args[3] -eq 'snippets' -OR $args[3] -eq 'templates')
     {
         if ($args[0] -eq 'unlink')
         {
             $files = $args[1].EnumerateRemoteFiles($args[2], $args[3], [WinSCP.EnumerationOptions]::MatchDirectories)
+            Write-Host $files
 
             foreach ($file in $files)
             {
