@@ -1,11 +1,14 @@
 {
   "name": "portfolio-m",
-  "description": "clean",
+  "description": "Portfolio Website",
   "version": "2.0.0",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp --dev",
     "build": "gulp --prod",
+    "build.preview": "gulp --preview",
+    "deploy": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./run/deploy.ps1",
+    "deploy.preview": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./run/deploy.ps1 -preview",
     "start.debug": "gulp --dev --debug",
     "build.debug": "gulp --prod --debug"
   },
@@ -58,8 +61,7 @@
       "./.stylelintrc"
     ],
     "ignoreFiles": [
-      "dist/**",
-      "backup/**"
+      "dist/**"
     ]
   },
   "eslintConfig": {
@@ -77,16 +79,15 @@
     }
   },
   "eslintIgnore": [
-    "dist/**",
-    "backup/**"
+    "dist/**"
   ],
   "author": "Marian Schramm",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mrnschrmm/portfolio-m/issues"
+    "url": "https://github.com/mrnmrhcs/portfolio-m/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrnschrmm/portfolio-m.git"
+    "url": "git+https://github.com/mrnmrhcs/portfolio-m.git"
   }
 }
