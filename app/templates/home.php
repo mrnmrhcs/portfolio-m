@@ -9,14 +9,14 @@
             <div class="list__item">
               <div class="card card_hello">
                 <a class="card__link" href="/templates/about.php">
-                  <h1 class="card__title">Hello</h1>
+                  <h2 class="card__title">Hello</h2>
                 </a>
               </div>
             </div>
             <div class="list__item">
               <div class="card card_square">
                 <a class="card__link" href="/templates/project-2.php">
-                  <h2 class="card__title">Hello</h2>
+                  <h3 class="card__title">Hello</h3>
                   <div class="card__media">
                     <div class="image">
                       <img class="image__tag" src="../assets/images/project-hero.jpg" alt="">
@@ -28,7 +28,7 @@
             <div class="list__item">
               <div class="card card_horizontal">
                 <a class="card__link" href="/templates/project-2.php">
-                  <h2 class="card__title">Hello</h2>
+                  <h3 class="card__title">Hello</h3>
                   <div class="card__media">
                     <div class="image">
                       <img class="image__tag" src="../assets/images/project-hero.jpg" alt="">
@@ -40,7 +40,7 @@
             <div class="list__item">
               <div class="card card_vertical">
                 <a class="card__link" href="/templates/project-2.php">
-                  <h2 class="card__title">Hello</h2>
+                  <h3 class="card__title">Hello</h3>
                   <div class="card__media">
                     <div class="image">
                       <img class="image__tag" src="../assets/images/project-hero.jpg" alt="">
@@ -52,7 +52,7 @@
             <div class="list__item">
               <div class="card card_vertical">
                 <a class="card__link" href="/templates/project-2.php">
-                  <h2 class="card__title">Hello</h2>
+                  <h3 class="card__title">Hello</h3>
                   <div class="card__media">
                     <div class="image">
                       <img class="image__tag" src="../assets/images/project-hero.jpg" alt="">
