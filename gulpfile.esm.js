@@ -110,6 +110,30 @@ function process__vendor () {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// SEO
+////////////////////////////////////////////////////////////////////////////////
+
+const seo__src = (root_src + path.index).replace('//', '/')
+const seo__dest = (root_dist).replace('//', '/')
+
+// CLEAN -------------------------------------------------------------
+
+function clean__robots () { return del([seo__dest + 'robots.txt']) }
+
+// COPY -------------------------------------------------------------
+
+function copy__robots () {
+  return src([seo__src + (!PREVIEW ? 'robots.prod' : 'robots.preview')])
+    .pipe(gulpif(DEBUG, debug({ title: '## ROBOTS:' })))
+    .pipe(rename('robots.txt'))
+    .pipe(dest(seo__dest))
+}
+
+// COMPOSITION -------------------------------------------------------------
+
+const robots = series(clean__robots, copy__robots)
+
+////////////////////////////////////////////////////////////////////////////////
 // LOGIC
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -374,10 +398,11 @@ const LOGIC = series(parallel(index, htaccess, snippets, templates), vendor)
 const STYLE = series(parallel(styles, scripts__main))
 const ASSET = series(images, icons, favicons, fonts)
 const LINT = series(lint__logic, lint__styles, lint__scripts)
+const SEO = series(robots)
 const RUN = series(browsersync, parallel(watch__logic, watch__assets, watch__styles, watch__scripts))
 
 if (PROD || PREVIEW) {
-  exports.default = series(LINT, LOGIC, STYLE, ASSET)
+  exports.default = series(LINT, LOGIC, STYLE, ASSET, SEO)
 } else {
   exports.default = series(LOGIC, STYLE, ASSET, RUN)
 }
