@@ -22,8 +22,8 @@ $pwd = $(Get-Content $hsh | ConvertTo-SecureString -Key (Get-Content $key))
 # Session
 $session = $Null
 $sessionOptions = $Null
-$sessionLogPath = $baseLocalEntry + '_logs\_winscp.' + $id + '.deploy.log'
-$sessionDebugPath = $baseLocalEntry + '_logs\_winscp.' + $id + '.deploy.debug.log'
+$sessionLogPath = $baseLocalEntry + '_logs\winscp.' + $id + '.deploy.log'
+$sessionDebugPath = $baseLocalEntry + '_logs\winscp.' + $id + '.deploy.debug.log'
 
 # Helper
 $done = $False
