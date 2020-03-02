@@ -1,3 +1,4 @@
+$scope = (Get-Culture).TextInfo
 Function TransferHandler()
 {
     if ($args[0] -eq 'public')
@@ -59,8 +60,8 @@ Function ActionHandler()
 
         if ($args[0] -eq 'cleanup')
         {
-            Write-Host "$(Get-Date -Format 'HH:mm:ss') Working... Remove Outdated $($args[3]) Files"
             Write-Host
+            Write-Host "$(Get-Date -Format 'HH:mm:ss') Working... Remove Outdated $($scope.ToTitleCase($args[3])) Files"
 
             $args[1].RemoveFiles($args[2] + '*__del')
 
@@ -107,7 +108,7 @@ Function ActionHandler()
         if ($args[0] -eq 'cleanup')
         {
             Write-Host
-            Write-Host "$(Get-Date -Format 'HH:mm:ss') Working... Remove Outdated $($args[3]) Files"
+            Write-Host "$(Get-Date -Format 'HH:mm:ss') Working... Remove Outdated $($scope.ToTitleCase($args[3])) Files"
             Write-Host
 
             $args[1].RemoveFiles($args[2] + $args[3] + '__del')
@@ -119,7 +120,6 @@ Function ActionHandler()
 
 Function TransferQueueHandler
 {
-    $scope = (Get-Culture).TextInfo
     $done = $False
 
     if ($args[0] -eq 'public')
@@ -165,16 +165,15 @@ Function FileActionsHandler
 
     if ($args[0] -eq 'public')
     {
-        ## MOVE
         Write-Host
-        Write-Host "$(Get-Date -Format 'HH:mm:ss') Working... Activate Public Upload"
+        Write-Host "$(Get-Date -Format 'HH:mm:ss') Working... Activate $($scope.ToTitleCase($args[0])) Upload"
         Write-Host
 
         do
         {
             $done = ActionHandler "unlink" $args[1] $args[2] 'public'
         }
-        while($done -eq $False)
+        while ($done -eq $False)
 
         $done = $False
 
@@ -182,7 +181,7 @@ Function FileActionsHandler
         {
             $done = ActionHandler "link" $args[1] $args[2] 'public'
         }
-        while($done -eq $False)
+        while ($done -eq $False)
 
         $done = $False
 
@@ -190,7 +189,7 @@ Function FileActionsHandler
         {
             $done = ActionHandler "cleanup" $args[1] $args[2] 'public'
         }
-        while($done -eq $False)
+        while ($done -eq $False)
 
         $done = $False
 
@@ -199,15 +198,15 @@ Function FileActionsHandler
 
     if ($args[0] -eq 'assets' -OR $args[0] -eq 'snippets' -OR $args[0] -eq 'templates')
     {
-        ## MOVE
         Write-Host
-        Write-Host "$(Get-Date -Format 'HH:mm:ss') Working... Move New $($args[0]) Files"
+        Write-Host "$(Get-Date -Format 'HH:mm:ss') Working... Activate $($scope.ToTitleCase($args[0])) Upload"
+        Write-Host
 
         do
         {
             $done = ActionHandler "unlink" $args[1] $args[2] $args[0]
         }
-        while($done -eq $False)
+        while ($done -eq $False)
 
         $done = $False
 
@@ -215,7 +214,7 @@ Function FileActionsHandler
         {
             $done = ActionHandler "link" $args[1] $args[2] $args[0]
         }
-        while($done -eq $False)
+        while ($done -eq $False)
 
         $done = $False
 
@@ -223,7 +222,7 @@ Function FileActionsHandler
         {
             $done = ActionHandler "cleanup" $args[1] $args[2] $args[0]
         }
-        while($done -eq $False)
+        while ($done -eq $False)
 
         $done = $False
 
@@ -239,7 +238,6 @@ Function LogTransferredFiles
     {
         Write-Host "$(Get-Date -Format 'HH:mm:ss') Working... $($e.Destination)"
     }
-
     else
     {
         Write-Host "## Error $($e.Error) ## $($e.Destination)"
