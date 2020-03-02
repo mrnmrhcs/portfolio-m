@@ -15,7 +15,6 @@ Function SessionSettings
     $options.AddRawSettings("PreserveDirectoryChanges", "0")
     $options.AddRawSettings("FollowDirectorySymlinks", "1")
     $options.AddRawSettings("Utf", "1")
-    # $options.AddRawSettings("FtpPingInterval", "60")
     $options.AddRawSettings("MinTlsVersion", "11")
 
     return $options

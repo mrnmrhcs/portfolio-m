@@ -133,8 +133,6 @@ catch
     Write-Host
     Write-Host "$($_.Exception.Message)"
     Write-Host
-    Write-Host "$($e.Destination)"
-    Write-Host
     Write-Host '##'
 
     exit 1

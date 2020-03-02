@@ -66,18 +66,6 @@ function reload (done) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-// CACHE
-////////////////////////////////////////////////////////////////////////////////
-
-const clear = series(clean__cache)
-
-// CLEAN -------------------------------------------------------------
-
-function clean__cache () {
-  return cache.clearAll()
-}
-
-////////////////////////////////////////////////////////////////////////////////
 // VENDOR
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -113,7 +101,7 @@ function process__vendor () {
 // SEO
 ////////////////////////////////////////////////////////////////////////////////
 
-const seo__src = (root_src + path.index).replace('//', '/')
+const seo__src = (root_src).replace('//', '/')
 const seo__dest = (root_dist).replace('//', '/')
 
 // CLEAN -------------------------------------------------------------
@@ -123,7 +111,7 @@ function clean__robots () { return del([seo__dest + 'robots.txt']) }
 // COPY -------------------------------------------------------------
 
 function copy__robots () {
-  return src([seo__src + (!PREVIEW ? 'robots.prod' : 'robots.preview')])
+  return src([seo__src + (!PREVIEW ? 'robots.txt' : 'robots.txt')])
     .pipe(gulpif(DEBUG, debug({ title: '## ROBOTS:' })))
     .pipe(rename('robots.txt'))
     .pipe(dest(seo__dest))
@@ -391,8 +379,6 @@ const styles = series(clean__styles, process__styles)
 ////////////////////////////////////////////////////////////////////////////////
 // COMPOSITION
 ////////////////////////////////////////////////////////////////////////////////
-
-exports.clear = series(clear)
 
 const LOGIC = series(parallel(index, htaccess, snippets, templates), vendor)
 const STYLE = series(parallel(styles, scripts__main))

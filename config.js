@@ -1,7 +1,7 @@
 module.exports = {
   host: {
     local: 'http://portfolio-m.local.run:8080',
-    live: 'https://m.kaimberg.com'
+    live: 'http://m.kaimberg.com'
   },
   path: {
     root_src: 'app',
