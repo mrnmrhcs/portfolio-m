@@ -4,13 +4,13 @@
   "version": "2.0.0",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp --dev",
-    "build": "gulp --prod",
-    "build.preview": "gulp --preview",
-    "deploy": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./run/deploy.ps1",
-    "deploy.preview": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./run/deploy.ps1 -preview",
-    "start.debug": "gulp --dev --debug",
-    "build.debug": "gulp --prod --debug"
+    "start": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='development'; $env:APP_NAME='%npm_package_name%'; gulp",
+    "build": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='production'; $env:APP_NAME='%npm_package_name%'; gulp",
+    "build.preview": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='staging'; $env:APP_NAME='%npm_package_name%'; gulp",
+    "deploy": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='production'; $env:APP_NAME='%npm_package_name%'; ./run/deploy.ps1",
+    "deploy.preview": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='staging'; $env:APP_NAME='%npm_package_name%'; ./run/deploy.ps1",
+    "start.debug": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='development'; $env:NODE_DEBUG='*'; $env:APP_NAME='%npm_package_name%'; gulp",
+    "build.debug": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='production'; $env:NODE_DEBUG='*'; $env:APP_NAME='%npm_package_name%'; gulp"
   },
   "browserslist": {
     "production": [
@@ -27,7 +27,7 @@
     "del": "5.1.0",
     "eslint": "7.2.0",
     "eslint-config-standard": "14.1.1",
-    "eslint-plugin-import": "2.21.1",
+    "eslint-plugin-import": "2.21.2",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-standard": "4.0.1",
@@ -46,9 +46,8 @@
     "gulp-sass": "4.1.0",
     "gulp-stylelint": "13.0.0",
     "gulp-uglify-es": "2.0.0",
-    "minimist": "1.2.5",
     "node-sass": "4.14.1",
-    "stylelint": "13.6.0",
+    "stylelint": "13.6.1",
     "stylelint-order": "4.1.0",
     "stylelint-scss": "3.17.2"
   },

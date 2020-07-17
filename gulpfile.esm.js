@@ -19,16 +19,14 @@ import debug from 'gulp-debug'
 import scss from 'gulp-sass'
 import sass from 'node-sass'
 import sync from 'browser-sync'
-import minimist from 'minimist'
 import del from 'del'
 
 import config from './config'
 
-// ARGS
-const ARGS = minimist(process.argv.slice(2))
-const DEBUG = (ARGS.debug) ? true : false
-const PREVIEW = (ARGS.preview) ? true : false
-const PROD = (ARGS.prod) ? true : false
+// CONF
+const NAME = process.env.APP_NAME
+const ENV = process.env.NODE_ENV
+const DEBUG = (process.env.NODE_DEBUG) ? true : false
 
 // PATHS
 const path = prep(config.path)
@@ -83,7 +81,7 @@ function process__vendor_head () {
   return src(config.vendor.head)
     .pipe(gulpif(DEBUG, debug({ title: '## VENDOR_HEAD:' })))
     .pipe(concat('vendor.head.js'))
-    .pipe(gulpif((PROD || PREVIEW), uglify()))
+    .pipe(gulpif((ENV === 'production' || ENV === 'staging'), uglify()))
     .pipe(rename({ suffix: '.min' }))
     .pipe(dest(config.vendor.dest))
 }
@@ -92,7 +90,7 @@ function process__vendor () {
   return src(config.vendor.src)
     .pipe(gulpif(DEBUG, debug({ title: '## VENDOR:' })))
     .pipe(concat('vendor.js'))
-    .pipe(gulpif((PROD || PREVIEW), uglify()))
+    .pipe(gulpif((ENV === 'production' || ENV === 'staging'), uglify()))
     .pipe(rename({ suffix: '.min' }))
     .pipe(dest(config.vendor.dest))
 }
@@ -111,7 +109,7 @@ function clean__robots () { return del([seo__dest + 'robots.txt']) }
 // COPY -------------------------------------------------------------
 
 function copy__robots () {
-  return src([seo__src + (!PREVIEW ? 'robots.txt' : 'robots.txt')])
+  return src([seo__src + `robots.${process.env.NODE_ENV}`])
     .pipe(gulpif(DEBUG, debug({ title: '## ROBOTS:' })))
     .pipe(rename('robots.txt'))
     .pipe(dest(seo__dest))
@@ -257,14 +255,14 @@ function process__favicons () {
       online: false,
       replace: true,
       icons: {
-        android: PROD ? true : (!PREVIEW ? false : true),
-        appleIcon: PROD ? true : (!PREVIEW ? false : true),
-        appleStartup: PROD ? true : (!PREVIEW ? false : true),
-        coast: PROD ? true : (!PREVIEW ? false : true),
+        android: ENV === 'production' || ENV === 'staging' ? true : false,
+        appleIcon: ENV === 'production' || ENV === 'staging' ? true : false,
+        appleStartup: ENV === 'production' || ENV === 'staging' ? true : false,
+        coast: ENV === 'production' || ENV === 'staging' ? true : false,
         favicons: true,
-        firefox: PROD ? true : (!PREVIEW ? false : true),
-        windows: PROD ? true : (!PREVIEW ? false : true),
-        yandex: PROD ? true : (!PREVIEW ? false : true)
+        firefox: ENV === 'production' || ENV === 'staging' ? true : false,
+        windows: ENV === 'production' || ENV === 'staging' ? true : false,
+        yandex: ENV === 'production' || ENV === 'staging' ? true : false
       }
     }))
     .pipe(gulpif(DEBUG, debug({ title: '## FAVICON:' })))
@@ -311,18 +309,18 @@ function lint__scripts () {
     .pipe(gulpif(DEBUG, debug({ title: '## MAIN:' })))
     .pipe(eslint())
     .pipe(eslint.format())
-    .pipe(gulpif((PROD || PREVIEW), eslint.failAfterError()))
+    .pipe(gulpif((ENV === 'production' || ENV === 'staging'), eslint.failAfterError()))
 }
 
 // PROCESS -------------------------------------------------------------
 
 function process__scripts__main () {
-  return src([scripts__src + 'main.js', snippets__src + '**/script.js'], { sourcemaps: !PROD ? (!PREVIEW ? true : false) : false })
+  return src([scripts__src + 'main.js', snippets__src + '**/script.js'], { sourcemaps: !ENV === 'production' ? (!ENV === 'staging' ? true : false) : false })
     .pipe(gulpif(DEBUG, debug({ title: '## MAIN:' })))
     .pipe(concat('main.js'))
-    .pipe(gulpif((PROD || PREVIEW), uglify()))
+    .pipe(gulpif((ENV === 'production' || ENV === 'staging'), uglify()))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(dest(scripts__dest, { sourcemaps: !PROD ? (!PREVIEW ? '.' : false) : false }))
+    .pipe(dest(scripts__dest, { sourcemaps: !ENV === 'production' ? (!ENV === 'staging' ? '.' : false) : false }))
 }
 
 // WATCH -------------------------------------------------------------
@@ -351,18 +349,18 @@ function clean__styles () { return del(styles__dest + '*.min.{css,css.map}') }
 function lint__styles () {
   return src([styles__src + '**/*.scss', snippets__src + '**/*.scss'])
     .pipe(gulpif(DEBUG, debug({ title: '## STYLE:' })))
-    .pipe(stylelint({ syntax: 'scss', reporters: [{ formatter: 'string', console: true }], failAfterError: PROD ? (!PREVIEW ? false : true) : false }))
+    .pipe(stylelint({ syntax: 'scss', reporters: [{ formatter: 'string', console: true }], failAfterError: ENV === 'production' ? (!ENV === 'staging' ? false : true) : false }))
 }
 
 // PROCESS -------------------------------------------------------------
 
 function process__styles () {
   scss.compiler = sass
-  return src(styles__src + 'main.scss', { sourcemaps: !PROD ? (!PREVIEW ? true : false) : false })
+  return src(styles__src + 'main.scss', { sourcemaps: !ENV === 'production' ? (!ENV === 'staging' ? true : false) : false })
     .pipe(gulpif(DEBUG, debug({ title: '## STYLE:' })))
-    .pipe(scss({ outputStyle: PROD ? (PREVIEW ? 'compressed' : 'expanded') : 'expanded' }).on('error', scss.logError))
+    .pipe(scss({ outputStyle: ENV === 'production' ? (ENV === 'staging' ? 'compressed' : 'expanded') : 'expanded' }).on('error', scss.logError))
     .pipe(autoprefixer()).pipe(rename({ suffix: '.min' }))
-    .pipe(dest(styles__dest, { sourcemaps: !PROD ? (!PREVIEW ? '.' : false) : false }))
+    .pipe(dest(styles__dest, { sourcemaps: !ENV === 'production' ? (!ENV === 'staging' ? '.' : false) : false }))
 }
 
 // WATCH -------------------------------------------------------------
@@ -387,7 +385,7 @@ const LINT = series(lint__logic, lint__styles, lint__scripts)
 const SEO = series(robots)
 const RUN = series(browsersync, parallel(watch__logic, watch__assets, watch__styles, watch__scripts))
 
-if (PROD || PREVIEW) {
+if (ENV === 'production' || ENV === 'staging') {
   exports.default = series(LINT, LOGIC, STYLE, ASSET, SEO)
 } else {
   exports.default = series(LOGIC, STYLE, ASSET, RUN)
