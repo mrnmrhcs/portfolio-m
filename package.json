@@ -23,11 +23,11 @@
     ]
   },
   "devDependencies": {
-    "browser-sync": "2.26.7",
-    "del": "5.1.0",
-    "eslint": "7.2.0",
+    "browser-sync": "2.26.12",
+    "del": "6.0.0",
+    "eslint": "7.11.0",
     "eslint-config-standard": "14.1.1",
-    "eslint-plugin-import": "2.21.1",
+    "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-standard": "4.0.1",
@@ -48,12 +48,12 @@
     "gulp-uglify-es": "2.0.0",
     "minimist": "1.2.5",
     "node-sass": "4.14.1",
-    "stylelint": "13.6.0",
+    "stylelint": "13.7.2",
     "stylelint-order": "4.1.0",
-    "stylelint-scss": "3.17.2"
+    "stylelint-scss": "3.18.0"
   },
   "dependencies": {
-    "document-register-element": "1.14.3",
+    "document-register-element": "1.14.10",
     "jquery": "3.5.1"
   },
   "stylelint": {
