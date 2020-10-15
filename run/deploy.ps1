@@ -3,9 +3,9 @@ $HostName = "wp1177004.server-he.de"
 $UserName = if ($args -eq '-preview') { "ftp1177004-mpreview" } else { "ftp1177004-m" }
 
 # Location
-$baseLocalEntry = 'E:\Sites\'
+$baseLocalEntry = 'T:\_sites\'
 $baseLocalEntryPath = $baseLocalEntry + $id + '\'
-$baseLocalConfigPath = 'D:\Tools\__configs\M-1\sites\' + $id + '\'
+$baseLocalConfigPath = 'T:\__configs\M-1\sites\' + $id + '\'
 $baseLocalDist = $baseLocalEntryPath + 'dist' + '\'
 
 $baseRemoteEntry = '/'
@@ -17,7 +17,7 @@ $winSCPdnet = $Env:APPS_HOME + '\' + 'winscp\current\WinSCPnet.dll'
 # Authentication
 $hsh = $baseLocalEntryPath + $(if ($args -eq '-preview') { "env\preview" } else { "env\prod" })
 $key = $baseLocalConfigPath + $(if ($args -eq '-preview') { "auth\preview" } else { "auth\prod" })
-$pwd = $(Get-Content $hsh | ConvertTo-SecureString -Key (Get-Content $key))
+$pw = $(Get-Content $hsh | ConvertTo-SecureString -Key (Get-Content $key))
 
 # Session
 $session = $Null
@@ -37,7 +37,7 @@ try
     Import-Module ($baseLocalEntryPath + 'run\module\session.psm1')
     Import-Module ($baseLocalEntryPath + 'run\module\transfer.psm1')
 
-    $sessionOptions = SessionSettings $HostName $UserName $pwd
+    $sessionOptions = SessionSettings $HostName $UserName $pw
 
     $session = New-Object WinSCP.Session
     $session.ExecutablePath = $winSCPexec
