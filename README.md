@@ -1,6 +1,6 @@
 # Site - Project: Portfolio
 
-`Node 12.16.1` `NPM 6.14.1` `PHP 7.3.15` `Composer 1.9.3`
+`Node 13.14.0` `NPM 6.14.8` `PHP 7.4.11` `Composer 1.10.15`
 
 ![WOW.](https://cldup.com/JD_k_tMHGF.gif "WOW.")
 
