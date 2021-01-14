@@ -1,241 +1,225 @@
-$scope = (Get-Culture).TextInfo
-Function TransferHandler()
-{
-    if ($args[0] -eq 'public')
-    {
-        foreach ($filemask in $args[5])
-        {
-            $transfer = $args[1].PutFiles($args[3] + $filemask, ($args[4] + '*__up'), $False, $args[2])
-            $transfer.Check()
+Function TransferHandler {
+    [CmdletBinding()]
+
+    param (
+        [Parameter(Mandatory)] [PSObject]$Session,
+        [Parameter(Mandatory)] [PSObject]$Options,
+        [Parameter(Mandatory)] [ValidateSet('Public','Assets','Snippets','Templates')] [String]$Switch
+    )
+
+    if ($Switch -eq 'Public') {
+
+        Write-Host
+        Write-Host "# $((Get-Culture).TextInfo.ToUpper($Switch)) # TRANSFER"
+        Write-Host
+
+        $FileMasks = '.*', '*.php', '*.js', '*.css', '*.txt'
+
+        foreach ($Mask in $FileMasks) {
+
+            $Done = $Null
+
+            while ($Done -eq $Null) {
+
+                $Transfer = $Session.PutFiles("$(Get-Location)\dist\$Mask", ('/*__up'), $False, $Options)
+                $Transfer.Check()
+
+                if ($Transfer.IsSuccess) {
+
+                    $Done = $True
+                }
+                else {
+
+                    Write-Host
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') Retry..."
+                }
+            }
         }
 
-        return $True
+        return
     }
 
-    if ($args[0] -eq 'assets' -OR $args[0] -eq 'snippets' -OR $args[0] -eq 'templates')
-    {
-        $transfer = $args[1].PutFiles($args[3] + $args[0], ($args[4] + $args[0] + '__up'), $False, $args[2])
-        $transfer.Check()
+    if ($Switch -eq 'Assets' -OR $Switch -eq 'Snippets' -OR $Switch -eq 'Templates') {
 
-        return $True
+        Write-Host
+        Write-Host "# $((Get-Culture).TextInfo.ToUpper($Switch)) # TRANSFER"
+        Write-Host
+
+        $Done = $Null
+
+        while ($Done -eq $Null) {
+
+            $Transfer = $Session.PutFiles("$(Get-Location)\dist\$((Get-Culture).TextInfo.ToLower($Switch))", ("/$((Get-Culture).TextInfo.ToLower($Switch))__up"), $False, $Options)
+            $Transfer.Check()
+
+            if ($Transfer.IsSuccess) {
+
+                $Done = $True
+            }
+            else {
+
+                Write-Host
+                Write-Host "$(Get-Date -Format 'HH:mm:ss') Retry..."
+            }
+        }
+
+        return
     }
 }
 
-Function ActionHandler()
-{
-    if ($args[3] -eq 'public')
-    {
-        if ($args[0] -eq 'unlink')
-        {
-            $files = $args[1].EnumerateRemoteFiles($args[2], '*', [WinSCP.EnumerationOptions]::None)
+Function ActionHandler {
+    [CmdletBinding()]
 
-            foreach ($file in $files)
-            {
-                if ($file.FullName -notmatch "__up$")
-                {
-                    $args[1].MoveFile($file.FullName, $file.FullName + '__del')
+    param (
+        [Parameter(Mandatory)] [PSObject]$Session,
+        [Parameter(Mandatory)] [ValidateSet('Public','Assets','Snippets','Templates')] [String]$Switch,
+        [Parameter()] [ValidateSet('Unlink','Link','Cleanup')] [String]$State
+    )
+
+    if ($Switch -eq 'Public') {
+
+        Write-Host
+        Write-Host "# $((Get-Culture).TextInfo.ToUpper($Switch)) # $((Get-Culture).TextInfo.ToUpper($State))"
+        Write-Host
+
+        if ($State -eq 'Unlink') {
+
+            $Files = $Session.EnumerateRemoteFiles('/', '*', [WinSCP.EnumerationOptions]::None)
+
+            foreach ($File in $Files) {
+
+                if ($File.FullName -notmatch "__up$") {
+
+                    $Session.MoveFile($File.FullName, $File.FullName + '__del')
+
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') Success... $($File.FullName) => $($File.FullName)__del"
                 }
             }
 
-            return $True
+            return
         }
 
-        if ($args[0] -eq 'link')
-        {
-            Write-Host
-            Write-Host "## Activate Upload ## $($scope.ToTitleCase($args[3]))"
-            Write-Host
+        if ($State -eq 'Link') {
 
-            $files = $args[1].EnumerateRemoteFiles($args[2], '*', [WinSCP.EnumerationOptions]::None)
+            $Files = $Session.EnumerateRemoteFiles('/', '*', [WinSCP.EnumerationOptions]::None)
 
-            foreach ($file in $files)
-            {
-                if ($file.FullName -notmatch "__del$")
-                {
-                    $filename = $file.FullName -replace "__up"
+            foreach ($File in $Files) {
 
-                    Write-Host "$(Get-Date -Format 'HH:mm:ss') Working... $($file.FullName) => $($filename)"
-                    $args[1].MoveFile($file.FullName, $filename)
+                if ($File.FullName -notmatch "__del$") {
+
+                    $FileName = $File.FullName -replace "__up"
+                    $Session.MoveFile($File.FullName, $FileName)
+
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') Success... $($File.FullName) => $FileName"
                 }
             }
 
-            return $True
+            return
         }
 
-        if ($args[0] -eq 'cleanup')
-        {
-            Write-Host "$(Get-Date -Format 'HH:mm:ss') Working... /Delete Outdated $($scope.ToTitleCase($args[3])) Files"
+        if ($State -eq 'Cleanup') {
 
-            $args[1].RemoveFiles($args[2] + '*__del')
+            $Done = $Null
 
-            return $True
+            while ($Done -eq $Null) {
+
+                $Removal = $Session.RemoveFiles('/.env__del')
+
+                if ($Removal.IsSuccess) {
+
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') Success... /.env__del => delete"
+
+                    $Done = $True
+                }
+                else {
+
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') $(if ($Session.Opened -ne $True) { 'Connection Status: Closed' } else { 'Connection Status: Open' })"
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') Retry..."
+                }
+            }
+
+            return
         }
     }
 
-    if ($args[3] -eq 'assets' -OR $args[3] -eq 'snippets' -OR $args[3] -eq 'templates')
-    {
-        if ($args[0] -eq 'unlink')
-        {
-            $files = $args[1].EnumerateRemoteFiles($args[2], $args[3], [WinSCP.EnumerationOptions]::MatchDirectories)
+    if ($Switch -eq 'Assets' -OR $Switch -eq 'Snippets' -OR $Switch -eq 'Templates') {
 
-            foreach ($file in $files)
-            {
-                if ($file.FullName -notmatch "__up$")
-                {
-                    $args[1].MoveFile($file.FullName, $file.FullName + '__del')
+        Write-Host
+        Write-Host "# $((Get-Culture).TextInfo.ToUpper($Switch)) # $((Get-Culture).TextInfo.ToUpper($State))"
+        Write-Host
+
+        if ($State -eq 'Unlink') {
+
+            $Files = $Session.EnumerateRemoteFiles('/', "$((Get-Culture).TextInfo.ToLower($Switch))", [WinSCP.EnumerationOptions]::MatchDirectories)
+
+            foreach ($File in $Files) {
+
+                if ($File.FullName -notmatch "__up$") {
+
+                    $Session.MoveFile($File.FullName, $File.FullName + '__del')
+
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') Success... $($File.FullName) => $($File.FullName)__del"
                 }
             }
 
-            return $True
+            return
         }
 
-        if ($args[0] -eq 'link')
-        {
-            Write-Host
-            Write-Host "## Activate Upload ## $($scope.ToTitleCase($args[3]))"
-            Write-Host
+        if ($State -eq 'Link') {
 
-            $files = $args[1].EnumerateRemoteFiles($args[2], $args[3] + '__up', [WinSCP.EnumerationOptions]::MatchDirectories)
+            $Files = $Session.EnumerateRemoteFiles('/', "$((Get-Culture).TextInfo.ToLower($Switch))__up", [WinSCP.EnumerationOptions]::MatchDirectories)
 
-            foreach ($file in $files)
-            {
-                if ($file.FullName -notmatch "__del$")
-                {
-                    $filename = $file.FullName -replace "__up"
+            foreach ($File in $Files) {
 
-                    Write-Host "$(Get-Date -Format 'HH:mm:ss') Working... $($file.FullName) => $($filename)"
-                    $args[1].MoveFile($file.FullName, $filename)
+                if ($File.FullName -notmatch "__del$") {
+
+                    $FileName = $File.FullName -replace "__up"
+                    $Session.MoveFile($File.FullName, $FileName)
+
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') Success... $($File.FullName) => $FileName"
                 }
             }
 
-            return $True
+            return
         }
 
-        if ($args[0] -eq 'cleanup')
-        {
-            Write-Host "$(Get-Date -Format 'HH:mm:ss') Working... /Delete Outdated $($scope.ToTitleCase($args[3])) Files"
+        if ($State -eq 'Cleanup') {
 
-            $args[1].RemoveFiles($args[2] + $args[3] + '__del')
+            $Done = $Null
 
-            return $True
+            while ($Done -eq $Null) {
+
+                $Removal = $Session.RemoveFiles(('/' + (Get-Culture).TextInfo.ToLower($Switch) + '__del'))
+
+                if ($Removal.IsSuccess) {
+
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') Success... /$((Get-Culture).TextInfo.ToLower($Switch))__del => delete"
+
+                    $Done = $True
+                }
+                else {
+
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') $(if ($Session.Opened -ne $True) { 'Connection Status: Closed' } else { 'Connection Status: Open' })"
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') Retry..."
+                }
+            }
+
+            return
         }
     }
 }
 
-Function TransferQueueHandler
-{
-    $done = $False
+Function LogTransferredFiles {
 
-    if ($args[0] -eq 'public')
-    {
-        Write-Host
-        Write-Host "## TransferQueue ## $($scope.ToTitleCase($args[0]))"
-        Write-Host
-
-        $filemasks = '.*', '*.php', '*.js', '*.css', '*.txt'
-
-        do
-        {
-            $done = TransferHandler $args[0] $args[1] $args[2] $args[3] $args[4] $filemasks
-        }
-        while ($done -eq $False)
-
-        $done = $False
-
-        return $True
-    }
-
-    if ($args[0] -eq 'assets' -OR $args[0] -eq 'snippets' -OR $args[0] -eq 'templates')
-    {
-        Write-Host
-        Write-Host "## TransferQueue ## $($scope.ToTitleCase($args[0]))"
-        Write-Host
-
-        do
-        {
-            $done = TransferHandler $args[0] $args[1] $args[2] $args[3] $args[4]
-        }
-        while ($done -eq $False)
-
-        $done = $False
-
-        return $True
-    }
-}
-
-Function FileActionsHandler
-{
-    $done = $False
-
-    if ($args[0] -eq 'public')
-    {
-        do
-        {
-            $done = ActionHandler "unlink" $args[1] $args[2] 'public'
-        }
-        while ($done -eq $False)
-
-        $done = $False
-
-        do
-        {
-            $done = ActionHandler "link" $args[1] $args[2] 'public'
-        }
-        while ($done -eq $False)
-
-        $done = $False
-
-        do
-        {
-            $done = ActionHandler "cleanup" $args[1] $args[2] 'public'
-        }
-        while ($done -eq $False)
-
-        $done = $False
-
-        return $True
-    }
-
-    if ($args[0] -eq 'assets' -OR $args[0] -eq 'snippets' -OR $args[0] -eq 'templates')
-    {
-        do
-        {
-            $done = ActionHandler "unlink" $args[1] $args[2] $args[0]
-        }
-        while ($done -eq $False)
-
-        $done = $False
-
-        do
-        {
-            $done = ActionHandler "link" $args[1] $args[2] $args[0]
-        }
-        while ($done -eq $False)
-
-        $done = $False
-
-        do
-        {
-            $done = ActionHandler "cleanup" $args[1] $args[2] $args[0]
-        }
-        while ($done -eq $False)
-
-        $done = $False
-
-        return $True
-    }
-}
-
-Function LogTransferredFiles
-{
     param($e)
 
-    if ($Null -eq $e.Error)
-    {
-        Write-Host "$(Get-Date -Format 'HH:mm:ss') Working... $($e.Destination)"
+    if ($Null -eq $e.Error) {
+
+        Write-Host "$(Get-Date -Format 'HH:mm:ss') Success... $($e.Destination)"
     }
-    else
-    {
-        Write-Host "## Error $($e.Error) ## $($e.Destination)"
+    else {
+
+        Write-Host
+        Write-Host "# ERROR $($e.Error) # $($e.Destination)"
     }
 }
