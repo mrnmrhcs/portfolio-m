@@ -1,9 +1,6 @@
 # Site - Project: Portfolio
 
-`Node 13.14.0` `NPM 6.14.8` `PHP 7.4.11` `Composer 1.10.15`
-
-![WOW.](https://cldup.com/JD_k_tMHGF.gif "WOW.")
-
+`Node 14.15.1` `NPM 6.14.11` `Composer 2.0.8` `PHP 7.4.14` `WinSCP 5.17.9` `PowerShell 7.1.0`
 
 ## Setup
 ```
