@@ -123,11 +123,11 @@ Function ActionHandler {
 
             while ($Done -eq $Null) {
 
-                $Removal = $Session.RemoveFiles('/.env__del')
+                $Removal = $Session.RemoveFiles('*.*__del')
 
                 if ($Removal.IsSuccess) {
 
-                    Write-Host "$(Get-Date -Format 'HH:mm:ss') Success... /.env__del => delete"
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') Success... /*.*__del => delete"
 
                     $Done = $True
                 }
@@ -196,6 +196,7 @@ Function ActionHandler {
                     Write-Host "$(Get-Date -Format 'HH:mm:ss') Success... /$((Get-Culture).TextInfo.ToLower($Switch))__del => delete"
 
                     $Done = $True
+
                 }
                 else {
 
