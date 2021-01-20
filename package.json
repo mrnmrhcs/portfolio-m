@@ -4,13 +4,13 @@
   "version": "2.0.0",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp --dev",
-    "build": "gulp --prod",
-    "build.preview": "gulp --preview",
-    "deploy": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./run/deploy.ps1",
-    "deploy.preview": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./run/deploy.ps1 -preview",
-    "start.debug": "gulp --dev --debug",
-    "build.debug": "gulp --prod --debug"
+    "start": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='development'; ./run/start.ps1",
+    "build": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='production'; ./run/build.ps1",
+    "build.preview": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='staging'; ./run/build.ps1",
+    "deploy": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='production'; $env:APP_NAME='%npm_package_name%'; ./run/deploy.ps1",
+    "deploy.preview": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='staging'; $env:APP_NAME='%npm_package_name%'; ./run/deploy.ps1",
+    "start.debug": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='development'; $env:NODE_DEBUG='*'; ./run/start.ps1",
+    "build.debug": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='production'; $env:NODE_DEBUG='*'; ./run/build.ps1"
   },
   "browserslist": {
     "production": [
@@ -23,37 +23,33 @@
     ]
   },
   "devDependencies": {
-    "browser-sync": "2.26.7",
-    "del": "5.1.0",
-    "eslint": "7.2.0",
-    "eslint-config-standard": "14.1.1",
-    "eslint-plugin-import": "2.21.1",
+    "browser-sync": "2.26.13",
+    "del": "6.0.0",
+    "eslint": "7.18.0",
+    "eslint-config-standard": "16.0.2",
+    "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "4.2.1",
-    "eslint-plugin-standard": "4.0.1",
+    "eslint-plugin-standard": "5.0.0",
     "esm": "3.2.25",
     "gulp": "4.0.2",
     "gulp-autoprefixer": "7.0.1",
     "gulp-cache": "1.1.3",
     "gulp-concat": "2.6.1",
     "gulp-debug": "4.0.0",
-    "gulp-eslint": "6.0.0",
-    "gulp-favicons": "2.4.0",
+    "gulp-favicons": "3.0.0",
     "gulp-if": "3.0.0",
     "gulp-imagemin": "7.1.0",
-    "gulp-phpcs": "3.1.0",
     "gulp-rename": "2.0.0",
     "gulp-sass": "4.1.0",
-    "gulp-stylelint": "13.0.0",
     "gulp-uglify-es": "2.0.0",
-    "minimist": "1.2.5",
-    "node-sass": "4.14.1",
-    "stylelint": "13.6.0",
+    "node-sass": "5.0.0",
+    "stylelint": "13.9.0",
     "stylelint-order": "4.1.0",
-    "stylelint-scss": "3.17.2"
+    "stylelint-scss": "3.18.0"
   },
   "dependencies": {
-    "document-register-element": "1.14.3",
+    "document-register-element": "1.14.10",
     "jquery": "3.5.1"
   },
   "stylelint": {
@@ -75,6 +71,7 @@
       "camelcase": "off",
       "no-unneeded-ternary": "off",
       "no-unused-vars": "off",
+      "no-undef": "off",
       "spaced-comment": "off"
     }
   },
