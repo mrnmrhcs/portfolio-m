@@ -2,7 +2,7 @@
 // GULP
 ////////////////////////////////////////////////////////////////////////////////
 
-import { series, parallel, src, dest, watch } from 'gulp'
+import { task, series, parallel, src, dest, watch } from 'gulp'
 
 import autoprefixer from 'gulp-autoprefixer'
 import imagemin from 'gulp-imagemin'
@@ -365,6 +365,8 @@ if (ENV === 'production' || ENV === 'staging') {
 ////////////////////////////////////////////////////////////////////////////////
 // HELPER
 ////////////////////////////////////////////////////////////////////////////////
+
+task('clear', () => cache.clearAll())
 
 function prep (paths) {
   for (var p in paths) {
