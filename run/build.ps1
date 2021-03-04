@@ -1,6 +1,12 @@
 Write-Host '### TASK ### BUILD ###'
 Write-Host
 
+$env:NODE_ENV=$Args[1]
+
+if ($Args[2] -match 'debug') {
+    $env:NODE_DEBUG="*"
+}
+
 Write-Host 'LINT'
 
 .\vendor\bin\phpcs --standard='.\phpcs.ruleset.xml' --report=summary '.\app' -v
