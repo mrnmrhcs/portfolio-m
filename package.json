@@ -4,13 +4,14 @@
   "version": "2.0.0",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='development'; ./run/start.ps1",
-    "build": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='production'; ./run/build.ps1",
-    "build.preview": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='staging'; ./run/build.ps1",
-    "deploy": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='production'; $env:APP_NAME='%npm_package_name%'; ./run/deploy.ps1",
-    "deploy.preview": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='staging'; $env:APP_NAME='%npm_package_name%'; ./run/deploy.ps1",
-    "start.debug": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='development'; $env:NODE_DEBUG='*'; ./run/start.ps1",
-    "build.debug": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:NODE_ENV='production'; $env:NODE_DEBUG='*'; ./run/build.ps1"
+    "start": ".\\run\\start.ps1 $env:npm_package_name development",
+    "start.debug": ".\\run\\start.ps1 $env:npm_package_name development debug",
+    "build": ".\\run\\build.ps1 $env:npm_package_name production",
+    "build.debug": ".\\run\\build.ps1 $env:npm_package_name production debug",
+    "build.preview": ".\\run\\build.ps1 $env:npm_package_name staging",
+    "build.preview.debug": ".\\run\\build.ps1 $env:npm_package_name staging debug",
+    "deploy": ".\\run\\deploy.ps1 $env:npm_package_name production",
+    "deploy.preview": ".\\run\\deploy.ps1 $env:npm_package_name staging"
   },
   "browserslist": {
     "production": [
@@ -23,13 +24,13 @@
     ]
   },
   "devDependencies": {
-    "browser-sync": "2.26.13",
+    "browser-sync": "2.26.14",
     "del": "6.0.0",
-    "eslint": "7.18.0",
+    "eslint": "7.22.0",
     "eslint-config-standard": "16.0.2",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-promise": "4.3.1",
     "eslint-plugin-standard": "5.0.0",
     "esm": "3.2.25",
     "gulp": "4.0.2",
@@ -44,13 +45,13 @@
     "gulp-sass": "4.1.0",
     "gulp-uglify-es": "2.0.0",
     "node-sass": "5.0.0",
-    "stylelint": "13.9.0",
+    "stylelint": "13.12.0",
     "stylelint-order": "4.1.0",
-    "stylelint-scss": "3.18.0"
+    "stylelint-scss": "3.19.0"
   },
   "dependencies": {
     "document-register-element": "1.14.10",
-    "jquery": "3.5.1"
+    "jquery": "3.6.0"
   },
   "stylelint": {
     "extends": [

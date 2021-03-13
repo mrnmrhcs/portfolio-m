@@ -1,6 +1,6 @@
 # Site - Project: Portfolio
 
-`Node 14.15.1` `NPM 6.14.11` `Composer 2.0.8` `PHP 7.4.14` `WinSCP 5.17.9` `PowerShell 7.1.0`
+`Node 14.16.0` `NPM 7.6.3` `Composer 2.0.11` `PHP 7.4.16` `WinSCP 5.17.10` `PowerShell 7.1.3`
 
 ## Setup
 ```

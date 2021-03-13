@@ -1,5 +1,8 @@
 Write-Host '### TASK ### DEPLOY ###'
 
+$Env:APP_NAME=$Args[0]
+$Env:NODE_ENV=$Args[1]
+
 # DIAGNOSTICS
 $Timer = [system.diagnostics.stopwatch]::startNew()
 
