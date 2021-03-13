@@ -13,7 +13,7 @@
                 </a>
               </div>
             </div>
-            <div class="list__item">
+            <!-- <div class="list__item">
               <div class="card card_square">
                 <a class="card__link" href="/templates/project-2.php">
                   <h3 class="card__title">Hello</h3>
@@ -36,7 +36,7 @@
                   </div>
                 </a>
               </div>
-            </div>
+            </div> -->
             <div class="list__item">
               <div class="card card_vertical">
                 <a class="card__link" href="/templates/project-2.php">
@@ -50,7 +50,7 @@
               </div>
             </div>
             <div class="list__item">
-              <div class="card card_vertical">
+              <div class="card card_square">
                 <a class="card__link" href="/templates/project-2.php">
                   <h3 class="card__title">Hello</h3>
                   <div class="card__media">

@@ -24,18 +24,18 @@
   .home {
     &__main,
     &__footer {
-      margin: 3rem 0 0;
+      margin: 5rem 0 0;
 
       @media (min-width: $breakpoint-s) {
-        margin-top: 4rem;
+        margin-top: 8rem;
       }
 
       @media (min-width: $breakpoint-l) {
-        margin-top: 6rem;
+        margin-top: 10rem;
       }
 
       @media (min-width: $breakpoint-max) {
-        margin-top: 8rem;
+        margin-top: 12rem;
       }
     }
 
