@@ -51,7 +51,7 @@ body {
 .container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 1696px;
+  max-width: $breakpoint-max + (2 * $container-padding-xxl);
   padding: 0 $container-padding-s;
 
   @media (min-width: $breakpoint-s) {
@@ -74,7 +74,7 @@ body {
     padding-right: $container-padding-xxl;
   }
 
-  @media (min-width: 1696px) {
+  @media (min-width: $breakpoint-max + (2 * $container-padding-xxl)) {
     max-width: $breakpoint-max;
     padding: 0;
   }
