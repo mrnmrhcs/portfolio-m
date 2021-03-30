@@ -9,7 +9,7 @@
             <div class="list__item">
               <div class="card card_horizontal">
                 <a class="card__link" href="https://www.helmholtz-berlin.de/" target="blank">
-                  <h2 class="card__title">Helmholtz Zentrum</h2>
+                  <h2 class="card__title">Helmholtz Zentrum Berlin</h2>
                   <div class="card__media">
                     <div class="image">
                       <img class="image__tag" src="../assets/images/media_card__wide--hzb.png" alt="">
@@ -63,7 +63,7 @@
             <div class="list__item">
               <div class="card">
                 <a class="card__link" href="https://www.deutsche-filmakademie.de/" target="blank">
-                  <h3 class="card__title">Filmakademie</h3>
+                  <h3 class="card__title">Deutsche Filmakademie</h3>
                 </a>
               </div>
             </div>
