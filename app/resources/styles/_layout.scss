@@ -270,7 +270,7 @@
 
       &_horizontal {
         .image {
-          padding-bottom: calc(9 / 21 * 100%);
+          padding-bottom: calc(9 / 20 * 100%);
         }
       }
     }
@@ -286,12 +286,11 @@
     }
 
     &__image {
-      // style
+      box-shadow: 32px 96px 96px #000;
     }
 
     &_artuner {
       .#{$block}__image {
-        box-shadow: 32px 96px 96px #000;
         margin: 0 auto;
         max-width: 1280px;
       }

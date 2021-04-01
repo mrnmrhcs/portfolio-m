@@ -6,14 +6,14 @@
       <header class="project__header">
         <div class="container">
           <h1 class="project__title">Helmholz Zentrum</h1>
-          <div class="project__image project__image_hero">
-            <div class="image">
-              <img class="image__tag" src="../assets/images/universal-hero-1160x1400.png" alt="">
-            </div>
-          </div>
         </div>
       </header>
       <main class="project__main">
+        <div class="project__image project__image_screen">
+          <div class="image">
+            <img class="image__tag" src="../assets/images/hzb__home__1440-1600-browser.png" alt="">
+          </div>
+        </div>
         <div class="project__facts">
           <div class="container">
             <ul class="list list_facts">
@@ -24,28 +24,14 @@
             </ul>
           </div>
         </div>
-        <div class="project__media">
-          <div class="example-mobile">
-            <div class="example-mobile__image example-mobile__image_background">
-              <div class="image">
-                <img class="image__tag" src="../assets/images/universal-mobile-bg.jpg" alt="">
-              </div>
-            </div>
-            <div class="example-mobile__image example-mobile__image_phone">
-              <div class="image">
-                <img class="image__tag" src="../assets/images/universal-mobile-434x882.png" alt="">
-              </div>
-            </div>
-            <div class="example-mobile__image example-mobile__image_screen">
-              <div class="image">
-                <img class="image__tag" src="../assets/images/universal-mobile-01-375x660.jpg" alt="">
-              </div>
-            </div>
-            <div class="example-mobile__image example-mobile__image_screen">
-              <div class="image">
-                <img class="image__tag" src="../assets/images/universal-mobile-02-375x660.jpg" alt="">
-              </div>
-            </div>
+        <div class="project__image project__image_screen">
+          <div class="image">
+            <img class="image__tag" src="../assets/images/hzb__home-menu__1440-1600-browser.png" alt="">
+          </div>
+        </div>
+        <div class="project__image">
+          <div class="image">
+            <img class="image__tag" src="../assets/images/hzb__home-search__1440-1600-browser.png" alt="">
           </div>
         </div>
       </main>

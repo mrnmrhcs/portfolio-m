@@ -5,23 +5,33 @@
     <section class="project__layout">
       <header class="project__header">
         <div class="container">
-          <h1 class="project__title">Audio<br>Verlag</h1>
-          <div class="project__image project__image_hero">
-            <div class="image">
-              <img class="image__tag" src="../assets/images/dav-hero-1160x860.png" alt="">
-            </div>
-          </div>
+          <h1 class="project__title">Audio Verlag</h1>
         </div>
       </header>
       <main class="project__main">
+        <div class="project__image project__image_screen">
+          <div class="image">
+            <img class="image__tag" src="../assets/images/dav__home__1440-1600-browser.png" alt="">
+          </div>
+        </div>
         <div class="project__facts">
           <div class="container">
             <ul class="list list_facts">
-              <li class="list__item">Project - Website Relaunch</li>
+              <li class="list__item">Project - Website / Shop</li>
               <li class="list__item">Role - Design, Frontend</li>
               <li class="list__item">Agency - Taikonauten</li>
               <li class="list__item">Year - 2014</li>
             </ul>
+          </div>
+        </div>
+        <div class="project__image project__image_screen">
+          <div class="image">
+            <img class="image__tag" src="../assets/images/dav__audiobook__1440-1600-browser.png" alt="">
+          </div>
+        </div>
+        <div class="project__image project__image_screen">
+          <div class="image">
+            <img class="image__tag" src="../assets/images/dav__creator__1440-1600-browser.png" alt="">
           </div>
         </div>
         <div class="project__media">
