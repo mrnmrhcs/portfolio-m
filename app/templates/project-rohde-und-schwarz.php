@@ -1,11 +1,11 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/document/header/index.php'; ?>
 
 <div class="snippet" is="layout-project">
-  <div class="project project_universal-music context-content">
+  <div class="project project_rohde-und-schwarz context-content">
     <section class="project__layout">
       <header class="project__header">
         <div class="container">
-          <h1 class="project__title">Universal Music</h1>
+          <h1 class="project__title">Rohde und Schwarz</h1>
           <div class="project__image project__image_hero">
             <div class="image">
               <img class="image__tag" src="../assets/images/universal-hero-1160x1400.png" alt="">
@@ -17,10 +17,9 @@
         <div class="project__facts">
           <div class="container">
             <ul class="list list_facts">
-              <li class="list__item">Prjct - Universal Music Pitch</li>
-              <li class="list__item">Role - Concept, Design</li>
-              <li class="list__item">Agency - Taikonauten</li>
-              <li class="list__item">Year - 2015</li>
+              <li class="list__item">Scope - Pitch Design</li>
+              <li class="list__item">Agency - United Digital Group</li>
+              <li class="list__item">Year - 2017</li>
             </ul>
           </div>
         </div>

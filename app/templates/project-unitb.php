@@ -1,7 +1,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/document/header/index.php'; ?>
 
 <div class="snippet" is="layout-project">
-  <div class="project project_client context-content">
+  <div class="project project_unitb context-content">
     <section class="project__layout">
       <header class="project__header">
         <div class="container">

@@ -8,7 +8,7 @@
           <h1 class="project__title">Artuner</h1>
           <div class="project__image project__image_hero">
             <div class="image">
-              <img class="image__tag" src="../assets/images/artuner-hero.png" alt="">
+              <img class="image__tag" src="../assets/images/artuner-all-art-1200-1280-browser.png" alt="">
             </div>
           </div>
         </div>
