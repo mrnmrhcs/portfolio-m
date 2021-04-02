@@ -19,7 +19,7 @@
         <div class="project__facts">
           <div class="container">
             <ul class="list list_facts">
-              <li class="list__item">Project - Website / Shop</li>
+              <li class="list__item">Project - Website</li>
               <li class="list__item">Role - Design</li>
               <li class="list__item">Agency - Taikonauten</li>
               <li class="list__item">Year - 2014</li>

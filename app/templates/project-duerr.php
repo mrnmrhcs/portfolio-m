@@ -19,7 +19,7 @@
         <div class="project__facts">
           <div class="container">
             <ul class="list list_facts">
-              <li class="list__item">Project - Pitch Design</li>
+              <li class="list__item">Project - Design Pitch</li>
               <li class="list__item">Role - Design</li>
               <li class="list__item">Agency - United Digital Group</li>
               <li class="list__item">Year - 2017</li>
