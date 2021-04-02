@@ -10,12 +10,12 @@
       <ul class="list list_menu">
         <li class="list__item">
           <a class="link" href="/">
-            <span class="link__text">Hello</span>
+            <span class="link__text">Home</span>
           </a>
         </li>
         <li class="list__item">
           <a class="link" href="/templates/about.php">
-            <span class="link__text">Resume</span>
+            <span class="link__text">About</span>
           </a>
         </li>
       </ul>

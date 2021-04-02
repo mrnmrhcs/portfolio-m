@@ -25,6 +25,10 @@ img {
       position: absolute;
       top: 0;
       width: 100%;
+
+      @media (min-width: $breakpoint-max + (2 * $container-padding-xxl)) {
+        height: auto;
+      }
     }
   }
 }
