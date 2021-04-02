@@ -2,7 +2,33 @@
 // LAYOUT
 /////////////////////////////////////
 
-[is|='layout'] {
+// [is|='layout'] {
+//   section {
+//     > [class$='__header'],
+//     > [class$='__main'],
+//     > [class$='__footer'] {
+//       margin: 2rem 0 0;
+
+//       @media (min-width: $breakpoint-xs) {
+//         margin-top: 2.5rem;
+//       }
+
+//       @media (min-width: $breakpoint-m) {
+//         margin-top: 8rem;
+//       }
+
+//       @media (min-width: $breakpoint-xxl) {
+//         margin-top: 10rem;
+//       }
+
+//       &:first-child {
+//         margin-top: 0;
+//       }
+//     }
+//   }
+// }
+
+[is='layout-home'] {
   section {
     > [class$='__header'],
     > [class$='__main'],
@@ -26,9 +52,7 @@
       }
     }
   }
-}
 
-[is='layout-home'] {
   .home {
     .list {
       $block: 'list';
@@ -278,6 +302,30 @@
 }
 
 [is='layout-project'] {
+  section {
+    > [class$='__header'],
+    > [class$='__main'],
+    > [class$='__footer'] {
+      margin: 2rem 0 0;
+
+      @media (min-width: $breakpoint-xs) {
+        margin-top: 2.5rem;
+      }
+
+      @media (min-width: $breakpoint-m) {
+        margin-top: 4rem;
+      }
+
+      @media (min-width: $breakpoint-xxl) {
+        margin-top: 6rem;
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
   .project {
     $block: 'project';
 
@@ -300,11 +348,11 @@
         }
 
         @media (min-width: $breakpoint-m) {
-          margin-top: 8rem;
+          margin-top: 6rem;
         }
 
         @media (min-width: $breakpoint-xxl) {
-          margin-top: 10rem;
+          margin-top: 8rem;
         }
 
         &:first-child {
