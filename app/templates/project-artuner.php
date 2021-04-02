@@ -16,14 +16,16 @@
             </div>
           </div>
         </div>
-        <div class="project__facts">
+        <div class="project__info">
           <div class="container">
-            <ul class="list list_facts">
-              <li class="list__item">Project - Website</li>
-              <li class="list__item">Role - Design</li>
-              <li class="list__item">Agency - Taikonauten</li>
-              <li class="list__item">Year - 2014</li>
-            </ul>
+            <div class="project__facts">
+              <ul class="list list_facts">
+                <li class="list__item">Project - Website</li>
+                <li class="list__item">Role - Design</li>
+                <li class="list__item">Agency - Taikonauten</li>
+                <li class="list__item">Year - 2014</li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="project__image project__image_screen">

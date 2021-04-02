@@ -56,12 +56,12 @@
     }
 
     h1 {
-      @include rwd-scale('font-size', 3rem, 12rem, 320px, 1200px);
+      @include rwd-scale('font-size', 3rem, 9rem, 320px, 1200px);
       line-height: 1.025;
     }
 
     h2 {
-      @include rwd-scale('font-size', 1.25rem, 4rem, 320px, 1200px);
+      @include rwd-scale('font-size', 1.25rem, 5rem, 320px, 1200px);
     }
 
     h3 {
