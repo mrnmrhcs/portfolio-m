@@ -10,8 +10,10 @@
       </header>
       <main class="project__main">
         <div class="project__image project__image_screen">
-          <div class="image">
-            <img class="image__tag" src="../assets/images/hzb__home__1440-1600-browser.png" alt="">
+          <div class="container">
+            <div class="image">
+              <img class="image__tag" src="../assets/images/hzb__home__1440-1600-browser.png" alt="">
+            </div>
           </div>
         </div>
         <div class="project__facts">
@@ -25,13 +27,17 @@
           </div>
         </div>
         <div class="project__image project__image_screen">
-          <div class="image">
-            <img class="image__tag" src="../assets/images/hzb__home-menu__1440-1600-browser.png" alt="">
+          <div class="container">
+            <div class="image">
+              <img class="image__tag" src="../assets/images/hzb__home-menu__1440-1600-browser.png" alt="">
+            </div>
           </div>
         </div>
         <div class="project__image">
-          <div class="image">
-            <img class="image__tag" src="../assets/images/hzb__home-search__1440-1600-browser.png" alt="">
+          <div class="container">
+            <div class="image">
+              <img class="image__tag" src="../assets/images/hzb__home-search__1440-1600-browser.png" alt="">
+            </div>
           </div>
         </div>
       </main>

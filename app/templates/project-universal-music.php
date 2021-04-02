@@ -10,8 +10,10 @@
       </header>
       <main class="project__main">
         <div class="project__image project__image_hero">
-          <div class="image">
-            <img class="image__tag" src="../assets/images/universal-hero-1160x1400.png" alt="">
+          <div class="container">
+            <div class="image">
+              <img class="image__tag" src="../assets/images/universal-hero-1160x1400.png" alt="">
+            </div>
           </div>
         </div>
         <div class="project__facts">

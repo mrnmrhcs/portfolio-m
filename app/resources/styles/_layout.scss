@@ -286,7 +286,31 @@
     }
 
     &__image {
-      box-shadow: 32px 96px 96px #000;
+      .image {
+        box-shadow: 32px 96px 96px #000;
+      }
+    }
+
+    &__main {
+      > * {
+        margin: 2rem 0 0;
+
+        @media (min-width: $breakpoint-xs) {
+          margin-top: 2.5rem;
+        }
+
+        @media (min-width: $breakpoint-m) {
+          margin-top: 8rem;
+        }
+
+        @media (min-width: $breakpoint-xxl) {
+          margin-top: 10rem;
+        }
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
     }
 
     &_artuner {
