@@ -31,7 +31,7 @@
         <div class="project__image project__image_screen">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/glow__home__1440-1600-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/glow__media__1440-1600-browser.png" alt="">
             </div>
           </div>
         </div>

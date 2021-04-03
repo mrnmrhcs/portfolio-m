@@ -12,7 +12,7 @@
         <div class="project__image project__image_screen">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/dfp__home__1440-1600-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/dfa__home__1440-1600-browser.png" alt="">
             </div>
           </div>
         </div>
@@ -23,21 +23,15 @@
                 <li class="list__item">Project - Website</li>
                 <li class="list__item">Role - Frontend</li>
                 <li class="list__item">Agency - Bleech</li>
-                <li class="list__item">Year - 2019</li>
+                <li class="list__item">Year - 2018</li>
               </ul>
             </div>
-          </div>
-        </div>
-        <div class="project__facts">
-          <div class="container">
-            <ul class="list list_facts">
-            </ul>
           </div>
         </div>
         <div class="project__image project__image_screen">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/dfp__home__1440-1600-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/dfa__events__1440-1600-browser.png" alt="">
             </div>
           </div>
         </div>

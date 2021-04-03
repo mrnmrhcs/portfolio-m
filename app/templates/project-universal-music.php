@@ -9,10 +9,10 @@
         </div>
       </header>
       <main class="project__main">
-        <div class="project__image project__image_hero">
+        <div class="project__image project__image_screen">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/universal-hero-1160x1400.png" alt="">
+              <img class="image__tag" src="../assets/images/universal-music__home__960-1024-browser.png" alt="">
             </div>
           </div>
         </div>

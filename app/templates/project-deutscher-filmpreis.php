@@ -20,10 +20,10 @@
           <div class="container">
             <div class="project__facts">
               <ul class="list list_facts">
-                <li class="list__item">Project - Website, Shop</li>
-                <li class="list__item">Role - Design, Frontend</li>
-                <li class="list__item">Agency - Taikonauten</li>
-                <li class="list__item">Year - 2014</li>
+                <li class="list__item">Project - Website</li>
+                <li class="list__item">Role - Frontend</li>
+                <li class="list__item">Agency - Bleech</li>
+                <li class="list__item">Year - 2018</li>
               </ul>
             </div>
           </div>
@@ -31,7 +31,7 @@
         <div class="project__image project__image_screen">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/dfp__home__1440-1600-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/dfp__winner__1440-1600-browser.png" alt="">
             </div>
           </div>
         </div>

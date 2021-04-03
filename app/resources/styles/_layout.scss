@@ -396,43 +396,91 @@
     }
 
     &_audio-verlag {
-      // style
+      .#{$block}__image {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1600px;
+      }
+    }
+
+    &_davide-rizzo {
+      .#{$block}__image {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1600px;
+      }
     }
 
     &_duerr {
-      // style
+      .#{$block}__image {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1280px;
+      }
     }
 
     &_deutsche-filmakademie {
-      // style
+      .#{$block}__image {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1600px;
+      }
     }
 
     &_deutscher-filmpreis {
-      // style
+      .#{$block}__image {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1600px;
+      }
     }
 
     &_glow {
-      // style
+      .#{$block}__image {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1600px;
+      }
     }
 
     &_helmholz-zentrum {
-      // style
+      .#{$block}__image {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1600px;
+      }
     }
 
     &_mycs {
-      // style
+      .#{$block}__image {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1280px;
+      }
     }
 
     &_rohde-und-schwarz {
-      // style
+      .#{$block}__image {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1024px;
+      }
     }
 
     &_unitb {
-      // style
+      .#{$block}__image {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1280px;
+      }
     }
 
     &_universal-music {
-      // style
+      .#{$block}__image {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1024px;
+      }
     }
   }
 }
