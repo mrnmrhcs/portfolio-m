@@ -12,7 +12,7 @@
         <div class="project__image project__image_screen">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/universal-music__home__960-1024-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/universal-music__home__960-1360-browser.png" alt="">
             </div>
           </div>
         </div>

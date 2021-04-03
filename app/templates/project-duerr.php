@@ -12,7 +12,7 @@
         <div class="project__image project__image_screen">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/duerr__group-home__1200-1280-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/duerr__content__1200-1280-browser.png" alt="">
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@
         <div class="project__image project__image_screen">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/duerr__content__1200-1280-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/duerr__group-home__1200-1280-browser.png" alt="">
             </div>
           </div>
         </div>
