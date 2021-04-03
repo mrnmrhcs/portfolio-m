@@ -28,7 +28,14 @@
             </div>
           </div>
         </div>
-        <div class="project__media">
+        <div class="project__image project__image_screen">
+          <div class="container">
+            <div class="image">
+              <img class="image__tag" src="../assets/images/universal-music__artist__960-1360-browser.png" alt="">
+            </div>
+          </div>
+        </div>
+        <!-- <div class="project__media">
           <div class="example-mobile">
             <div class="example-mobile__image example-mobile__image_background">
               <div class="image">
@@ -51,7 +58,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </main>
     </section>
   </div>

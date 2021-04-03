@@ -12,7 +12,7 @@
         <div class="project__image project__image_screen">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/rohde-und-schwarz__product__960-1024-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/rohde-und-schwarz__product__960-1360-browser.png" alt="">
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@
         <div class="project__image project__image_screen">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/rohde-und-schwarz__filter__960-1024-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/rohde-und-schwarz__filter__960-1360-browser.png" alt="">
             </div>
           </div>
         </div>
