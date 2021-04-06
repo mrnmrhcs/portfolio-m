@@ -9,7 +9,7 @@
         </div>
       </header>
       <main class="project__main">
-        <div class="project__image project__image_screen">
+        <div class="project__image project__image_desktop">
           <div class="container">
             <div class="image">
               <img class="image__tag" src="../assets/images/universal-music__home__960-1360-browser.png" alt="">
@@ -28,37 +28,13 @@
             </div>
           </div>
         </div>
-        <div class="project__image project__image_screen">
+        <div class="project__image project__image_desktop">
           <div class="container">
             <div class="image">
               <img class="image__tag" src="../assets/images/universal-music__artist__960-1360-browser.png" alt="">
             </div>
           </div>
         </div>
-        <!-- <div class="project__media">
-          <div class="example-mobile">
-            <div class="example-mobile__image example-mobile__image_background">
-              <div class="image">
-                <img class="image__tag" src="../assets/images/universal-mobile-bg.jpg" alt="">
-              </div>
-            </div>
-            <div class="example-mobile__image example-mobile__image_phone">
-              <div class="image">
-                <img class="image__tag" src="../assets/images/universal-mobile-434x882.png" alt="">
-              </div>
-            </div>
-            <div class="example-mobile__image example-mobile__image_screen">
-              <div class="image">
-                <img class="image__tag" src="../assets/images/universal-mobile-01-375x660.jpg" alt="">
-              </div>
-            </div>
-            <div class="example-mobile__image example-mobile__image_screen">
-              <div class="image">
-                <img class="image__tag" src="../assets/images/universal-mobile-02-375x660.jpg" alt="">
-              </div>
-            </div>
-          </div>
-        </div> -->
       </main>
     </section>
   </div>

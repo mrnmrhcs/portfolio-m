@@ -9,7 +9,7 @@
         </div>
       </header>
       <main class="project__main">
-        <div class="project__image project__image_screen">
+        <div class="project__image project__image_desktop">
           <div class="container">
             <div class="image">
               <img class="image__tag" src="../assets/images/rizzo__home__1440-1600-browser.png" alt="">
@@ -28,7 +28,7 @@
             </div>
           </div>
         </div>
-        <div class="project__image project__image_screen">
+        <div class="project__image project__image_desktop">
           <div class="container">
             <div class="image">
               <img class="image__tag" src="../assets/images/rizzo__work__1440-1600-browser.png" alt="">
