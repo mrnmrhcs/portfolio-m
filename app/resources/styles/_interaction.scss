@@ -15,41 +15,47 @@ button {
 
 .button {
   appearance: none;
-  background: $c-btn-link;
+  background: #fbf88f;
   border: 0;
-  border-radius: 100em;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-size: 18px;
+  font-family: inherit;
+  font-size: 1.125rem;
   font-weight: 700;
   line-height: 1;
   outline: 0;
-  padding: 1em calc(1.5em + 32px) 0.9em 1.5em;
+  padding: 0;
   position: relative;
   text-align: center;
-  text-transform: uppercase;
   transition: background-color 200ms ease-in-out;
+  user-select: none;
 
   &:hover,
   &:focus,
   &:active {
-    background: $c-btn-hover;
+    background: #18181a;
+
+    svg {
+      fill: #fff;
+    }
   }
 
-  &::after {
-    background: center / 24px 24px no-repeat;
-    border-radius: 100em;
-    bottom: 0;
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 48px;
-  }
-
-  &_circle {
+  &__circle {
     border-radius: 50%;
+    display: block;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80px;
+
+    svg {
+      fill: #18181a;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 }
 

@@ -59,7 +59,7 @@
     .link {
       $block: 'link';
 
-      @include rwd-scale('font-size', 1.5rem, 11rem, 320px, 1400px);
+      @include rwd-scale('font-size', 1.5rem, 9rem, 320px, 1400px);
       align-items: center;
       background-color: $c-bg;
       color: $c-white;

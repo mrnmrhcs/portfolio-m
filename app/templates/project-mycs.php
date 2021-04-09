@@ -9,59 +9,39 @@
         </div>
       </header>
       <main class="project__main">
-        <div class="project__image project__image_screen">
+        <div class="project__image project__image_desktop">
           <div class="container">
             <div class="image">
               <img class="image__tag" src="../assets/images/mycs__home__1200-1280-browser.png" alt="">
             </div>
           </div>
         </div>
-        <div class="project__facts">
+        <div class="project__info">
           <div class="container">
-            <ul class="list list_facts">
-              <li class="list__item">Project - Website / Configurator</li>
-              <li class="list__item">Role - Concept, Design</li>
-              <li class="list__item">Agency - Taikonauten</li>
-              <li class="list__item">Year - 2015</li>
-            </ul>
+            <div class="project__facts">
+              <ul class="list list_facts">
+                <li class="list__item">Project - Web Design</li>
+                <li class="list__item">Role - Designer</li>
+                <li class="list__item">Agency - Taikonauten</li>
+                <li class="list__item">Year - 2015</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="project__image project__image_screen">
+        <div class="project__image project__image_desktop">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/mycs__home__1200-1280-browser.png" alt="">
-            </div>
-          </div>
-        </div>
-        <div class="project__media">
-          <div class="example-mobile">
-            <div class="example-mobile__image example-mobile__image_background">
-              <div class="image">
-                <img class="image__tag" src="../assets/images/universal-mobile-bg.jpg" alt="">
-              </div>
-            </div>
-            <div class="example-mobile__image example-mobile__image_phone">
-              <div class="image">
-                <img class="image__tag" src="../assets/images/universal-mobile-434x882.png" alt="">
-              </div>
-            </div>
-            <div class="example-mobile__image example-mobile__image_screen">
-              <div class="image">
-                <img class="image__tag" src="../assets/images/universal-mobile-01-375x660.jpg" alt="">
-              </div>
-            </div>
-            <div class="example-mobile__image example-mobile__image_screen">
-              <div class="image">
-                <img class="image__tag" src="../assets/images/universal-mobile-02-375x660.jpg" alt="">
-              </div>
+              <img class="image__tag" src="../assets/images/mycs__configurator__1200-1280-browser.png" alt="">
             </div>
           </div>
         </div>
       </main>
       <footer class="project__footer">
-        <a class="button button--circle" href="https://de.mycs.com" target="_blank">
-          <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"><path id="ico-link" class="ico" d="M29.22 25.1L44 10.32 33.68 0 18.9 14.78l4.457 4.456-4.12 4.12-4.457-4.455L0 33.68 10.32 44 25.1 29.22l-4.457-4.456 4.12-4.12 4.457 4.455zm-6.934 4.12L10.32 41.187 2.812 33.68 14.78 21.715l3.05 3.05-6.48 6.48 1.406 1.406 6.48-6.48 3.05 3.05zm-.572-14.44L33.68 2.813l7.507 7.506L29.22 22.285l-3.05-3.05 6.48-6.48-1.407-1.406-6.48 6.48-3.05-3.05z" fill-rule="evenodd"/></svg>
-        </a>
+        <div class="container">
+          <a class="button button__circle" href="https://de.mycs.com" target="_blank" rel="noreferrer noopener">
+            <svg width="44" height="44" viewBox="0 0 44 44" xmlns="https://www.w3.org/2000/svg"><path id="ico-link" class="ico" d="M29.22 25.1L44 10.32 33.68 0 18.9 14.78l4.457 4.456-4.12 4.12-4.457-4.455L0 33.68 10.32 44 25.1 29.22l-4.457-4.456 4.12-4.12 4.457 4.455zm-6.934 4.12L10.32 41.187 2.812 33.68 14.78 21.715l3.05 3.05-6.48 6.48 1.406 1.406 6.48-6.48 3.05 3.05zm-.572-14.44L33.68 2.813l7.507 7.506L29.22 22.285l-3.05-3.05 6.48-6.48-1.407-1.406-6.48 6.48-3.05-3.05z" fill-rule="evenodd"/></svg>
+          </a>
+        </div>
       </footer>
     </section>
   </div>
