@@ -124,22 +124,22 @@
           <div class="list list_social">
             <div class="list__item">
               <div class="card">
-                <a class="card__link" href="https://github.com/mrnmrhcs" target="blank">
+                <a class="card__link" href="https://github.com/mrnmrhcs" target="_blank" rel="noreferrer noopener">
                   <h4 class="card__title">Github</h4>
                 </a>
               </div>
             </div>
             <div class="list__item">
               <div class="card">
-                <a class="card__link" href="/templates/about.php">
-                  <h4 class="card__title">Mail</h4>
+                <a class="card__link" href="https://raindrop.io/collection/17462336" target="_blank" rel="noreferrer noopener">
+                  <h4 class="card__title">Raindrop</h4>
                 </a>
               </div>
             </div>
             <div class="list__item">
               <div class="card">
-                <a class="card__link" href="/">
-                  <h4 class="card__title">Raindrop</h4>
+                <a class="card__link" href="https://soundcloud.com/mrnmrhcs" target="_blank" rel="noreferrer noopener">
+                  <h4 class="card__title">Soundcloud</h4>
                 </a>
               </div>
             </div>
