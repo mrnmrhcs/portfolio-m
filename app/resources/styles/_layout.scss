@@ -7,10 +7,10 @@
     > [class$='__header'],
     > [class$='__main'],
     > [class$='__footer'] {
-      margin: 2rem 0 0;
+      margin: 3rem 0 0;
 
       @media (min-width: $breakpoint-xs) {
-        margin-top: 3rem;
+        margin-top: 4rem;
       }
 
       @media (min-width: $breakpoint-m) {
@@ -34,7 +34,7 @@
       &_projects,
       &_social {
         @media (min-width: $breakpoint-xxs) {
-          column-gap: 1rem;
+          column-gap: 1.25rem;
           display: grid;
         }
 
@@ -49,7 +49,7 @@
 
       &_featured {
         @media (min-width: $breakpoint-xxs) {
-          column-gap: 1rem;
+          column-gap: 1.25rem;
           display: grid;
         }
 
@@ -62,14 +62,18 @@
         }
 
         .#{$block}__item {
-          margin: 1rem 0 0;
+          margin: 1.25rem 0 0;
+
+          @media (min-width: $breakpoint-xs) {
+            margin-top: 3rem;
+          }
 
           @media (min-width: $breakpoint-m) {
-            margin-top: 5rem;
+            margin-top: 4rem;
           }
 
           @media (min-width: $breakpoint-xl) {
-            margin-top: 8rem;
+            margin-top: 6rem;
           }
 
           &:first-child {
@@ -132,6 +136,12 @@
         }
       }
 
+      &_projects {
+        @media (min-width: $breakpoint-s) {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+
       &_social {
         @media (min-width: $breakpoint-xxs) {
           grid-template-columns: 1fr 1fr 1fr;
@@ -145,7 +155,7 @@
         }
 
         .#{$block}__item {
-          margin: 1rem 0 0;
+          margin: 1.25rem 0 0;
 
           @media (min-width: $breakpoint-m) {
             margin-top: 1.5rem;
@@ -210,6 +220,12 @@
             }
           }
 
+          @media (min-width: $breakpoint-s) {
+            &:nth-child(-1n+3) {
+              margin-top: 0;
+            }
+          }
+
           @media (min-width: $breakpoint-m) {
             &:nth-child(-1n+4) {
               margin-top: 0;
@@ -226,17 +242,21 @@
 
       &_social {
         .#{$block}__item {
-          &:nth-child(3) {
-            grid-column-end: auto;
-            grid-column-start: auto;
+          @media (min-width: $breakpoint-xxs) {
+            &:nth-child(3) {
+              grid-column-end: auto;
+              grid-column-start: auto;
+            }
 
-            @media (min-width: $breakpoint-m) {
-              grid-column-start: 4;
+            &:nth-child(-1n+3) {
+              margin-top: 0;
             }
           }
 
-          &:nth-child(-1n+3) {
-            margin-top: 0;
+          @media (min-width: $breakpoint-m) {
+            &:nth-child(3) {
+              grid-column-start: 4;
+            }
           }
         }
 
@@ -258,16 +278,30 @@
       }
 
       &__title {
-        @include rwd-scale('font-size', 14px, 24px, 375px, 1400px);
+        font-size: 22px;
         font-weight: 600;
-        left: 0.75rem;
+        left: 1.125rem;
         position: absolute;
-        top: 0.75rem;
+        top: 1.125rem;
         z-index: 22;
 
+        @media (min-width: $breakpoint-xxs) {
+          @include rwd-scale('font-size', 16px, 20px, 375px, 575px);
+        }
+
         @media (min-width: $breakpoint-s) {
-          left: 1.125rem;
-          top: 1.125rem;
+          @include rwd-scale('font-size', 16px, 20px, 576px, 767px);
+          left: 1rem;
+          top: 1rem;
+        }
+
+        @media (min-width: $breakpoint-m) {
+          @include rwd-scale('font-size', 18px, 24px, 768px, 1400px);
+        }
+
+        @media (min-width: $breakpoint-xl) {
+          left: 1.25rem;
+          top: 1.25rem;
         }
       }
 
