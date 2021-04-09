@@ -10,15 +10,15 @@
       margin: 2rem 0 0;
 
       @media (min-width: $breakpoint-xs) {
-        margin-top: 2.5rem;
+        margin-top: 3rem;
       }
 
       @media (min-width: $breakpoint-m) {
-        margin-top: 8rem;
+        margin-top: 5rem;
       }
 
       @media (min-width: $breakpoint-xl) {
-        margin-top: 10rem;
+        margin-top: 8rem;
       }
 
       &:first-child {
@@ -33,71 +33,43 @@
 
       &_projects,
       &_social {
-        column-gap: 4px;
-        display: grid;
-
-        @media (min-width: $breakpoint-xs) {
-          column-gap: 8px;
+        @media (min-width: $breakpoint-xxs) {
+          column-gap: 1rem;
+          display: grid;
         }
 
         @media (min-width: $breakpoint-m) {
-          column-gap: 16px;
-        }
-
-        @media (min-width: $breakpoint-l) {
-          column-gap: 24px;
+          column-gap: 1.5rem;
         }
 
         @media (min-width: $breakpoint-xl) {
-          column-gap: 32px;
-        }
-
-        @media (min-width: $breakpoint-xxl) {
-          column-gap: 40px;
+          column-gap: 2.5rem;
         }
       }
 
       &_featured {
-        column-gap: 4px;
-        display: grid;
-
-        @media (min-width: $breakpoint-xs) {
-          column-gap: 8px;
+        @media (min-width: $breakpoint-xxs) {
+          column-gap: 1rem;
+          display: grid;
         }
 
         @media (min-width: $breakpoint-m) {
-          column-gap: 16px;
-        }
-
-        @media (min-width: $breakpoint-l) {
-          column-gap: 24px;
+          column-gap: 1.5rem;
         }
 
         @media (min-width: $breakpoint-xl) {
-          column-gap: 32px;
-        }
-
-        @media (min-width: $breakpoint-xxl) {
-          column-gap: 40px;
+          column-gap: 2.5rem;
         }
 
         .#{$block}__item {
-          margin: 0.875rem 0 0;
-
-          @media (min-width: $breakpoint-xs) {
-            margin-top: 1.25rem;
-          }
+          margin: 1rem 0 0;
 
           @media (min-width: $breakpoint-m) {
-            margin-top: 2rem;
-          }
-
-          @media (min-width: $breakpoint-l) {
-            margin-top: 4rem;
-          }
-
-          @media (min-width: $breakpoint-xxl) {
             margin-top: 5rem;
+          }
+
+          @media (min-width: $breakpoint-xl) {
+            margin-top: 8rem;
           }
 
           &:first-child {
@@ -155,14 +127,14 @@
 
       &_featured,
       &_projects {
-        grid-template-columns: 1fr 1fr;
+        @media (min-width: $breakpoint-xxs) {
+          grid-template-columns: 1fr 1fr;
+        }
       }
 
       &_social {
-        grid-template-columns: 1fr 1fr 1fr;
-
         @media (min-width: $breakpoint-xxs) {
-          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-template-columns: 1fr 1fr 1fr;
         }
       }
 
@@ -173,26 +145,14 @@
         }
 
         .#{$block}__item {
-          margin: 4px 0 0;
-
-          @media (min-width: $breakpoint-xs) {
-            margin-top: 8px;
-          }
+          margin: 1rem 0 0;
 
           @media (min-width: $breakpoint-m) {
-            margin-top: 16px;
-          }
-
-          @media (min-width: $breakpoint-l) {
-            margin-top: 24px;
+            margin-top: 1.5rem;
           }
 
           @media (min-width: $breakpoint-xl) {
-            margin-top: 32px;
-          }
-
-          @media (min-width: $breakpoint-xxl) {
-            margin-top: 40px;
+            margin-top: 2.5rem;
           }
 
           &:first-child {
@@ -225,16 +185,18 @@
 
       &_featured {
         .#{$block}__item {
-          &:first-child,
-          &:nth-child(4) {
-            grid-column-end: 3;
-            grid-column-start: 1;
-          }
+          @media (min-width: $breakpoint-xxs) {
+            &:first-child,
+            &:nth-child(4) {
+              grid-column-end: 3;
+              grid-column-start: 1;
+            }
 
-          &:first-child,
-          &:nth-child(4) {
-            .card__title {
-              color: #c8cbd2;
+            &:first-child,
+            &:nth-child(4) {
+              .card__title {
+                color: #c8cbd2;
+              }
             }
           }
         }
@@ -242,8 +204,10 @@
 
       &_projects {
         .#{$block}__item {
-          &:nth-child(-1n+2) {
-            margin-top: 0;
+          @media (min-width: $breakpoint-xxs) {
+            &:nth-child(-1n+2) {
+              margin-top: 0;
+            }
           }
 
           @media (min-width: $breakpoint-m) {
@@ -266,7 +230,7 @@
             grid-column-end: auto;
             grid-column-start: auto;
 
-            @media (min-width: $breakpoint-xxs) {
+            @media (min-width: $breakpoint-m) {
               grid-column-start: 4;
             }
           }
@@ -328,21 +292,39 @@
 
 [is='layout-project'] {
   section {
-    > [class$='__header'],
-    > [class$='__main'],
+    > [class$='__main'] {
+      margin: 2rem 0 0;
+
+      @media (min-width: $breakpoint-xs) {
+        margin-top: 3rem;
+      }
+
+      @media (min-width: $breakpoint-m) {
+        margin-top: 5rem;
+      }
+
+      @media (min-width: $breakpoint-xl) {
+        margin-top: 8rem;
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
     > [class$='__footer'] {
       margin: 2rem 0 0;
 
       @media (min-width: $breakpoint-xs) {
-        margin-top: 2.5rem;
+        margin-top: 3rem;
       }
 
       @media (min-width: $breakpoint-m) {
-        margin-top: 4rem;
+        margin-top: 5rem;
       }
 
       @media (min-width: $breakpoint-xl) {
-        margin-top: 6rem;
+        margin-top: 8rem;
       }
 
       &:first-child {
@@ -356,14 +338,18 @@
 
     &.context-content {
       .#{$block}__title {
-        padding: 2rem 0 0;
+        padding: 1rem 0 0;
         text-align: center;
 
         @media (min-width: $breakpoint-xs) {
-          padding-top: 2.5rem;
+          padding-top: 2rem;
         }
 
         @media (min-width: $breakpoint-m) {
+          padding-top: 3rem;
+        }
+
+        @media (min-width: $breakpoint-xl) {
           padding-top: 6rem;
         }
       }
@@ -372,32 +358,64 @@
     &__image {
       &.#{$block}__image_desktop {
         .image {
-          box-shadow: 32px 96px 96px #000;
+          box-shadow: 16px 24px 40px rgba(0, 0, 0, 0.2);
           margin-left: auto;
           margin-right: auto;
+
+          @media (min-width: $breakpoint-m) {
+            box-shadow: 32px 48px 64px rgba(0, 0, 0, 0.2);
+          }
+
+          @media (min-width: $breakpoint-xl) {
+            box-shadow: 56px 64px 80px rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+
+      + .#{$block}__image {
+        margin: 4rem 0 0;
+
+        @media (min-width: $breakpoint-xs) {
+          margin-top: 6rem;
+        }
+
+        @media (min-width: $breakpoint-m) {
+          margin-top: 10rem;
+        }
+
+        @media (min-width: $breakpoint-xl) {
+          margin-top: 14rem;
         }
       }
     }
 
     &__info {
       .#{$block}__facts {
-        column-gap: 0.875rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        display: block;
+        text-align: center;
 
-        @media (min-width: $breakpoint-xxs) {
-          grid-template-columns: 1fr 1fr 1fr 1fr;
+        @media (min-width: $breakpoint-m) {
+          text-align: left;
         }
       }
 
       .list {
         &_facts {
-          grid-column-end: auto;
-          grid-column-start: auto;
-
-          @media (min-width: $breakpoint-xxs) {
-            grid-column-start: 2;
+          @media (min-width: $breakpoint-xs) {
+            margin-left: 10%;
           }
+
+          @media (min-width: $breakpoint-m) {
+            margin-left: 20%;
+          }
+
+          @media (min-width: $breakpoint-xl) {
+            margin-left: 30%;
+          }
+        }
+
+        &__item {
+          text-align: left;
         }
       }
     }
@@ -407,11 +425,11 @@
         margin: 2rem 0 0;
 
         @media (min-width: $breakpoint-xs) {
-          margin-top: 2.5rem;
+          margin-top: 3rem;
         }
 
         @media (min-width: $breakpoint-m) {
-          margin-top: 6rem;
+          margin-top: 5rem;
         }
 
         @media (min-width: $breakpoint-xl) {
