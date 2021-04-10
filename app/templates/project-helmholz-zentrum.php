@@ -20,7 +20,7 @@
           <div class="container">
             <div class="project__facts">
               <ul class="list list_facts">
-                <li class="list__item">Project - Relaunch</li>
+                <li class="list__item">Project - Website Relaunch</li>
                 <li class="list__item">Role - Frontend Developer</li>
                 <li class="list__item">Agency - Bleech</li>
                 <li class="list__item">Year - 2019</li>
