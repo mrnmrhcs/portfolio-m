@@ -31,10 +31,10 @@ body {
   }
 
   &__layout {
-    padding: 7.25rem 0 2rem;
+    padding: 7.25rem 0 3rem;
 
-    @media (min-width: $breakpoint-xs) {
-      padding-bottom: 3rem;
+    @media (min-width: $breakpoint-xxs) {
+      padding-bottom: 4rem;
     }
 
     @media (min-width: $breakpoint-m) {
@@ -53,7 +53,7 @@ body {
   max-width: $breakpoint-max + (2 * $container-padding-xxl);
   padding: 0 $container-padding-xs;
 
-  @media (min-width: $breakpoint-xs) {
+  @media (min-width: $breakpoint-xxs) {
     padding-left: $container-padding-s;
     padding-right: $container-padding-s;
   }
