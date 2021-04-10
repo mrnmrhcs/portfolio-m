@@ -31,14 +31,14 @@
         <div class="project__image project__image_desktop">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/dav__audiobook__1440-1600-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/dav__creator__1440-1600-browser.png" alt="">
             </div>
           </div>
         </div>
         <div class="project__image project__image_desktop">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/dav__creator__1440-1600-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/dav__audiobook__1440-1600-browser.png" alt="">
             </div>
           </div>
         </div>
