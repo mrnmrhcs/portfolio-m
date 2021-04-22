@@ -5,42 +5,35 @@
     <section class="about__layout">
       <header class="about__header context-content">
         <div class="container">
-          <h1 class="about__title">Hello</h1><span class="about__divider">—</span>
-          <p class="about__intro">I’m a web developer with a good sense for ux and interface design, who values hard work and a methodical workflow to build digital products in a clean and usable manner.</p>
+          <h1 class="about__title">About</h1>
+          <p class="about__intro">Marian Schramm - Frontend web developer based in Berlin with great enthusiasm for all design and technology related aspects of digital ecosystems. I have worked in design and web development agencies for several years and contributed in a variety of successful digital design projects.</p>
         </div>
       </header>
       <main class="about__main">
         <div class="about__experience context-content">
           <div class="container">
-            <h2>Work Experience</h2>
-            <p>Graduated from Mediadesign Hochschule Berlin in 2008, i have worked in design &amp; web development agencies in germany to help in a variety of successful digital product and experience projects, both small and large companies.</p>
-            <p>I'm a self-motivated and creative front-end developer with a great enthusiasm for all technology related aspects of digital ecosystems.</p>
-          </div>
-        </div>
-        <div class="about__skills context-content">
-          <div class="container">
-            <div class="about__skill">
-              <h3>Development Experience</h3>
-              <ul>
-                <li>HTML5 / CSS3</li>
-                <li>Javascript</li>
-                <li>Kirby CMS Development</li>
-                <li>Git Version Control</li>
-                <li>Gulp Task Automation</li>
-              </ul>
-            </div>
-            <div class="about__skill">
-              <h3>Design Experience</h3>
-              <ul>
-                <li>User Experience Design</li>
-                <li>UI &amp; Visual Design</li>
-                <li>Prototypes &amp; Wireframes</li>
-                <li>Responsive Design</li>
-              </ul>
+            <div class="about__departments">
+              <div class="about__department">
+                <h3>Programming Experience</h3>
+                <ul class="list list_skills">
+                  <li class="list__item">HTML / SASS / PHP / Javascript</li>
+                  <li class="list__item">WordPress CMS / Kirby CMS</li>
+                  <li class="list__item">NPM / Composer / Task Automation</li>
+                  <li class="list__item">PHPCS / ESlint / Stylelint / Maintainable CSS</li>
+                </ul>
+              </div>
+              <div class="about__department">
+                <h3>Design Experience</h3>
+                <ul class="list list_skills">
+                  <li class="list__item">User Interface &amp; Experience Design</li>
+                  <li class="list__item">Responsive Web Design</li>
+                  <li class="list__item">CMS Backend / Component Design</li>
+                  <li class="list__item">Asset Optimization</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-        <div class="about__contribution"><?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/component/block-graph-contribution/index.php'; ?></div>
       </main>
     </section>
   </div>

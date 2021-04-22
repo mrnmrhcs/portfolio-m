@@ -9,7 +9,7 @@
     > [class$='__footer'] {
       margin: 3rem 0 0;
 
-      @media (min-width: $breakpoint-xs) {
+      @media (min-width: $breakpoint-xxs) {
         margin-top: 4rem;
       }
 
@@ -33,13 +33,9 @@
 
       &_projects,
       &_social {
-        @media (min-width: $breakpoint-xxs) {
-          column-gap: 1.25rem;
-          display: grid;
-        }
-
-        @media (min-width: $breakpoint-m) {
+        @media (min-width: $breakpoint-xs) {
           column-gap: 1.5rem;
+          display: grid;
         }
 
         @media (min-width: $breakpoint-xl) {
@@ -48,13 +44,9 @@
       }
 
       &_featured {
-        @media (min-width: $breakpoint-xxs) {
-          column-gap: 1.25rem;
-          display: grid;
-        }
-
-        @media (min-width: $breakpoint-m) {
+        @media (min-width: $breakpoint-xs) {
           column-gap: 1.5rem;
+          display: grid;
         }
 
         @media (min-width: $breakpoint-xl) {
@@ -63,6 +55,10 @@
 
         .#{$block}__item {
           margin: 1.25rem 0 0;
+
+          @media (min-width: $breakpoint-xxs) {
+            margin-top: 1.5rem;
+          }
 
           @media (min-width: $breakpoint-xs) {
             margin-top: 3rem;
@@ -131,7 +127,7 @@
 
       &_featured,
       &_projects {
-        @media (min-width: $breakpoint-xxs) {
+        @media (min-width: $breakpoint-xs) {
           grid-template-columns: 1fr 1fr;
         }
       }
@@ -143,21 +139,21 @@
       }
 
       &_social {
-        @media (min-width: $breakpoint-xxs) {
+        @media (min-width: $breakpoint-xs) {
           grid-template-columns: 1fr 1fr 1fr;
         }
       }
 
       &_projects,
       &_social {
-        @media (min-width: $breakpoint-m) {
+        @media (min-width: $breakpoint-l) {
           grid-template-columns: 1fr 1fr 1fr 1fr;
         }
 
         .#{$block}__item {
           margin: 1.25rem 0 0;
 
-          @media (min-width: $breakpoint-m) {
+          @media (min-width: $breakpoint-xxs) {
             margin-top: 1.5rem;
           }
 
@@ -195,7 +191,19 @@
 
       &_featured {
         .#{$block}__item {
-          @media (min-width: $breakpoint-xxs) {
+          &:first-child {
+            .image__tag {
+              object-position: left;
+            }
+          }
+
+          &:nth-child(4) {
+            .image__tag {
+              object-position: right;
+            }
+          }
+
+          @media (min-width: $breakpoint-xs) {
             &:first-child,
             &:nth-child(4) {
               grid-column-end: 3;
@@ -214,7 +222,7 @@
 
       &_projects {
         .#{$block}__item {
-          @media (min-width: $breakpoint-xxs) {
+          @media (min-width: $breakpoint-xs) {
             &:nth-child(-1n+2) {
               margin-top: 0;
             }
@@ -226,7 +234,7 @@
             }
           }
 
-          @media (min-width: $breakpoint-m) {
+          @media (min-width: $breakpoint-l) {
             &:nth-child(-1n+4) {
               margin-top: 0;
             }
@@ -234,7 +242,11 @@
 
           .card {
             &__link {
-              padding-bottom: 100%;
+              padding-bottom: calc(3 / 5 * 100%);
+
+              @media (min-width: $breakpoint-xs) {
+                padding-bottom: 100%;
+              }
             }
           }
         }
@@ -242,18 +254,13 @@
 
       &_social {
         .#{$block}__item {
-          @media (min-width: $breakpoint-xxs) {
-            &:nth-child(3) {
-              grid-column-end: auto;
-              grid-column-start: auto;
-            }
-
+          @media (min-width: $breakpoint-xs) {
             &:nth-child(-1n+3) {
               margin-top: 0;
             }
           }
 
-          @media (min-width: $breakpoint-m) {
+          @media (min-width: $breakpoint-l) {
             &:nth-child(3) {
               grid-column-start: 4;
             }
@@ -262,7 +269,7 @@
 
         .card {
           &__link {
-            padding-bottom: calc(3 / 5 * 100%);
+            padding-bottom: calc(9 / 21 * 100%);
           }
         }
       }
@@ -278,15 +285,15 @@
       }
 
       &__title {
-        font-size: 22px;
+        font-size: 21px;
         font-weight: 600;
         left: 1.125rem;
         position: absolute;
         top: 1.125rem;
         z-index: 22;
 
-        @media (min-width: $breakpoint-xxs) {
-          @include rwd-scale('font-size', 16px, 20px, 375px, 575px);
+        @media (min-width: $breakpoint-xs) {
+          @include rwd-scale('font-size', 16px, 20px, 480px, 575px);
         }
 
         @media (min-width: $breakpoint-s) {
@@ -296,7 +303,7 @@
         }
 
         @media (min-width: $breakpoint-m) {
-          @include rwd-scale('font-size', 18px, 24px, 768px, 1400px);
+          @include rwd-scale('font-size', 18px, 21px, 768px, 1400px);
         }
 
         @media (min-width: $breakpoint-xl) {
@@ -317,7 +324,23 @@
 
       &_horizontal {
         .image {
-          padding-bottom: calc(9 / 20 * 100%);
+          padding-bottom: 100%;
+        }
+
+        @media (min-width: $breakpoint-s) {
+          .image {
+            padding-bottom: calc(3 / 5 * 100%);
+          }
+        }
+
+        @media (min-width: $breakpoint-l) {
+          .image {
+            padding-bottom: calc(9 / 20 * 100%);
+
+            &__tag {
+              object-position: center;
+            }
+          }
         }
       }
     }
@@ -327,10 +350,10 @@
 [is='layout-project'] {
   section {
     > [class$='__main'] {
-      margin: 2rem 0 0;
+      margin: 3rem 0 0;
 
       @media (min-width: $breakpoint-xs) {
-        margin-top: 3rem;
+        margin-top: 4rem;
       }
 
       @media (min-width: $breakpoint-m) {
@@ -347,10 +370,10 @@
     }
 
     > [class$='__footer'] {
-      margin: 2rem 0 0;
+      margin: 3rem 0 0;
 
       @media (min-width: $breakpoint-xs) {
-        margin-top: 3rem;
+        margin-top: 4rem;
       }
 
       @media (min-width: $breakpoint-m) {
@@ -436,15 +459,15 @@
       .list {
         &_facts {
           @media (min-width: $breakpoint-xs) {
-            margin-left: 10%;
+            margin-left: 8%;
           }
 
           @media (min-width: $breakpoint-m) {
-            margin-left: 20%;
+            margin-left: 24%;
           }
 
           @media (min-width: $breakpoint-xl) {
-            margin-left: 30%;
+            margin-left: 32%;
           }
         }
 
@@ -456,10 +479,10 @@
 
     &__main {
       > * {
-        margin: 2rem 0 0;
+        margin: 3rem 0 0;
 
         @media (min-width: $breakpoint-xs) {
-          margin-top: 3rem;
+          margin-top: 4rem;
         }
 
         @media (min-width: $breakpoint-m) {
@@ -508,71 +531,105 @@
         }
       }
     }
-
-    &_davide-rizzo {
-      // style
-    }
-
-    &_duerr {
-      // style
-    }
-
-    &_deutsche-filmakademie {
-      // style
-    }
-
-    &_deutscher-filmpreis {
-      // style
-    }
-
-    &_glow {
-      // style
-    }
-
-    &_helmholz-zentrum {
-      // style
-    }
-
-    &_mycs {
-      // style
-    }
-
-    &_rohde-und-schwarz {
-      // style
-    }
-
-    &_unitb {
-      // style
-    }
-
-    &_universal-music {
-      // style
-    }
   }
 }
 
 [is='layout-about'] {
+  section {
+    > [class$='__header'],
+    > [class$='__main'],
+    > [class$='__footer'] {
+      margin: 2rem 0 0;
+
+      @media (min-width: $breakpoint-xs) {
+        margin-top: 4rem;
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    .container {
+      max-width: 900px;
+    }
+  }
+
   .about {
     $block: 'about';
 
-    &__title {
-      // style
+    &__header {
+      &.context-content {
+        .#{$block}__title {
+          padding: 1rem 0 0;
+
+          @media (min-width: $breakpoint-xs) {
+            padding-top: 2rem;
+          }
+
+          @media (min-width: $breakpoint-m) {
+            padding-top: 3rem;
+          }
+
+          @media (min-width: $breakpoint-xl) {
+            padding-top: 6rem;
+          }
+        }
+      }
     }
 
-    &__intro {
-      // style
+    &__main {
+      > * {
+        margin: 3rem 0 0;
+
+        @media (min-width: $breakpoint-xs) {
+          margin-top: 4rem;
+        }
+
+        @media (min-width: $breakpoint-m) {
+          margin-top: 5rem;
+        }
+
+        @media (min-width: $breakpoint-xl) {
+          margin-top: 8rem;
+        }
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
     }
 
     &__experience {
-      // style
-    }
+      .#{$block}__departments {
+        @media (min-width: $breakpoint-s) {
+          column-gap: 1rem;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
 
-    &__skills {
-      // style
-    }
+          .#{$block}__department {
+            &:nth-child(-1n+2) {
+              margin-top: 0;
+            }
+          }
+        }
 
-    &__skill {
-      // style
+        > * {
+          margin: 2rem 0 0;
+
+          @media (min-width: $breakpoint-m) {
+            margin-top: 3rem;
+          }
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+
+      &.context-content {
+        // style
+      }
     }
   }
 }
