@@ -1,0 +1,45 @@
+<div class="content content--ticket" id="ticket-{{ tab.title|lower|replace({' ': "-"})|e('html_attr') }}--{{ loop.index }}" aria-hidden="{{ loop.first ? 'false' : 'true' }}">
+  <article class="ticket">
+    <header class="ticket-header">
+      <div class="columns">
+        <div class="column-info">
+          <h4 class="title">{{- ticket.title|e -}}</h4>
+          <p class="infoText">{{ ticket.infoText|e }}</p>
+        </div>
+        <div class="column-price">
+          <span class="price">{{ ticket.price|e }}</spa>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column--meta">
+          <p class="introText">{{ ticket.introText|e }}</p>
+          {% if ticket.facts %}
+            <div class="facts">
+              <ul class="list list--facts">
+                {% for item in ticket.facts %}
+                  <li class="list-item list-item--fact">
+                    {{- item.text|e -}}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        </div>
+        <div class="column--shop">
+          <div class="media">
+            {% include 'Partials/Media/index.twig' with { image: ticket.image } only %}
+          </div>
+          <div class="cta">
+            <a class="cta-button button" href="{{ ticket.link.url|e('esc_url') }}"{{ ticket.link.target == '_blank' ? ' target="_blank" rel="nofollow noreferrer noopener"' : ' rel="nofollow"' }}>{{ ticket.link.title ? ticket.link.title|e : generalTranslatable.buyTicket|e }}</a>
+            <p class="cta-notice">{{ ticket.notice|e }}</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="ticket-main">
+      <div class="description">
+        {{ ticket.description|e('wp_kses_post') }}
+      </div>
+    </section>
+  </article>
+</div>

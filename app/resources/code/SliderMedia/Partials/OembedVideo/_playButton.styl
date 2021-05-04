@@ -1,0 +1,70 @@
+$colorGray = #fff
+$colorWhite = #fff
+$backgroundOpacity = .75
+$borderWidth = 0
+$transitionTime = .3s
+$transitionEasing = ease
+$playButtonCircleDiameter = {
+  'desktop': 90px,
+  'mobile': 72px
+}
+$playButtonTriangleSize = {
+  desktop: 36px,
+  mobile: 28px
+}
+$pseudoElementDefaults = {
+  content: '',
+  left: 50%,
+  position: absolute,
+  top: 50%,
+}
+
+playButton($pseudoElementDefaults, $colorPlayButton, $backgroundOpacity, $borderWidth, $colorBorder, $playButtonCircleDiameter, $colorTriangle, $playButtonTriangleSize)
+  transition: transform $transitionTime $transitionEasing
+
+  &
+    backface-visibility: hidden
+    height: $playButtonCircleDiameter.desktop
+    width: @height
+    transform: translate(-50%, -50%)
+
+    +below(576px)
+      height: $playButtonCircleDiameter.mobile
+      width: @height
+
+  &::before
+    {$pseudoElementDefaults}
+    background-color: rgba($colorPlayButton, $backgroundOpacity)
+    border: $borderWidth solid $colorBorder
+    border-radius: ($playButtonCircleDiameter.desktop / 2)
+    height: $playButtonCircleDiameter.desktop
+    margin-top: -($playButtonCircleDiameter.desktop / 2)
+    margin-left: -($playButtonCircleDiameter.desktop / 2)
+    width: $playButtonCircleDiameter.desktop
+
+    +below(576px)
+      border: ($borderWidth - 1) solid $colorBorder
+      height: $playButtonCircleDiameter.mobile
+      margin-top: -($playButtonCircleDiameter.mobile / 2)
+      margin-left: -($playButtonCircleDiameter.mobile / 2)
+      width: $playButtonCircleDiameter.mobile
+
+  &::after
+    {$pseudoElementDefaults}
+    border-bottom: ($playButtonTriangleSize.desktop / 2) solid transparent
+    border-left: ($playButtonTriangleSize.desktop - 7) solid $colorTriangle
+    border-top: ($playButtonTriangleSize.desktop / 2) solid transparent
+    height: 0
+    margin-left: -(($playButtonTriangleSize.desktop / 2) - 8)
+    margin-top: -($playButtonTriangleSize.desktop / 2)
+    width: 0
+
+    +below(576px)
+      border-bottom: ($playButtonTriangleSize.mobile / 2) solid transparent
+      border-left: ($playButtonTriangleSize.mobile - 4) solid $colorTriangle
+      border-top: ($playButtonTriangleSize.mobile / 2) solid transparent
+      margin-left: -(($playButtonTriangleSize.mobile / 2) - 6)
+      margin-top: -($playButtonTriangleSize.mobile / 2)
+
+  &:hover
+    transform: translate(-50%, -50%) scale(1.125)

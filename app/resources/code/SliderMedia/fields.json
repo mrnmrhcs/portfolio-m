@@ -1,0 +1,319 @@
+{
+  "translatableOptions": [
+
+  ],
+  "globalOptions": [
+
+  ],
+  "layout": {
+    "name": "sliderMedia",
+    "label": "Slider: Media",
+    "sub_fields": [
+      {
+        "label": "Content",
+        "name": "globalContentTab",
+        "type": "tab",
+        "placement": "top",
+        "endpoint": false
+      },
+      {
+        "label": "Add Title",
+        "name": "titleAccordion",
+        "type": "accordion",
+        "open": false,
+        "multi_expand": true,
+        "endpoint": false
+      },
+      {
+        "label": "Title",
+        "name": "sectionTitle",
+        "type": "text"
+      },
+      {
+        "label": "",
+        "name": "anchorId",
+        "type": "text",
+        "instructions": "<b>Anchor-ID:</b> lowercase without spaces or umlauts - <b>e.g.</b> 'rueckblick-2018'"
+      },
+      {
+        "label": "",
+        "name": "",
+        "type": "accordion",
+        "open": false,
+        "multi_expand": true,
+        "endpoint": true
+      },
+      {
+        "label": "",
+        "name": "mediaSlides",
+        "type": "repeater",
+        "layout": "row",
+        "button_label": "Add Slide",
+        "min": 1,
+        "sub_fields": [
+          {
+            "label": "Slide",
+            "name": "slide",
+            "type": "group",
+            "sub_fields": [
+              {
+                "label": "Media",
+                "name": "mediaTab",
+                "type": "tab",
+                "placement": "top",
+                "endpoint": false
+              },
+              {
+                "label": "",
+                "name": "mediaType",
+                "type": "radio",
+                "layout": "horizontal",
+                "choices": {
+                  "image": "Image",
+                  "oembed": "oEmbed"
+                },
+                "default_value": "image"
+              },
+              {
+                "label": "Source",
+                "name": "image",
+                "type": "image",
+                "return_format": "array",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": 2560,
+                "min_height": 1440,
+                "max_size": 2.5,
+                "required": true,
+                "instructions": "Resolution: 2560 x 1440px Minimum - Ratio: 16:9 - Format: JPG",
+                "mime_types": "jpg,jpeg",
+                "conditional_logic": [
+                  [
+                    {
+                      "fieldPath": "mediaType",
+                      "operator": "==",
+                      "value": "image"
+                    }
+                  ]
+                ]
+              },
+              {
+                "label": "Preview Image Source",
+                "name": "posterImage",
+                "type": "image",
+                "return_format": "array",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": 2560,
+                "min_height": 1440,
+                "max_size": 2.5,
+                "required": true,
+                "instructions": "Resolution: 2560 x 1440px Minimum - Ratio: 16:9 - Format: JPG",
+                "mime_types": "jpg,jpeg",
+                "conditional_logic": [
+                  [
+                    {
+                      "fieldPath": "mediaType",
+                      "operator": "==",
+                      "value": "oembed"
+                    }
+                  ]
+                ]
+              },
+              {
+                "label": "Description",
+                "name": "descriptionTab",
+                "type": "tab",
+                "placement": "top",
+                "endpoint": false
+              },
+              {
+                "label": "Topic",
+                "name": "topic",
+                "type": "text"
+              },
+              {
+                "label": "Title",
+                "name": "title",
+                "maxlength": 72,
+                "required": true,
+                "type": "text"
+              },
+              {
+                "label": "",
+                "name": "heroType",
+                "type": "radio",
+                "layout": "horizontal",
+                "choices": {
+                  "cta": "Call-to-Action",
+                  "subtitle": "Subtitle"
+                },
+                "default_value": "cta"
+              },
+              {
+                "label": "",
+                "name": "subtitle",
+                "type": "text",
+                "conditional_logic": [
+                  [
+                    {
+                      "fieldPath": "heroType",
+                      "operator": "==",
+                      "value": "subtitle"
+                    }
+                  ]
+                ]
+              },
+              {
+                "label": "",
+                "type": "link",
+                "name": "link",
+                "instructions": "Enter the button label via Link-Text. Less than 20 characters are recommended.",
+                "return_format": "array",
+                "conditional_logic": [
+                  [
+                    {
+                      "fieldPath": "heroType",
+                      "operator": "==",
+                      "value": "cta"
+                    }
+                  ]
+                ]
+              },
+              {
+                "label": "Options",
+                "name": "optionTab",
+                "type": "tab",
+                "placement": "top",
+                "endpoint": false,
+                "conditional_logic": [
+                  [
+                    {
+                      "fieldPath": "mediaType",
+                      "operator": "==",
+                      "value": "image"
+                    }
+                  ]
+                ]
+              },
+              {
+                "label": "Image Alignment",
+                "name": "alignImage",
+                "type": "button_group",
+                "layout": "horizontal",
+                "choices": {
+                  "imageTop": "Top",
+                  "imageCenter": "Center",
+                  "imageBottom": "Bottom"
+                },
+                "default_value": "imageTop",
+                "conditional_logic": [
+                  [
+                    {
+                      "fieldPath": "mediaType",
+                      "operator": "==",
+                      "value": "image"
+                    }
+                  ]
+                ]
+              },
+              {
+                "label": "Video Source",
+                "name": "previewTab",
+                "type": "tab",
+                "placement": "top",
+                "endpoint": false,
+                "conditional_logic": [
+                  [
+                    {
+                      "fieldPath": "mediaType",
+                      "operator": "==",
+                      "value": "oembed"
+                    }
+                  ]
+                ]
+              },
+              {
+                "label": "URL",
+                "name": "oembed",
+                "type": "oembed",
+                "required": true,
+                "conditional_logic": [
+                  [
+                    {
+                      "fieldPath": "mediaType",
+                      "operator": "==",
+                      "value": "oembed"
+                    }
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Options",
+        "name": "globalOptionsTab",
+        "type": "tab",
+        "placement": "top",
+        "endpoint": false
+      },
+      {
+        "label": "",
+        "name": "globalOptionSet",
+        "type": "group",
+        "layout": "row",
+        "sub_fields": [
+          {
+            "label": "Autoplay",
+            "name": "autoplay",
+            "type": "button_group",
+            "choices": {
+              "0": "Off",
+              "1": "On"
+            },
+            "default_value": "0"
+          },
+          {
+            "label": "Seconds per Slide",
+            "name": "autoplaySpeed",
+            "type": "range",
+            "min": 3,
+            "max": 30,
+            "step": 1,
+            "default_value": 6,
+            "conditional_logic": [
+              [
+                {
+                  "fieldPath": "autoplay",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "name": "mainContentOptionSet",
+        "type": "group",
+        "layout": "row",
+        "sub_fields": [
+          {
+            "label": "Layout",
+            "name": "layoutType",
+            "type": "button_group",
+            "choices": {
+              "0": "Full",
+              "1": "Content"
+            },
+            "default_value": "0"
+          }
+        ]
+      }
+    ]
+  }
+}
+
