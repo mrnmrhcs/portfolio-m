@@ -1,0 +1,105 @@
+@import '_playButton'
+
+.oembedVideo
+  position: relative
+
+  .playButton
+    position: absolute
+    top: 48%
+    left: 50%
+    z-index: 5
+
+    +below('xl')
+      top: 46%
+
+    +below('l')
+      top: 44%
+
+    +below(940px)
+      top: 42%
+
+    +below('m')
+      top: 50%
+
+    &-isHidden
+      display: none
+
+  .playButton:hover + .posterImage::before
+    opacity: .4
+
+  .video
+    visibility: hidden
+    width: 100%
+
+    &-isVisible
+      visibility: visible
+
+    iframe
+      display: block
+      height: 100%
+      left: 0
+      position: absolute
+      top: 0
+      width: 100%
+
+  .posterImage
+    position: relative
+    transition: visibility $transitionTime $transitionEasing
+    visibility: visible
+
+    &::before
+      background-color: #111
+      content: ''
+      display: block
+      height: 100%
+      left: 0
+      opacity: .15
+      position: absolute
+      transition: all .4s ease
+      width: 100%
+      z-index: 2
+
+    &::after
+      content: ''
+      display: block
+      height: 0
+      width: 100%
+
+    &-imageTag
+      display: block
+      height: auto
+      left: 0
+      position: absolute
+      top: 0
+      width: 100%
+
+    &-isHidden
+      visibility: hidden
+
+    /.sliderMediaSlider-pageHeader
+      .posterImage::after
+        padding-bottom: calc(1 / 2 * 100%)
+
+    /.sliderMediaSlider-content:not(.sliderMediaSlider-pageHeader)
+      .posterImage::after
+        padding-bottom: calc(9 / 16 * 100%)
+
+// THEME-DFP
+// -------------------------------------------------------------
+
+/[is='flynt-slider-media']
+  &.flyntComponent
+    &--themeDfp
+      .oembedVideo
+        .playButton
+          playButton($pseudoElementDefaults, $colorGold, $backgroundOpacity, $borderWidth, $colorWhite, $playButtonCircleDiameter, $colorWhite, $playButtonTriangleSize)
+
+// THEME-DFA
+// -------------------------------------------------------------
+
+/[is='flynt-slider-media']
+  &.flyntComponent
+    &--themeDfa
+      .oembedVideo
+        .playButton
+          playButton($pseudoElementDefaults, $colorRed, $backgroundOpacity, $borderWidth, $colorWhite, $playButtonCircleDiameter, $colorWhite, $playButtonTriangleSize)
