@@ -1,5 +1,3 @@
-var $ = window.jQuery
-
 class BlockGraphContribution extends window.HTMLDivElement {
   constructor (...args) {
     const self = super(...args)
@@ -17,7 +15,7 @@ class BlockGraphContribution extends window.HTMLDivElement {
   }
 
   connectedCallback () {
-    for (var i = 1; i < 365; i++) {
+    for (let i = 1; i < 365; i++) {
       const level = Math.floor(Math.random() * 3)
       this.$squares.append(`<li data-level="${level}"></li>`)
     }

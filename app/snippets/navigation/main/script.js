@@ -1,5 +1,3 @@
-var $ = window.jQuery
-
 class NavigationMain extends window.HTMLDivElement {
   constructor (...args) {
     const self = super(...args)
@@ -27,7 +25,7 @@ class NavigationMain extends window.HTMLDivElement {
   }
 
   connectedCallback () {
-    console.log('### NAVIGATION-MAIN - SCRIPT.JS ###')
+    // console.log('### NAVIGATION-MAIN - SCRIPT.JS ###')
   }
 
   toggleMenu (e) {
