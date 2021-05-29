@@ -1,5 +1,3 @@
-var $ = window.jQuery
-
 class NavigationMain extends window.HTMLDivElement {
   constructor (...args) {
     const self = super(...args)

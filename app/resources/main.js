@@ -1,1 +1,1 @@
-// console.log('### M ###')
+const $ = window.jQuery
