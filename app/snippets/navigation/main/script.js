@@ -27,7 +27,7 @@ class NavigationMain extends window.HTMLDivElement {
   }
 
   connectedCallback () {
-    console.log('### NAVIGATION-MAIN - SCRIPT.JS ###')
+    // console.log('### NAVIGATION-MAIN - SCRIPT.JS ###')
   }
 
   toggleMenu (e) {
