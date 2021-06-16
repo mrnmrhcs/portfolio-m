@@ -61,9 +61,7 @@ function reload (done) {
 
 // CLEAN -------------------------------------------------------------
 
-function clean__vendor () {
-  return del(config.vendor.dest + '{vendor.head,vendor}.min.js')
-}
+function clean__vendor () { return del(config.vendor.dest + '{vendor.head,vendor}.min.js') }
 
 // PROCESS -------------------------------------------------------------
 
@@ -95,9 +93,7 @@ const vendor = series(clean__vendor, process__vendor_head, process__vendor)
 
 // CLEAN -------------------------------------------------------------
 
-function clean__robots () {
-  return del(config.path.dist + 'robots.txt')
-}
+function clean__robots () { return del(config.path.dist + 'robots.txt') }
 
 // COPY -------------------------------------------------------------
 
