@@ -5,18 +5,17 @@
 import { task, series, parallel, src, dest, watch } from 'gulp'
 
 import autoprefixer from 'gulp-autoprefixer'
-import imagemin from 'gulp-imagemin'
-import favicon from 'gulp-favicons'
-import concat from 'gulp-concat'
-import rename from 'gulp-rename'
-import uglify from 'gulp-uglify-es'
-import gulpif from 'gulp-if'
+import babel from 'gulp-babel'
 import cache from 'gulp-cache'
 import debug from 'gulp-debug'
-import babel from 'gulp-babel'
+import gulpif from 'gulp-if'
+import concat from 'gulp-concat'
+import uglify from 'gulp-uglify-es'
+import imagemin from 'gulp-imagemin'
 import scss from 'gulp-sass'
-import sass from 'sass'
 import sync from 'browser-sync'
+import favicon from 'favicons'
+import sass from 'sass'
 import del from 'del'
 
 import config from './config'
@@ -27,9 +26,7 @@ import pkg from './package.json'
 ////////////////////////////////////////////////////////////////////////////////
 
 const DEBUG = (process.env.NODE_DEBUG) ? true : false
-
 console.log('ENV:', process.env.NODE_ENV)
-console.log('DEBUG:', DEBUG)
 
 ////////////////////////////////////////////////////////////////////////////////
 // BROWSERSYNC
@@ -66,7 +63,7 @@ function reload (done) {
 
 // CLEAN -------------------------------------------------------------
 
-function clean__vendor () { return del(config.vendor.dest + '{vendor.head,vendor}.min.js') }
+function clean__vendor () { return del(config.vendor.dest + '{vendor,vendor-legacy}.js') }
 
 // PROCESS -------------------------------------------------------------
 
@@ -140,6 +137,121 @@ function process__vendor__modern () {
 const vendor = series(clean__vendor, process__vendor__modern, process__vendor__legacy)
 
 ////////////////////////////////////////////////////////////////////////////////
+// SCRIPT
+////////////////////////////////////////////////////////////////////////////////
+
+// CLEAN -------------------------------------------------------------
+
+function clean__scripts__main () { return del(config.path.dist + '{main,main-legacy}.js') }
+
+// PROCESS -------------------------------------------------------------
+
+function process__scripts__legacy () {
+  return src([config.path.src + config.path.resources + 'main.js', config.path.src + config.path.snippets + '**/script.js'], { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? true : false) : false })
+    .pipe(gulpif(DEBUG, debug({ title: '## MAIN:' })))
+    .pipe(babel({
+      presets: [
+        ['@babel/preset-env',
+          {
+            modules: false,
+            corejs: {
+              version: 2,
+              proposals: true
+            },
+            useBuiltIns: 'usage',
+            targets: {
+              browsers: [
+                '> 1%',
+                'last 2 versions',
+                'Firefox ESR'
+              ]
+            }
+          }
+        ]
+      ]
+    }))
+    .pipe(concat('main-legacy.js'))
+    .pipe(gulpif((process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'), uglify()))
+    .pipe(dest(config.path.dist, { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? '.' : false) : false }))
+}
+
+function process__scripts__modern () {
+  return src([config.path.src + config.path.resources + 'main.js', config.path.src + config.path.snippets + '**/script.js'], { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? true : false) : false })
+    .pipe(gulpif(DEBUG, debug({ title: '## MAIN:' })))
+    .pipe(babel({
+      presets: [
+        ['@babel/preset-env',
+          {
+            modules: false,
+            corejs: {
+              version: 2,
+              proposals: true
+            },
+            useBuiltIns: 'usage',
+            targets: {
+              browsers: [
+                'last 2 Chrome versions',
+                'not Chrome < 60',
+                'last 2 Safari versions',
+                'not Safari < 10.1',
+                'last 2 iOS versions',
+                'not iOS < 10.3',
+                'last 2 Firefox versions',
+                'not Firefox < 54',
+                'last 2 Edge versions',
+                'not Edge < 15'
+              ]
+            }
+          }
+        ]
+      ]
+    }))
+    .pipe(concat('main.js'))
+    .pipe(gulpif((process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'), uglify()))
+    .pipe(dest(config.path.dist, { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? '.' : false) : false }))
+}
+
+// WATCH -------------------------------------------------------------
+
+function watch__scripts () {
+  watch([config.path.src + config.path.resources + 'main.js', config.path.src + config.path.snippets + '**/script.js'], series(scripts__main, reload))
+};
+
+// COMPOSITION -------------------------------------------------------------
+
+const scripts__main = series(clean__scripts__main, process__scripts__legacy, process__scripts__modern)
+
+////////////////////////////////////////////////////////////////////////////////
+// STYLE
+////////////////////////////////////////////////////////////////////////////////
+
+// CLEAN -------------------------------------------------------------
+
+function clean__styles () { return del(config.path.dist + '*.{css,css.map}') }
+
+// PROCESS -------------------------------------------------------------
+
+function process__styles () {
+  scss.compiler = sass
+  return src(config.path.src + config.path.resources + 'main.scss', { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? true : false) : false })
+    .pipe(gulpif(DEBUG, debug({ title: '## STYLE:' })))
+    .pipe(scss({ outputStyle: process.env.NODE_ENV === 'production' ? (process.env.NODE_ENV === 'staging' ? 'compressed' : 'expanded') : 'expanded' }).on('error', scss.logError))
+    .pipe(autoprefixer())
+    .pipe(dest(config.path.dist, { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? '.' : false) : false }))
+}
+
+// WATCH -------------------------------------------------------------
+
+function watch__styles () {
+  watch(config.path.src + config.path.snippets + '**/*.scss', series(styles, reload))
+  watch(config.path.src + config.path.resources + '**/*.scss', series(styles, reload))
+}
+
+// COMPOSITION -------------------------------------------------------------
+
+const styles = series(clean__styles, process__styles)
+
+////////////////////////////////////////////////////////////////////////////////
 // SEO
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -152,7 +264,6 @@ function clean__robots () { return del(config.path.dist + 'robots.txt') }
 function copy__robots () {
   return src(config.path.src + (!process.env.NODE_ENV === 'staging' ? 'robots.txt' : 'robots.txt'))
     .pipe(gulpif(DEBUG, debug({ title: '## ROBOTS:' })))
-    .pipe(rename('robots.txt'))
     .pipe(dest(config.path.dist))
 }
 
@@ -256,14 +367,25 @@ function process__icons () {
 
 function process__favicons () {
   return src(config.path.src + config.path.resources + config.path.assets + config.path.favicons + 'favicon_src.png')
-    .pipe(favicon({
+    .pipe(gulpif(DEBUG, debug({ title: '## FAVICON:' })))
+    .pipe(favicon.stream({
+      appName: 'Portfolio — Marian Schramm',
+      appShortName: pkg.name,
+      appDescription: pkg.description,
+      developerName: pkg.author,
+      developerURL: config.host.live,
+      lang: 'en-US',
       background: '#FFFFFF',
-      path: config.path.dist + config.path.assets + config.path.favicons,
+      path: '../../../' + config.path.assets + config.path.favicons,
       url: config.host.live,
-      display: 'standalone',
-      orientation: 'portrait',
+      display: 'browser',
+      orientation: 'any',
+      scope: '/',
+      start_url: '/index.php',
+      version: pkg.version,
       logging: DEBUG ? true : false,
-      online: false,
+      html: 'HEAD.html',
+      pipeHTML: true,
       replace: true,
       icons: {
         android: process.env.NODE_ENV === 'production' ? true : (!process.env.NODE_ENV === 'staging' ? false : true),
@@ -276,7 +398,6 @@ function process__favicons () {
         yandex: process.env.NODE_ENV === 'production' ? true : (!process.env.NODE_ENV === 'staging' ? false : true)
       }
     }))
-    .pipe(gulpif(DEBUG, debug({ title: '## FAVICON:' })))
     .pipe(dest(config.path.dist + config.path.assets + config.path.favicons))
 }
 
@@ -301,121 +422,6 @@ const images = series(clean__images, process__images)
 const icons = series(clean__icons, process__icons)
 const favicons = series(clean__favicons, process__favicons)
 const fonts = series(clean__fonts, copy__fonts)
-
-////////////////////////////////////////////////////////////////////////////////
-// SCRIPT
-////////////////////////////////////////////////////////////////////////////////
-
-// CLEAN -------------------------------------------------------------
-
-function clean__scripts__main () { return del(config.path.dist + 'main.min.{js,js.map}') }
-
-// PROCESS -------------------------------------------------------------
-
-function process__scripts__legacy () {
-  return src([config.path.src + config.path.resources + 'main.js', config.path.src + config.path.snippets + '**/script.js'], { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? true : false) : false })
-    .pipe(gulpif(DEBUG, debug({ title: '## MAIN:' })))
-    .pipe(babel({
-      presets: [
-        ['@babel/preset-env',
-          {
-            modules: false,
-            corejs: {
-              version: 2,
-              proposals: true
-            },
-            useBuiltIns: 'usage',
-            targets: {
-              browsers: [
-                '> 1%',
-                'last 2 versions',
-                'Firefox ESR'
-              ]
-            }
-          }
-        ]
-      ]
-    }))
-    .pipe(concat('main-legacy.js'))
-    .pipe(gulpif((process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'), uglify()))
-    .pipe(dest(config.path.dist, { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? '.' : false) : false }))
-}
-
-function process__scripts__modern () {
-  return src([config.path.src + config.path.resources + 'main.js', config.path.src + config.path.snippets + '**/script.js'], { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? true : false) : false })
-    .pipe(gulpif(DEBUG, debug({ title: '## MAIN:' })))
-    .pipe(babel({
-      presets: [
-        ['@babel/preset-env',
-          {
-            modules: false,
-            corejs: {
-              version: 2,
-              proposals: true
-            },
-            useBuiltIns: 'usage',
-            targets: {
-              browsers: [
-                'last 2 Chrome versions',
-                'not Chrome < 60',
-                'last 2 Safari versions',
-                'not Safari < 10.1',
-                'last 2 iOS versions',
-                'not iOS < 10.3',
-                'last 2 Firefox versions',
-                'not Firefox < 54',
-                'last 2 Edge versions',
-                'not Edge < 15'
-              ]
-            }
-          }
-        ]
-      ]
-    }))
-    .pipe(concat('main.js'))
-    .pipe(gulpif((process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'), uglify()))
-    .pipe(dest(config.path.dist, { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? '.' : false) : false }))
-}
-
-// WATCH -------------------------------------------------------------
-
-function watch__scripts () {
-  watch([config.path.src + config.path.resources + 'main.js', config.path.src + config.path.snippets + '**/script.js'], series(scripts__main, reload))
-};
-
-// COMPOSITION -------------------------------------------------------------
-
-const scripts__main = series(clean__scripts__main, process__scripts__legacy, process__scripts__modern)
-
-////////////////////////////////////////////////////////////////////////////////
-// STYLE
-////////////////////////////////////////////////////////////////////////////////
-
-// CLEAN -------------------------------------------------------------
-
-function clean__styles () { return del(config.path.dist + '*.min.{css,css.map}') }
-
-// PROCESS -------------------------------------------------------------
-
-function process__styles () {
-  scss.compiler = sass
-  return src(config.path.src + config.path.resources + 'main.scss', { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? true : false) : false })
-    .pipe(gulpif(DEBUG, debug({ title: '## STYLE:' })))
-    .pipe(scss({ outputStyle: process.env.NODE_ENV === 'production' ? (process.env.NODE_ENV === 'staging' ? 'compressed' : 'expanded') : 'expanded' }).on('error', scss.logError))
-    .pipe(autoprefixer()).pipe(rename({ suffix: '.min' }))
-    .pipe(dest(config.path.dist, { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? '.' : false) : false }))
-}
-
-// WATCH -------------------------------------------------------------
-
-function watch__styles () {
-  watch(config.path.src + config.path.snippets + '**/*.scss', series(styles, reload))
-  watch(config.path.src + config.path.resources + '**/*.scss', series(styles, reload))
-}
-
-// COMPOSITION -------------------------------------------------------------
-
-const styles = series(clean__styles, process__styles)
 
 ////////////////////////////////////////////////////////////////////////////////
 // COMPOSITION
