@@ -1,1 +1,1 @@
-const $ = window.jQuery
+const $ = window.$

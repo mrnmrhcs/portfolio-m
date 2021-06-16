@@ -14,7 +14,10 @@
     <link rel="shortcut icon" sizes="16x16 32x32" href="../../../assets/favicons/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicons/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicons/favicon-32x32.png">
-    <script src="../vendor.head.min.js"></script>
+    <script type="module" src="../vendor.js"></script>
+    <script type="module" src="../main.js"></script>
+    <script nomodule src="../vendor-legacy.js"></script>
+    <script nomodule src="../main-legacy.js"></script>
   </head>
 
   <body>

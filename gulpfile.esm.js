@@ -13,17 +13,22 @@ import uglify from 'gulp-uglify-es'
 import gulpif from 'gulp-if'
 import cache from 'gulp-cache'
 import debug from 'gulp-debug'
+import babel from 'gulp-babel'
 import scss from 'gulp-sass'
-import sass from 'node-sass'
+import sass from 'sass'
 import sync from 'browser-sync'
 import del from 'del'
 
 import config from './config'
+import pkg from './package.json'
 
-const ENV = process.env.NODE_ENV
+////////////////////////////////////////////////////////////////////////////////
+// INFO
+////////////////////////////////////////////////////////////////////////////////
+
 const DEBUG = (process.env.NODE_DEBUG) ? true : false
 
-console.log('ENV:', ENV)
+console.log('ENV:', process.env.NODE_ENV)
 console.log('DEBUG:', DEBUG)
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -36,7 +41,7 @@ function browsersync (done) {
   browser.init({
     host: config.host.local,
     proxy: config.host.local,
-    logLevel: DEBUG ? 'debug' : 'info',
+    logLevel: DEBUG ? 'info' : 'info',
     logFileChanges: DEBUG ? true : false,
     logPrefix: 'portfolio-m',
     ghostMode: false,
@@ -65,27 +70,74 @@ function clean__vendor () { return del(config.vendor.dest + '{vendor.head,vendor
 
 // PROCESS -------------------------------------------------------------
 
-function process__vendor_head () {
-  return src(config.vendor.head)
-    .pipe(gulpif(DEBUG, debug({ title: '## VENDOR_HEAD:' })))
-    .pipe(concat('vendor.head.js'))
-    .pipe(gulpif((ENV === 'production' || ENV === 'staging'), uglify()))
-    .pipe(rename({ suffix: '.min' }))
+function process__vendor__legacy () {
+  return src(config.vendor.src)
+    .pipe(gulpif(DEBUG, debug({ title: '## VENDOR:' })))
+    .pipe(babel({
+      presets: [
+        ['@babel/preset-env',
+          {
+            modules: false,
+            corejs: {
+              version: 2,
+              proposals: true
+            },
+            useBuiltIns: 'entry',
+            targets: {
+              browsers: [
+                '> 1%',
+                'last 2 versions',
+                'Firefox ESR'
+              ]
+            }
+          }
+        ]
+      ]
+    }))
+    .pipe(concat('vendor-legacy.js'))
+    .pipe(gulpif((process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'), uglify()))
     .pipe(dest(config.vendor.dest))
 }
 
-function process__vendor () {
+function process__vendor__modern () {
   return src(config.vendor.src)
     .pipe(gulpif(DEBUG, debug({ title: '## VENDOR:' })))
+    .pipe(babel({
+      presets: [
+        ['@babel/preset-env',
+          {
+            modules: false,
+            corejs: {
+              version: 2,
+              proposals: true
+            },
+            useBuiltIns: 'entry',
+            targets: {
+              browsers: [
+                'last 2 Chrome versions',
+                'not Chrome < 60',
+                'last 2 Safari versions',
+                'not Safari < 10.1',
+                'last 2 iOS versions',
+                'not iOS < 10.3',
+                'last 2 Firefox versions',
+                'not Firefox < 54',
+                'last 2 Edge versions',
+                'not Edge < 15'
+              ]
+            }
+          }
+        ]
+      ]
+    }))
     .pipe(concat('vendor.js'))
-    .pipe(gulpif((ENV === 'production' || ENV === 'staging'), uglify()))
-    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulpif((process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'), uglify()))
     .pipe(dest(config.vendor.dest))
 }
 
 // COMPOSITION -------------------------------------------------------------
 
-const vendor = series(clean__vendor, process__vendor_head, process__vendor)
+const vendor = series(clean__vendor, process__vendor__modern, process__vendor__legacy)
 
 ////////////////////////////////////////////////////////////////////////////////
 // SEO
@@ -98,7 +150,7 @@ function clean__robots () { return del(config.path.dist + 'robots.txt') }
 // COPY -------------------------------------------------------------
 
 function copy__robots () {
-  return src(config.path.src + (!ENV === 'staging' ? 'robots.txt' : 'robots.txt'))
+  return src(config.path.src + (!process.env.NODE_ENV === 'staging' ? 'robots.txt' : 'robots.txt'))
     .pipe(gulpif(DEBUG, debug({ title: '## ROBOTS:' })))
     .pipe(rename('robots.txt'))
     .pipe(dest(config.path.dist))
@@ -214,14 +266,14 @@ function process__favicons () {
       online: false,
       replace: true,
       icons: {
-        android: ENV === 'production' ? true : (!ENV === 'staging' ? false : true),
-        appleIcon: ENV === 'production' ? true : (!ENV === 'staging' ? false : true),
-        appleStartup: ENV === 'production' ? true : (!ENV === 'staging' ? false : true),
-        coast: ENV === 'production' ? true : (!ENV === 'staging' ? false : true),
+        android: process.env.NODE_ENV === 'production' ? true : (!process.env.NODE_ENV === 'staging' ? false : true),
+        appleIcon: process.env.NODE_ENV === 'production' ? true : (!process.env.NODE_ENV === 'staging' ? false : true),
+        appleStartup: process.env.NODE_ENV === 'production' ? true : (!process.env.NODE_ENV === 'staging' ? false : true),
+        coast: process.env.NODE_ENV === 'production' ? true : (!process.env.NODE_ENV === 'staging' ? false : true),
         favicons: true,
-        firefox: ENV === 'production' ? true : (!ENV === 'staging' ? false : true),
-        windows: ENV === 'production' ? true : (!ENV === 'staging' ? false : true),
-        yandex: ENV === 'production' ? true : (!ENV === 'staging' ? false : true)
+        firefox: process.env.NODE_ENV === 'production' ? true : (!process.env.NODE_ENV === 'staging' ? false : true),
+        windows: process.env.NODE_ENV === 'production' ? true : (!process.env.NODE_ENV === 'staging' ? false : true),
+        yandex: process.env.NODE_ENV === 'production' ? true : (!process.env.NODE_ENV === 'staging' ? false : true)
       }
     }))
     .pipe(gulpif(DEBUG, debug({ title: '## FAVICON:' })))
@@ -260,13 +312,69 @@ function clean__scripts__main () { return del(config.path.dist + 'main.min.{js,j
 
 // PROCESS -------------------------------------------------------------
 
-function process__scripts__main () {
-  return src([config.path.src + config.path.resources + 'main.js', config.path.src + config.path.snippets + '**/script.js'], { sourcemaps: !ENV === 'production' ? (!ENV === 'staging' ? true : false) : false })
+function process__scripts__legacy () {
+  return src([config.path.src + config.path.resources + 'main.js', config.path.src + config.path.snippets + '**/script.js'], { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? true : false) : false })
     .pipe(gulpif(DEBUG, debug({ title: '## MAIN:' })))
+    .pipe(babel({
+      presets: [
+        ['@babel/preset-env',
+          {
+            modules: false,
+            corejs: {
+              version: 2,
+              proposals: true
+            },
+            useBuiltIns: 'usage',
+            targets: {
+              browsers: [
+                '> 1%',
+                'last 2 versions',
+                'Firefox ESR'
+              ]
+            }
+          }
+        ]
+      ]
+    }))
+    .pipe(concat('main-legacy.js'))
+    .pipe(gulpif((process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'), uglify()))
+    .pipe(dest(config.path.dist, { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? '.' : false) : false }))
+}
+
+function process__scripts__modern () {
+  return src([config.path.src + config.path.resources + 'main.js', config.path.src + config.path.snippets + '**/script.js'], { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? true : false) : false })
+    .pipe(gulpif(DEBUG, debug({ title: '## MAIN:' })))
+    .pipe(babel({
+      presets: [
+        ['@babel/preset-env',
+          {
+            modules: false,
+            corejs: {
+              version: 2,
+              proposals: true
+            },
+            useBuiltIns: 'usage',
+            targets: {
+              browsers: [
+                'last 2 Chrome versions',
+                'not Chrome < 60',
+                'last 2 Safari versions',
+                'not Safari < 10.1',
+                'last 2 iOS versions',
+                'not iOS < 10.3',
+                'last 2 Firefox versions',
+                'not Firefox < 54',
+                'last 2 Edge versions',
+                'not Edge < 15'
+              ]
+            }
+          }
+        ]
+      ]
+    }))
     .pipe(concat('main.js'))
-    .pipe(gulpif((ENV === 'production' || ENV === 'staging'), uglify()))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(dest(config.path.dist, { sourcemaps: !ENV === 'production' ? (!ENV === 'staging' ? '.' : false) : false }))
+    .pipe(gulpif((process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'), uglify()))
+    .pipe(dest(config.path.dist, { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? '.' : false) : false }))
 }
 
 // WATCH -------------------------------------------------------------
@@ -277,7 +385,7 @@ function watch__scripts () {
 
 // COMPOSITION -------------------------------------------------------------
 
-const scripts__main = series(clean__scripts__main, process__scripts__main)
+const scripts__main = series(clean__scripts__main, process__scripts__legacy, process__scripts__modern)
 
 ////////////////////////////////////////////////////////////////////////////////
 // STYLE
@@ -291,11 +399,11 @@ function clean__styles () { return del(config.path.dist + '*.min.{css,css.map}')
 
 function process__styles () {
   scss.compiler = sass
-  return src(config.path.src + config.path.resources + 'main.scss', { sourcemaps: !ENV === 'production' ? (!ENV === 'staging' ? true : false) : false })
+  return src(config.path.src + config.path.resources + 'main.scss', { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? true : false) : false })
     .pipe(gulpif(DEBUG, debug({ title: '## STYLE:' })))
-    .pipe(scss({ outputStyle: ENV === 'production' ? (ENV === 'staging' ? 'compressed' : 'expanded') : 'expanded' }).on('error', scss.logError))
+    .pipe(scss({ outputStyle: process.env.NODE_ENV === 'production' ? (process.env.NODE_ENV === 'staging' ? 'compressed' : 'expanded') : 'expanded' }).on('error', scss.logError))
     .pipe(autoprefixer()).pipe(rename({ suffix: '.min' }))
-    .pipe(dest(config.path.dist, { sourcemaps: !ENV === 'production' ? (!ENV === 'staging' ? '.' : false) : false }))
+    .pipe(dest(config.path.dist, { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? '.' : false) : false }))
 }
 
 // WATCH -------------------------------------------------------------
@@ -319,7 +427,7 @@ const ASSET = series(images, icons, favicons, fonts)
 const SEO = series(robots)
 const RUN = series(browsersync, parallel(watch__logic, watch__assets, watch__styles, watch__scripts))
 
-if (ENV === 'production' || ENV === 'staging') {
+if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
   exports.default = series(LOGIC, STYLE, ASSET, SEO)
 } else {
   exports.default = series(LOGIC, STYLE, ASSET, RUN)
