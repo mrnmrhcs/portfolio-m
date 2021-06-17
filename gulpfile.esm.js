@@ -385,7 +385,7 @@ function process__favicons () {
       theme_color: 'rgba(164,170,204,0)',
       pixel_art: false,
       scope: '/',
-      html: 'HEAD.html',
+      html: 'all.html',
       start_url: '/index.php',
       logging: true,
       pipeHTML: true,
