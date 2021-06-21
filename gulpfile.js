@@ -2,24 +2,24 @@
 // GULP
 ////////////////////////////////////////////////////////////////////////////////
 
-import { task, series, parallel, src, dest, watch } from 'gulp'
+const { task, series, parallel, src, dest, watch } = require('gulp')
 
-import autoprefixer from 'gulp-autoprefixer'
-import babel from 'gulp-babel'
-import cache from 'gulp-cache'
-import debug from 'gulp-debug'
-import gulpif from 'gulp-if'
-import concat from 'gulp-concat'
-import uglify from 'gulp-uglify-es'
-import imagemin from 'gulp-imagemin'
-import scss from 'gulp-sass'
-import sync from 'browser-sync'
-import favicon from 'favicons'
-import sass from 'sass'
-import del from 'del'
+const autoprefixer = require('gulp-autoprefixer')
+const babel = require('gulp-babel')
+const debug = require('gulp-debug')
+const gulpif = require('gulp-if')
+const concat = require('gulp-concat')
+const terser = require('gulp-terser')
+const imagemin = require('gulp-imagemin')
+const favicon = require('favicons').stream
+const cache = require('gulp-cache')
+const scss = require('gulp-sass')
+const sync = require('browser-sync')
+const sass = require('sass')
+const del = require('del')
 
-import config from './config'
-import pkg from './package.json'
+const config = require('./config')
+const pkg = require('./package.json')
 
 ////////////////////////////////////////////////////////////////////////////////
 // INFO
@@ -63,78 +63,21 @@ function reload (done) {
 
 // CLEAN -------------------------------------------------------------
 
-function clean__vendor () { return del(config.vendor.dest + '{vendor,vendor-legacy}.js') }
+function clean__vendor () { return del(config.vendor.dest + 'vendor.js') }
 
 // PROCESS -------------------------------------------------------------
 
-function process__vendor__legacy () {
+function process__vendor () {
   return src(config.vendor.src)
     .pipe(gulpif(DEBUG, debug({ title: '## VENDOR:' })))
-    .pipe(babel({
-      presets: [
-        ['@babel/preset-env',
-          {
-            modules: false,
-            corejs: {
-              version: 2,
-              proposals: true
-            },
-            useBuiltIns: 'entry',
-            targets: {
-              browsers: [
-                '> 1%',
-                'last 2 versions',
-                'Firefox ESR'
-              ]
-            }
-          }
-        ]
-      ]
-    }))
-    .pipe(concat('vendor-legacy.js'))
-    .pipe(gulpif((process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'), uglify()))
-    .pipe(dest(config.vendor.dest))
-}
-
-function process__vendor__modern () {
-  return src(config.vendor.src)
-    .pipe(gulpif(DEBUG, debug({ title: '## VENDOR:' })))
-    .pipe(babel({
-      presets: [
-        ['@babel/preset-env',
-          {
-            modules: false,
-            corejs: {
-              version: 2,
-              proposals: true
-            },
-            useBuiltIns: 'entry',
-            targets: {
-              browsers: [
-                'last 2 Chrome versions',
-                'not Chrome < 60',
-                'last 2 Safari versions',
-                'not Safari < 10.1',
-                'last 2 iOS versions',
-                'not iOS < 10.3',
-                'last 2 Firefox versions',
-                'not Firefox < 54',
-                'last 2 Edge versions',
-                'not Edge < 15'
-              ]
-            }
-          }
-        ]
-      ]
-    }))
     .pipe(concat('vendor.js'))
-    .pipe(gulpif((process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'), uglify()))
+    .pipe(gulpif((process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'), terser()))
     .pipe(dest(config.vendor.dest))
 }
 
 // COMPOSITION -------------------------------------------------------------
 
-const vendor = series(clean__vendor, process__vendor__modern, process__vendor__legacy)
+const vendor = series(clean__vendor, process__vendor)
 
 ////////////////////////////////////////////////////////////////////////////////
 // SCRIPT
@@ -171,7 +114,7 @@ function process__scripts__legacy () {
       ]
     }))
     .pipe(concat('main-legacy.js'))
-    .pipe(gulpif((process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'), uglify()))
+    .pipe(gulpif((process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'), terser()))
     .pipe(dest(config.path.dist, { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? '.' : false) : false }))
 }
 
@@ -207,7 +150,7 @@ function process__scripts__modern () {
       ]
     }))
     .pipe(concat('main.js'))
-    .pipe(gulpif((process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'), uglify()))
+    .pipe(gulpif((process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'), terser()))
     .pipe(dest(config.path.dist, { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? '.' : false) : false }))
 }
 
@@ -368,7 +311,7 @@ function process__icons () {
 function process__favicons () {
   return src(config.path.src + config.path.resources + config.path.assets + config.path.favicons + 'favicon_src.png')
     .pipe(gulpif(DEBUG, debug({ title: '## FAVICON:' })))
-    .pipe(favicon.stream({
+    .pipe(favicon({
       path: '../../../' + config.path.assets + config.path.favicons,
       appName: 'Portfolio — Marian Schramm',
       appShortName: 'Portfolio-M',
@@ -391,14 +334,14 @@ function process__favicons () {
       pipeHTML: true,
       replace: true,
       icons: {
-        android: process.env.NODE_ENV === 'production' ? true : (!process.env.NODE_ENV === 'staging' ? false : true),
-        appleIcon: process.env.NODE_ENV === 'production' ? true : (!process.env.NODE_ENV === 'staging' ? false : true),
-        appleStartup: process.env.NODE_ENV === 'production' ? true : (!process.env.NODE_ENV === 'staging' ? false : true),
-        coast: process.env.NODE_ENV === 'production' ? true : (!process.env.NODE_ENV === 'staging' ? false : true),
+        android: process.env.NODE_ENV === 'development' ? false : true,
+        appleIcon: process.env.NODE_ENV === 'development' ? false : true,
+        appleStartup: process.env.NODE_ENV === 'development' ? false : true,
+        coast: process.env.NODE_ENV === 'development' ? false : true,
         favicons: true,
-        firefox: process.env.NODE_ENV === 'production' ? true : (!process.env.NODE_ENV === 'staging' ? false : true),
-        windows: process.env.NODE_ENV === 'production' ? true : (!process.env.NODE_ENV === 'staging' ? false : true),
-        yandex: process.env.NODE_ENV === 'production' ? true : (!process.env.NODE_ENV === 'staging' ? false : true)
+        firefox: process.env.NODE_ENV === 'development' ? false : true,
+        windows: process.env.NODE_ENV === 'development' ? false : true,
+        yandex: process.env.NODE_ENV === 'development' ? false : true
       }
     }))
     .pipe(dest(config.path.dist + config.path.assets + config.path.favicons))

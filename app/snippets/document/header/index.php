@@ -62,9 +62,9 @@
     <link rel="yandex-tableau-widget" href="../../../assets/favicons/yandex-browser-manifest.json">
 
     <link rel="stylesheet" href="../main.css">
-    <script type="module" src="../vendor.js"></script>
+    <script src="../vendor.js"></script>
+
     <script type="module" src="../main.js"></script>
-    <script nomodule src="../vendor-legacy.js"></script>
     <script nomodule src="../main-legacy.js"></script>
   </head>
 

@@ -19,7 +19,6 @@ module.exports = {
   vendor: {
     dest: 'dist/',
     src: [
-      'node_modules/document-register-element/build/document-register-element.js',
       'node_modules/jquery/dist/jquery.js'
     ]
   }
