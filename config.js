@@ -4,26 +4,20 @@ module.exports = {
     live: 'http://m.kaimberg.com'
   },
   path: {
-    root_src: 'app',
-    root_dist: 'dist',
-    root_public: 'dist',
-    assets: 'assets',
-    configs: 'config',
-    resources: 'resources',
-    fonts: 'fonts',
-    icons: 'icons',
-    images: 'images',
-    favicons: 'favicons',
-    templates: 'templates',
-    snippets: 'snippets',
-    scripts: 'dist',
-    styles: 'dist'
+    src: 'app/',
+    dist: 'dist/',
+    assets: 'assets/',
+    configs: 'config/',
+    resources: 'resources/',
+    fonts: 'fonts/',
+    icons: 'icons/',
+    images: 'images/',
+    favicons: 'favicons/',
+    templates: 'templates/',
+    snippets: 'snippets/'
   },
   vendor: {
-    dest: 'dist',
-    head: [
-      'node_modules/document-register-element/build/document-register-element.js'
-    ],
+    dest: 'dist/',
     src: [
       'node_modules/jquery/dist/jquery.js'
     ]
