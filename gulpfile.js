@@ -13,9 +13,8 @@ const terser = require('gulp-terser')
 const imagemin = require('gulp-imagemin')
 const favicon = require('favicons').stream
 const cache = require('gulp-cache')
-const scss = require('gulp-sass')
+const scss = require('gulp-sass')(require('sass'))
 const sync = require('browser-sync')
-const sass = require('sass')
 const del = require('del')
 
 const config = require('./config')
@@ -32,7 +31,7 @@ function browsersync (done) {
     proxy: config.host.local,
     logLevel: process.env.DEBUG === 'True' ? 'debug' : 'info',
     logFileChanges: process.env.DEBUG === 'True' ? true : false,
-    logPrefix: 'portfolio-m',
+    logPrefix: process.env.npm_package_name,
     ghostMode: false,
     open: false,
     notify: false,
@@ -167,7 +166,6 @@ function clean__styles () { return del(config.path.dist + '*.{css,css.map}') }
 // PROCESS -------------------------------------------------------------
 
 function process__styles () {
-  scss.compiler = sass
   return src(config.path.src + config.path.resources + 'main.scss', { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? true : false) : false })
     .pipe(gulpif(process.env.DEBUG === 'True', debug({ title: '## STYLE:' })))
     .pipe(scss({ outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded' }).on('error', scss.logError))
@@ -307,10 +305,10 @@ function process__favicons () {
       path: '../../../' + config.path.assets + config.path.favicons,
       appName: 'Portfolio — Marian Schramm',
       appShortName: 'Portfolio-M',
-      appDescription: process.env.npm_package_description,
+      appDescription: 'Portfolio Website',
       url: config.host.live,
       version: process.env.npm_package_version,
-      developerName: process.env.npm_package_author,
+      developerName: 'Marian Schramm',
       developerURL: config.host.live,
       lang: 'en-US',
       display: 'browser',
@@ -326,7 +324,7 @@ function process__favicons () {
       pipeHTML: true,
       replace: true,
       icons: {
-        android: process.env.NODE_ENV === 'development' ? false : true,
+        android: process.env.NODE_ENV === 'development' ? true : true,
         appleIcon: process.env.NODE_ENV === 'development' ? false : true,
         appleStartup: process.env.NODE_ENV === 'development' ? false : true,
         coast: process.env.NODE_ENV === 'development' ? false : true,
@@ -366,7 +364,7 @@ const fonts = series(clean__fonts, copy__fonts)
 ////////////////////////////////////////////////////////////////////////////////
 
 const LOGIC = series(parallel(index, htaccess, snippets, templates), vendor)
-const STYLE = series(parallel(styles, scripts__main))
+const STYLE = parallel(styles, scripts__main)
 const ASSET = series(images, icons, favicons, fonts)
 const SEO = series(robots)
 const RUN = series(browsersync, parallel(watch__logic, watch__assets, watch__styles, watch__scripts))
