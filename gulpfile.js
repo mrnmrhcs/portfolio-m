@@ -13,20 +13,11 @@ const terser = require('gulp-terser')
 const imagemin = require('gulp-imagemin')
 const favicon = require('favicons').stream
 const cache = require('gulp-cache')
-const scss = require('gulp-sass')
+const scss = require('gulp-sass')(require('sass'))
 const sync = require('browser-sync')
-const sass = require('sass')
 const del = require('del')
 
 const config = require('./config')
-const pkg = require('./package.json')
-
-////////////////////////////////////////////////////////////////////////////////
-// INFO
-////////////////////////////////////////////////////////////////////////////////
-
-const DEBUG = (process.env.NODE_DEBUG) ? true : false
-console.log('ENV:', process.env.NODE_ENV)
 
 ////////////////////////////////////////////////////////////////////////////////
 // BROWSERSYNC
@@ -38,9 +29,9 @@ function browsersync (done) {
   browser.init({
     host: config.host.local,
     proxy: config.host.local,
-    logLevel: DEBUG ? 'info' : 'info',
-    logFileChanges: DEBUG ? true : false,
-    logPrefix: 'portfolio-m',
+    logLevel: process.env.DEBUG === 'True' ? 'debug' : 'info',
+    logFileChanges: process.env.DEBUG === 'True' ? true : false,
+    logPrefix: process.env.npm_package_name,
     ghostMode: false,
     open: false,
     notify: false,
@@ -69,7 +60,7 @@ function clean__vendor () { return del(config.vendor.dest + 'vendor.js') }
 
 function process__vendor () {
   return src(config.vendor.src)
-    .pipe(gulpif(DEBUG, debug({ title: '## VENDOR:' })))
+    .pipe(gulpif(process.env.DEBUG === 'True', debug({ title: '## VENDOR:' })))
     .pipe(concat('vendor.js'))
     .pipe(gulpif((process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'), terser()))
     .pipe(dest(config.vendor.dest))
@@ -91,14 +82,14 @@ function clean__scripts__main () { return del(config.path.dist + '{main,main-leg
 
 function process__scripts__legacy () {
   return src([config.path.src + config.path.resources + 'main.js', config.path.src + config.path.snippets + '**/script.js'], { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? true : false) : false })
-    .pipe(gulpif(DEBUG, debug({ title: '## MAIN:' })))
+    .pipe(gulpif(process.env.DEBUG === 'True', debug({ title: '## MAIN:' })))
     .pipe(babel({
       presets: [
         ['@babel/preset-env',
           {
-            modules: false,
+            modules: 'auto',
             corejs: {
-              version: 2,
+              version: 3.8,
               proposals: true
             },
             useBuiltIns: 'usage',
@@ -120,14 +111,14 @@ function process__scripts__legacy () {
 
 function process__scripts__modern () {
   return src([config.path.src + config.path.resources + 'main.js', config.path.src + config.path.snippets + '**/script.js'], { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? true : false) : false })
-    .pipe(gulpif(DEBUG, debug({ title: '## MAIN:' })))
+    .pipe(gulpif(process.env.DEBUG === 'True', debug({ title: '## MAIN:' })))
     .pipe(babel({
       presets: [
         ['@babel/preset-env',
           {
-            modules: false,
+            modules: 'auto',
             corejs: {
-              version: 2,
+              version: 3.8,
               proposals: true
             },
             useBuiltIns: 'usage',
@@ -175,10 +166,9 @@ function clean__styles () { return del(config.path.dist + '*.{css,css.map}') }
 // PROCESS -------------------------------------------------------------
 
 function process__styles () {
-  scss.compiler = sass
   return src(config.path.src + config.path.resources + 'main.scss', { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? true : false) : false })
-    .pipe(gulpif(DEBUG, debug({ title: '## STYLE:' })))
-    .pipe(scss({ outputStyle: process.env.NODE_ENV === 'production' ? (process.env.NODE_ENV === 'staging' ? 'compressed' : 'expanded') : 'expanded' }).on('error', scss.logError))
+    .pipe(gulpif(process.env.DEBUG === 'True', debug({ title: '## STYLE:' })))
+    .pipe(scss({ outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded' }).on('error', scss.logError))
     .pipe(autoprefixer())
     .pipe(dest(config.path.dist, { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? '.' : false) : false }))
 }
@@ -205,8 +195,8 @@ function clean__robots () { return del(config.path.dist + 'robots.txt') }
 // COPY -------------------------------------------------------------
 
 function copy__robots () {
-  return src(config.path.src + (!process.env.NODE_ENV === 'staging' ? 'robots.txt' : 'robots.txt'))
-    .pipe(gulpif(DEBUG, debug({ title: '## ROBOTS:' })))
+  return src(config.path.src + 'robots.txt')
+    .pipe(gulpif(process.env.DEBUG === 'True', debug({ title: '## ROBOTS:' })))
     .pipe(dest(config.path.dist))
 }
 
@@ -229,25 +219,25 @@ function clean__templates () { return del(config.path.dist + config.path.templat
 
 function copy__htaccess () {
   return src(config.path.src + '.htaccess')
-    .pipe(gulpif(DEBUG, debug({ title: '## HTACCESS:' })))
+    .pipe(gulpif(process.env.DEBUG === 'True', debug({ title: '## HTACCESS:' })))
     .pipe(dest(config.path.dist))
 }
 
 function copy__index () {
   return src(config.path.src + 'index.php')
-    .pipe(gulpif(DEBUG, debug({ title: '## INDEX:' })))
+    .pipe(gulpif(process.env.DEBUG === 'True', debug({ title: '## INDEX:' })))
     .pipe(dest(config.path.dist))
 }
 
 function copy__snippets () {
   return src(config.path.src + config.path.snippets + '**/*.php')
-    .pipe(gulpif(DEBUG, debug({ title: '## SNIPPETS:' })))
+    .pipe(gulpif(process.env.DEBUG === 'True', debug({ title: '## SNIPPETS:' })))
     .pipe(dest(config.path.dist + config.path.snippets))
 }
 
 function copy__templates () {
   return src(config.path.src + config.path.templates + '**/*.php')
-    .pipe(gulpif(DEBUG, debug({ title: '## TEMPLATES:' })))
+    .pipe(gulpif(process.env.DEBUG === 'True', debug({ title: '## TEMPLATES:' })))
     .pipe(dest(config.path.dist + config.path.templates))
 }
 
@@ -282,7 +272,7 @@ function clean__fonts () { return del(config.path.dist + config.path.assets + co
 
 function process__images () {
   return src(config.path.src + config.path.resources + config.path.assets + config.path.images + '**/*.{png,jpg,jpeg,gif}')
-    .pipe(debug({ title: '## IMAGES:' }))
+    .pipe(gulpif(process.env.DEBUG === 'True', debug({ title: '## IMAGES:' })))
     .pipe(cache(imagemin([
       imagemin.gifsicle({ interlaced: true }),
       imagemin.mozjpeg({ quality: 75, progressive: true }),
@@ -293,7 +283,7 @@ function process__images () {
 
 function process__icons () {
   return src(config.path.src + config.path.resources + config.path.assets + config.path.icons + '**/*.svg')
-    .pipe(debug({ title: '## ICONS:' }))
+    .pipe(gulpif(process.env.DEBUG === 'True', debug({ title: '## ICONS:' })))
     .pipe(cache(imagemin([
       imagemin.svgo({
         plugins: [
@@ -302,7 +292,7 @@ function process__icons () {
           { cleanupIDs: true },
           { removeXMLNS: false }
         ],
-        verbose: DEBUG ? true : false
+        verbose: process.env.DEBUG === 'True' ? true : false
       })
     ])))
     .pipe(dest(config.path.dist + config.path.assets + config.path.icons))
@@ -310,15 +300,15 @@ function process__icons () {
 
 function process__favicons () {
   return src(config.path.src + config.path.resources + config.path.assets + config.path.favicons + 'favicon_src.png')
-    .pipe(gulpif(DEBUG, debug({ title: '## FAVICON:' })))
+    .pipe(gulpif(process.env.DEBUG === 'True', debug({ title: '## FAVICON:' })))
     .pipe(favicon({
       path: '../../../' + config.path.assets + config.path.favicons,
       appName: 'Portfolio — Marian Schramm',
       appShortName: 'Portfolio-M',
-      appDescription: pkg.description,
+      appDescription: 'Portfolio Website',
       url: config.host.live,
-      version: pkg.version,
-      developerName: pkg.author,
+      version: process.env.npm_package_version,
+      developerName: 'Marian Schramm',
       developerURL: config.host.live,
       lang: 'en-US',
       display: 'browser',
@@ -334,7 +324,7 @@ function process__favicons () {
       pipeHTML: true,
       replace: true,
       icons: {
-        android: process.env.NODE_ENV === 'development' ? false : true,
+        android: process.env.NODE_ENV === 'development' ? true : true,
         appleIcon: process.env.NODE_ENV === 'development' ? false : true,
         appleStartup: process.env.NODE_ENV === 'development' ? false : true,
         coast: process.env.NODE_ENV === 'development' ? false : true,
@@ -349,7 +339,7 @@ function process__favicons () {
 
 function copy__fonts () {
   return src(config.path.src + config.path.resources + config.path.assets + config.path.fonts + '**/*.{woff,woff2}')
-    .pipe(gulpif(DEBUG, debug({ title: '## FONTS:' })))
+    .pipe(gulpif(process.env.DEBUG === 'True', debug({ title: '## FONTS:' })))
     .pipe(dest(config.path.dist + config.path.assets + config.path.fonts))
 }
 
@@ -374,7 +364,7 @@ const fonts = series(clean__fonts, copy__fonts)
 ////////////////////////////////////////////////////////////////////////////////
 
 const LOGIC = series(parallel(index, htaccess, snippets, templates), vendor)
-const STYLE = series(parallel(styles, scripts__main))
+const STYLE = parallel(styles, scripts__main)
 const ASSET = series(images, icons, favicons, fonts)
 const SEO = series(robots)
 const RUN = series(browsersync, parallel(watch__logic, watch__assets, watch__styles, watch__scripts))
