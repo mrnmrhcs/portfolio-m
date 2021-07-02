@@ -6,14 +6,14 @@
   "scripts": {
     "start": "$env:NODE_ENV = 'development'; .\\run\\start.ps1",
     "build": "$env:NODE_ENV = 'production'; .\\run\\build.ps1",
-    "build-staging": "$env:NODE_ENV = 'staging'; .\\run\\build.ps1",
+    "build:staging": "$env:NODE_ENV = 'staging'; .\\run\\build.ps1",
     "deploy": "$env:NODE_ENV = 'production'; .\\run\\deploy.ps1",
-    "deploy-staging": "$env:NODE_ENV = 'staging'; .\\run\\deploy.ps1"
+    "deploy:staging": "$env:NODE_ENV = 'staging'; .\\run\\deploy.ps1"
   },
   "devDependencies": {
     "@babel/core": "7.14.6",
-    "@babel/preset-env": "7.14.5",
-    "browser-sync": "2.26.14",
+    "@babel/preset-env": "7.14.7",
+    "browser-sync": "2.27.4",
     "del": "6.0.0",
     "eslint": "7.29.0",
     "eslint-config-standard": "16.0.3",
@@ -30,7 +30,7 @@
     "gulp-debug": "4.0.0",
     "gulp-if": "3.0.0",
     "gulp-imagemin": "7.1.0",
-    "gulp-sass": "4.1.0",
+    "gulp-sass": "5.0.0",
     "gulp-terser": "2.0.1",
     "sass": "1.35.1",
     "stylelint": "13.13.1",
