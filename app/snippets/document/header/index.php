@@ -15,7 +15,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicons/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="../../../assets/favicons/favicon-48x48.png">
-    <link rel="manifest" href="../../../assets/favicons/manifest.json">
+    <link rel="manifest" href="../../../assets/favicons/manifest.json" crossorigin="use-credentials">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="rgba(164,170,204,0)">
     <meta name="application-name" content="Portfolio — Marian Schramm">
