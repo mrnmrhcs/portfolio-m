@@ -1,0 +1,43 @@
+#////////////////////////////////////////////////////////////////////////////////
+#// .HTACCESS
+#////////////////////////////////////////////////////////////////////////////////
+
+# SERVER INFO
+ServerSignature Off
+
+# compress responses
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+
+# SECURITY HEADER
+<IfModule mod_headers.c>
+
+  Header set X-UA-Compatible "IE=edge"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Feature-Policy "fullscreen 'self'; geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; payment 'none'"
+  Header set Referrer-Policy "no-referrer-when-downgrade"
+  Header set Strict-Transport-Security "max-age=31536000"
+  # Header set Content-Security-Policy "default-src 'self' 'unsafe-eval' 'unsafe-inline' maps.googleapis.com; form-src 'self'"
+  Header unset X-Powered-By
+
+  # Header for Cache Control
+  <filesMatch ".(ico|woff2|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+    Header set Cache-Control "max-age=15768000, public"
+  </filesMatch>
+
+  # Header only for HTML documents
+  <FilesMatch "\.(appcache|atom|bbaw|bmp|crx|css|cur|eot|f4[abpv]|flv|geojson|gif|htc|ico|jpe?g|js|json(ld)?|m4[av]|manifest|map|mp4|oex|og[agv]|opus|otf|pdf|png|rdf|rss|safariextz|svgz?|swf|topojson|tt[cf]|txt|vcard|vcf|vtt|webapp|web[mp]|webmanifest|woff2?|xloc|xml|xpi)$">
+    Header unset X-XSS-Protection
+    Header unset Content-Security-Policy
+    Header unset X-UA-Compatible
+  </FilesMatch>
+</IfModule>
