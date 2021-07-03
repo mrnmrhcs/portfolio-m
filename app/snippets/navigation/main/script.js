@@ -7,28 +7,30 @@ class NavigationMain extends window.HTMLDivElement {
 
   init () {
     this.$ = $(this)
-    this.bindFunctions()
-    this.bindEvents()
     this.resolveElements()
-  }
-
-  bindFunctions () {
-    this.toggleMenu = this.toggleMenu.bind(this)
-  }
-
-  bindEvents () {
-    this.$.on('click', '.navigation-main__button', this.toggleMenu)
   }
 
   resolveElements () {
     this.$html = $('.app')
+    this.$menu = $('[aria-labelledby="menu"]', this)
+    this.$trigger = $('[aria-controls="menu"]', this)
   }
 
   connectedCallback () {
-    // console.log('### NAVIGATION-MAIN - SCRIPT.JS ###')
+    this.$.on('click', '[aria-controls="menu"]', this.runTrigger.bind(this))
   }
 
-  toggleMenu (e) {
+  runTrigger (e) {
+    const target = e.currentTarget
+
+    if (target.ariaExpanded === 'true') {
+      this.$trigger.attr('aria-expanded', 'false')
+      this.$menu.attr('aria-hidden', 'true')
+    } else {
+      this.$trigger.attr('aria-expanded', 'true')
+      this.$menu.attr('aria-hidden', 'false')
+    }
+
     this.$html.toggleClass('app_menu')
   }
 }

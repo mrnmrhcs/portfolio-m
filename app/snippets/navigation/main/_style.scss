@@ -4,14 +4,14 @@
     padding: 3rem 0;
     position: relative;
 
-    &__toggle {
+    &__nav {
       height: 1.25rem;
       margin: 0 auto;
       text-align: center;
       width: 0.75rem;
     }
 
-    &__button {
+    &__trigger {
       background: transparent;
       border-radius: 0;
       display: block;
@@ -30,7 +30,6 @@
 
     &__menu {
       background: $c-nav-bg;
-      display: none;
       height: 100%;
       left: 0;
       opacity: 0;
@@ -39,9 +38,17 @@
       width: 100%;
       z-index: -22;
 
-      @at-root .app_menu #{&} {
+      &[aria-hidden='true'] {
+        display: none;
+      }
+
+      &[aria-hidden='false'] {
         display: block;
         opacity: 1;
+      }
+
+      @at-root .app_menu {
+        overflow-y: hidden;
       }
     }
   }
@@ -77,8 +84,10 @@
         margin: 0 auto;
       }
 
+      &:focus,
       &:hover {
         background-color: $c-white;
+        outline: 0;
 
         .#{$block}__text {
           color: $c-nav-link;
