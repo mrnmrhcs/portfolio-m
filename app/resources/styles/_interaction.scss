@@ -31,14 +31,19 @@ button {
   transition: background-color 200ms ease-in-out;
   user-select: none;
 
-  &:hover,
   &:focus,
+  &:hover,
   &:active {
     background: #18181a;
 
     svg {
       fill: #fff;
     }
+  }
+
+  &:focus {
+    outline: 2px dotted #000;
+    outline-offset: -2px;
   }
 
   &__circle {
