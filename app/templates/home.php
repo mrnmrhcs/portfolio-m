@@ -8,7 +8,7 @@
           <div class="list list_featured">
             <div class="list__item">
               <div class="card card_horizontal">
-                <a class="card__link" href="/templates/project-helmholz-zentrum.php">
+                <a class="card__link" href="/templates/project-helmholz-zentrum.php" aria-label="Goto Project">
                   <h2 class="card__title">Helmholtz Zentrum</h2>
                   <div class="card__media">
                     <div class="image">
@@ -20,7 +20,7 @@
             </div>
             <div class="list__item">
               <div class="card">
-                <a class="card__link" href="/templates/project-glow.php">
+                <a class="card__link" href="/templates/project-glow.php" aria-label="Goto Project">
                   <h2 class="card__title">Glow</h2>
                   <div class="card__media">
                     <div class="image">
@@ -32,7 +32,7 @@
             </div>
             <div class="list__item">
               <div class="card">
-                <a class="card__link" href="/templates/project-deutscher-filmpreis.php">
+                <a class="card__link" href="/templates/project-deutscher-filmpreis.php" aria-label="Goto Project">
                   <h2 class="card__title">Deutscher Filmpreis</h2>
                   <div class="card__media">
                     <div class="image">
@@ -44,7 +44,7 @@
             </div>
             <div class="list__item">
               <div class="card card_horizontal">
-                <a class="card__link" href="/templates/project-davide-rizzo.php">
+                <a class="card__link" href="/templates/project-davide-rizzo.php" aria-label="Goto Project">
                   <h2 class="card__title">Davide Rizzo</h2>
                   <div class="card__media">
                     <div class="image">
@@ -62,56 +62,56 @@
           <div class="list list_projects">
             <div class="list__item">
               <div class="card">
-                <a class="card__link" href="/templates/project-deutsche-filmakademie.php">
+                <a class="card__link" href="/templates/project-deutsche-filmakademie.php" aria-label="Goto Project">
                   <h3 class="card__title">Deutsche Filmakademie</h3>
                 </a>
               </div>
             </div>
             <div class="list__item">
               <div class="card">
-                <a class="card__link" href="/templates/project-audio-verlag.php">
+                <a class="card__link" href="/templates/project-audio-verlag.php" aria-label="Goto Project">
                   <h3 class="card__title">Audio Verlag</h3>
                 </a>
               </div>
             </div>
             <div class="list__item">
               <div class="card">
-                <a class="card__link" href="/templates/project-mycs.php">
+                <a class="card__link" href="/templates/project-mycs.php" aria-label="Goto Project">
                   <h3 class="card__title">Mycs</h3>
                 </a>
               </div>
             </div>
             <div class="list__item">
               <div class="card">
-                <a class="card__link" href="/templates/project-artuner.php">
+                <a class="card__link" href="/templates/project-artuner.php" aria-label="Goto Project">
                   <h3 class="card__title">Artuner</h3>
                 </a>
               </div>
             </div>
             <div class="list__item">
               <div class="card">
-                <a class="card__link" href="/templates/project-duerr.php">
+                <a class="card__link" href="/templates/project-duerr.php" aria-label="Goto Project">
                   <h3 class="card__title">Duerr</h3>
                 </a>
               </div>
             </div>
             <div class="list__item">
               <div class="card">
-                <a class="card__link" href="/templates/project-rohde-und-schwarz.php">
+                <a class="card__link" href="/templates/project-rohde-und-schwarz.php" aria-label="Goto Project">
                   <h3 class="card__title">Rohde und Schwarz</h3>
                 </a>
               </div>
             </div>
             <div class="list__item">
               <div class="card">
-                <a class="card__link" href="/templates/project-unitb.php">
+                <a class="card__link" href="/templates/project-unitb.php" aria-label="Goto Project">
                   <h3 class="card__title">Unitb</h3>
                 </a>
               </div>
             </div>
             <div class="list__item">
               <div class="card">
-                <a class="card__link" href="/templates/project-universal-music.php">
+                <a class="card__link" href="/templates/project-universal-music.php" aria-label="Goto Project">
                   <h3 class="card__title">Universal Music</h3>
                 </a>
               </div>

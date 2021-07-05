@@ -12,26 +12,38 @@ class NavigationMain extends window.HTMLDivElement {
 
   resolveElements () {
     this.$html = $('.app')
-    this.$menu = $('[aria-labelledby="menu"]', this)
+
     this.$trigger = $('[aria-controls="menu"]', this)
+    this.$menu = $('[aria-labelledby="menu"]', this)
   }
 
   connectedCallback () {
-    this.$.on('click', '[aria-controls="menu"]', this.runTrigger.bind(this))
+    this.$.on('click', '[aria-controls="menu"]', this.runNavigation.bind(this))
   }
 
-  runTrigger (e) {
+  runNavigation (e) {
     const target = e.currentTarget
 
     if (target.ariaExpanded === 'true') {
-      this.$trigger.attr('aria-expanded', 'false')
-      this.$menu.attr('aria-hidden', 'true')
+      this.stateHandler('close')
     } else {
+      this.stateHandler('open')
+    }
+  }
+
+  stateHandler (action) {
+    if (action === 'open') {
+      this.$html.addClass('app--menu')
+
       this.$trigger.attr('aria-expanded', 'true')
       this.$menu.attr('aria-hidden', 'false')
     }
+    if (action === 'close') {
+      this.$html.removeClass('app--menu')
 
-    this.$html.toggleClass('app_menu')
+      this.$trigger.attr('aria-expanded', 'false')
+      this.$menu.attr('aria-hidden', 'true')
+    }
   }
 }
 

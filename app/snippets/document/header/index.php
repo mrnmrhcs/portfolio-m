@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="app theme-default" lang="en">
+<html class="theme-default app" lang="en">
 
   <head>
     <meta charset="utf-8">

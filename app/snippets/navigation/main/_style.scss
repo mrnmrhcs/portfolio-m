@@ -17,7 +17,10 @@
       display: block;
       padding: 0;
 
-      &:focus,
+      &:focus {
+        outline: 0;
+      }
+
       &:hover {
         background: transparent;
       }
@@ -47,14 +50,14 @@
         opacity: 1;
       }
 
-      @at-root .app_menu {
+      @at-root .app--menu {
         overflow-y: hidden;
       }
     }
   }
 
   .list {
-    &_menu {
+    &--menu {
       @include grid-scale(2, center, 0, 0);
       height: 100%;
       list-style: none;
