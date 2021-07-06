@@ -132,7 +132,7 @@
             <div class="list__item">
               <div class="card">
                 <a class="card__link" aria-label="Open Raindrop.io Collection" href="https://raindrop.io/mrnmrhcs/view/17462336/theme=dark&sort=title&perpage=50" target="_blank" rel="noreferrer noopener">
-                  <h4 class="card__title">Raindrop</h4>
+                  <h4 class="card__title">Raindrop.io</h4>
                 </a>
               </div>
             </div>
