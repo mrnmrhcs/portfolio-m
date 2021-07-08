@@ -1,0 +1,180 @@
+.slideTitle
+  background-image: linear-gradient(to top, rgba(0, 0, 0, .75), rgba(0, 0, 0, 0))
+  pointer-events: none
+  text-align: left
+  width: 100%
+
+  +below('m')
+    background-color: $colorBlack
+    background-image: none
+
+  .container
+    center($pad: $containerPadding)
+
+    +below('m')
+      center($pad: $containerPaddingMobile)
+
+  &--overlayTitleTop
+    left: 0
+    position: absolute
+    top: 15px // Offset of the title to the edges of the slider
+    z-index: 5
+
+  &--overlayTitleBottom
+    bottom: 0 // Offset of the title to the edges of the slider
+    left: 0
+    position: absolute
+    z-index: 5
+
+    +below('m')
+      position: relative
+      z-index: 5
+
+  &-isHidden
+    display: none
+
+    +below('s')
+      display: block
+
+  &-content
+    align-items: flex-start
+    color: white
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    padding: 6rem 20rem 4.25rem 0
+    user-select: text
+
+    +below(1440px)
+      padding: 6rem 20rem 4rem 1.5rem
+
+    +below('xl')
+      padding: 6rem 12rem 3.5rem 2rem
+
+    +below('l')
+      padding: 5rem 10rem 3.25rem 2rem
+
+    +below('m')
+      padding: 1.5rem 0 3rem .5rem
+
+    +below('s')
+      padding: 1.5rem 0 3rem
+
+    +below('xs')
+      padding: 1.5rem 0 2.5rem
+
+  &--sliderIsContentWidth
+    .slideTitle-content
+      padding: 6rem 20rem 4.25rem 3.5rem
+
+      +below('xl')
+        padding: 6rem 12rem 3.5rem 3.25rem
+
+      +below('l')
+        padding: 5rem 10rem 3.25rem 3rem
+
+      +below('m')
+        padding: 1.5rem 0 3rem 1.5rem
+
+      +below('s')
+        padding: 1.5rem 0 3rem 1rem
+
+      +below('xs')
+        padding: 1.5rem 0 2.5rem 1rem
+
+  &-topic,
+  &-title,
+  &-description
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
+
+  &-cta
+    pointer-events: auto
+
+  &-topic
+    rwdScale('font-size', 12px, 14px, 426px, 576px)
+    stylesTitle()
+    font-weight: 900
+    letter-spacing: .05em
+    margin-bottom: 1.5rem
+    text-transform: uppercase
+
+    &::before
+      background-color: white
+
+    +below('xl')
+      margin-bottom: 1.25rem
+
+    +below('l')
+      margin-bottom: 1rem
+
+    +below('s')
+      margin-bottom: 1rem
+
+  &-title
+    rwdScale('font-size', 40px, 56px, 992px, 1200px)
+    color: inherit
+    display: block
+    margin: 0
+
+    +below('l')
+      rwdScale('font-size', 32px, 40px, 768px, 991px)
+
+    +below('m')
+      rwdScale('font-size', 24px, 32px, 576px, 767px)
+
+    +below('s')
+      font-size: 1.375rem
+
+    &:not(:last-child)
+      margin-bottom: 1rem
+
+      +below('xl')
+        margin-bottom: .75rem
+
+      +below('l')
+        margin-bottom: .5rem
+
+  &-titleLink
+    color: inherit
+    text-decoration: none
+
+    &:focus
+      outline-offset: 6px
+
+  &-description
+    margin: 0 0 1.5rem
+
+    +below('l')
+      margin: 0 0 1.25rem
+
+    +below('s')
+      margin: 0 0 1rem
+
+    &:last-child
+      margin-bottom: 0
+
+  &-cta
+    rwdScale('font-size', 14px, 16px, 426px, 768px)
+    font-weight: 400
+    margin-bottom: 0
+    padding-left: .1em
+
+    &::before,
+    &::after
+      content: ''
+      display: block
+      transition-duration: .15s
+      transition-property: transform
+      transition-timing-function: ease-out
+
+    &:hover
+      opacity: 1
+
+    &:hover::before,
+    &:hover::after
+      opacity: 1
+      transform: translate(6px, -50%)
+
+.slideTitle--pageHeader
+  transform: translate3d(0, 0, 0)

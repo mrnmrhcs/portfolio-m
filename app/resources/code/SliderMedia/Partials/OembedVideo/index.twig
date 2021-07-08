@@ -1,0 +1,20 @@
+<div class="oembedVideo">
+  <button class="playButton"></button>
+  <div class="posterImage" {{ useCase == 'pageHeader' ? 'data-parallax' }} >
+    <img class="posterImage-imageTag lazyload {{ useCase == 'pageHeader' ? 'lazypreload' }} lazyload--fade"
+      src="{{ posterImage.src|resizeDynamic(2096, 1179, 'center') }}"
+      srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAQAAACRI2S5AAAAEklEQVR42mP8X8+AFzCOKgADAJ1vDXivFXd/AAAAAElFTkSuQmCC"
+      data-srcset="
+        {{ posterImage.src|resizeDynamic(2560, 1440, 'center') }} 2560w,
+        {{ posterImage.src|resizeDynamic(2096, 1179, 'center') }} 2096w,
+        {{ posterImage.src|resizeDynamic(1600, 900, 'center') }} 1600w,
+        {{ posterImage.src|resizeDynamic(1280, 720, 'center') }} 1280w,
+        {{ posterImage.src|resizeDynamic(800, 450, 'center') }} 800w,
+        {{ posterImage.src|resizeDynamic(480, 270, 'center') }} 480w"
+      data-sizes="auto"
+      alt="{{ posterImage.alt|e }}">
+  </div>
+  <div class="video">
+    {{ oembedLazyLoad }}
+  </div>
+</div>

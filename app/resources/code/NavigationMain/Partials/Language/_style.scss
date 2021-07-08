@@ -1,0 +1,53 @@
+.language {
+  &--list {
+    @include reset-list;
+    align-items: center;
+    display: flex;
+  }
+
+  &-item {
+    align-items: center;
+    display: flex;
+    padding: 0 0.5rem;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  &-link {
+    color: $color-gray-dark;
+    font-size: rem(12px);
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 1.15;
+    opacity: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: opacity 300ms ease;
+
+    &:hover,
+    &:focus {
+      &:not(.language-link-isActive) {
+        opacity: 0.65;
+      }
+    }
+
+    &-isActive {
+      color: #fff;
+      cursor: default;
+      font-weight: 800;
+    }
+  }
+
+  .divider {
+    background-color: $color-gray-dark;
+    display: block;
+    height: rem(11px);
+    width: 1px;
+  }
+}

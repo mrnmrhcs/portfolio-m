@@ -1,0 +1,29 @@
+{{ lvl == 2 ? '<div class="container">' }}
+  <ul class="list list--{{ lvl }}">
+    {% for item in items %}
+      <li class="item">
+        {% if item.children %}
+          <a class="item-toggle {{- item.current or item.current_item_ancestor ? ' item-toggle-isCurrent' }}" href="#" tabindex="{{ lvl == 2 ? '-1' : '0' }}" aria-expanded="{{ lvl == 2 ? 'true' : 'false' }}" aria-controls="item-content--{{ item.title|lower|replace({' ': "-"})|e('html_attr') }}" data-level="{{ lvl }}">
+            {{- item.title -}}
+          </a>
+          <div class="item-content" aria-hidden="{{ lvl == 2 ? 'false' : 'true' }}" aria-labelledby="item-content--{{ item.title|lower|replace({' ': "-"})|e('html_attr') }}">
+            {% include 'Partials/Menu/index.twig' with { items: item.children, lvl: lvl + 1 } only %}
+            {% if lvl == 1 %}
+              {% for section in area.main.quicklink.area %}
+                {% if section == item.title|lower|replace({' ': "-"}) %}
+                  <div class="special">
+                    <div class="container">
+                      {% include 'Partials/Link/index.twig' with { ico: ico, main: 'The WimLeX Show - EP. 142', infoText: 'How to disrupt the market with best solution partners for e-commerce in eastern europe.' } only %}
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </div>
+        {% else %}
+          {% include 'Partials/Link/index.twig' with { item: item, lvl: lvl } only %}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{{ lvl == 2 ? '</div>' }}

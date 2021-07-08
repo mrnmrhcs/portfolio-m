@@ -1,0 +1,54 @@
+.brand {
+  $block: 'brand';
+
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  height: $nav-height-main;
+  width: 84px;
+
+  &:focus {
+    outline: 1px dotted $color-gray-dark;
+    outline-offset: -1px;
+  }
+
+  &-inner {
+    display: block;
+    position: relative;
+
+    svg {
+      display: block;
+    }
+  }
+
+  @at-root {
+    #{$component}.headroom .#{$block}-inner::before {
+      background-image: url('../Components/NavigationMain/Assets/logo-illustration.svg');
+      content: '';
+      display: block;
+      height: 54px;
+      left: -16px;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      transform: translate(-100%, -58%);
+      transition: opacity 540ms, visibility 0ms linear 540ms;
+      visibility: hidden;
+      width: 35px;
+
+      @media (min-width: $breakpoint-desktop-wide + $container-padding-desktop) {
+        left: -32px;
+      }
+    }
+
+    #{$component}.headroom-isNotTop.headroom-isPinned .#{$block}-inner::before {
+      opacity: 0;
+
+      @media (min-width: 1480px) {
+        opacity: 1;
+        transition: opacity 900ms;
+        visibility: visible;
+      }
+    }
+  }
+}

@@ -1,0 +1,253 @@
+[is='flynt-accordion-tickets'] {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $container-max-width;
+    padding-left: 0;
+    padding-right: 0;
+
+    @media (min-width: $breakpoint-mobile-horizontal) {
+      padding-left: $container-padding-mobile;
+      padding-right: $container-padding-mobile;
+    }
+
+    @media (min-width: $breakpoint-tablet-horizontal) {
+      padding-left: $container-padding-tablet;
+      padding-right: $container-padding-tablet;
+    }
+
+    @media (min-width: $container-max-width) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .accordionTickets {
+    &.themeHeroGradient,
+    &.themeHeroGradientWhite {
+      padding-bottom: 8rem;
+
+      @media (min-width: $breakpoint-mobile-wide) {
+        padding-bottom: 14rem;
+      }
+    }
+
+    &-header {
+      .boxSkew-title {
+        margin: 0;
+      }
+
+      .event {
+        font-size: 16px;
+        padding-left: $container-padding-mobile;
+        padding-right: $container-padding-mobile;
+        padding-top: 0;
+        text-align: center;
+        transform: skewY(3deg);
+
+        @media (min-width: $breakpoint-mobile-wide) {
+          font-size: 1.125rem;
+        }
+
+        @media (min-width: $breakpoint-tablet) {
+          font-size: 1.25rem;
+          padding-left: $container-padding-tablet;
+          padding-right: $container-padding-tablet;
+        }
+
+        @media (min-width: $breakpoint-tablet-horizontal) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .event {
+      margin: 2.5rem 0 0;
+
+      @media (min-width: $breakpoint-mobile-wide) {
+        margin-top: 4rem;
+      }
+
+      @media (min-width: $breakpoint-tablet-horizontal) {
+        margin-top: 4.5rem;
+      }
+
+      @media (min-width: $breakpoint-desktop) {
+        margin-top: 5.5rem;
+      }
+    }
+
+    &-main {
+      margin: 2.25rem 0 0;
+
+      @media (min-width: $breakpoint-mobile-wide) {
+        margin-top: 2.75rem;
+      }
+
+      @media (min-width: $breakpoint-tablet-horizontal) {
+        margin-top: 3.25rem;
+      }
+
+      @media (min-width: $breakpoint-desktop) {
+        margin-top: 4.25rem;
+      }
+    }
+
+    &-main {
+      transform: skewY(3deg);
+      width: 100%;
+    }
+  }
+
+  // COMPONENT - GENERAL
+  // -------------------------------------------------------------
+
+  @import 'Partials/Trigger/style';
+
+  .list {
+    @include reset-list;
+  }
+
+  .content {
+    padding: 0;
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
+
+    &[aria-hidden='false'] {
+      display: block;
+    }
+  }
+
+  // // COMPONENT - TABS
+  // -------------------------------------------------------------
+
+  .list {
+    &--tabs {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .list-item {
+    &--tab {
+      margin: 0 0 0 0.375rem;
+
+      @media (min-width: $breakpoint-mobile-wide) {
+        margin-left: 0.75rem;
+      }
+
+      @media (min-width: $breakpoint-tablet) {
+        margin-left: 1.25rem;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    &--ticket {
+      &:first-child {
+        .trigger-inner {
+          border-top: 0;
+        }
+      }
+    }
+  }
+
+  .content {
+    &--tab {
+      background-color: #fff;
+
+      .boxSkewBottom {
+        &::after {
+          bottom: -3rem;
+
+          @media (min-width: $breakpoint-tablet) {
+            bottom: -0.25rem;
+          }
+        }
+      }
+
+      .boxSkewBottom-inner > .columns {
+        @media (min-width: $breakpoint-tablet-horizontal) {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+
+      .notice {
+        color: $color-grey-paragraph;
+        font-size: 0.9375rem;
+        margin: 0;
+        width: 100%;
+
+        > * {
+          margin: 1.125rem 0 0;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+
+      .column {
+        &--side {
+          display: none;
+
+          @media (min-width: $breakpoint-tablet-horizontal) {
+            display: block;
+            margin-right: 12px;
+            padding: 1.75rem 0 1.75rem 0.875rem;
+            width: calc(40% - 12px);
+          }
+
+          @media (min-width: $breakpoint-desktop) {
+            margin-right: 20px;
+            padding: 2.25rem 0 2.25rem 1rem;
+            width: calc(35% - 20px);
+          }
+          @media (min-width: $breakpoint-desktop-wide) {
+            padding: 3rem 0 3rem 1.5rem;
+          }
+        }
+
+        &--main {
+          padding: 0.9375rem 0.75rem;
+          width: 100%;
+
+          &:only-child {
+            min-height: 180px;
+            padding: 4rem;
+            text-align: center;
+            width: 100%;
+          }
+
+          @media (min-width: $breakpoint-mobile-horizontal) {
+            padding: 1rem 0.875rem;
+          }
+
+          @media (min-width: $breakpoint-tablet-horizontal) {
+            margin-left: 16px;
+            padding: 1.75rem 0.875rem 1.75rem 0;
+            width: calc(60% - 16px);
+          }
+
+          @media (min-width: $breakpoint-desktop) {
+            padding: 2.25rem 1.75rem 2rem 0;
+            width: calc(65% - 16px);
+          }
+
+          @media (min-width: $breakpoint-desktop-wide) {
+            padding: 3rem 2rem 2rem 0;
+          }
+        }
+      }
+    }
+
+    &--ticket {
+      @import 'Partials/Content/style';
+    }
+  }
+}
