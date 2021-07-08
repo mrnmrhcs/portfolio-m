@@ -1,0 +1,23 @@
+{% if header %}
+  <div class="quicklink">
+    <a class="quicklink-title" href="{{ header.quicklink.link.url }}">{{ header.quicklink.link.title }}</a>
+    <span class="quicklink-infoText">{{ header.quicklink.infoText }}</span>
+    <a class="button button--ghost button--icon" href="{{ header.quicklink.link.url }}">
+      {{- header.quicklink.buttonLabel -}}
+    </a>
+  </div>
+{% elseif main %}
+  <div class="quicklink">
+    <div class="quicklink-media">{{ ico.artwork }}</div>
+    <a class="quicklink-title" href="#">{{ main }}</a>
+    <span class="quicklink-infoText">{{ infoText }}</span>
+  </div>
+{% elseif cta %}
+  <a class="button" href="{{ cta.button.link.url }}">
+    {{- cta.button.link.title -}}
+  </a>
+{% elseif item %}
+  <a class="item-link {{- item.current or item.current_item_ancestor ? ' item-link-isCurrent' }}" href="{{ item.link }}" data-level="{{ lvl }}">
+    {{- item.title -}}
+  </a>
+{% endif %}

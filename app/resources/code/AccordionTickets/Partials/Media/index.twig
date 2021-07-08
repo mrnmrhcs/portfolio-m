@@ -1,0 +1,13 @@
+  <div class="image">
+  <img class="image-tag lazyload lazyload--fade"
+    src="{{ image.src|resizeDynamic(800, 600, 'center') }}"
+    srcset="{{ placeholderImage(800, 600) }}"
+    data-srcset="
+      {{ image.src|resizeDynamic(800, 600, 'center') }} 800w,
+      {{ image.src|resizeDynamic(600, 450, 'center') }} 600w,
+      {{ image.src|resizeDynamic(500, 375, 'center') }} 500w,
+      {{ image.src|resizeDynamic(400, 300, 'center') }} 400w,
+      {{ image.src|resizeDynamic(380, 285, 'center') }} 380w"
+    data-sizes="auto"
+    alt="{{ image.alt|e }}">
+</div>

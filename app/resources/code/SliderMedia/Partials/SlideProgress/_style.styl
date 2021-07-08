@@ -1,0 +1,21 @@
+.slideProgress
+  bottom: 0
+  height: 4px
+  left: 0
+  position: absolute
+  width: 100%
+  z-index: 3
+
+  .bar
+    height: 4px
+    width: 0
+
+&--themeDfa
+  .slideProgress
+    .bar
+      background-color: $colorRed
+
+&--themeDfp
+  .slideProgress
+    .bar
+      background-color: $colorGold

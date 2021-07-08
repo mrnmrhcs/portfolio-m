@@ -1,0 +1,47 @@
+{% set lvl = 0 %}
+
+<nav class="flyntComponent" is="flynt-navigation-main">
+  <div class="navigationMain">
+    <div class="navigationMain-header">
+      <div class="wrapper wrapper--header">
+        <div class="container">
+          <div class="columns columns--header">
+            {% if area.header.quicklink %}
+              <div class="column column--quicklink">
+                {% include 'Partials/Link/index.twig' with { header: area.header } only %}
+              </div>
+            {% endif %}
+            <div class="column column--language">
+              {% include 'Partials/Language/index.twig' with { languages: languages } only %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navigationMain-main">
+      <div class="wrapper wrapper--main">
+        <div class="container">
+          <div class="columns columns--main">
+            <div class="column column--brand">
+              {% include 'Partials/Brand/index.twig' with { brand: brand, site: site } only %}
+            </div>
+            <div class="column column--menu">
+              {% include 'Partials/Menu/index.twig' with { items: navigation.main.items, area: area, ico: ico, lvl: lvl + 1 } only %}
+            </div>
+            <div class="column column--search">
+              {% include 'Partials/Search/index.twig' with { searchTranslatable: searchTranslatable, ico: ico } only %}
+            </div>
+            <div class="column column--side">
+              {% include 'Partials/Menu/index.twig' with { items: navigation.side.items, lvl: lvl + 1 } only %}
+            </div>
+            {% if area.cta.button %}
+              <div class="column column--cta">
+                {% include 'Partials/Link/index.twig' with { cta: area.cta } only %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,54 @@
+<div class="flyntComponent componentSpacing--m" is="flynt-accordion-tickets">
+  <div class="accordionTickets boxSkew {{ theme }}">
+    {% if header.title or header.event %}
+      <div class="accordionTickets-header">
+        <h2 class="h1 boxSkew-title">{{ header.title|e }}</h2>
+        <h3 class="event">{{ header.event|e }}</h3>
+      </div>
+    {% endif %}
+    <div class="container">
+      <div class="accordionTickets-main boxSkewNormalize">
+        <nav class="tabs">
+          <ul class="list list--tabs">
+            {% for tab in tabs %}
+              <li class="list-item list-item--tab">
+                {% include 'Partials/Trigger/index.twig' with { tab: tab, loop: loop, context: 'tab' } only %}
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+        {% for tab in tabs %}
+          <div class="content content--tab" id="tab-{{ tab.title|lower|replace({' ': "-"})|e('html_attr') }}--{{ loop.index }}" aria-hidden="{{ loop.first ? 'false' : 'true' }}">
+            <div class="boxSkewBottom">
+              <div class="boxSkewBottom-inner">
+                <div class="columns">
+                  {% if tab.tickets %}
+                    <div class="column column--side">
+                      <nav class="tickets">
+                        <ul class="list list--tickets">
+                          {% for ticket in tab.tickets %}
+                            <li class="list-item list-item--ticket">
+                              {% include 'Partials/Trigger/index.twig' with { tab: tab, ticket: ticket, loop: loop, context: 'ticket', env: 'desktop' } only %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      </nav>
+                    </div>
+                  {% endif %}
+                  <div class="column column--main">
+                    {% for ticket in tab.tickets %}
+                      {% include 'Partials/Trigger/index.twig' with { tab: tab, ticket: ticket, loop: loop, context: 'ticket', env: 'mobile' } only %}
+                      {% include 'Partials/Content/index.twig' with { tab: tab, ticket: ticket, loop: loop, generalTranslatable: generalTranslatable } only %}
+                    {% else %}
+                      <div class="notice"><p>{{ generalTranslatable.noTicketsNotice|e }}</p></div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
