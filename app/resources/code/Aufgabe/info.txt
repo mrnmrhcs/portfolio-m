@@ -1,0 +1,15 @@
+Entwickle ein Template auf der Grundlage des beiliegenden Entwurfs. Die
+Umsetzung soll per html, css und javascript im Ordner „public“ erfolgen.
+Wir bitten dich keine Plugins oder Bibliotheken einzusetzen, damit wir
+deine eigenen Fähigkeiten besser einschätzen können.
+
+Vorgaben:
+• Schriftart: Google-Font Roboto in den Schriftdicken 400 & 700
+• das Template soll für die neuesten Browser und Geräte optimiert sein
+
+Zur Funktionalität:
+Bei Klick auf „Alle Kategorien“ erscheint der Overlay Kategorienauswahl. Ein Klick
+auf das Schließen-Icon lässt den Overlay verschwinden. Wenn man im Overlay über eine
+weiße Kachel hovert, ändert sich der Text in der blauen Box entsprechend zu der Kachel.
+Bitte verwende für diese Texte Bespieldaten deiner Wahl. Wir legen bei der Auswertung
+der eingereichten Arbeit besonderen Wert auf Usability, Performance und Accessibility.
