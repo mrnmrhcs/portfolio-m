@@ -9,16 +9,27 @@
 //  rwd-scale('font-size', 14px, 20px, 320px, 1366px)
 //  rwd-scale('padding-top' 'padding-bottom', 2rem, 4rem, 320px, 1366px)
 
+@use "sass:math";
+
 @mixin rwd-scale($properties, $min-value, $max-value, $min-screen: $breakpoint-sm, $max-screen: $breakpoint-xl, $font-base-size: $global-font-base-size) {
+
+  $min-value-type: math.unit($min-value);
+  $max-value-type: math.unit($max-value);
+  $min-screen-type: math.unit($min-screen);
+  $max-screen-type: math.unit($max-screen);
+
+  $min-value-no-unit: math.div($min-value, $min-value * 0 + 1);
+  $max-value-no-unit: math.div($max-value, $max-value * 0 + 1);
+  $min-screen-no-unit: math.div($min-screen, $min-screen * 0 + 1);
+  $max-screen-no-unit: math.div($max-screen, $max-screen * 0 + 1);
 
   // MINIMUM VALUE
 
   @each $property in $properties {
-    @if unit($min-value) == 'px' {
-      #{$property}: (strip-unit($min-value / $font-base-size) * 1rem);
+    @if $min-value-type == 'px' {
+      #{$property}: math.div($min-value-no-unit, $font-base-size) * 1rem;
     }
-
-    @else if unit($min-value) == 'rem' or unit($min-value) == '%' {
+    @else if $min-value-type == 'rem' or $min-value-unit == '%' {
       #{$property}: $min-value;
     }
   }
@@ -27,16 +38,14 @@
 
   @media screen and (min-width: $min-screen) {
     @each $property in $properties {
-      @if unit($min-value) == 'px' {
-        #{$property}: calc(#{(strip-unit($min-value / $font-base-size) * 1rem)} + (#{strip-unit($max-value - $min-value)} / #{$font-base-size}) * ((100vw - #{(strip-unit($min-screen / $font-base-size) * 1rem)}) / (#{strip-unit($max-screen - $min-screen)} / #{$font-base-size})));
+      @if $min-value-type == 'px' {
+        #{$property}: calc(#{(math.div($min-value-no-unit, $font-base-size) * 1rem)} + (#{$max-value-no-unit - $min-value-no-unit} / #{$font-base-size}) * ((100vw - #{(math.div($min-screen-no-unit, $font-base-size) * 1rem)}) / #{math.div($max-screen-no-unit - $min-screen-no-unit, $font-base-size)}));
       }
-
-      @else if unit($min-value) == 'rem' {
-        #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * ((100vw - #{(strip-unit($min-screen / $font-base-size) * 1rem)}) / (#{strip-unit($max-screen - $min-screen)} / #{$font-base-size})));
+      @else if $min-value-type == 'rem' {
+        #{$property}: calc(#{$min-value} + #{$max-value-no-unit - $min-value-no-unit} * ((100vw - #{math.div($min-screen-no-unit, $font-base-size) * 1rem}) / #{math.div($max-screen-no-unit - $min-screen-no-unit, $font-base-size)}));
       }
-
-      @else if unit($min-value) == '%' {
-        #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * ((100vw - #{$min-screen}) / #{strip-unit($max-screen - $min-screen)}));
+      @else if $min-value-type == '%' {
+        #{$property}: calc(#{$min-value} + #{$max-value-no-unit - $min-value-no-unit} * ((100vw - #{$min-screen}) / #{$max-screen-no-unit - $min-screen-no-unit}));
       }
     }
   }
@@ -45,11 +54,10 @@
 
   @media screen and (min-width: $max-screen) {
     @each $property in $properties {
-      @if unit($max-value) == 'px' {
-        #{$property}: (strip-unit($max-value / $font-base-size) * 1rem);
+      @if $max-value-type == 'px' {
+        #{$property}: math.div($max-value-no-unit, $font-base-size) * 1rem;
       }
-
-      @else if unit($max-value) == 'rem' or unit($max-value) == '%' {
+      @else if $max-value-type == 'rem' or $max-value-type == '%' {
         #{$property}: $max-value;
       }
     }
