@@ -22,7 +22,7 @@
       $gutter-v: $gutter-v * 1rem;
     }
 
-    width: calc((#{100% / $columns}) -
+    width: calc((100% / #{$columns}) -
     (#{$columns - 1} / #{$columns} * #{$gutter-h}));
 
     &:nth-child(n) {
