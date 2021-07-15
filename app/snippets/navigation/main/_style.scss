@@ -50,14 +50,14 @@ navigation-main.snippet {
         opacity: 1;
       }
 
-      @at-root .app--menu {
+      @at-root .app_overlay {
         overflow-y: hidden;
       }
     }
   }
 
   .list {
-    &--menu {
+    &_menu {
       @include grid-scale(2, center, 0, 0);
       height: 100%;
       list-style: none;

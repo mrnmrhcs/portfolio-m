@@ -46,7 +46,7 @@ button {
     outline-offset: -2px;
   }
 
-  &--circle {
+  &_circle {
     border-radius: 50%;
     display: block;
     height: 80px;
@@ -127,7 +127,7 @@ button {
     padding-right: 1.625rem;
   }
 
-  &_is_active {
+  &_active {
     background-color: $c-btn-hover;
     border-color: $c-btn-hover;
     color: $c-hover;

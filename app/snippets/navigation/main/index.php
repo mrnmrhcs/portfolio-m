@@ -7,7 +7,7 @@
       </button>
     </nav>
     <div class="navigation-main__menu" aria-labelledby="menu" aria-hidden="true">
-      <ul class="list list--menu">
+      <ul class="list list_menu">
         <li class="list__item">
           <a class="link" href="/">
             <span class="link__text">Home</span>
