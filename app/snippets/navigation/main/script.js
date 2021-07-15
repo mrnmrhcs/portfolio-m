@@ -33,13 +33,13 @@ class NavigationMain extends window.HTMLElement {
 
   stateHandler (action) {
     if (action === 'open') {
-      this.$html.addClass('app_overlay')
+      this.$html.addClass('app_menu')
 
       this.$trigger.attr('aria-expanded', 'true')
       this.$menu.attr('aria-hidden', 'false')
     }
     if (action === 'close') {
-      this.$html.removeClass('app_overlay')
+      this.$html.removeClass('app_menu')
 
       this.$trigger.attr('aria-expanded', 'false')
       this.$menu.attr('aria-hidden', 'true')
