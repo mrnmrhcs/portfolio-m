@@ -1,5 +1,5 @@
 <?php ?>
-<div class="snippet" is="block-graph-contribution">
+<block-graph-contribution class="snippet">
   <div class="container">
     <div class="graph">
       <ul class="graph__months">
@@ -30,4 +30,4 @@
       </ul>
     </div>
   </div>
-</div>
+</block-graph-contribution>

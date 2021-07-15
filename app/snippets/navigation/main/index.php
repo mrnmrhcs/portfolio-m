@@ -1,5 +1,5 @@
 <?php ?>
-<div class="snippet" is="navigation-main">
+<navigation-main class="snippet">
   <div class="navigation-main">
     <nav class="navigation-main__nav">
       <button class="navigation-main__trigger button" aria-controls="menu" aria-expanded="false" type="button">
@@ -21,4 +21,4 @@
       </ul>
     </div>
   </div>
-</div>
+</navigation-main>

@@ -2,7 +2,7 @@
 // LAYOUT
 /////////////////////////////////////
 
-[is='layout-home'] {
+.layout-home {
   section {
     > [class$='__header'],
     > [class$='__main'],
@@ -347,7 +347,7 @@
   }
 }
 
-[is='layout-project'] {
+.layout-project {
   section {
     > [class$='__main'] {
       margin: 3rem 0 0;
@@ -534,7 +534,7 @@
   }
 }
 
-[is='layout-about'] {
+.layout-about {
   section {
     > [class$='__header'],
     > [class$='__main'],

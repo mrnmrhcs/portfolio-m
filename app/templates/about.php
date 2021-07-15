@@ -1,6 +1,6 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/document/header/index.php'; ?>
 
-<div class="snippet" is="layout-about">
+<div class="layout-about">
   <div class="about">
     <section class="about__layout">
       <header class="about__header context-content">

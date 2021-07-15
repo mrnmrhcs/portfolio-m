@@ -11,7 +11,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: $alignment;
-  width: 100vw;
+  width: 100%;
 
   > * {
     @if unitless($gutter-h) {

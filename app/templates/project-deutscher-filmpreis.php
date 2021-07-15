@@ -1,6 +1,6 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/snippets/document/header/index.php'; ?>
 
-<div class="snippet" is="layout-project">
+<div class="layout-project">
   <div class="project project_deutscher-filmpreis context-content">
     <section class="project__layout">
       <header class="project__header">

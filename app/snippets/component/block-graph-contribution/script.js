@@ -1,4 +1,4 @@
-class BlockGraphContribution extends window.HTMLDivElement {
+class BlockGraphContribution extends window.HTMLElement {
   constructor (...args) {
     const self = super(...args)
     self.init()
@@ -22,4 +22,4 @@ class BlockGraphContribution extends window.HTMLDivElement {
   }
 }
 
-window.customElements.define('block-graph-contribution', BlockGraphContribution, { extends: 'div' })
+window.customElements.define('block-graph-contribution', BlockGraphContribution)

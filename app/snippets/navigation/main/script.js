@@ -1,4 +1,4 @@
-class NavigationMain extends window.HTMLDivElement {
+class NavigationMain extends window.HTMLElement {
   constructor (...args) {
     const self = super(...args)
     self.init()
@@ -47,4 +47,4 @@ class NavigationMain extends window.HTMLDivElement {
   }
 }
 
-window.customElements.define('navigation-main', NavigationMain, { extends: 'div' })
+window.customElements.define('navigation-main', NavigationMain)
