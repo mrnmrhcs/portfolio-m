@@ -27,7 +27,7 @@
                 <ul class="list list_skills">
                   <li class="list__item">Node.js, NPM, Composer, Gulp, Webpack</li>
                   <li class="list__item">Git Version Control, Asset Optimization</li>
-                  <li class="list__item">Usability, Accessibility, User Experience</li>
+                  <li class="list__item">Usability, User Experience, Accessibility</li>
                   <li class="list__item">User Interface Design</li>
                 </ul>
               </div>
