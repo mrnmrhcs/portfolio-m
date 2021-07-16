@@ -32,7 +32,7 @@ navigation-main.snippet {
     }
 
     &__menu {
-      background: $c-nav-bg;
+      background: $c-bg;
       height: 100%;
       left: 0;
       opacity: 0;
@@ -40,6 +40,10 @@ navigation-main.snippet {
       top: 0;
       width: 100%;
       z-index: -22;
+
+      @media (max-width: $breakpoint-xs) {
+        padding-top: 116px;
+      }
 
       &[aria-hidden='true'] {
         display: none;
