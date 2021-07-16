@@ -12,7 +12,7 @@
         <div class="project__image project__image_desktop">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/universal-music__home__960-1360-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/universal-music__home__960-1360-browser.png" alt="Universal Music Layout Home">
             </div>
           </div>
         </div>
@@ -20,8 +20,8 @@
           <div class="container">
             <div class="project__facts">
               <ul class="list list_facts">
-                <li class="list__item">Project - Web Design Pitch</li>
-                <li class="list__item">Role - Designer</li>
+                <li class="list__item">Project - Web Design / Pitch</li>
+                <li class="list__item">Role - Design</li>
                 <li class="list__item">Agency - Taikonauten</li>
                 <li class="list__item">Year - 2015</li>
               </ul>
@@ -31,7 +31,7 @@
         <div class="project__image project__image_desktop">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/universal-music__artist__960-1360-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/universal-music__artist__960-1360-browser.png" alt="Universal Music Layout Artist">
             </div>
           </div>
         </div>

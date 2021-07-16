@@ -12,7 +12,7 @@
         <div class="project__image project__image_desktop">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/glow__home__1440-1600-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/glow__home__1440-1600-browser.png" alt="Glowcon Layout Home">
             </div>
           </div>
         </div>
@@ -21,7 +21,7 @@
             <div class="project__facts">
               <ul class="list list_facts">
                 <li class="list__item">Project - WordPress Website</li>
-                <li class="list__item">Role - Frontend Developer</li>
+                <li class="list__item">Role - Development</li>
                 <li class="list__item">Agency - Bleech</li>
                 <li class="list__item">Year - 2019</li>
               </ul>
@@ -31,7 +31,7 @@
         <div class="project__image project__image_desktop">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/glow__media__1440-1600-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/glow__media__1440-1600-browser.png" alt="Glowcon Media Example">
             </div>
           </div>
         </div>

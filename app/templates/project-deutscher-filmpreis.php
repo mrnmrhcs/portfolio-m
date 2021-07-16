@@ -12,7 +12,7 @@
         <div class="project__image project__image_desktop">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/dfp__winner__1440-1600-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/dfp__winner__1440-1600-browser.png" alt="Deutscher Filmpreis List Winner">
             </div>
           </div>
         </div>
@@ -21,7 +21,7 @@
             <div class="project__facts">
               <ul class="list list_facts">
                 <li class="list__item">Project - WordPress Multisite</li>
-                <li class="list__item">Role - Frontend Developer</li>
+                <li class="list__item">Role - Development</li>
                 <li class="list__item">Agency - Bleech</li>
                 <li class="list__item">Year - 2018</li>
               </ul>
@@ -31,14 +31,14 @@
         <div class="project__image project__image_desktop">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/dfp__event__1440-1600-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/dfp__event__1440-1600-browser.png" alt="Deutscher Filmpreis Layout Event">
             </div>
           </div>
         </div>
         <div class="project__image project__image_desktop">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/dfp__media__1440-1600-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/dfp__media__1440-1600-browser.png" alt="Deutscher Filmpreis Layout Media">
             </div>
           </div>
         </div>

@@ -12,7 +12,7 @@
         <div class="project__image project__image_desktop">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/duerr__content__1200-1280-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/duerr__content__1200-1280-browser.png" alt="Duerr Content Example">
             </div>
           </div>
         </div>
@@ -21,7 +21,7 @@
             <div class="project__facts">
               <ul class="list list_facts">
                 <li class="list__item">Project - Web Design Pitch</li>
-                <li class="list__item">Role - Designer</li>
+                <li class="list__item">Role - Design</li>
                 <li class="list__item">Agency - United Digital Group</li>
                 <li class="list__item">Year - 2017</li>
               </ul>
@@ -31,7 +31,7 @@
         <div class="project__image project__image_desktop">
           <div class="container">
             <div class="image">
-              <img class="image__tag" src="../assets/images/duerr__group-home__1200-1280-browser.png" alt="">
+              <img class="image__tag" src="../assets/images/duerr__group-home__1200-1280-browser.png" alt="Duerr Group Layout Home">
             </div>
           </div>
         </div>
