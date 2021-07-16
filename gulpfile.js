@@ -12,9 +12,9 @@ const concat = require('gulp-concat')
 const terser = require('gulp-terser')
 const imagemin = require('gulp-imagemin')
 const favicon = require('favicons').stream
-const cache = require('gulp-cache')
+const browser = require('browser-sync').create('server')
 const scss = require('gulp-sass')(require('sass'))
-const bs = require('browser-sync')
+const cache = require('gulp-cache')
 const del = require('del')
 
 const config = require('./config')
@@ -23,25 +23,24 @@ const config = require('./config')
 // BROWSERSYNC
 ////////////////////////////////////////////////////////////////////////////////
 
-const instance = bs.create()
-
-const server = () => instance.init({
+const server = () => browser.init({
   host: config.host.local,
   proxy: config.host.local,
-  logLevel: process.env.DEBUG === 'True' ? 'debug' : 'info',
-  logFileChanges: process.env.DEBUG === 'True' ? true : false,
   logPrefix: process.env.npm_package_name,
-  ghostMode: false,
-  open: false,
+  logLevel: process.env.DEBUG === 'True' ? 'debug' : 'info',
+  logConnections: process.env.DEBUG === 'True' ? true : false,
+  logFileChanges: process.env.DEBUG === 'True' ? true : false,
   notify: false,
-  ui: false,
+  ghostMode: false,
+  reloadDelay: 320,
+  injectChanges: false,
   online: false,
-  injectChanges: true,
-  reloadDelay: 800
+  open: false,
+  ui: false
 })
 
 const reload = (done) => {
-  instance.reload()
+  browser.reload()
   done()
 }
 
@@ -51,7 +50,7 @@ const reload = (done) => {
 
 // CLEAN -------------------------------------------------------------
 
-const clean__vendor = () => { return del(config.vendor.dest + 'vendor.js') }
+const clean__vendor = () => del(config.vendor.dest + 'vendor.js')
 
 // PROCESS -------------------------------------------------------------
 
@@ -73,7 +72,7 @@ const vendor = series(clean__vendor, process__vendor)
 
 // CLEAN -------------------------------------------------------------
 
-const clean__scripts__main = () => { return del(config.path.dist + '{main,main-legacy}.js') }
+const clean__scripts__main = () => del(config.path.dist + '{main,main-legacy}.js')
 
 // PROCESS -------------------------------------------------------------
 
@@ -158,7 +157,7 @@ const scripts__main = series(clean__scripts__main, process__scripts__legacy, pro
 
 // CLEAN -------------------------------------------------------------
 
-const clean__styles = () => { return del(config.path.dist + '*.{css,css.map}') }
+const clean__styles = () => del(config.path.dist + '*.{css,css.map}')
 
 // PROCESS -------------------------------------------------------------
 
@@ -168,6 +167,7 @@ const process__styles = () => {
     .pipe(scss({ outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded' }).on('error', scss.logError))
     .pipe(autoprefixer())
     .pipe(dest(config.path.dist, { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? '.' : false) : false }))
+    .pipe(browser.reload({ stream: true }))
 }
 
 // WATCH -------------------------------------------------------------
@@ -187,7 +187,7 @@ const styles = series(clean__styles, process__styles)
 
 // CLEAN -------------------------------------------------------------
 
-const clean__robots = () => { return del(config.path.dist + 'robots.txt') }
+const clean__robots = () => del(config.path.dist + 'robots.txt')
 
 // COPY -------------------------------------------------------------
 
@@ -207,10 +207,10 @@ const robots = series(clean__robots, copy__robots)
 
 // CLEAN -------------------------------------------------------------
 
-const clean__index = () => { return del(config.path.dist + 'index.php') }
-const clean__htaccess = () => { return del(config.path.dist + '.htaccess') }
-const clean__snippets = () => { return del(config.path.dist + config.path.snippets) }
-const clean__templates = () => { return del(config.path.dist + config.path.templates) }
+const clean__index = () => del(config.path.dist + 'index.php')
+const clean__htaccess = () => del(config.path.dist + '.htaccess')
+const clean__snippets = () => del(config.path.dist + config.path.snippets)
+const clean__templates = () => del(config.path.dist + config.path.templates)
 
 // COPY -------------------------------------------------------------
 
@@ -260,10 +260,10 @@ const templates = series(clean__templates, copy__templates)
 
 // CLEAN -------------------------------------------------------------
 
-const clean__images = () => { return del(config.path.dist + config.path.assets + config.path.images) }
-const clean__icons = () => { return del(config.path.dist + config.path.assets + config.path.icons) }
-const clean__favicons = () => { return del(config.path.dist + config.path.assets + config.path.favicons) }
-const clean__fonts = () => { return del(config.path.dist + config.path.assets + config.path.fonts) }
+const clean__images = () => del(config.path.dist + config.path.assets + config.path.images)
+const clean__icons = () => del(config.path.dist + config.path.assets + config.path.icons)
+const clean__favicons = () => del(config.path.dist + config.path.assets + config.path.favicons)
+const clean__fonts = () => del(config.path.dist + config.path.assets + config.path.fonts)
 
 // PROCESS -------------------------------------------------------------
 
@@ -364,7 +364,7 @@ const LOGIC = series(parallel(index, htaccess, snippets, templates), vendor)
 const STYLE = parallel(styles, scripts__main)
 const ASSET = series(images, icons, favicons, fonts)
 const SEO = series(robots)
-const RUN = series(server, parallel(watch__logic, watch__assets, watch__styles, watch__scripts))
+const RUN = parallel(server, parallel(watch__logic, watch__assets, watch__styles, watch__scripts))
 
 if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
   exports.default = series(LOGIC, STYLE, ASSET, SEO)
