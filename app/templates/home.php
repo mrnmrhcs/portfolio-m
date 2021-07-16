@@ -12,7 +12,7 @@
                   <h2 class="card__title">Helmholtz Zentrum</h2>
                   <div class="card__media">
                     <div class="image">
-                      <img class="image__tag" src="../assets/images/media_card__wide--hzb.png" alt="">
+                      <img class="image__tag" src="../assets/images/media_card__wide--hzb.png" alt="Thumbnail of Project Helmholtz Zentrum">
                     </div>
                   </div>
                 </a>
@@ -24,7 +24,7 @@
                   <h2 class="card__title">Glow</h2>
                   <div class="card__media">
                     <div class="image">
-                      <img class="image__tag" src="../assets/images/media_card--glow.png" alt="">
+                      <img class="image__tag" src="../assets/images/media_card--glow.png" alt="Thumbnail of Project Glow">
                     </div>
                   </div>
                 </a>
@@ -36,7 +36,7 @@
                   <h2 class="card__title">Deutscher Filmpreis</h2>
                   <div class="card__media">
                     <div class="image">
-                      <img class="image__tag" src="../assets/images/media_card--dfp.png" alt="">
+                      <img class="image__tag" src="../assets/images/media_card--dfp.png" alt="Thumbnail of Project Deutscher Filmpreis">
                     </div>
                   </div>
                 </a>
@@ -48,7 +48,7 @@
                   <h2 class="card__title">Davide Rizzo</h2>
                   <div class="card__media">
                     <div class="image">
-                      <img class="image__tag" src="../assets/images/media_card__wide--rizzo.png" alt="">
+                      <img class="image__tag" src="../assets/images/media_card__wide--rizzo.png" alt="Thumbnail of Project Davide Rizzo">
                     </div>
                   </div>
                 </a>
