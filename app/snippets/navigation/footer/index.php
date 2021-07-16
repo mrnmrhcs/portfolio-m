@@ -1,8 +1,8 @@
 <?php ?>
-<div class="snippet" is="navigation-footer">
+<navigation-footer class="snippet">
   <div class="container">
     <nav class="navigation">
 
     </nav>
   </div>
-</div>
+</navigation-footer>

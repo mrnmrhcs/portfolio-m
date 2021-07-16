@@ -1,4 +1,4 @@
-class NavigationMain extends window.HTMLDivElement {
+class NavigationMain extends window.HTMLElement {
   constructor (...args) {
     const self = super(...args)
     self.init()
@@ -33,13 +33,13 @@ class NavigationMain extends window.HTMLDivElement {
 
   stateHandler (action) {
     if (action === 'open') {
-      this.$html.addClass('app--menu')
+      this.$html.addClass('app_menu')
 
       this.$trigger.attr('aria-expanded', 'true')
       this.$menu.attr('aria-hidden', 'false')
     }
     if (action === 'close') {
-      this.$html.removeClass('app--menu')
+      this.$html.removeClass('app_menu')
 
       this.$trigger.attr('aria-expanded', 'false')
       this.$menu.attr('aria-hidden', 'true')
@@ -47,4 +47,4 @@ class NavigationMain extends window.HTMLDivElement {
   }
 }
 
-window.customElements.define('navigation-main', NavigationMain, { extends: 'div' })
+window.customElements.define('navigation-main', NavigationMain)

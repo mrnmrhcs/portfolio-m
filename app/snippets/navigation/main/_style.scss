@@ -1,4 +1,4 @@
-[is='navigation-main'] {
+navigation-main.snippet {
   .navigation-main {
     height: 7.25rem;
     padding: 3rem 0;
@@ -32,7 +32,7 @@
     }
 
     &__menu {
-      background: $c-nav-bg;
+      background: $c-bg;
       height: 100%;
       left: 0;
       opacity: 0;
@@ -40,6 +40,10 @@
       top: 0;
       width: 100%;
       z-index: -22;
+
+      @media (max-width: $breakpoint-xs) {
+        padding-top: 116px;
+      }
 
       &[aria-hidden='true'] {
         display: none;
@@ -50,37 +54,45 @@
         opacity: 1;
       }
 
-      @at-root .app--menu {
+      @at-root .app_menu {
         overflow-y: hidden;
       }
     }
   }
 
   .list {
-    &--menu {
-      @include grid-scale(2, center, 0, 0);
+    &_menu {
+      @include grid-scale(1, center, 0, 0);
       height: 100%;
       list-style: none;
       margin: 0;
       padding: 0;
       text-align: center;
+
+      @media (min-width: $breakpoint-xs) {
+        @include grid-scale(2, center, 0, 0);
+      }
     }
 
     .link {
       $block: 'link';
-
-      @include rwd-scale('font-size', 1.5rem, 9rem, 320px, 1400px);
       align-items: center;
       background-color: $c-bg;
       color: $c-white;
       display: flex;
       font-family: 'Alpha', Helvetica, Arial, sans-serif;
+
+      font-size: 2.75rem;
       font-weight: 600;
       height: 100%;
       letter-spacing: -2px;
       line-height: 1.025;
       text-decoration: none;
       width: 100%;
+
+      @media (min-width: $breakpoint-xs) {
+        @include rwd-scale('font-size', 2.75rem, 8rem, 480px, 1400px);
+      }
 
       &__text {
         display: block;

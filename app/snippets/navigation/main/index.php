@@ -1,5 +1,5 @@
 <?php ?>
-<div class="snippet" is="navigation-main">
+<navigation-main class="snippet">
   <div class="navigation-main">
     <nav class="navigation-main__nav">
       <button class="navigation-main__trigger button" aria-controls="menu" aria-expanded="false" type="button">
@@ -7,7 +7,7 @@
       </button>
     </nav>
     <div class="navigation-main__menu" aria-labelledby="menu" aria-hidden="true">
-      <ul class="list list--menu">
+      <ul class="list list_menu">
         <li class="list__item">
           <a class="link" href="/">
             <span class="link__text">Home</span>
@@ -21,4 +21,4 @@
       </ul>
     </div>
   </div>
-</div>
+</navigation-main>

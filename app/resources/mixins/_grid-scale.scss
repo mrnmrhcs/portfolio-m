@@ -11,7 +11,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: $alignment;
-  width: 100vw;
+  width: 100%;
 
   > * {
     @if unitless($gutter-h) {
@@ -22,7 +22,7 @@
       $gutter-v: $gutter-v * 1rem;
     }
 
-    width: calc((#{100% / $columns}) -
+    width: calc((100% / #{$columns}) -
     (#{$columns - 1} / #{$columns} * #{$gutter-h}));
 
     &:nth-child(n) {
