@@ -10,6 +10,13 @@
               <div class="card card_horizontal">
                 <a class="card__link" aria-label="Goto Project Helmholtz Zentrum" href="/templates/project-helmholz-zentrum.php">
                   <h2 class="card__title">Helmholtz Zentrum</h2>
+                  <div class="card__info">
+                    <ul class="list list_tags">
+                      <li class="list__item">
+                        <span class="tag tag_text">Development - Frontend</span>
+                      </li>
+                    </ul>
+                  </div>
                   <div class="card__media">
                     <div class="image">
                       <img class="image__tag" src="../assets/images/media_card__wide--hzb.png" alt="Thumbnail of Project Helmholtz Zentrum">
@@ -22,6 +29,13 @@
               <div class="card">
                 <a class="card__link" aria-label="Goto Project Glow" href="/templates/project-glow.php">
                   <h2 class="card__title">Glow</h2>
+                  <div class="card__info">
+                    <ul class="list list_tags">
+                      <li class="list__item">
+                        <span class="tag tag_text">Development - Frontend</span>
+                      </li>
+                    </ul>
+                  </div>
                   <div class="card__media">
                     <div class="image">
                       <img class="image__tag" src="../assets/images/media_card--glow.png" alt="Thumbnail of Project Glow">
@@ -34,6 +48,13 @@
               <div class="card">
                 <a class="card__link" aria-label="Goto Project Deutscher Filmpreis" href="/templates/project-deutscher-filmpreis.php">
                   <h2 class="card__title">Deutscher Filmpreis</h2>
+                  <div class="card__info">
+                    <ul class="list list_tags">
+                      <li class="list__item">
+                        <span class="tag tag_text">Development - Frontend</span>
+                      </li>
+                    </ul>
+                  </div>
                   <div class="card__media">
                     <div class="image">
                       <img class="image__tag" src="../assets/images/media_card--dfp.png" alt="Thumbnail of Project Deutscher Filmpreis">
@@ -46,6 +67,13 @@
               <div class="card card_horizontal">
                 <a class="card__link" aria-label="Goto Project Davide Rizzo" href="/templates/project-davide-rizzo.php">
                   <h2 class="card__title">Davide Rizzo</h2>
+                  <div class="card__info">
+                    <ul class="list list_tags">
+                      <li class="list__item">
+                        <span class="tag tag_text">Development - Frontend</span>
+                      </li>
+                    </ul>
+                  </div>
                   <div class="card__media">
                     <div class="image">
                       <img class="image__tag" src="../assets/images/media_card__wide--rizzo.png" alt="Thumbnail of Project Davide Rizzo">
@@ -76,20 +104,6 @@
             </div>
             <div class="list__item">
               <div class="card">
-                <a class="card__link" aria-label="Goto Project Mycs" href="/templates/project-mycs.php">
-                  <h3 class="card__title">Mycs</h3>
-                </a>
-              </div>
-            </div>
-            <div class="list__item">
-              <div class="card">
-                <a class="card__link" aria-label="Goto Project Artuner" href="/templates/project-artuner.php">
-                  <h3 class="card__title">Artuner</h3>
-                </a>
-              </div>
-            </div>
-            <div class="list__item">
-              <div class="card">
                 <a class="card__link" aria-label="Goto Project Duerr" href="/templates/project-duerr.php">
                   <h3 class="card__title">Duerr</h3>
                 </a>
@@ -99,6 +113,20 @@
               <div class="card">
                 <a class="card__link" aria-label="Goto Project Rohde und Schwarz" href="/templates/project-rohde-und-schwarz.php">
                   <h3 class="card__title">Rohde und Schwarz</h3>
+                </a>
+              </div>
+            </div>
+            <div class="list__item">
+              <div class="card">
+                <a class="card__link" aria-label="Goto Project Mycs" href="/templates/project-mycs.php">
+                  <h3 class="card__title">Mycs</h3>
+                </a>
+              </div>
+            </div>
+            <div class="list__item">
+              <div class="card">
+                <a class="card__link" aria-label="Goto Project Artuner" href="/templates/project-artuner.php">
+                  <h3 class="card__title">Artuner</h3>
                 </a>
               </div>
             </div>
