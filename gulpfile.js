@@ -35,7 +35,7 @@ const server = () => browser.init({
   reloadDelay: 320,
   injectChanges: false,
   online: false,
-  open: false,
+  open: true,
   ui: false
 })
 
