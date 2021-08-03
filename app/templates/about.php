@@ -6,7 +6,7 @@
       <header class="about__header context-content">
         <div class="container">
           <h1 class="about__title">About</h1>
-          <p class="about__intro">Frontend Web Developer based in Berlin. I contributed to a variety of successful digital design and web development projects.</p>
+          <p class="about__intro">Frontend Web Developer based in Berlin. I work for digital agencies and contributed to a variety of successful digital design and web development projects.</p>
         </div>
       </header>
       <main class="about__main">
