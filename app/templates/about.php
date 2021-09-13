@@ -14,16 +14,16 @@
           <div class="container">
             <div class="about__departments">
               <div class="about__department">
-                <h3>design</h3>
+                <h3>development</h3>
                 <ul class="list list_skills">
                   <li class="list__item">HTML/CSS, PHP/Twig, SCSS/BEM</li>
-                  <li class="list__item">JavaScript, React, Web Components</li>
+                  <li class="list__item">JavaScript, React, WebComponents</li>
                   <li class="list__item">UX/UI, Usability, Accessibility</li>
                   <li class="list__item">Wordpress, Kirby</li>
                 </ul>
               </div>
               <div class="about__department">
-                <h3>development</h3>
+                <h3>enviroment</h3>
                 <ul class="list list_skills">
                   <li class="list__item">NPM, Composer, Webpack, Gulp</li>
                   <li class="list__item">ESLint, Stylelint, PHPCS</li>
