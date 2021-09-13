@@ -32,7 +32,7 @@ navigation-main.snippet {
     }
 
     &__menu {
-      background: $c-bg;
+      background: var(--c-bg);
       height: 100%;
       left: 0;
       opacity: 0;
@@ -77,8 +77,8 @@ navigation-main.snippet {
     .link {
       $block: 'link';
       align-items: center;
-      background-color: $c-bg;
-      color: $c-white;
+      background-color: var(--c-bg);
+      color: var(--c-white);
       display: flex;
       font-family: 'Alpha', Helvetica, Arial, sans-serif;
 
@@ -101,11 +101,11 @@ navigation-main.snippet {
 
       &:focus,
       &:hover {
-        background-color: $c-white;
+        background-color: var(--c-white);
         outline: 0;
 
         .#{$block}__text {
-          color: $c-nav-link;
+          color: var(--c-nav-link);
         }
       }
     }

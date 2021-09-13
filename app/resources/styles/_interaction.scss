@@ -15,9 +15,9 @@ button {
 
 .button {
   appearance: none;
-  background: #fbf88f;
+  background: var(--c-highlight);
   border: 0;
-  color: #fff;
+  color: var(--c-white);
   cursor: pointer;
   display: inline-block;
   font-family: inherit;
@@ -34,10 +34,10 @@ button {
   &:focus,
   &:hover,
   &:active {
-    background: #18181a;
+    background: var(--c-text);
 
     svg {
-      fill: #fff;
+      fill: var(--c-white);
     }
   }
 
@@ -55,7 +55,7 @@ button {
     width: 80px;
 
     svg {
-      fill: #18181a;
+      fill: var(--c-text);
       left: 50%;
       position: absolute;
       top: 50%;
@@ -98,35 +98,35 @@ button {
   }
 
   &_solid {
-    background-color: #18181a;
-    border-color: #18181a;
+    background-color: var(--c-text);
+    border-color: var(--c-text);
 
     @at-root a#{&} {
-      color: #18181a;
+      color: var(--c-text);
       transition: background-color 250ms, border-color 250ms;
 
       &:hover,
       &:focus {
-        background-color: #f8f7cb;
-        border-color: #f8f7cb;
-        color: #18181a;
+        background-color: var(--c-highlight);
+        border-color: var(--c-highlight);
+        color: var(--c-text);
       }
     }
   }
 
   &_outline {
-    background-color: rgba($c-white, 0);
-    border-color: $c-white;
+    background-color: rgba(var(--c-white), 0);
+    border-color: var(--c-white);
 
     @at-root a#{&} {
-      color: $c-white;
+      color: var(--c-white);
       transition: background-color 250ms, border-color 250ms;
 
       &:hover,
       &:focus {
-        background-color: #f8f7cb;
-        border-color: #f8f7cb;
-        color: #18181a;
+        background-color: var(--c-highlight);
+        border-color: var(--c-highlight);
+        color: var(--c-text);
       }
     }
   }
@@ -165,9 +165,9 @@ select,
 textarea {
   appearance: none;
   background-color: transparent;
-  border: 1px solid $c-white;
+  border: 1px solid var(--c-white);
   border-radius: 0;
-  color: $c-white;
+  color: var(--c-white);
   display: block;
   font-size: 0.875rem;
   line-height: 1.25;
@@ -175,8 +175,8 @@ textarea {
 
   &:hover,
   &:focus {
-    border-color: #f8f7cb;
-    color: $c-white;
+    border-color: var(--c-highlight);
+    color: var(--c-white);
     cursor: pointer;
   }
 }

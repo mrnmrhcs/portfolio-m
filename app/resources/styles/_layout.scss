@@ -80,7 +80,7 @@
         .card {
           &__link {
             &::before {
-              background-color: #18181a;
+              background-color: var(--c-text);
               content: '';
               display: block;
               height: 100%;
@@ -100,7 +100,7 @@
               }
 
               .card__title {
-                color: #fff;
+                color: var(--c-white);
                 opacity: 1;
               }
 
@@ -115,13 +115,13 @@
               &:focus,
               &:active {
                 .card__title {
-                  color: #fff;
+                  color: var(--c-white);
                 }
               }
             }
 
             .card__title {
-              color: #fff;
+              color: var(--c-white);
               opacity: 0;
               transition: opacity 350ms ease;
             }
@@ -202,23 +202,23 @@
 
           .card {
             &__link {
-              background-color: #fff;
+              background-color: var(--c-white);
               height: 0;
               transition: background-color 350ms ease-in-out;
 
               &:hover,
               &:focus,
               &:active {
-                background: #18181a;
+                background: var(--c-text);
 
                 .card__title {
-                  color: #fff;
+                  color: var(--c-white);
                 }
               }
             }
 
             &__title {
-              color: $c-bg;
+              color: var(--c-bg);
             }
           }
         }

@@ -1,17 +1,7 @@
-/////////////////////////////////////
 // VARIABLES
-/////////////////////////////////////
 
 // FONT
-// -------------------------------------------------------------
-
 $global-font-base-size: 16;
-
-// LAYOUT
-// -------------------------------------------------------------
-
-// WIDTH
-$document-max: 2560px;
 
 // PADDING
 $container-padding-xxs: 8px;
@@ -32,16 +22,15 @@ $breakpoint-xl: 1200px;
 $breakpoint-xxl: 1400px;
 $breakpoint-max: 1600px;
 
+// WIDTH
+$container-max: $breakpoint-max + ($container-padding-xxl * 2);
+
 // COLOR
-// -------------------------------------------------------------
-
-$c-bg: #c8cbd2;
-$c-white: #fff;
-
-$c-headline: #fff;
-$c-text: #18181a;
-
-$c-nav-link: #c8cbd2;
-$c-nav-hover: #18181a;
-$c-nav-active: #61616b;
-$c-nav-bg: #fff;
+:root {
+  --c-white: #fff;
+  --c-bg: #c8cbd2;
+  --c-heading: #fff;
+  --c-text: #18181a;
+  --c-highlight: #fbf88f;
+  --c-nav-link: #c8cbd2;
+}
