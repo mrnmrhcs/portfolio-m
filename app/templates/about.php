@@ -26,7 +26,7 @@
                 <ul class="list list_skills">
                   <li class="list__item">NodeJS/NPM, Webpack, Gulp, Composer</li>
                   <li class="list__item">PHPCS, ESLint, Stylelint</li>
-                  <li class="list__item">Git Version Control, PowerShell</li>
+                  <li class="list__item">Git Version Control, PowerShell/Bash</li>
                 </ul>
               </div>
             </div>
