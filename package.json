@@ -2,6 +2,7 @@
   "name": "portfolio-m",
   "description": "Portfolio Website",
   "version": "2.0.0",
+  "type": "module",
   "main": "gulpfile.js",
   "scripts": {
     "start": "$env:NODE_ENV = 'development'; .\\run\\start.ps1",
@@ -29,7 +30,7 @@
     "gulp-concat": "2.6.1",
     "gulp-debug": "4.0.0",
     "gulp-if": "3.0.0",
-    "gulp-imagemin": "7.1.0",
+    "gulp-imagemin": "8.0.0",
     "gulp-sass": "5.0.0",
     "gulp-terser": "2.1.0",
     "sass": "1.42.1",
