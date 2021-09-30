@@ -2,28 +2,32 @@
 // GULP
 ////////////////////////////////////////////////////////////////////////////////
 
-const { task, series, parallel, src, dest, watch } = require('gulp')
+import gulp from 'gulp'
 
-const autoprefixer = require('gulp-autoprefixer')
-const babel = require('gulp-babel')
-const debug = require('gulp-debug')
-const gulpif = require('gulp-if')
-const concat = require('gulp-concat')
-const terser = require('gulp-terser')
-const imagemin = require('gulp-imagemin')
-const favicon = require('favicons').stream
-const browser = require('browser-sync').create('server')
-const scss = require('gulp-sass')(require('sass'))
-const cache = require('gulp-cache')
-const del = require('del')
+import autoprefixer from 'gulp-autoprefixer'
+import babel from 'gulp-babel'
+import cache from 'gulp-cache'
+import debug from 'gulp-debug'
+import concat from 'gulp-concat'
+import terser from 'gulp-terser'
+import gulpif from 'gulp-if'
+import gs from 'gulp-sass'
+import ss from 'sass'
+import bs from 'browser-sync'
+import del from 'del'
+import favicon from 'favicons'
+import imagemin, { gifsicle, mozjpeg, optipng, svgo } from 'gulp-imagemin'
+import { config } from './config.js'
 
-const config = require('./config')
+const { task, series, parallel, src, dest, watch } = gulp
 
 ////////////////////////////////////////////////////////////////////////////////
 // BROWSERSYNC
 ////////////////////////////////////////////////////////////////////////////////
 
-const server = () => browser.init({
+const instance = bs.create()
+
+const server = () => instance.init({
   host: config.host.local,
   proxy: config.host.local,
   logPrefix: process.env.npm_package_name,
@@ -40,7 +44,7 @@ const server = () => browser.init({
 })
 
 const reload = (done) => {
-  browser.reload()
+  instance.reload()
   done()
 }
 
@@ -162,12 +166,13 @@ const clean__styles = () => del(config.path.dist + '*.{css,css.map}')
 // PROCESS -------------------------------------------------------------
 
 const process__styles = () => {
+  const scss = gs(ss)
   return src(config.path.src + config.path.resources + 'main.scss', { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? true : false) : false })
     .pipe(gulpif(process.env.DEBUG === 'True', debug({ title: '## STYLE:' })))
     .pipe(scss({ outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded' }).on('error', scss.logError))
     .pipe(autoprefixer())
     .pipe(dest(config.path.dist, { sourcemaps: !process.env.NODE_ENV === 'production' ? (!process.env.NODE_ENV === 'staging' ? '.' : false) : false }))
-    .pipe(browser.reload({ stream: true }))
+    .pipe(instance.reload({ stream: true }))
 }
 
 // WATCH -------------------------------------------------------------
@@ -271,9 +276,9 @@ const process__images = () => {
   return src(config.path.src + config.path.resources + config.path.assets + config.path.images + '**/*.{png,jpg,jpeg,gif}')
     .pipe(gulpif(process.env.DEBUG === 'True', debug({ title: '## IMAGES:' })))
     .pipe(cache(imagemin([
-      imagemin.gifsicle({ interlaced: true }),
-      imagemin.mozjpeg({ quality: 75, progressive: true }),
-      imagemin.optipng({ optimizationLevel: 7 })
+      gifsicle({ interlaced: true }),
+      mozjpeg({ quality: 75, progressive: true }),
+      optipng({ optimizationLevel: 7 })
     ])))
     .pipe(dest(config.path.dist + config.path.assets + config.path.images))
 }
@@ -282,7 +287,7 @@ const process__icons = () => {
   return src(config.path.src + config.path.resources + config.path.assets + config.path.icons + '**/*.svg')
     .pipe(gulpif(process.env.DEBUG === 'True', debug({ title: '## ICONS:' })))
     .pipe(cache(imagemin([
-      imagemin.svgo({
+      svgo({
         plugins: [
           { removeTitle: true },
           { removeViewBox: false },
@@ -298,8 +303,8 @@ const process__icons = () => {
 const process__favicons = () => {
   return src(config.path.src + config.path.resources + config.path.assets + config.path.favicons + 'favicon_src.png')
     .pipe(gulpif(process.env.DEBUG === 'True', debug({ title: '## FAVICON:' })))
-    .pipe(favicon({
-      path: '../../../' + config.path.assets + config.path.favicons,
+    .pipe(favicon.stream({
+      path: '.  ./../../' + config.path.assets + config.path.favicons,
       appName: 'Portfolio — Marian Schramm',
       appShortName: 'Portfolio-M',
       appDescription: 'Portfolio Website',
@@ -360,17 +365,14 @@ const fonts = series(clean__fonts, copy__fonts)
 // COMPOSITION
 ////////////////////////////////////////////////////////////////////////////////
 
+const WATCH = parallel(server, parallel(watch__logic, watch__assets, watch__styles, watch__scripts))
 const LOGIC = series(parallel(index, htaccess, snippets, templates), vendor)
 const STYLE = parallel(styles, scripts__main)
 const ASSET = series(images, icons, favicons, fonts)
 const SEO = series(robots)
-const RUN = parallel(server, parallel(watch__logic, watch__assets, watch__styles, watch__scripts))
+const RUN = series(LOGIC, STYLE, ASSET, process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging' ? SEO : WATCH)
 
-if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
-  exports.default = series(LOGIC, STYLE, ASSET, SEO)
-} else {
-  exports.default = series(LOGIC, STYLE, ASSET, RUN)
-}
+export default RUN
 
 ////////////////////////////////////////////////////////////////////////////////
 // HELPER
