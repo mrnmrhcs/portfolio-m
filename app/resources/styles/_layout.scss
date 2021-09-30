@@ -621,6 +621,11 @@
             padding-top: 6rem;
           }
         }
+
+        .#{$block}__statement {
+          @include rwd-scale('font-size', 1.25rem, 1.625rem, 320px, 1200px);
+          line-height: 1.375;
+        }
       }
     }
 
