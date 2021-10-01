@@ -26,7 +26,7 @@ img {
       top: 0;
       width: 100%;
 
-      @media (min-width: $breakpoint-max + (2 * $container-padding-xxl)) {
+      @media (min-width: $container-max) {
         height: auto;
       }
     }

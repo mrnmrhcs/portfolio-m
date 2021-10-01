@@ -3,7 +3,7 @@
     <title>ico-menu</title>
     <defs></defs>
     <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="ico-menu" fill="#FFFFFF">
+        <g id="ico-menu" fill="var(--c-white)FFF">
             <rect id="ico-object-bottom" x="0" y="18" width="12" height="2"></rect>
             <rect id="ico-object-center" x="0" y="9" width="12" height="2"></rect>
             <rect id="ico-object-top" x="0" y="0" width="12" height="2"></rect>

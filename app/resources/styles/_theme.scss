@@ -5,8 +5,8 @@
 .theme-default {
   &,
   body {
-    background-color: $c-bg;
-    color: $c-white;
+    background-color: var(--c-bg);
+    color: var(--c-white);
     font-family: 'IBM Plex Mono', monospace;
     line-height: 1.5;
   }
@@ -26,7 +26,7 @@
     }
 
     a {
-      color: #fbf88f;
+      color: var(--c-highlight);
 
       &:focus {
         outline: 0;
@@ -42,7 +42,7 @@
     // -------------------------------------------------------------
 
     h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-      color: $c-headline;
+      color: var(--c-heading);
       line-height: 1.25;
     }
 
@@ -55,17 +55,17 @@
       font-weight: 300;
     }
 
-    h1 {
+    h1, .h1 {
       @include rwd-scale('font-size', 3rem, 7rem, 320px, 1200px);
       line-height: 1.025;
     }
 
-    h2 {
+    h2, .h2 {
       @include rwd-scale('font-size', 1.25rem, 5rem, 320px, 1200px);
     }
 
-    h3 {
-      @include rwd-scale('font-size', 0.875rem, 1.5rem, 320px, 1200px);
+    h3, .h3 {
+      @include rwd-scale('font-size', 1rem, 1.5rem, 320px, 1200px);
     }
 
     // LIST
@@ -128,8 +128,8 @@
     }
 
     mark {
-      background-color: #fbf88f;
-      color: $c-white;
+      background-color: var(--c-highlight);
+      color: var(--c-white);
     }
 
     code {
@@ -137,7 +137,7 @@
     }
 
     kbd {
-      background-color: #fbf88f;
+      background-color: var(--c-highlight);
       font-family: 'Courier New', Courier, monospace;
     }
 

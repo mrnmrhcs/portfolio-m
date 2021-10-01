@@ -1,4 +1,6 @@
-module.exports = {
+// let config
+
+export const config = {
   host: {
     local: 'http://portfolio-m.local.run:8080',
     live: 'http://m.kaimberg.com'

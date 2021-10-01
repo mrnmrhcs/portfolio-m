@@ -2,6 +2,7 @@
   "name": "portfolio-m",
   "description": "Portfolio Website",
   "version": "2.0.0",
+  "type": "module",
   "main": "gulpfile.js",
   "scripts": {
     "start": "$env:NODE_ENV = 'development'; .\\run\\start.ps1",
@@ -29,13 +30,13 @@
     "gulp-concat": "2.6.1",
     "gulp-debug": "4.0.0",
     "gulp-if": "3.0.0",
-    "gulp-imagemin": "7.1.0",
+    "gulp-imagemin": "8.0.0",
     "gulp-sass": "5.0.0",
-    "gulp-terser": "2.0.1",
-    "sass": "1.39.2",
+    "gulp-terser": "2.1.0",
+    "sass": "1.42.1",
     "stylelint": "13.13.1",
     "stylelint-order": "4.1.0",
-    "stylelint-scss": "3.20.1"
+    "stylelint-scss": "3.21.0"
   },
   "dependencies": {
     "jquery": "3.6.0"
