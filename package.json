@@ -12,15 +12,15 @@
     "deploy:staging": "$env:NODE_ENV = 'staging'; .\\run\\deploy.ps1"
   },
   "devDependencies": {
-    "@babel/core": "7.15.5",
-    "@babel/preset-env": "7.15.6",
-    "browser-sync": "2.27.5",
+    "@babel/core": "7.16.0",
+    "@babel/preset-env": "7.16.4",
+    "browser-sync": "2.27.7",
     "del": "6.0.0",
-    "eslint": "7.32.0",
+    "eslint": "8.3.0",
     "eslint-config-standard": "16.0.3",
-    "eslint-plugin-import": "2.24.2",
+    "eslint-plugin-import": "2.25.3",
     "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-promise": "5.1.0",
+    "eslint-plugin-promise": "5.1.1",
     "eslint-plugin-standard": "5.0.0",
     "favicons": "6.2.2",
     "gulp": "4.0.2",
@@ -33,10 +33,11 @@
     "gulp-imagemin": "8.0.0",
     "gulp-sass": "5.0.0",
     "gulp-terser": "2.1.0",
-    "sass": "1.42.1",
-    "stylelint": "13.13.1",
-    "stylelint-order": "4.1.0",
-    "stylelint-scss": "3.21.0"
+    "postcss-scss": "4.0.2",
+    "sass": "1.43.5",
+    "stylelint": "14.1.0",
+    "stylelint-order": "5.0.0",
+    "stylelint-scss": "4.0.0"
   },
   "dependencies": {
     "jquery": "3.6.0"

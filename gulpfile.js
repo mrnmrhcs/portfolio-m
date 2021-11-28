@@ -289,10 +289,18 @@ const process__icons = () => {
     .pipe(cache(imagemin([
       svgo({
         plugins: [
-          { removeTitle: true },
-          { removeViewBox: false },
-          { cleanupIDs: true },
-          { removeXMLNS: false }
+          {
+            name: 'removeTitle',
+            active: true
+          },
+          {
+            name: 'removeViewBox',
+            active: true
+          },
+          {
+            name: 'cleanupIDs',
+            active: true
+          }
         ],
         verbose: process.env.DEBUG === 'True' ? true : false
       })

@@ -1,5 +1,3 @@
-// let config
-
 export const config = {
   host: {
     local: 'http://portfolio-m.local.run:8080',
